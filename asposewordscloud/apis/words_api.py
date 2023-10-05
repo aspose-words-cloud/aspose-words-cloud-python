@@ -146,6 +146,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def accept_all_revisions_online(self, request, **kwargs):  # noqa: E501
         """Accepts all revisions in the document.  # noqa: E501
 
@@ -223,6 +224,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def append_document(self, request, **kwargs):  # noqa: E501
         """Appends documents to the original document.  # noqa: E501
@@ -307,6 +309,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def append_document_online(self, request, **kwargs):  # noqa: E501
         """Appends documents to the original document.  # noqa: E501
 
@@ -387,6 +390,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
         """Applies a style to the document node.  # noqa: E501
@@ -472,6 +476,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def apply_style_to_document_element_online(self, request, **kwargs):  # noqa: E501
         """Applies a style to the document node.  # noqa: E501
 
@@ -553,6 +558,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def build_report(self, request, **kwargs):  # noqa: E501
         """Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
@@ -636,6 +642,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def build_report_online(self, request, **kwargs):  # noqa: E501
         """Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
 
@@ -713,6 +720,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def classify(self, request, **kwargs):  # noqa: E501
         """Runs a multi-class text classification for the specified raw text.  # noqa: E501
 
@@ -787,6 +795,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def classify_document(self, request, **kwargs):  # noqa: E501
         """Runs a multi-class text classification for the document.  # noqa: E501
@@ -866,6 +875,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def classify_document_online(self, request, **kwargs):  # noqa: E501
         """Runs a multi-class text classification for the document.  # noqa: E501
 
@@ -944,6 +954,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def compare_document(self, request, **kwargs):  # noqa: E501
         """Compares two documents.  # noqa: E501
@@ -1027,6 +1038,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def compare_document_online(self, request, **kwargs):  # noqa: E501
         """Compares two documents.  # noqa: E501
 
@@ -1107,6 +1119,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def compress_document(self, request, **kwargs):  # noqa: E501
         """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
@@ -1189,6 +1202,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def compress_document_online(self, request, **kwargs):  # noqa: E501
         """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
 
@@ -1267,6 +1281,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def convert_document(self, request, **kwargs):  # noqa: E501
         """Converts a document on a local drive to the specified format.  # noqa: E501
@@ -1350,6 +1365,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def copy_file(self, request, **kwargs):  # noqa: E501
         """Copy file.  # noqa: E501
 
@@ -1425,6 +1441,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def copy_folder(self, request, **kwargs):  # noqa: E501
         """Copy folder.  # noqa: E501
 
@@ -1498,6 +1515,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def copy_style(self, request, **kwargs):  # noqa: E501
         """Makes a copy of the style in the document.  # noqa: E501
@@ -1582,6 +1600,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def copy_style_online(self, request, **kwargs):  # noqa: E501
         """Makes a copy of the style in the document.  # noqa: E501
 
@@ -1663,6 +1682,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def copy_styles_from_template(self, request, **kwargs):  # noqa: E501
         """Copies styles from the origin document to the target document.  # noqa: E501
 
@@ -1743,6 +1763,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def create_document(self, request, **kwargs):  # noqa: E501
         """Creates a new document in cloud storage in the format, determined by the file extension. Supported all save format extensions.  # noqa: E501
 
@@ -1816,6 +1837,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def create_folder(self, request, **kwargs):  # noqa: E501
         """Create the folder.  # noqa: E501
 
@@ -1887,6 +1909,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def create_or_update_document_property(self, request, **kwargs):  # noqa: E501
         """Adds a new or updates an existing document property.  # noqa: E501
@@ -1972,6 +1995,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def create_or_update_document_property_online(self, request, **kwargs):  # noqa: E501
         """Adds a new or updates an existing document property.  # noqa: E501
 
@@ -2054,6 +2078,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_all_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Removes paragraph tab stops from the document node.  # noqa: E501
 
@@ -2132,6 +2157,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_all_paragraph_tab_stops_online(self, request, **kwargs):  # noqa: E501
         """Removes paragraph tab stops from the document node.  # noqa: E501
@@ -2213,6 +2239,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_bookmark(self, request, **kwargs):  # noqa: E501
         """Removes a bookmark from the document.  # noqa: E501
 
@@ -2292,6 +2319,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_bookmark_online(self, request, **kwargs):  # noqa: E501
         """Removes a bookmark from the document.  # noqa: E501
@@ -2374,6 +2402,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_bookmarks(self, request, **kwargs):  # noqa: E501
         """Removes all bookmarks from the document.  # noqa: E501
 
@@ -2452,6 +2481,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_bookmarks_online(self, request, **kwargs):  # noqa: E501
         """Removes all bookmarks from the document.  # noqa: E501
@@ -2533,6 +2563,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_border(self, request, **kwargs):  # noqa: E501
         """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
@@ -2613,6 +2644,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_border_online(self, request, **kwargs):  # noqa: E501
         """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -2696,6 +2728,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_borders(self, request, **kwargs):  # noqa: E501
         """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
@@ -2775,6 +2808,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_borders_online(self, request, **kwargs):  # noqa: E501
         """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -2857,6 +2891,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_comment(self, request, **kwargs):  # noqa: E501
         """Removes a comment from the document.  # noqa: E501
 
@@ -2936,6 +2971,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_comment_online(self, request, **kwargs):  # noqa: E501
         """Removes a comment from the document.  # noqa: E501
@@ -3018,6 +3054,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_comments(self, request, **kwargs):  # noqa: E501
         """Removes all comments from the document.  # noqa: E501
 
@@ -3096,6 +3133,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_comments_online(self, request, **kwargs):  # noqa: E501
         """Removes all comments from the document.  # noqa: E501
@@ -3177,6 +3215,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_custom_xml_part(self, request, **kwargs):  # noqa: E501
         """Removes the custom xml part from the document.  # noqa: E501
 
@@ -3256,6 +3295,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_custom_xml_part_online(self, request, **kwargs):  # noqa: E501
         """Removes the custom xml part from the document.  # noqa: E501
@@ -3338,6 +3378,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_custom_xml_parts(self, request, **kwargs):  # noqa: E501
         """Removes all custom xml parts from the document.  # noqa: E501
 
@@ -3416,6 +3457,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_custom_xml_parts_online(self, request, **kwargs):  # noqa: E501
         """Removes all custom xml parts from the document.  # noqa: E501
@@ -3497,6 +3539,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_document_property(self, request, **kwargs):  # noqa: E501
         """Removes a document property.  # noqa: E501
 
@@ -3576,6 +3619,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_document_property_online(self, request, **kwargs):  # noqa: E501
         """Removes a document property.  # noqa: E501
@@ -3658,6 +3702,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_drawing_object(self, request, **kwargs):  # noqa: E501
         """Removes a DrawingObject from the document node.  # noqa: E501
 
@@ -3738,6 +3783,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_drawing_object_online(self, request, **kwargs):  # noqa: E501
         """Removes a DrawingObject from the document node.  # noqa: E501
@@ -3821,6 +3867,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_field(self, request, **kwargs):  # noqa: E501
         """Removes a field from the document node.  # noqa: E501
 
@@ -3901,6 +3948,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_field_online(self, request, **kwargs):  # noqa: E501
         """Removes a field from the document node.  # noqa: E501
@@ -3984,6 +4032,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_fields(self, request, **kwargs):  # noqa: E501
         """Removes fields from the document node.  # noqa: E501
 
@@ -4063,6 +4112,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_fields_online(self, request, **kwargs):  # noqa: E501
         """Removes fields from the document node.  # noqa: E501
@@ -4145,6 +4195,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_file(self, request, **kwargs):  # noqa: E501
         """Delete file.  # noqa: E501
 
@@ -4218,6 +4269,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_folder(self, request, **kwargs):  # noqa: E501
         """Delete folder.  # noqa: E501
 
@@ -4290,6 +4342,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_footnote(self, request, **kwargs):  # noqa: E501
         """Removes a footnote from the document node.  # noqa: E501
@@ -4371,6 +4424,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_footnote_online(self, request, **kwargs):  # noqa: E501
         """Removes a footnote from the document node.  # noqa: E501
@@ -4454,6 +4508,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_form_field(self, request, **kwargs):  # noqa: E501
         """Removes a form field from the document node.  # noqa: E501
 
@@ -4534,6 +4589,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_form_field_online(self, request, **kwargs):  # noqa: E501
         """Removes a form field from the document node.  # noqa: E501
@@ -4617,6 +4673,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_header_footer(self, request, **kwargs):  # noqa: E501
         """Removes a HeaderFooter object from the document section.  # noqa: E501
 
@@ -4697,6 +4754,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_header_footer_online(self, request, **kwargs):  # noqa: E501
         """Removes a HeaderFooter object from the document section.  # noqa: E501
@@ -4780,6 +4838,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_headers_footers(self, request, **kwargs):  # noqa: E501
         """Removes HeaderFooter objects from the document section.  # noqa: E501
 
@@ -4860,6 +4919,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_headers_footers_online(self, request, **kwargs):  # noqa: E501
         """Removes HeaderFooter objects from the document section.  # noqa: E501
@@ -4943,6 +5003,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_macros(self, request, **kwargs):  # noqa: E501
         """Removes macros from the document.  # noqa: E501
 
@@ -5021,6 +5082,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_macros_online(self, request, **kwargs):  # noqa: E501
         """Removes macros from the document.  # noqa: E501
@@ -5102,6 +5164,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_office_math_object(self, request, **kwargs):  # noqa: E501
         """Removes an OfficeMath object from the document node.  # noqa: E501
 
@@ -5182,6 +5245,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_office_math_object_online(self, request, **kwargs):  # noqa: E501
         """Removes an OfficeMath object from the document node.  # noqa: E501
@@ -5265,6 +5329,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_paragraph(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph from the document node.  # noqa: E501
 
@@ -5346,6 +5411,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
 
@@ -5426,6 +5492,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
         """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
@@ -5509,6 +5576,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_paragraph_online(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph from the document node.  # noqa: E501
 
@@ -5591,6 +5659,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph tab stop from the document node.  # noqa: E501
 
@@ -5670,6 +5739,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_paragraph_tab_stop_online(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph tab stop from the document node.  # noqa: E501
@@ -5752,6 +5822,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_run(self, request, **kwargs):  # noqa: E501
         """Removes a Run object from the paragraph.  # noqa: E501
 
@@ -5832,6 +5903,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_run_online(self, request, **kwargs):  # noqa: E501
         """Removes a Run object from the paragraph.  # noqa: E501
@@ -5915,6 +5987,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_section(self, request, **kwargs):  # noqa: E501
         """Removes a section from the document.  # noqa: E501
 
@@ -5994,6 +6067,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_section_online(self, request, **kwargs):  # noqa: E501
         """Removes a section from the document.  # noqa: E501
@@ -6076,6 +6150,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_structured_document_tag(self, request, **kwargs):  # noqa: E501
         """Removes a StructuredDocumentTag (SDT) from the document node.  # noqa: E501
 
@@ -6156,6 +6231,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_structured_document_tag_online(self, request, **kwargs):  # noqa: E501
         """Removes a StructuredDocumentTag (SDT) from the document node.  # noqa: E501
@@ -6239,6 +6315,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_table(self, request, **kwargs):  # noqa: E501
         """Removes a table from the document node.  # noqa: E501
 
@@ -6320,6 +6397,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_table_cell(self, request, **kwargs):  # noqa: E501
         """Removes a cell from the table row.  # noqa: E501
 
@@ -6400,6 +6478,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_table_cell_online(self, request, **kwargs):  # noqa: E501
         """Removes a cell from the table row.  # noqa: E501
@@ -6483,6 +6562,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_table_online(self, request, **kwargs):  # noqa: E501
         """Removes a table from the document node.  # noqa: E501
 
@@ -6565,6 +6645,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_table_row(self, request, **kwargs):  # noqa: E501
         """Removes a row from the table.  # noqa: E501
 
@@ -6645,6 +6726,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_table_row_online(self, request, **kwargs):  # noqa: E501
         """Removes a row from the table.  # noqa: E501
@@ -6728,6 +6810,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def delete_watermark(self, request, **kwargs):  # noqa: E501
         """Removes a watermark from the document.  # noqa: E501
 
@@ -6806,6 +6889,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def delete_watermark_online(self, request, **kwargs):  # noqa: E501
         """Removes a watermark from the document.  # noqa: E501
@@ -6887,6 +6971,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def download_file(self, request, **kwargs):  # noqa: E501
         """Download file.  # noqa: E501
 
@@ -6959,6 +7044,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def execute_mail_merge(self, request, **kwargs):  # noqa: E501
         """Executes a Mail Merge operation.  # noqa: E501
@@ -7046,6 +7132,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def execute_mail_merge_online(self, request, **kwargs):  # noqa: E501
         """Executes a Mail Merge operation online.  # noqa: E501
 
@@ -7125,6 +7212,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_available_fonts(self, request, **kwargs):  # noqa: E501
         """Reads available fonts from the document.  # noqa: E501
 
@@ -7195,6 +7283,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_bookmark_by_name(self, request, **kwargs):  # noqa: E501
         """Reads a bookmark, specified by name, from the document.  # noqa: E501
@@ -7272,6 +7361,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_bookmark_by_name_online(self, request, **kwargs):  # noqa: E501
         """Reads a bookmark, specified by name, from the document.  # noqa: E501
@@ -7351,6 +7441,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_bookmarks(self, request, **kwargs):  # noqa: E501
         """Reads bookmarks from the document.  # noqa: E501
 
@@ -7426,6 +7517,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_bookmarks_online(self, request, **kwargs):  # noqa: E501
         """Reads bookmarks from the document.  # noqa: E501
@@ -7504,6 +7596,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_border(self, request, **kwargs):  # noqa: E501
         """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
@@ -7581,6 +7674,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_border_online(self, request, **kwargs):  # noqa: E501
         """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -7661,6 +7755,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_borders(self, request, **kwargs):  # noqa: E501
         """Reads borders from the document node.  # noqa: E501
 
@@ -7737,6 +7832,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_borders_online(self, request, **kwargs):  # noqa: E501
         """Reads borders from the document node.  # noqa: E501
@@ -7816,6 +7912,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_comment(self, request, **kwargs):  # noqa: E501
         """Reads a comment from the document.  # noqa: E501
 
@@ -7892,6 +7989,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_comment_online(self, request, **kwargs):  # noqa: E501
         """Reads a comment from the document.  # noqa: E501
@@ -7971,6 +8069,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_comments(self, request, **kwargs):  # noqa: E501
         """Reads comments from the document.  # noqa: E501
 
@@ -8046,6 +8145,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_comments_online(self, request, **kwargs):  # noqa: E501
         """Reads comments from the document.  # noqa: E501
@@ -8124,6 +8224,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_custom_xml_part(self, request, **kwargs):  # noqa: E501
         """Reads the custom xml part from the document.  # noqa: E501
 
@@ -8200,6 +8301,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_custom_xml_part_online(self, request, **kwargs):  # noqa: E501
         """Reads the custom xml part from the document.  # noqa: E501
@@ -8279,6 +8381,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_custom_xml_parts(self, request, **kwargs):  # noqa: E501
         """Reads custom xml parts from the document.  # noqa: E501
 
@@ -8354,6 +8457,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_custom_xml_parts_online(self, request, **kwargs):  # noqa: E501
         """Reads custom xml parts from the document.  # noqa: E501
@@ -8432,6 +8536,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document(self, request, **kwargs):  # noqa: E501
         """Reads common information from the document.  # noqa: E501
 
@@ -8507,6 +8612,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_drawing_object_by_index(self, request, **kwargs):  # noqa: E501
         """Reads a DrawingObject from the document node.  # noqa: E501
@@ -8585,6 +8691,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_drawing_object_by_index_online(self, request, **kwargs):  # noqa: E501
         """Reads a DrawingObject from the document node.  # noqa: E501
@@ -8665,6 +8772,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_drawing_object_image_data(self, request, **kwargs):  # noqa: E501
         """Reads image data of a DrawingObject from the document node.  # noqa: E501
 
@@ -8742,6 +8850,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_drawing_object_image_data_online(self, request, **kwargs):  # noqa: E501
         """Reads image data of a DrawingObject from the document node.  # noqa: E501
@@ -8822,6 +8931,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_drawing_object_ole_data(self, request, **kwargs):  # noqa: E501
         """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
 
@@ -8899,6 +9009,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_drawing_object_ole_data_online(self, request, **kwargs):  # noqa: E501
         """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
@@ -8979,6 +9090,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_drawing_objects(self, request, **kwargs):  # noqa: E501
         """Reads DrawingObjects from the document node.  # noqa: E501
 
@@ -9055,6 +9167,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_drawing_objects_online(self, request, **kwargs):  # noqa: E501
         """Reads DrawingObjects from the document node.  # noqa: E501
@@ -9134,6 +9247,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_field_names(self, request, **kwargs):  # noqa: E501
         """Reads merge field names from the document.  # noqa: E501
 
@@ -9210,6 +9324,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_field_names_online(self, request, **kwargs):  # noqa: E501
         """Reads merge field names from the document.  # noqa: E501
@@ -9289,6 +9404,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_hyperlink_by_index(self, request, **kwargs):  # noqa: E501
         """Reads a hyperlink from the document.  # noqa: E501
 
@@ -9365,6 +9481,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_hyperlink_by_index_online(self, request, **kwargs):  # noqa: E501
         """Reads a hyperlink from the document.  # noqa: E501
@@ -9444,6 +9561,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_hyperlinks(self, request, **kwargs):  # noqa: E501
         """Reads hyperlinks from the document.  # noqa: E501
 
@@ -9519,6 +9637,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_hyperlinks_online(self, request, **kwargs):  # noqa: E501
         """Reads hyperlinks from the document.  # noqa: E501
@@ -9597,6 +9716,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_properties(self, request, **kwargs):  # noqa: E501
         """Reads document properties.  # noqa: E501
 
@@ -9672,6 +9792,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_properties_online(self, request, **kwargs):  # noqa: E501
         """Reads document properties.  # noqa: E501
@@ -9750,6 +9871,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_property(self, request, **kwargs):  # noqa: E501
         """Reads a document property.  # noqa: E501
 
@@ -9826,6 +9948,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_property_online(self, request, **kwargs):  # noqa: E501
         """Reads a document property.  # noqa: E501
@@ -9905,6 +10028,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_protection(self, request, **kwargs):  # noqa: E501
         """Reads protection properties from the document.  # noqa: E501
 
@@ -9980,6 +10104,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_protection_online(self, request, **kwargs):  # noqa: E501
         """Reads protection properties from the document.  # noqa: E501
@@ -10057,6 +10182,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_statistics(self, request, **kwargs):  # noqa: E501
         """Reads document statistics.  # noqa: E501
@@ -10136,6 +10262,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_document_statistics_online(self, request, **kwargs):  # noqa: E501
         """Reads document statistics.  # noqa: E501
@@ -10217,6 +10344,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_document_with_format(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to the specified format.  # noqa: E501
 
@@ -10296,6 +10424,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_field(self, request, **kwargs):  # noqa: E501
         """Reads a field from the document node.  # noqa: E501
 
@@ -10373,6 +10502,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_field_online(self, request, **kwargs):  # noqa: E501
         """Reads a field from the document node.  # noqa: E501
@@ -10453,6 +10583,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_fields(self, request, **kwargs):  # noqa: E501
         """Reads fields from the document node.  # noqa: E501
 
@@ -10529,6 +10660,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_fields_online(self, request, **kwargs):  # noqa: E501
         """Reads fields from the document node.  # noqa: E501
@@ -10608,6 +10740,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_files_list(self, request, **kwargs):  # noqa: E501
         """Get all files and folders within a folder.  # noqa: E501
 
@@ -10679,6 +10812,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_footnote(self, request, **kwargs):  # noqa: E501
         """Reads a footnote from the document node.  # noqa: E501
@@ -10757,6 +10891,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_footnote_online(self, request, **kwargs):  # noqa: E501
         """Reads a footnote from the document node.  # noqa: E501
@@ -10837,6 +10972,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_footnotes(self, request, **kwargs):  # noqa: E501
         """Reads footnotes from the document node.  # noqa: E501
 
@@ -10913,6 +11049,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_footnotes_online(self, request, **kwargs):  # noqa: E501
         """Reads footnotes from the document node.  # noqa: E501
@@ -10992,6 +11129,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_form_field(self, request, **kwargs):  # noqa: E501
         """Reads a form field from the document node.  # noqa: E501
 
@@ -11069,6 +11207,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_form_field_online(self, request, **kwargs):  # noqa: E501
         """Reads a form field from the document node.  # noqa: E501
@@ -11149,6 +11288,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_form_fields(self, request, **kwargs):  # noqa: E501
         """Reads form fields from the document node.  # noqa: E501
 
@@ -11225,6 +11365,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_form_fields_online(self, request, **kwargs):  # noqa: E501
         """Reads form fields from the document node.  # noqa: E501
@@ -11304,6 +11445,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_header_footer(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document.  # noqa: E501
 
@@ -11381,6 +11523,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_header_footer_of_section(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document section.  # noqa: E501
@@ -11460,6 +11603,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_header_footer_of_section_online(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document section.  # noqa: E501
@@ -11541,6 +11685,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_header_footer_online(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document.  # noqa: E501
 
@@ -11620,6 +11765,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_header_footers(self, request, **kwargs):  # noqa: E501
         """Reads HeaderFooter objects from the document section.  # noqa: E501
 
@@ -11697,6 +11843,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_header_footers_online(self, request, **kwargs):  # noqa: E501
         """Reads HeaderFooter objects from the document section.  # noqa: E501
@@ -11777,6 +11924,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_info(self, request, **kwargs):  # noqa: E501
         """Returns application info.  # noqa: E501
 
@@ -11846,6 +11994,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_list(self, request, **kwargs):  # noqa: E501
         """Reads a list from the document.  # noqa: E501
@@ -11923,6 +12072,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_list_online(self, request, **kwargs):  # noqa: E501
         """Reads a list from the document.  # noqa: E501
@@ -12002,6 +12152,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_lists(self, request, **kwargs):  # noqa: E501
         """Reads lists from the document.  # noqa: E501
 
@@ -12077,6 +12228,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_lists_online(self, request, **kwargs):  # noqa: E501
         """Reads lists from the document.  # noqa: E501
@@ -12155,6 +12307,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_office_math_object(self, request, **kwargs):  # noqa: E501
         """Reads an OfficeMath object from the document node.  # noqa: E501
 
@@ -12232,6 +12385,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_office_math_object_online(self, request, **kwargs):  # noqa: E501
         """Reads an OfficeMath object from the document node.  # noqa: E501
@@ -12312,6 +12466,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_office_math_objects(self, request, **kwargs):  # noqa: E501
         """Reads OfficeMath objects from the document node.  # noqa: E501
 
@@ -12388,6 +12543,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_office_math_objects_online(self, request, **kwargs):  # noqa: E501
         """Reads OfficeMath objects from the document node.  # noqa: E501
@@ -12467,6 +12623,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraph(self, request, **kwargs):  # noqa: E501
         """Reads a paragraph from the document node.  # noqa: E501
 
@@ -12545,6 +12702,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
 
@@ -12622,6 +12780,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_paragraph_format_online(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
@@ -12702,6 +12861,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
 
@@ -12779,6 +12939,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
@@ -12859,6 +13020,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraph_online(self, request, **kwargs):  # noqa: E501
         """Reads a paragraph from the document node.  # noqa: E501
 
@@ -12938,6 +13100,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraphs(self, request, **kwargs):  # noqa: E501
         """Reads paragraphs from the document node.  # noqa: E501
 
@@ -13014,6 +13177,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_paragraphs_online(self, request, **kwargs):  # noqa: E501
         """Reads paragraphs from the document node.  # noqa: E501
@@ -13093,6 +13257,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Reads paragraph tab stops from the document node.  # noqa: E501
 
@@ -13170,6 +13335,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_paragraph_tab_stops_online(self, request, **kwargs):  # noqa: E501
         """Reads paragraph tab stops from the document node.  # noqa: E501
@@ -13250,6 +13416,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_public_key(self, request, **kwargs):  # noqa: E501
         """Get assymetric public key.  # noqa: E501
 
@@ -13319,6 +13486,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_range_text(self, request, **kwargs):  # noqa: E501
         """Reads range text from the document.  # noqa: E501
@@ -13397,6 +13565,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_range_text_online(self, request, **kwargs):  # noqa: E501
         """Reads range text from the document.  # noqa: E501
@@ -13477,6 +13646,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_run(self, request, **kwargs):  # noqa: E501
         """Reads a Run object from the paragraph.  # noqa: E501
 
@@ -13555,6 +13725,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_run_font(self, request, **kwargs):  # noqa: E501
         """Reads the font properties of a Run object from the paragraph.  # noqa: E501
 
@@ -13632,6 +13803,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_run_font_online(self, request, **kwargs):  # noqa: E501
         """Reads the font properties of a Run object from the paragraph.  # noqa: E501
@@ -13712,6 +13884,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_run_online(self, request, **kwargs):  # noqa: E501
         """Reads a Run object from the paragraph.  # noqa: E501
 
@@ -13791,6 +13964,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_runs(self, request, **kwargs):  # noqa: E501
         """Reads Run objects from the paragraph.  # noqa: E501
 
@@ -13867,6 +14041,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_runs_online(self, request, **kwargs):  # noqa: E501
         """Reads Run objects from the paragraph.  # noqa: E501
@@ -13946,6 +14121,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_section(self, request, **kwargs):  # noqa: E501
         """Reads a section from the document.  # noqa: E501
 
@@ -14022,6 +14198,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_section_online(self, request, **kwargs):  # noqa: E501
         """Reads a section from the document.  # noqa: E501
@@ -14101,6 +14278,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Reads the page setup of a section from the document.  # noqa: E501
 
@@ -14177,6 +14355,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_section_page_setup_online(self, request, **kwargs):  # noqa: E501
         """Reads the page setup of a section from the document.  # noqa: E501
@@ -14256,6 +14435,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_sections(self, request, **kwargs):  # noqa: E501
         """Reads sections from the document.  # noqa: E501
 
@@ -14331,6 +14511,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_sections_online(self, request, **kwargs):  # noqa: E501
         """Reads sections from the document.  # noqa: E501
@@ -14409,6 +14590,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_structured_document_tag(self, request, **kwargs):  # noqa: E501
         """Reads a StructuredDocumentTag (SDT) from the document node.  # noqa: E501
 
@@ -14486,6 +14668,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_structured_document_tag_online(self, request, **kwargs):  # noqa: E501
         """Reads a StructuredDocumentTag (SDT) from the document node.  # noqa: E501
@@ -14566,6 +14749,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_structured_document_tags(self, request, **kwargs):  # noqa: E501
         """Reads StructuredDocumentTags (SDT) from the document node.  # noqa: E501
 
@@ -14642,6 +14826,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_structured_document_tags_online(self, request, **kwargs):  # noqa: E501
         """Reads StructuredDocumentTags (SDT) from the document node.  # noqa: E501
@@ -14721,6 +14906,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_style(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document.  # noqa: E501
 
@@ -14798,6 +14984,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document node.  # noqa: E501
 
@@ -14874,6 +15061,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_style_from_document_element_online(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document node.  # noqa: E501
@@ -14953,6 +15141,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_style_online(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document.  # noqa: E501
 
@@ -15031,6 +15220,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_styles(self, request, **kwargs):  # noqa: E501
         """Reads styles from the document.  # noqa: E501
 
@@ -15106,6 +15296,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_styles_online(self, request, **kwargs):  # noqa: E501
         """Reads styles from the document.  # noqa: E501
@@ -15183,6 +15374,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_table(self, request, **kwargs):  # noqa: E501
         """Reads a table from the document node.  # noqa: E501
@@ -15262,6 +15454,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_cell(self, request, **kwargs):  # noqa: E501
         """Reads a cell from the table row.  # noqa: E501
 
@@ -15340,6 +15533,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table cell.  # noqa: E501
 
@@ -15417,6 +15611,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_table_cell_format_online(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table cell.  # noqa: E501
@@ -15497,6 +15692,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_cell_online(self, request, **kwargs):  # noqa: E501
         """Reads a cell from the table row.  # noqa: E501
 
@@ -15575,6 +15771,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_table_online(self, request, **kwargs):  # noqa: E501
         """Reads a table from the document node.  # noqa: E501
@@ -15655,6 +15852,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_properties(self, request, **kwargs):  # noqa: E501
         """Reads properties of a table from the document node.  # noqa: E501
 
@@ -15732,6 +15930,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_table_properties_online(self, request, **kwargs):  # noqa: E501
         """Reads properties of a table from the document node.  # noqa: E501
@@ -15812,6 +16011,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_row(self, request, **kwargs):  # noqa: E501
         """Reads a row from the table.  # noqa: E501
 
@@ -15890,6 +16090,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_row_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table row.  # noqa: E501
 
@@ -15967,6 +16168,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_table_row_format_online(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table row.  # noqa: E501
@@ -16047,6 +16249,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_table_row_online(self, request, **kwargs):  # noqa: E501
         """Reads a row from the table.  # noqa: E501
 
@@ -16126,6 +16329,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def get_tables(self, request, **kwargs):  # noqa: E501
         """Reads tables from the document node.  # noqa: E501
 
@@ -16202,6 +16406,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def get_tables_online(self, request, **kwargs):  # noqa: E501
         """Reads tables from the document node.  # noqa: E501
@@ -16280,6 +16485,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_bookmark(self, request, **kwargs):  # noqa: E501
         """Inserts a new bookmark to the document.  # noqa: E501
@@ -16364,6 +16570,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_bookmark_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new bookmark to the document.  # noqa: E501
 
@@ -16444,6 +16651,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_comment(self, request, **kwargs):  # noqa: E501
         """Inserts a new comment to the document.  # noqa: E501
@@ -16528,6 +16736,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_comment_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new comment to the document.  # noqa: E501
 
@@ -16608,6 +16817,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_custom_xml_part(self, request, **kwargs):  # noqa: E501
         """Inserts a new custom xml part to the document.  # noqa: E501
@@ -16692,6 +16902,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_custom_xml_part_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new custom xml part to the document.  # noqa: E501
 
@@ -16772,6 +16983,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_drawing_object(self, request, **kwargs):  # noqa: E501
         """Inserts a new DrawingObject to the document node.  # noqa: E501
@@ -16858,6 +17070,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_drawing_object_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new DrawingObject to the document node.  # noqa: E501
 
@@ -16940,6 +17153,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_field(self, request, **kwargs):  # noqa: E501
         """Inserts a new field to the document node.  # noqa: E501
@@ -17026,6 +17240,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_field_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new field to the document node.  # noqa: E501
 
@@ -17108,6 +17323,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_footnote(self, request, **kwargs):  # noqa: E501
         """Inserts a new footnote to the document node.  # noqa: E501
@@ -17193,6 +17409,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_footnote_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new footnote to the document node.  # noqa: E501
 
@@ -17274,6 +17491,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_form_field(self, request, **kwargs):  # noqa: E501
         """Inserts a new form field to the document node.  # noqa: E501
@@ -17360,6 +17578,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_form_field_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new form field to the document node.  # noqa: E501
 
@@ -17442,6 +17661,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_header_footer(self, request, **kwargs):  # noqa: E501
         """Inserts a new HeaderFooter object to the document section.  # noqa: E501
@@ -17527,6 +17747,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_header_footer_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new HeaderFooter object to the document section.  # noqa: E501
 
@@ -17608,6 +17829,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_list(self, request, **kwargs):  # noqa: E501
         """Inserts a new list to the document.  # noqa: E501
@@ -17692,6 +17914,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_list_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new list to the document.  # noqa: E501
 
@@ -17772,6 +17995,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_or_update_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
@@ -17856,6 +18080,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_or_update_paragraph_tab_stop_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
 
@@ -17936,6 +18161,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_page_numbers(self, request, **kwargs):  # noqa: E501
         """Inserts page numbers to the document.  # noqa: E501
@@ -18020,6 +18246,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_page_numbers_online(self, request, **kwargs):  # noqa: E501
         """Inserts page numbers to the document.  # noqa: E501
 
@@ -18100,6 +18327,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_paragraph(self, request, **kwargs):  # noqa: E501
         """Inserts a new paragraph to the document node.  # noqa: E501
@@ -18186,6 +18414,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_paragraph_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new paragraph to the document node.  # noqa: E501
 
@@ -18268,6 +18497,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_run(self, request, **kwargs):  # noqa: E501
         """Inserts a new Run object to the paragraph.  # noqa: E501
@@ -18354,6 +18584,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_run_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new Run object to the paragraph.  # noqa: E501
 
@@ -18437,6 +18668,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_section(self, request, **kwargs):  # noqa: E501
         """Inserts a section to the document.  # noqa: E501
 
@@ -18516,6 +18748,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_section_online(self, request, **kwargs):  # noqa: E501
         """Inserts a section to the document.  # noqa: E501
@@ -18597,6 +18830,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_structured_document_tag(self, request, **kwargs):  # noqa: E501
         """Inserts a new StructuredDocumentTag (SDT) to the document node.  # noqa: E501
@@ -18682,6 +18916,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_structured_document_tag_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new StructuredDocumentTag (SDT) to the document node.  # noqa: E501
 
@@ -18763,6 +18998,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_style(self, request, **kwargs):  # noqa: E501
         """Inserts a new style to the document.  # noqa: E501
@@ -18847,6 +19083,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_style_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new style to the document.  # noqa: E501
 
@@ -18927,6 +19164,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_table(self, request, **kwargs):  # noqa: E501
         """Inserts a new table to the document node.  # noqa: E501
@@ -19012,6 +19250,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_table_cell(self, request, **kwargs):  # noqa: E501
         """Inserts a new cell to the table row.  # noqa: E501
 
@@ -19096,6 +19335,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_table_cell_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new cell to the table row.  # noqa: E501
 
@@ -19178,6 +19418,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_table_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new table to the document node.  # noqa: E501
 
@@ -19259,6 +19500,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_table_row(self, request, **kwargs):  # noqa: E501
         """Inserts a new row to the table.  # noqa: E501
@@ -19344,6 +19586,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_table_row_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new row to the table.  # noqa: E501
 
@@ -19425,6 +19668,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_watermark_image(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
@@ -19511,6 +19755,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_watermark_image_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
 
@@ -19593,6 +19838,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def insert_watermark_text(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
@@ -19677,6 +19923,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def insert_watermark_text_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
 
@@ -19757,6 +20004,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def link_header_footers_to_previous(self, request, **kwargs):  # noqa: E501
         """Links headers / footers of the section to the previous one.  # noqa: E501
@@ -19839,6 +20087,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def load_web_document(self, request, **kwargs):  # noqa: E501
         """Downloads a document from the Web using URL and saves it to cloud storage in the specified format.  # noqa: E501
 
@@ -19913,6 +20162,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def move_file(self, request, **kwargs):  # noqa: E501
         """Move file.  # noqa: E501
@@ -19989,6 +20239,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def move_folder(self, request, **kwargs):  # noqa: E501
         """Move folder.  # noqa: E501
 
@@ -20062,6 +20313,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def optimize_document(self, request, **kwargs):  # noqa: E501
         """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
@@ -20146,6 +20398,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def optimize_document_online(self, request, **kwargs):  # noqa: E501
         """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
 
@@ -20226,6 +20479,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def protect_document(self, request, **kwargs):  # noqa: E501
         """Adds protection to the document.  # noqa: E501
@@ -20308,6 +20562,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def protect_document_online(self, request, **kwargs):  # noqa: E501
         """Adds protection to the document.  # noqa: E501
 
@@ -20387,6 +20642,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def reject_all_revisions(self, request, **kwargs):  # noqa: E501
         """Rejects all revisions in the document.  # noqa: E501
 
@@ -20463,6 +20719,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def reject_all_revisions_online(self, request, **kwargs):  # noqa: E501
         """Rejects all revisions in the document.  # noqa: E501
@@ -20542,6 +20799,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def remove_range(self, request, **kwargs):  # noqa: E501
         """Removes a range from the document.  # noqa: E501
 
@@ -20620,6 +20878,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def remove_range_online(self, request, **kwargs):  # noqa: E501
         """Removes a range from the document.  # noqa: E501
@@ -20701,6 +20960,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def render_drawing_object(self, request, **kwargs):  # noqa: E501
         """Renders a DrawingObject to the specified format.  # noqa: E501
 
@@ -20781,6 +21041,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def render_drawing_object_online(self, request, **kwargs):  # noqa: E501
         """Renders a DrawingObject to the specified format.  # noqa: E501
@@ -20864,6 +21125,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def render_math_object(self, request, **kwargs):  # noqa: E501
         """Renders an OfficeMath object to the specified format.  # noqa: E501
 
@@ -20944,6 +21206,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def render_math_object_online(self, request, **kwargs):  # noqa: E501
         """Renders an OfficeMath object to the specified format.  # noqa: E501
@@ -21027,6 +21290,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def render_page(self, request, **kwargs):  # noqa: E501
         """Renders a page to the specified format.  # noqa: E501
 
@@ -21105,6 +21369,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def render_page_online(self, request, **kwargs):  # noqa: E501
         """Renders a page to the specified format.  # noqa: E501
@@ -21186,6 +21451,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def render_paragraph(self, request, **kwargs):  # noqa: E501
         """Renders a paragraph to the specified format.  # noqa: E501
 
@@ -21266,6 +21532,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def render_paragraph_online(self, request, **kwargs):  # noqa: E501
         """Renders a paragraph to the specified format.  # noqa: E501
@@ -21349,6 +21616,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def render_table(self, request, **kwargs):  # noqa: E501
         """Renders a table to the specified format.  # noqa: E501
 
@@ -21429,6 +21697,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def render_table_online(self, request, **kwargs):  # noqa: E501
         """Renders a table to the specified format.  # noqa: E501
@@ -21511,6 +21780,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def replace_text(self, request, **kwargs):  # noqa: E501
         """Replaces text in the document.  # noqa: E501
@@ -21595,6 +21865,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def replace_text_online(self, request, **kwargs):  # noqa: E501
         """Replaces text in the document.  # noqa: E501
 
@@ -21675,6 +21946,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def replace_with_text(self, request, **kwargs):  # noqa: E501
         """Replaces a range with text in the document.  # noqa: E501
@@ -21759,6 +22031,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def replace_with_text_online(self, request, **kwargs):  # noqa: E501
         """Replaces a range with text in the document.  # noqa: E501
 
@@ -21840,6 +22113,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def reset_cache(self, request, **kwargs):  # noqa: E501
         """Clears the font cache.  # noqa: E501
 
@@ -21909,6 +22183,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def save_as(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to the specified format.  # noqa: E501
@@ -21991,6 +22266,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def save_as_online(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to the specified format.  # noqa: E501
 
@@ -22069,6 +22345,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def save_as_range(self, request, **kwargs):  # noqa: E501
         """Saves a range as a new document.  # noqa: E501
@@ -22152,6 +22429,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def save_as_range_online(self, request, **kwargs):  # noqa: E501
         """Saves a range as a new document.  # noqa: E501
 
@@ -22232,6 +22510,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+    @deprecated("This operation will be removed in the future.")
     def save_as_tiff(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22281,6 +22560,7 @@ class WordsApi(Encryptor, object):
             data = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @deprecated("This operation will be removed in the future.")
     def save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22330,6 +22610,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+    @deprecated("This operation will be removed in the future.")
     def save_as_tiff_online(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22377,6 +22658,7 @@ class WordsApi(Encryptor, object):
             data = self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @deprecated("This operation will be removed in the future.")
     def save_as_tiff_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22425,6 +22707,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def search(self, request, **kwargs):  # noqa: E501
         """Searches text, specified by the regular expression, in the document.  # noqa: E501
@@ -22503,6 +22786,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def search_online(self, request, **kwargs):  # noqa: E501
         """Searches text, specified by the regular expression, in the document.  # noqa: E501
 
@@ -22580,6 +22864,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def split_document(self, request, **kwargs):  # noqa: E501
         """Splits a document into parts and saves them in the specified format.  # noqa: E501
@@ -22662,6 +22947,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def split_document_online(self, request, **kwargs):  # noqa: E501
         """Splits a document into parts and saves them in the specified format.  # noqa: E501
@@ -22746,6 +23032,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def unprotect_document(self, request, **kwargs):  # noqa: E501
         """Removes protection from the document.  # noqa: E501
 
@@ -22827,6 +23114,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def unprotect_document_online(self, request, **kwargs):  # noqa: E501
         """Removes protection from the document.  # noqa: E501
 
@@ -22905,6 +23193,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_bookmark(self, request, **kwargs):  # noqa: E501
         """Updates a bookmark in the document.  # noqa: E501
@@ -22990,6 +23279,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_bookmark_online(self, request, **kwargs):  # noqa: E501
         """Updates a bookmark in the document.  # noqa: E501
 
@@ -23071,6 +23361,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_border(self, request, **kwargs):  # noqa: E501
         """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -23157,6 +23448,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_border_online(self, request, **kwargs):  # noqa: E501
         """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
@@ -23239,6 +23531,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_comment(self, request, **kwargs):  # noqa: E501
         """Updates a comment in the document.  # noqa: E501
@@ -23324,6 +23617,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_comment_online(self, request, **kwargs):  # noqa: E501
         """Updates a comment in the document.  # noqa: E501
 
@@ -23405,6 +23699,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_custom_xml_part(self, request, **kwargs):  # noqa: E501
         """Updates the custom xml part in the document.  # noqa: E501
@@ -23490,6 +23785,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_custom_xml_part_online(self, request, **kwargs):  # noqa: E501
         """Updates the custom xml part in the document.  # noqa: E501
 
@@ -23571,6 +23867,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_drawing_object(self, request, **kwargs):  # noqa: E501
         """Updates a DrawingObject in the document node.  # noqa: E501
@@ -23658,6 +23955,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_drawing_object_online(self, request, **kwargs):  # noqa: E501
         """Updates a DrawingObject in the document node.  # noqa: E501
 
@@ -23741,6 +24039,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_field(self, request, **kwargs):  # noqa: E501
         """Updates a field in the document node.  # noqa: E501
@@ -23827,6 +24126,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_field_online(self, request, **kwargs):  # noqa: E501
         """Updates a field in the document node.  # noqa: E501
 
@@ -23910,6 +24210,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_fields(self, request, **kwargs):  # noqa: E501
         """Reevaluates field values in the document.  # noqa: E501
 
@@ -23986,6 +24287,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_fields_online(self, request, **kwargs):  # noqa: E501
         """Reevaluates field values in the document.  # noqa: E501
@@ -24064,6 +24366,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_footnote(self, request, **kwargs):  # noqa: E501
         """Updates a footnote in the document node.  # noqa: E501
@@ -24150,6 +24453,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_footnote_online(self, request, **kwargs):  # noqa: E501
         """Updates a footnote in the document node.  # noqa: E501
 
@@ -24232,6 +24536,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_form_field(self, request, **kwargs):  # noqa: E501
         """Updates a form field in the document node.  # noqa: E501
@@ -24318,6 +24623,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_form_field_online(self, request, **kwargs):  # noqa: E501
         """Updates a form field in the document node.  # noqa: E501
 
@@ -24400,6 +24706,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_list(self, request, **kwargs):  # noqa: E501
         """Updates a list in the document.  # noqa: E501
@@ -24484,6 +24791,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_list_level(self, request, **kwargs):  # noqa: E501
         """Updates the level of a List element in the document.  # noqa: E501
@@ -24570,6 +24878,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_list_level_online(self, request, **kwargs):  # noqa: E501
         """Updates the level of a List element in the document.  # noqa: E501
 
@@ -24653,6 +24962,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_list_online(self, request, **kwargs):  # noqa: E501
         """Updates a list in the document.  # noqa: E501
 
@@ -24734,6 +25044,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
@@ -24820,6 +25131,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_paragraph_format_online(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
 
@@ -24902,6 +25214,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
@@ -24988,6 +25301,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
 
@@ -25070,6 +25384,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_run(self, request, **kwargs):  # noqa: E501
         """Updates a Run object in the paragraph.  # noqa: E501
@@ -25156,6 +25471,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_run_font(self, request, **kwargs):  # noqa: E501
         """Updates the font properties of a Run object in the paragraph.  # noqa: E501
 
@@ -25241,6 +25557,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_run_font_online(self, request, **kwargs):  # noqa: E501
         """Updates the font properties of a Run object in the paragraph.  # noqa: E501
 
@@ -25324,6 +25641,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_run_online(self, request, **kwargs):  # noqa: E501
         """Updates a Run object in the paragraph.  # noqa: E501
 
@@ -25406,6 +25724,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Updates the page setup of a section in the document.  # noqa: E501
@@ -25491,6 +25810,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_section_page_setup_online(self, request, **kwargs):  # noqa: E501
         """Updates the page setup of a section in the document.  # noqa: E501
 
@@ -25572,6 +25892,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_structured_document_tag(self, request, **kwargs):  # noqa: E501
         """Updates a StructuredDocumentTag (SDT) in the document node.  # noqa: E501
@@ -25658,6 +25979,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_structured_document_tag_online(self, request, **kwargs):  # noqa: E501
         """Updates a StructuredDocumentTag (SDT) in the document node.  # noqa: E501
 
@@ -25740,6 +26062,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_style(self, request, **kwargs):  # noqa: E501
         """Updates a style in the document.  # noqa: E501
@@ -25825,6 +26148,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_style_online(self, request, **kwargs):  # noqa: E501
         """Updates a style in the document.  # noqa: E501
 
@@ -25906,6 +26230,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a cell in the table row.  # noqa: E501
@@ -25992,6 +26317,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_table_cell_format_online(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a cell in the table row.  # noqa: E501
 
@@ -26074,6 +26400,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_table_properties(self, request, **kwargs):  # noqa: E501
         """Updates properties of a table in the document node.  # noqa: E501
@@ -26160,6 +26487,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_table_properties_online(self, request, **kwargs):  # noqa: E501
         """Updates properties of a table in the document node.  # noqa: E501
 
@@ -26242,6 +26570,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def update_table_row_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a table row.  # noqa: E501
@@ -26328,6 +26657,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
+
     def update_table_row_format_online(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a table row.  # noqa: E501
 
@@ -26410,6 +26740,7 @@ class WordsApi(Encryptor, object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
+
 
     def upload_file(self, request, **kwargs):  # noqa: E501
         """Upload file.  # noqa: E501
