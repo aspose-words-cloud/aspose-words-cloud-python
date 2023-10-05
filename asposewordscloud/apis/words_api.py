@@ -28,6 +28,7 @@
 from __future__ import absolute_import
 
 import re  # noqa: F401
+import typing_extensions
 
 # python 2 and python 3 compatibility library
 import six
@@ -22510,7 +22511,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
-    @deprecated("This operation will be removed in the future.")
+    @typing_extensions.deprecated("This operation will be removed in the future.")
     def save_as_tiff(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22560,7 +22561,7 @@ class WordsApi(Encryptor, object):
             data = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
-    @deprecated("This operation will be removed in the future.")
+    @typing_extensions.deprecated("This operation will be removed in the future.")
     def save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22610,7 +22611,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
-    @deprecated("This operation will be removed in the future.")
+    @typing_extensions.deprecated("This operation will be removed in the future.")
     def save_as_tiff_online(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
@@ -22658,7 +22659,7 @@ class WordsApi(Encryptor, object):
             data = self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
-    @deprecated("This operation will be removed in the future.")
+    @typing_extensions.deprecated("This operation will be removed in the future.")
     def save_as_tiff_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 

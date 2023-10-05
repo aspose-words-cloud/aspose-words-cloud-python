@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
