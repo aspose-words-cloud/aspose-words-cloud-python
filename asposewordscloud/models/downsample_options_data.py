@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -72,7 +73,7 @@ class DownsampleOptionsData(object):
     def downsample_images(self):
         """Gets the downsample_images of this DownsampleOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether images should be downsampled.  # noqa: E501
+        Gets or sets a value indicating whether images should be downsampled. The default value is true.  # noqa: E501
 
         :return: The downsample_images of this DownsampleOptionsData.  # noqa: E501
         :rtype: bool
@@ -83,7 +84,7 @@ class DownsampleOptionsData(object):
     def downsample_images(self, downsample_images):
         """Sets the downsample_images of this DownsampleOptionsData.
 
-        Gets or sets a value indicating whether images should be downsampled.  # noqa: E501
+        Gets or sets a value indicating whether images should be downsampled. The default value is true.  # noqa: E501
 
         :param downsample_images: The downsample_images of this DownsampleOptionsData.  # noqa: E501
         :type: bool
@@ -94,7 +95,7 @@ class DownsampleOptionsData(object):
     def resolution(self):
         """Gets the resolution of this DownsampleOptionsData.  # noqa: E501
 
-        Gets or sets the resolution in pixels per inch which the images should be downsampled to.  # noqa: E501
+        Gets or sets the resolution in pixels per inch which the images should be downsampled to. The default value is 220 ppi.  # noqa: E501
 
         :return: The resolution of this DownsampleOptionsData.  # noqa: E501
         :rtype: int
@@ -105,7 +106,7 @@ class DownsampleOptionsData(object):
     def resolution(self, resolution):
         """Sets the resolution of this DownsampleOptionsData.
 
-        Gets or sets the resolution in pixels per inch which the images should be downsampled to.  # noqa: E501
+        Gets or sets the resolution in pixels per inch which the images should be downsampled to. The default value is 220 ppi.  # noqa: E501
 
         :param resolution: The resolution of this DownsampleOptionsData.  # noqa: E501
         :type: int
@@ -116,7 +117,7 @@ class DownsampleOptionsData(object):
     def resolution_threshold(self):
         """Gets the resolution_threshold of this DownsampleOptionsData.  # noqa: E501
 
-        Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.  # noqa: E501
+        Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled. The default value is 0.  # noqa: E501
 
         :return: The resolution_threshold of this DownsampleOptionsData.  # noqa: E501
         :rtype: int
@@ -127,7 +128,7 @@ class DownsampleOptionsData(object):
     def resolution_threshold(self, resolution_threshold):
         """Sets the resolution_threshold of this DownsampleOptionsData.
 
-        Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.  # noqa: E501
+        Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled. The default value is 0.  # noqa: E501
 
         :param resolution_threshold: The resolution_threshold of this DownsampleOptionsData.  # noqa: E501
         :type: int

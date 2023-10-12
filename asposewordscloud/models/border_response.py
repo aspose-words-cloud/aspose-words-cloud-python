@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class BorderResponse(object):
-    """The REST response with a border.
+    """The REST response with a border. This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
     """
 
     """

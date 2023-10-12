@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class XmlDataLoadOptions(object):
-    """Represents options for XML data loading. To learn more, visit the LINQ Reporting Engine documentation article.
+    """Represents options for XML data loading. To learn more, visit the LINQ Reporting Engine documentation article. An instance of this class can be passed into constructors of XmlDataSource.
     """
 
     """
@@ -62,7 +63,7 @@ class XmlDataLoadOptions(object):
     def always_generate_root_object(self):
         """Gets the always_generate_root_object of this XmlDataLoadOptions.  # noqa: E501
 
-        Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root element. If an XML root element has no attributes and all its child elements have same names, such an object is not created by default.  # noqa: E501
+        Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root element. If an XML root element has no attributes and all its child elements have same names, such an object is not created by default. The default value is false.  # noqa: E501
 
         :return: The always_generate_root_object of this XmlDataLoadOptions.  # noqa: E501
         :rtype: bool
@@ -73,7 +74,7 @@ class XmlDataLoadOptions(object):
     def always_generate_root_object(self, always_generate_root_object):
         """Sets the always_generate_root_object of this XmlDataLoadOptions.
 
-        Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root element. If an XML root element has no attributes and all its child elements have same names, such an object is not created by default.  # noqa: E501
+        Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root element. If an XML root element has no attributes and all its child elements have same names, such an object is not created by default. The default value is false.  # noqa: E501
 
         :param always_generate_root_object: The always_generate_root_object of this XmlDataLoadOptions.  # noqa: E501
         :type: bool

@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -67,7 +68,7 @@ class StructuredDocumentTagListItem(object):
     def display_text(self):
         """Gets the display_text of this StructuredDocumentTagListItem.  # noqa: E501
 
-        Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item.  # noqa: E501
+        Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item. Cannot be null and cannot be an empty string.  # noqa: E501
 
         :return: The display_text of this StructuredDocumentTagListItem.  # noqa: E501
         :rtype: str
@@ -78,7 +79,7 @@ class StructuredDocumentTagListItem(object):
     def display_text(self, display_text):
         """Sets the display_text of this StructuredDocumentTagListItem.
 
-        Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item.  # noqa: E501
+        Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item. Cannot be null and cannot be an empty string.  # noqa: E501
 
         :param display_text: The display_text of this StructuredDocumentTagListItem.  # noqa: E501
         :type: str
@@ -89,7 +90,7 @@ class StructuredDocumentTagListItem(object):
     def value(self):
         """Gets the value of this StructuredDocumentTagListItem.  # noqa: E501
 
-        Gets or sets the value of this list item.  # noqa: E501
+        Gets or sets the value of this list item. Cannot be null and cannot be an empty string.  # noqa: E501
 
         :return: The value of this StructuredDocumentTagListItem.  # noqa: E501
         :rtype: str
@@ -100,7 +101,7 @@ class StructuredDocumentTagListItem(object):
     def value(self, value):
         """Sets the value of this StructuredDocumentTagListItem.
 
-        Gets or sets the value of this list item.  # noqa: E501
+        Gets or sets the value of this list item. Cannot be null and cannot be an empty string.  # noqa: E501
 
         :param value: The value of this StructuredDocumentTagListItem.  # noqa: E501
         :type: str

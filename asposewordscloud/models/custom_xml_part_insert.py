@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -94,7 +95,7 @@ class CustomXmlPartInsert(object):
     def id(self):
         """Gets the id of this CustomXmlPartInsert.  # noqa: E501
 
-        Gets or sets the custom xml part id.  # noqa: E501
+        Gets or sets the custom xml part id. Cannot be null.  # noqa: E501
 
         :return: The id of this CustomXmlPartInsert.  # noqa: E501
         :rtype: str
@@ -105,7 +106,7 @@ class CustomXmlPartInsert(object):
     def id(self, id):
         """Sets the id of this CustomXmlPartInsert.
 
-        Gets or sets the custom xml part id.  # noqa: E501
+        Gets or sets the custom xml part id. Cannot be null.  # noqa: E501
 
         :param id: The id of this CustomXmlPartInsert.  # noqa: E501
         :type: str
@@ -116,7 +117,7 @@ class CustomXmlPartInsert(object):
     def data(self):
         """Gets the data of this CustomXmlPartInsert.  # noqa: E501
 
-        Gets or sets the custom xml part data.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The data of this CustomXmlPartInsert.  # noqa: E501
         :rtype: str
@@ -127,7 +128,7 @@ class CustomXmlPartInsert(object):
     def data(self, data):
         """Sets the data of this CustomXmlPartInsert.
 
-        Gets or sets the custom xml part data.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
 
         :param data: The data of this CustomXmlPartInsert.  # noqa: E501
         :type: str

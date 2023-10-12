@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class Border(object):
-    """Represents a border of an object.
+    """Represents a border of an object. Borders can be applied to various document elements including paragraph, run of text inside a paragraph or a table cell.
     """
 
     """
@@ -166,7 +167,7 @@ class Border(object):
     def distance_from_text(self):
         """Gets the distance_from_text of this Border.  # noqa: E501
 
-        Gets or sets the distance of the border from text or from the page edge in points.  # noqa: E501
+        Gets or sets the distance of the border from text or from the page edge in points. Has no effect and will be automatically reset to zero for borders of table cells.  # noqa: E501
 
         :return: The distance_from_text of this Border.  # noqa: E501
         :rtype: float
@@ -177,7 +178,7 @@ class Border(object):
     def distance_from_text(self, distance_from_text):
         """Sets the distance_from_text of this Border.
 
-        Gets or sets the distance of the border from text or from the page edge in points.  # noqa: E501
+        Gets or sets the distance of the border from text or from the page edge in points. Has no effect and will be automatically reset to zero for borders of table cells.  # noqa: E501
 
         :param distance_from_text: The distance_from_text of this Border.  # noqa: E501
         :type: float
@@ -188,7 +189,7 @@ class Border(object):
     def line_style(self):
         """Gets the line_style of this Border.  # noqa: E501
 
-        Gets or sets the border style.  # noqa: E501
+        Gets or sets the border style. If you set line style to none, then line width is automatically changed to zero.  # noqa: E501
 
         :return: The line_style of this Border.  # noqa: E501
         :rtype: str
@@ -199,7 +200,7 @@ class Border(object):
     def line_style(self, line_style):
         """Sets the line_style of this Border.
 
-        Gets or sets the border style.  # noqa: E501
+        Gets or sets the border style. If you set line style to none, then line width is automatically changed to zero.  # noqa: E501
 
         :param line_style: The line_style of this Border.  # noqa: E501
         :type: str
@@ -218,7 +219,7 @@ class Border(object):
     def line_width(self):
         """Gets the line_width of this Border.  # noqa: E501
 
-        Gets or sets the border width in points.  # noqa: E501
+        Gets or sets the border width in points. If you set line width greater than zero when line style is none, the line style is automatically changed to single line.  # noqa: E501
 
         :return: The line_width of this Border.  # noqa: E501
         :rtype: float
@@ -229,7 +230,7 @@ class Border(object):
     def line_width(self, line_width):
         """Sets the line_width of this Border.
 
-        Gets or sets the border width in points.  # noqa: E501
+        Gets or sets the border width in points. If you set line width greater than zero when line style is none, the line style is automatically changed to single line.  # noqa: E501
 
         :param line_width: The line_width of this Border.  # noqa: E501
         :type: float
@@ -240,7 +241,7 @@ class Border(object):
     def shadow(self):
         """Gets the shadow of this Border.  # noqa: E501
 
-        Gets or sets a value indicating whether the border has a shadow.  # noqa: E501
+        Gets or sets a value indicating whether the border has a shadow. In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.  # noqa: E501
 
         :return: The shadow of this Border.  # noqa: E501
         :rtype: bool
@@ -251,7 +252,7 @@ class Border(object):
     def shadow(self, shadow):
         """Sets the shadow of this Border.
 
-        Gets or sets a value indicating whether the border has a shadow.  # noqa: E501
+        Gets or sets a value indicating whether the border has a shadow. In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.  # noqa: E501
 
         :param shadow: The shadow of this Border.  # noqa: E501
         :type: bool

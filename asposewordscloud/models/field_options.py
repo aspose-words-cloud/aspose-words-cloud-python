@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -42,7 +43,6 @@ class FieldOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'built_in_templates_paths': 'list[str]',
         'current_user': 'UserInformation',
         'custom_toc_style_separator': 'str',
         'default_document_author': 'str',
@@ -54,11 +54,11 @@ class FieldOptions(object):
         'legacy_number_format': 'bool',
         'pre_process_culture_name': 'str',
         'template_name': 'str',
-        'use_invariant_culture_number_format': 'bool'
+        'use_invariant_culture_number_format': 'bool',
+        'built_in_templates_paths': 'list[str]'
     }
 
     attribute_map = {
-        'built_in_templates_paths': 'BuiltInTemplatesPaths',
         'current_user': 'CurrentUser',
         'custom_toc_style_separator': 'CustomTocStyleSeparator',
         'default_document_author': 'DefaultDocumentAuthor',
@@ -70,13 +70,13 @@ class FieldOptions(object):
         'legacy_number_format': 'LegacyNumberFormat',
         'pre_process_culture_name': 'PreProcessCultureName',
         'template_name': 'TemplateName',
-        'use_invariant_culture_number_format': 'UseInvariantCultureNumberFormat'
+        'use_invariant_culture_number_format': 'UseInvariantCultureNumberFormat',
+        'built_in_templates_paths': 'BuiltInTemplatesPaths'
     }
 
-    def __init__(self, built_in_templates_paths=None, current_user=None, custom_toc_style_separator=None, default_document_author=None, field_index_format=None, field_update_culture_name=None, field_update_culture_source=None, file_name=None, is_bidi_text_supported_on_update=None, legacy_number_format=None, pre_process_culture_name=None, template_name=None, use_invariant_culture_number_format=None):  # noqa: E501
+    def __init__(self, current_user=None, custom_toc_style_separator=None, default_document_author=None, field_index_format=None, field_update_culture_name=None, field_update_culture_source=None, file_name=None, is_bidi_text_supported_on_update=None, legacy_number_format=None, pre_process_culture_name=None, template_name=None, use_invariant_culture_number_format=None, built_in_templates_paths=None):  # noqa: E501
         """FieldOptions - a model defined in Swagger"""  # noqa: E501
 
-        self._built_in_templates_paths = None
         self._current_user = None
         self._custom_toc_style_separator = None
         self._default_document_author = None
@@ -89,10 +89,9 @@ class FieldOptions(object):
         self._pre_process_culture_name = None
         self._template_name = None
         self._use_invariant_culture_number_format = None
+        self._built_in_templates_paths = None
         self.discriminator = None
 
-        if built_in_templates_paths is not None:
-            self.built_in_templates_paths = built_in_templates_paths
         if current_user is not None:
             self.current_user = current_user
         if custom_toc_style_separator is not None:
@@ -117,28 +116,8 @@ class FieldOptions(object):
             self.template_name = template_name
         if use_invariant_culture_number_format is not None:
             self.use_invariant_culture_number_format = use_invariant_culture_number_format
-
-    @property
-    def built_in_templates_paths(self):
-        """Gets the built_in_templates_paths of this FieldOptions.  # noqa: E501
-
-        Gets or sets BuiltIn Templates Paths.  # noqa: E501
-
-        :return: The built_in_templates_paths of this FieldOptions.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._built_in_templates_paths
-
-    @built_in_templates_paths.setter
-    def built_in_templates_paths(self, built_in_templates_paths):
-        """Sets the built_in_templates_paths of this FieldOptions.
-
-        Gets or sets BuiltIn Templates Paths.  # noqa: E501
-
-        :param built_in_templates_paths: The built_in_templates_paths of this FieldOptions.  # noqa: E501
-        :type: list[str]
-        """
-        self._built_in_templates_paths = built_in_templates_paths
+        if built_in_templates_paths is not None:
+            self.built_in_templates_paths = built_in_templates_paths
 
     @property
     def current_user(self):
@@ -419,6 +398,28 @@ class FieldOptions(object):
         :type: bool
         """
         self._use_invariant_culture_number_format = use_invariant_culture_number_format
+
+    @property
+    def built_in_templates_paths(self):
+        """Gets the built_in_templates_paths of this FieldOptions.  # noqa: E501
+
+        Gets or sets BuiltIn Templates Paths.  # noqa: E501
+
+        :return: The built_in_templates_paths of this FieldOptions.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._built_in_templates_paths
+
+    @built_in_templates_paths.setter
+    def built_in_templates_paths(self, built_in_templates_paths):
+        """Sets the built_in_templates_paths of this FieldOptions.
+
+        Gets or sets BuiltIn Templates Paths.  # noqa: E501
+
+        :param built_in_templates_paths: The built_in_templates_paths of this FieldOptions.  # noqa: E501
+        :type: list[str]
+        """
+        self._built_in_templates_paths = built_in_templates_paths
 
 
     def extract_files_content(self, filesContentResult):

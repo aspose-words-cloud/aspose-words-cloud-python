@@ -47,7 +47,7 @@ class InsertWatermarkImageOnlineRequest(BaseRequestObject):
     :param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
     """
 
-    def __init__(self, document, image_file, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None, rotation_angle=None, image=None):
+    def __init__(self, document, image_file=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None, rotation_angle=None, image=None):
         self.document = document
         self.image_file = image_file
         self.load_encoding = load_encoding
@@ -63,9 +63,6 @@ class InsertWatermarkImageOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_watermark_image_online`")  # noqa: E501
-        # verify the required parameter 'image_file' is set
-        if self.image_file is None:
-            raise ValueError("Missing the required parameter `image_file` when calling `insert_watermark_image_online`")  # noqa: E501
 
         path = '/v4.0/words/online/post/watermarks/images'
         path_params = {}

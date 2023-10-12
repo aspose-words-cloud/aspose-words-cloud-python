@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -45,8 +46,8 @@ class CommentUpdate(object):
         'range_start': 'NewDocumentPosition',
         'range_end': 'NewDocumentPosition',
         'author': 'str',
-        'date_time': 'datetime',
         'initial': 'str',
+        'date_time': 'datetime',
         'text': 'str'
     }
 
@@ -54,19 +55,19 @@ class CommentUpdate(object):
         'range_start': 'RangeStart',
         'range_end': 'RangeEnd',
         'author': 'Author',
-        'date_time': 'DateTime',
         'initial': 'Initial',
+        'date_time': 'DateTime',
         'text': 'Text'
     }
 
-    def __init__(self, range_start=None, range_end=None, author=None, date_time=None, initial=None, text=None):  # noqa: E501
+    def __init__(self, range_start=None, range_end=None, author=None, initial=None, date_time=None, text=None):  # noqa: E501
         """CommentUpdate - a model defined in Swagger"""  # noqa: E501
 
         self._range_start = None
         self._range_end = None
         self._author = None
-        self._date_time = None
         self._initial = None
+        self._date_time = None
         self._text = None
         self.discriminator = None
 
@@ -76,10 +77,10 @@ class CommentUpdate(object):
             self.range_end = range_end
         if author is not None:
             self.author = author
-        if date_time is not None:
-            self.date_time = date_time
         if initial is not None:
             self.initial = initial
+        if date_time is not None:
+            self.date_time = date_time
         if text is not None:
             self.text = text
 
@@ -131,7 +132,7 @@ class CommentUpdate(object):
     def author(self):
         """Gets the author of this CommentUpdate.  # noqa: E501
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The author of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -142,7 +143,7 @@ class CommentUpdate(object):
     def author(self, author):
         """Sets the author of this CommentUpdate.
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :param author: The author of this CommentUpdate.  # noqa: E501
         :type: str
@@ -150,32 +151,10 @@ class CommentUpdate(object):
         self._author = author
 
     @property
-    def date_time(self):
-        """Gets the date_time of this CommentUpdate.  # noqa: E501
-
-        Gets or sets the date and time that the comment was made.  # noqa: E501
-
-        :return: The date_time of this CommentUpdate.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_time
-
-    @date_time.setter
-    def date_time(self, date_time):
-        """Sets the date_time of this CommentUpdate.
-
-        Gets or sets the date and time that the comment was made.  # noqa: E501
-
-        :param date_time: The date_time of this CommentUpdate.  # noqa: E501
-        :type: datetime
-        """
-        self._date_time = date_time
-
-    @property
     def initial(self):
         """Gets the initial of this CommentUpdate.  # noqa: E501
 
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The initial of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -186,7 +165,7 @@ class CommentUpdate(object):
     def initial(self, initial):
         """Sets the initial of this CommentUpdate.
 
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :param initial: The initial of this CommentUpdate.  # noqa: E501
         :type: str
@@ -194,10 +173,32 @@ class CommentUpdate(object):
         self._initial = initial
 
     @property
+    def date_time(self):
+        """Gets the date_time of this CommentUpdate.  # noqa: E501
+
+        Gets or sets the date and time that the comment was made. Default is MinValue03.01.0001.  # noqa: E501
+
+        :return: The date_time of this CommentUpdate.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_time
+
+    @date_time.setter
+    def date_time(self, date_time):
+        """Sets the date_time of this CommentUpdate.
+
+        Gets or sets the date and time that the comment was made. Default is MinValue03.01.0001.  # noqa: E501
+
+        :param date_time: The date_time of this CommentUpdate.  # noqa: E501
+        :type: datetime
+        """
+        self._date_time = date_time
+
+    @property
     def text(self):
         """Gets the text of this CommentUpdate.  # noqa: E501
 
-        Gets or sets text of the comment.  # noqa: E501
+        Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.  # noqa: E501
 
         :return: The text of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -208,7 +209,7 @@ class CommentUpdate(object):
     def text(self, text):
         """Sets the text of this CommentUpdate.
 
-        Gets or sets text of the comment.  # noqa: E501
+        Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.  # noqa: E501
 
         :param text: The text of this CommentUpdate.  # noqa: E501
         :type: str

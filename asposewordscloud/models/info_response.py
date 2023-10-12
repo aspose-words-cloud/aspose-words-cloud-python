@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -99,7 +100,7 @@ class InfoResponse(object):
     def additional_info(self):
         """Gets the additional_info of this InfoResponse.  # noqa: E501
 
-        Gets or sets additional info.  # noqa: E501
+        Gets or sets AdditionalInfo.  # noqa: E501
 
         :return: The additional_info of this InfoResponse.  # noqa: E501
         :rtype: list[InfoAdditionalItem]
@@ -110,7 +111,7 @@ class InfoResponse(object):
     def additional_info(self, additional_info):
         """Sets the additional_info of this InfoResponse.
 
-        Gets or sets additional info.  # noqa: E501
+        Gets or sets AdditionalInfo.  # noqa: E501
 
         :param additional_info: The additional_info of this InfoResponse.  # noqa: E501
         :type: list[InfoAdditionalItem]
@@ -121,7 +122,7 @@ class InfoResponse(object):
     def name(self):
         """Gets the name of this InfoResponse.  # noqa: E501
 
-        Gets or sets application name.  # noqa: E501
+        Gets or sets Name.  # noqa: E501
 
         :return: The name of this InfoResponse.  # noqa: E501
         :rtype: str
@@ -132,7 +133,7 @@ class InfoResponse(object):
     def name(self, name):
         """Sets the name of this InfoResponse.
 
-        Gets or sets application name.  # noqa: E501
+        Gets or sets Name.  # noqa: E501
 
         :param name: The name of this InfoResponse.  # noqa: E501
         :type: str
@@ -143,7 +144,7 @@ class InfoResponse(object):
     def version(self):
         """Gets the version of this InfoResponse.  # noqa: E501
 
-        Gets or sets version.  # noqa: E501
+        Gets or sets Version.  # noqa: E501
 
         :return: The version of this InfoResponse.  # noqa: E501
         :rtype: str
@@ -154,7 +155,7 @@ class InfoResponse(object):
     def version(self, version):
         """Sets the version of this InfoResponse.
 
-        Gets or sets version.  # noqa: E501
+        Gets or sets Version.  # noqa: E501
 
         :param version: The version of this InfoResponse.  # noqa: E501
         :type: str

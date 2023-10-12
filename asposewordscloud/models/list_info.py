@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -119,7 +120,7 @@ class ListInfo(object):
     def list_id(self):
         """Gets the list_id of this ListInfo.  # noqa: E501
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets the unique identifier of the list. You do not normally need to use this property. But if you use it, you normally do so in conjunction with the Aspose.Words.Lists.ListCollection.GetListByListId(System.Int32) method to find a list by its identifier.  # noqa: E501
 
         :return: The list_id of this ListInfo.  # noqa: E501
         :rtype: int
@@ -130,7 +131,7 @@ class ListInfo(object):
     def list_id(self, list_id):
         """Sets the list_id of this ListInfo.
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets the unique identifier of the list. You do not normally need to use this property. But if you use it, you normally do so in conjunction with the Aspose.Words.Lists.ListCollection.GetListByListId(System.Int32) method to find a list by its identifier.  # noqa: E501
 
         :param list_id: The list_id of this ListInfo.  # noqa: E501
         :type: int
@@ -141,7 +142,7 @@ class ListInfo(object):
     def is_multi_level(self):
         """Gets the is_multi_level of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.  # noqa: E501
+        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level. The lists that you create with Aspose.Words are always multi-level lists and contain 9 levels. Microsoft Word 2003 and later always create multi-level lists with 9 levels. But in some documents, created with earlier versions of Microsoft Word you might encounter lists that have 1 level only.  # noqa: E501
 
         :return: The is_multi_level of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -152,7 +153,7 @@ class ListInfo(object):
     def is_multi_level(self, is_multi_level):
         """Sets the is_multi_level of this ListInfo.
 
-        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.  # noqa: E501
+        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level. The lists that you create with Aspose.Words are always multi-level lists and contain 9 levels. Microsoft Word 2003 and later always create multi-level lists with 9 levels. But in some documents, created with earlier versions of Microsoft Word you might encounter lists that have 1 level only.  # noqa: E501
 
         :param is_multi_level: The is_multi_level of this ListInfo.  # noqa: E501
         :type: bool
@@ -163,7 +164,7 @@ class ListInfo(object):
     def is_restart_at_each_section(self):
         """Gets the is_restart_at_each_section of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher then Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :return: The is_restart_at_each_section of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -174,7 +175,7 @@ class ListInfo(object):
     def is_restart_at_each_section(self, is_restart_at_each_section):
         """Sets the is_restart_at_each_section of this ListInfo.
 
-        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher then Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :param is_restart_at_each_section: The is_restart_at_each_section of this ListInfo.  # noqa: E501
         :type: bool
@@ -185,7 +186,7 @@ class ListInfo(object):
     def is_list_style_definition(self):
         """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style. When this property is true, the Aspose.Words.Lists.List.Style property returns the list style that this list defines. By modifying properties of a list that defines a list style, you modify The properties of the list style. A list that is a definition of a list style cannot be applied directly to paragraphs to make them numbered. Aspose.Words.Lists.List.Style Aspose.Words.Lists.List.IsListStyleReference.  # noqa: E501
 
         :return: The is_list_style_definition of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -196,7 +197,7 @@ class ListInfo(object):
     def is_list_style_definition(self, is_list_style_definition):
         """Sets the is_list_style_definition of this ListInfo.
 
-        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style. When this property is true, the Aspose.Words.Lists.List.Style property returns the list style that this list defines. By modifying properties of a list that defines a list style, you modify The properties of the list style. A list that is a definition of a list style cannot be applied directly to paragraphs to make them numbered. Aspose.Words.Lists.List.Style Aspose.Words.Lists.List.IsListStyleReference.  # noqa: E501
 
         :param is_list_style_definition: The is_list_style_definition of this ListInfo.  # noqa: E501
         :type: bool
@@ -207,7 +208,7 @@ class ListInfo(object):
     def is_list_style_reference(self):
         """Gets the is_list_style_reference of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style. Note, modifying properties of a list that is a reference to list style has no effect. The list formatting specified in the list style itself always takes precedence. Aspose.Words.Lists.List.Style Aspose.Words.Lists.List.IsListStyleDefinition.  # noqa: E501
 
         :return: The is_list_style_reference of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -218,7 +219,7 @@ class ListInfo(object):
     def is_list_style_reference(self, is_list_style_reference):
         """Sets the is_list_style_reference of this ListInfo.
 
-        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style. Note, modifying properties of a list that is a reference to list style has no effect. The list formatting specified in the list style itself always takes precedence. Aspose.Words.Lists.List.Style Aspose.Words.Lists.List.IsListStyleDefinition.  # noqa: E501
 
         :param is_list_style_reference: The is_list_style_reference of this ListInfo.  # noqa: E501
         :type: bool
@@ -229,7 +230,7 @@ class ListInfo(object):
     def style(self):
         """Gets the style of this ListInfo.  # noqa: E501
 
-        Gets or sets the list style that this list references or defines.  # noqa: E501
+        Gets or sets the list style that this list references or defines. If this list is not associated with a list style, the property will return null. A list could be a reference to a list style, in this case Aspose.Words.Lists.List.IsListStyleReference will be true. A list could be a definition of a list style, in this case Aspose.Words.Lists.List.IsListStyleDefinition will be true. Such a list cannot be applied to paragraphs in the document directly.  # noqa: E501
 
         :return: The style of this ListInfo.  # noqa: E501
         :rtype: Style
@@ -240,7 +241,7 @@ class ListInfo(object):
     def style(self, style):
         """Sets the style of this ListInfo.
 
-        Gets or sets the list style that this list references or defines.  # noqa: E501
+        Gets or sets the list style that this list references or defines. If this list is not associated with a list style, the property will return null. A list could be a reference to a list style, in this case Aspose.Words.Lists.List.IsListStyleReference will be true. A list could be a definition of a list style, in this case Aspose.Words.Lists.List.IsListStyleDefinition will be true. Such a list cannot be applied to paragraphs in the document directly.  # noqa: E501
 
         :param style: The style of this ListInfo.  # noqa: E501
         :type: Style
@@ -251,7 +252,7 @@ class ListInfo(object):
     def list_levels(self):
         """Gets the list_levels of this ListInfo.  # noqa: E501
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets the collection of list levels for this list. Use this property to access and modify formatting individual to each level of the list.  # noqa: E501
 
         :return: The list_levels of this ListInfo.  # noqa: E501
         :rtype: ListLevels
@@ -262,7 +263,7 @@ class ListInfo(object):
     def list_levels(self, list_levels):
         """Sets the list_levels of this ListInfo.
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets the collection of list levels for this list. Use this property to access and modify formatting individual to each level of the list.  # noqa: E501
 
         :param list_levels: The list_levels of this ListInfo.  # noqa: E501
         :type: ListLevels

@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class JsonDataLoadOptions(object):
-    """Represents options for parsing JSON data.
+    """Represents options for parsing JSON data. An instance of this class can be passed into constructors of Aspose.Words.Reporting.JsonDataSource.
     """
 
     """
@@ -72,7 +73,7 @@ class JsonDataLoadOptions(object):
     def always_generate_root_object(self):
         """Gets the always_generate_root_object of this JsonDataLoadOptions.  # noqa: E501
 
-        Gets or sets a value indicating whether a generated data source will always contain an object for a JSON root element. If a JSON root element contains a single complex property, such an object is not created by default.  # noqa: E501
+        Gets or sets a value indicating whether a generated data source will always contain an object for a JSON root element. If a JSON root element contains a single complex property, such an object is not created by default. The default value is false.  # noqa: E501
 
         :return: The always_generate_root_object of this JsonDataLoadOptions.  # noqa: E501
         :rtype: bool
@@ -83,7 +84,7 @@ class JsonDataLoadOptions(object):
     def always_generate_root_object(self, always_generate_root_object):
         """Sets the always_generate_root_object of this JsonDataLoadOptions.
 
-        Gets or sets a value indicating whether a generated data source will always contain an object for a JSON root element. If a JSON root element contains a single complex property, such an object is not created by default.  # noqa: E501
+        Gets or sets a value indicating whether a generated data source will always contain an object for a JSON root element. If a JSON root element contains a single complex property, such an object is not created by default. The default value is false.  # noqa: E501
 
         :param always_generate_root_object: The always_generate_root_object of this JsonDataLoadOptions.  # noqa: E501
         :type: bool
@@ -94,7 +95,7 @@ class JsonDataLoadOptions(object):
     def exact_date_time_parse_formats(self):
         """Gets the exact_date_time_parse_formats of this JsonDataLoadOptions.  # noqa: E501
 
-        Gets or sets exact formats for parsing JSON date-time values while loading JSON. The default is null.  # noqa: E501
+        Gets or sets exact formats for parsing JSON date-time values while loading JSON. The default is null. Strings encoded using Microsoft® JSON date-time format (for example, "/Date(1224043200000)/") are always recognized as date-time values regardless of a value of this property. The property defines additional formats to be used while parsing date-time values from strings in the following way: • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats is null, the ISO-8601 format and all date-time formats supported for the current, English USA, and English New Zealand cultures are used additionally in the mentioned order. • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats contains strings, they are used as additional date-time formats utilizing the current culture. • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats is empty, no additional date-time formats are used.  # noqa: E501
 
         :return: The exact_date_time_parse_formats of this JsonDataLoadOptions.  # noqa: E501
         :rtype: list[str]
@@ -105,7 +106,7 @@ class JsonDataLoadOptions(object):
     def exact_date_time_parse_formats(self, exact_date_time_parse_formats):
         """Sets the exact_date_time_parse_formats of this JsonDataLoadOptions.
 
-        Gets or sets exact formats for parsing JSON date-time values while loading JSON. The default is null.  # noqa: E501
+        Gets or sets exact formats for parsing JSON date-time values while loading JSON. The default is null. Strings encoded using Microsoft® JSON date-time format (for example, "/Date(1224043200000)/") are always recognized as date-time values regardless of a value of this property. The property defines additional formats to be used while parsing date-time values from strings in the following way: • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats is null, the ISO-8601 format and all date-time formats supported for the current, English USA, and English New Zealand cultures are used additionally in the mentioned order. • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats contains strings, they are used as additional date-time formats utilizing the current culture. • When Aspose.Words.Reporting.JsonDataLoadOptions.ExactDateTimeParseFormats is empty, no additional date-time formats are used.  # noqa: E501
 
         :param exact_date_time_parse_formats: The exact_date_time_parse_formats of this JsonDataLoadOptions.  # noqa: E501
         :type: list[str]

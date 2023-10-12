@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -44,34 +45,34 @@ class BookmarkInsert(object):
     swagger_types = {
         'name': 'str',
         'text': 'str',
-        'end_range': 'NewDocumentPosition',
-        'start_range': 'NewDocumentPosition'
+        'start_range': 'NewDocumentPosition',
+        'end_range': 'NewDocumentPosition'
     }
 
     attribute_map = {
         'name': 'Name',
         'text': 'Text',
-        'end_range': 'EndRange',
-        'start_range': 'StartRange'
+        'start_range': 'StartRange',
+        'end_range': 'EndRange'
     }
 
-    def __init__(self, name=None, text=None, end_range=None, start_range=None):  # noqa: E501
+    def __init__(self, name=None, text=None, start_range=None, end_range=None):  # noqa: E501
         """BookmarkInsert - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._text = None
-        self._end_range = None
         self._start_range = None
+        self._end_range = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
         if text is not None:
             self.text = text
-        if end_range is not None:
-            self.end_range = end_range
         if start_range is not None:
             self.start_range = start_range
+        if end_range is not None:
+            self.end_range = end_range
 
     @property
     def name(self):
@@ -118,28 +119,6 @@ class BookmarkInsert(object):
         self._text = text
 
     @property
-    def end_range(self):
-        """Gets the end_range of this BookmarkInsert.  # noqa: E501
-
-        Gets or sets the link to end bookmark node.  # noqa: E501
-
-        :return: The end_range of this BookmarkInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
-        """
-        return self._end_range
-
-    @end_range.setter
-    def end_range(self, end_range):
-        """Sets the end_range of this BookmarkInsert.
-
-        Gets or sets the link to end bookmark node.  # noqa: E501
-
-        :param end_range: The end_range of this BookmarkInsert.  # noqa: E501
-        :type: NewDocumentPosition
-        """
-        self._end_range = end_range
-
-    @property
     def start_range(self):
         """Gets the start_range of this BookmarkInsert.  # noqa: E501
 
@@ -160,6 +139,28 @@ class BookmarkInsert(object):
         :type: NewDocumentPosition
         """
         self._start_range = start_range
+
+    @property
+    def end_range(self):
+        """Gets the end_range of this BookmarkInsert.  # noqa: E501
+
+        Gets or sets the link to end bookmark node.  # noqa: E501
+
+        :return: The end_range of this BookmarkInsert.  # noqa: E501
+        :rtype: NewDocumentPosition
+        """
+        return self._end_range
+
+    @end_range.setter
+    def end_range(self, end_range):
+        """Sets the end_range of this BookmarkInsert.
+
+        Gets or sets the link to end bookmark node.  # noqa: E501
+
+        :param end_range: The end_range of this BookmarkInsert.  # noqa: E501
+        :type: NewDocumentPosition
+        """
+        self._end_range = end_range
 
 
     def extract_files_content(self, filesContentResult):

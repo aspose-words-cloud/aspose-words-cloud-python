@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class HyperlinkResponse(object):
-    """The REST response with a hyperlink.
+    """The REST response with a hyperlink. This response should be returned by the service when handling: GET /{name}/hyperlinks/{hyperlinkIndex}.
     """
 
     """

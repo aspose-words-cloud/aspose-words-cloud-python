@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class SectionPageSetupResponse(object):
-    """The REST response with a page setup of a section.
+    """The REST response with a page setup of a section. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup" REST API requests.
     """
 
     """

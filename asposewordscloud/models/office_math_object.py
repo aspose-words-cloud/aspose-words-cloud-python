@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -153,7 +154,7 @@ class OfficeMathObject(object):
     def display_type(self):
         """Gets the display_type of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
+        Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line. Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.  # noqa: E501
 
         :return: The display_type of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -164,7 +165,7 @@ class OfficeMathObject(object):
     def display_type(self, display_type):
         """Sets the display_type of this OfficeMathObject.
 
-        Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
+        Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line. Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.  # noqa: E501
 
         :param display_type: The display_type of this OfficeMathObject.  # noqa: E501
         :type: str
@@ -183,7 +184,7 @@ class OfficeMathObject(object):
     def justification(self):
         """Gets the justification of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets the justification of the OfficeMath object.  # noqa: E501
+        Gets or sets the justification of the OfficeMath object. Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.  # noqa: E501
 
         :return: The justification of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -194,7 +195,7 @@ class OfficeMathObject(object):
     def justification(self, justification):
         """Sets the justification of this OfficeMathObject.
 
-        Gets or sets the justification of the OfficeMath object.  # noqa: E501
+        Gets or sets the justification of the OfficeMath object. Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.  # noqa: E501
 
         :param justification: The justification of this OfficeMathObject.  # noqa: E501
         :type: str

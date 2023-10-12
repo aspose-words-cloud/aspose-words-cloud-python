@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -288,7 +289,7 @@ class ParagraphFormatUpdate(object):
     def bidi(self):
         """Gets the bidi of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether this is a right-to-left paragraph.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left paragraph. When true, the runs and other inline objects in this paragraph are laid out right to left.  # noqa: E501
 
         :return: The bidi of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: bool
@@ -299,7 +300,7 @@ class ParagraphFormatUpdate(object):
     def bidi(self, bidi):
         """Sets the bidi of this ParagraphFormatUpdate.
 
-        Gets or sets a value indicating whether this is a right-to-left paragraph.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left paragraph. When true, the runs and other inline objects in this paragraph are laid out right to left.  # noqa: E501
 
         :param bidi: The bidi of this ParagraphFormatUpdate.  # noqa: E501
         :type: bool
@@ -428,7 +429,7 @@ class ParagraphFormatUpdate(object):
     def line_spacing(self):
         """Gets the line_spacing of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets the line spacing (in points) for the paragraph.  # noqa: E501
+        Gets or sets the line spacing (in points) for the paragraph. When LineSpacingRule property is set to AtLeast, the line spacing can be greater than or equal to, but never less than the specified LineSpacing value.When LineSpacingRule property is set to Exactly, the line spacing never changes from the specified LineSpacing value, even if a larger font is used within the paragraph.  # noqa: E501
 
         :return: The line_spacing of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: float
@@ -439,7 +440,7 @@ class ParagraphFormatUpdate(object):
     def line_spacing(self, line_spacing):
         """Sets the line_spacing of this ParagraphFormatUpdate.
 
-        Gets or sets the line spacing (in points) for the paragraph.  # noqa: E501
+        Gets or sets the line spacing (in points) for the paragraph. When LineSpacingRule property is set to AtLeast, the line spacing can be greater than or equal to, but never less than the specified LineSpacing value.When LineSpacingRule property is set to Exactly, the line spacing never changes from the specified LineSpacing value, even if a larger font is used within the paragraph.  # noqa: E501
 
         :param line_spacing: The line_spacing of this ParagraphFormatUpdate.  # noqa: E501
         :type: float
@@ -502,7 +503,7 @@ class ParagraphFormatUpdate(object):
     def no_space_between_paragraphs_of_same_style(self):
         """Gets the no_space_between_paragraphs_of_same_style of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
+        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style. This setting only takes affect when applied to a paragraph style. If applied to a paragraph directly, it has no effect.  # noqa: E501
 
         :return: The no_space_between_paragraphs_of_same_style of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: bool
@@ -513,7 +514,7 @@ class ParagraphFormatUpdate(object):
     def no_space_between_paragraphs_of_same_style(self, no_space_between_paragraphs_of_same_style):
         """Sets the no_space_between_paragraphs_of_same_style of this ParagraphFormatUpdate.
 
-        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
+        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style. This setting only takes affect when applied to a paragraph style. If applied to a paragraph directly, it has no effect.  # noqa: E501
 
         :param no_space_between_paragraphs_of_same_style: The no_space_between_paragraphs_of_same_style of this ParagraphFormatUpdate.  # noqa: E501
         :type: bool
@@ -598,7 +599,7 @@ class ParagraphFormatUpdate(object):
     def space_after(self):
         """Gets the space_after of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets the amount of spacing (in points) after the paragraph.  # noqa: E501
+        Gets or sets the amount of spacing (in points) after the paragraph. Has no effect when SpaceAfterAuto is true.  # noqa: E501
 
         :return: The space_after of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: float
@@ -609,7 +610,7 @@ class ParagraphFormatUpdate(object):
     def space_after(self, space_after):
         """Sets the space_after of this ParagraphFormatUpdate.
 
-        Gets or sets the amount of spacing (in points) after the paragraph.  # noqa: E501
+        Gets or sets the amount of spacing (in points) after the paragraph. Has no effect when SpaceAfterAuto is true.  # noqa: E501
 
         :param space_after: The space_after of this ParagraphFormatUpdate.  # noqa: E501
         :type: float
@@ -620,7 +621,7 @@ class ParagraphFormatUpdate(object):
     def space_after_auto(self):
         """Gets the space_after_auto of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically. When set to true, overrides the effect of SpaceAfter.  # noqa: E501
 
         :return: The space_after_auto of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: bool
@@ -631,7 +632,7 @@ class ParagraphFormatUpdate(object):
     def space_after_auto(self, space_after_auto):
         """Sets the space_after_auto of this ParagraphFormatUpdate.
 
-        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically. When set to true, overrides the effect of SpaceAfter.  # noqa: E501
 
         :param space_after_auto: The space_after_auto of this ParagraphFormatUpdate.  # noqa: E501
         :type: bool
@@ -642,7 +643,7 @@ class ParagraphFormatUpdate(object):
     def space_before(self):
         """Gets the space_before of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets the amount of spacing (in points) before the paragraph.  # noqa: E501
+        Gets or sets the amount of spacing (in points) before the paragraph. Has no effect when SpaceBeforeAuto is true.  # noqa: E501
 
         :return: The space_before of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: float
@@ -653,7 +654,7 @@ class ParagraphFormatUpdate(object):
     def space_before(self, space_before):
         """Sets the space_before of this ParagraphFormatUpdate.
 
-        Gets or sets the amount of spacing (in points) before the paragraph.  # noqa: E501
+        Gets or sets the amount of spacing (in points) before the paragraph. Has no effect when SpaceBeforeAuto is true.  # noqa: E501
 
         :param space_before: The space_before of this ParagraphFormatUpdate.  # noqa: E501
         :type: float
@@ -664,7 +665,7 @@ class ParagraphFormatUpdate(object):
     def space_before_auto(self):
         """Gets the space_before_auto of this ParagraphFormatUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically. When set to true, overrides the effect of SpaceBefore.  # noqa: E501
 
         :return: The space_before_auto of this ParagraphFormatUpdate.  # noqa: E501
         :rtype: bool
@@ -675,7 +676,7 @@ class ParagraphFormatUpdate(object):
     def space_before_auto(self, space_before_auto):
         """Sets the space_before_auto of this ParagraphFormatUpdate.
 
-        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically. When set to true, overrides the effect of SpaceBefore.  # noqa: E501
 
         :param space_before_auto: The space_before_auto of this ParagraphFormatUpdate.  # noqa: E501
         :type: bool

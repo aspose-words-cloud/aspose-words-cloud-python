@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class RunsResponse(object):
-    """The REST response with a collection of Run elements.
+    """The REST response with a collection of Run elements. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/{paragraphPath}/runs" REST API requests.
     """
 
     """

@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class FieldNamesResponse(object):
-    """The REST response with a collection of mail merge fields.
+    """The REST response with a collection of mail merge fields. This response should be returned by the service when handling: GET /{name}/mailMergeFieldNames.
     """
 
     """

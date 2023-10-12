@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -165,7 +166,7 @@ class XamlFixedSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self):
         """Gets the allow_embedding_post_script_fonts of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :return: The allow_embedding_post_script_fonts of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -176,7 +177,7 @@ class XamlFixedSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
         """Sets the allow_embedding_post_script_fonts of this XamlFixedSaveOptionsData.
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -209,7 +210,7 @@ class XamlFixedSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -220,7 +221,7 @@ class XamlFixedSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this XamlFixedSaveOptionsData.
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -239,7 +240,7 @@ class XamlFixedSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -250,7 +251,7 @@ class XamlFixedSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this XamlFixedSaveOptionsData.
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -269,7 +270,7 @@ class XamlFixedSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -280,7 +281,7 @@ class XamlFixedSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this XamlFixedSaveOptionsData.
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -321,7 +322,7 @@ class XamlFixedSaveOptionsData(object):
     def iml_rendering_mode(self):
         """Gets the iml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :return: The iml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -332,7 +333,7 @@ class XamlFixedSaveOptionsData(object):
     def iml_rendering_mode(self, iml_rendering_mode):
         """Sets the iml_rendering_mode of this XamlFixedSaveOptionsData.
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :param iml_rendering_mode: The iml_rendering_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -417,7 +418,7 @@ class XamlFixedSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_last_saved_time_property of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -428,7 +429,7 @@ class XamlFixedSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this XamlFixedSaveOptionsData.
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -439,7 +440,7 @@ class XamlFixedSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :return: The zip_output of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -450,7 +451,7 @@ class XamlFixedSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this XamlFixedSaveOptionsData.
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :param zip_output: The zip_output of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -461,7 +462,7 @@ class XamlFixedSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The color_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -472,7 +473,7 @@ class XamlFixedSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this XamlFixedSaveOptionsData.
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param color_mode: The color_mode of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -631,7 +632,7 @@ class XamlFixedSaveOptionsData(object):
     def resources_folder(self):
         """Gets the resources_folder of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. The default value is null.  # noqa: E501
+        Gets or sets the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. The default value is null. When you save a Document in fixed page Xaml format, Aspose.Words needs to save all images embedded in the document as standalone files. ResourcesFolder allows you to specify where the images will be saved and ResourcesFolderAlias allows to specify how the image URIs will be constructed.If you save a document into a file and provide a file name, Aspose.Words, by default, saves the images in the same folder where the document file is saved. Use ResourcesFolder to override this behavior.If you save a document into a stream, Aspose.Words does not have a folder where to save the images, but still needs to save the images somewhere. In this case, you need to specify an accessible folder by using the ResourcesFolder property.  # noqa: E501
 
         :return: The resources_folder of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -642,7 +643,7 @@ class XamlFixedSaveOptionsData(object):
     def resources_folder(self, resources_folder):
         """Sets the resources_folder of this XamlFixedSaveOptionsData.
 
-        Gets or sets the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. The default value is null.  # noqa: E501
+        Gets or sets the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. The default value is null. When you save a Document in fixed page Xaml format, Aspose.Words needs to save all images embedded in the document as standalone files. ResourcesFolder allows you to specify where the images will be saved and ResourcesFolderAlias allows to specify how the image URIs will be constructed.If you save a document into a file and provide a file name, Aspose.Words, by default, saves the images in the same folder where the document file is saved. Use ResourcesFolder to override this behavior.If you save a document into a stream, Aspose.Words does not have a folder where to save the images, but still needs to save the images somewhere. In this case, you need to specify an accessible folder by using the ResourcesFolder property.  # noqa: E501
 
         :param resources_folder: The resources_folder of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -653,7 +654,7 @@ class XamlFixedSaveOptionsData(object):
     def resources_folder_alias(self):
         """Gets the resources_folder_alias of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the name of the folder used to construct image URIs written into an fixed page Xaml document. The default value is null.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs written into an fixed page Xaml document. The default value is null. When you save a Document in fixed page Xaml format, Aspose.Words needs to save all images embedded in the document as standalone files. ResourcesFolder allows you to specify where the images will be saved and ResourcesFolderAlias allows to specify how the image URIs will be constructed.  # noqa: E501
 
         :return: The resources_folder_alias of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -664,7 +665,7 @@ class XamlFixedSaveOptionsData(object):
     def resources_folder_alias(self, resources_folder_alias):
         """Sets the resources_folder_alias of this XamlFixedSaveOptionsData.
 
-        Gets or sets the name of the folder used to construct image URIs written into an fixed page Xaml document. The default value is null.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs written into an fixed page Xaml document. The default value is null. When you save a Document in fixed page Xaml format, Aspose.Words needs to save all images embedded in the document as standalone files. ResourcesFolder allows you to specify where the images will be saved and ResourcesFolderAlias allows to specify how the image URIs will be constructed.  # noqa: E501
 
         :param resources_folder_alias: The resources_folder_alias of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: str

@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -42,100 +43,56 @@ class DrawingObjectInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'height': 'float',
-        'left': 'float',
         'position': 'NewDocumentPosition',
         'relative_horizontal_position': 'str',
+        'left': 'float',
         'relative_vertical_position': 'str',
         'top': 'float',
         'width': 'float',
+        'height': 'float',
         'wrap_type': 'str'
     }
 
     attribute_map = {
-        'height': 'Height',
-        'left': 'Left',
         'position': 'Position',
         'relative_horizontal_position': 'RelativeHorizontalPosition',
+        'left': 'Left',
         'relative_vertical_position': 'RelativeVerticalPosition',
         'top': 'Top',
         'width': 'Width',
+        'height': 'Height',
         'wrap_type': 'WrapType'
     }
 
-    def __init__(self, height=None, left=None, position=None, relative_horizontal_position=None, relative_vertical_position=None, top=None, width=None, wrap_type=None):  # noqa: E501
+    def __init__(self, position=None, relative_horizontal_position=None, left=None, relative_vertical_position=None, top=None, width=None, height=None, wrap_type=None):  # noqa: E501
         """DrawingObjectInsert - a model defined in Swagger"""  # noqa: E501
 
-        self._height = None
-        self._left = None
         self._position = None
         self._relative_horizontal_position = None
+        self._left = None
         self._relative_vertical_position = None
         self._top = None
         self._width = None
+        self._height = None
         self._wrap_type = None
         self.discriminator = None
 
-        if height is not None:
-            self.height = height
-        if left is not None:
-            self.left = left
         if position is not None:
             self.position = position
         if relative_horizontal_position is not None:
             self.relative_horizontal_position = relative_horizontal_position
+        if left is not None:
+            self.left = left
         if relative_vertical_position is not None:
             self.relative_vertical_position = relative_vertical_position
         if top is not None:
             self.top = top
         if width is not None:
             self.width = width
+        if height is not None:
+            self.height = height
         if wrap_type is not None:
             self.wrap_type = wrap_type
-
-    @property
-    def height(self):
-        """Gets the height of this DrawingObjectInsert.  # noqa: E501
-
-        Gets or sets the height of the DrawingObject in points.  # noqa: E501
-
-        :return: The height of this DrawingObjectInsert.  # noqa: E501
-        :rtype: float
-        """
-        return self._height
-
-    @height.setter
-    def height(self, height):
-        """Sets the height of this DrawingObjectInsert.
-
-        Gets or sets the height of the DrawingObject in points.  # noqa: E501
-
-        :param height: The height of this DrawingObjectInsert.  # noqa: E501
-        :type: float
-        """
-        self._height = height
-
-    @property
-    def left(self):
-        """Gets the left of this DrawingObjectInsert.  # noqa: E501
-
-        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
-
-        :return: The left of this DrawingObjectInsert.  # noqa: E501
-        :rtype: float
-        """
-        return self._left
-
-    @left.setter
-    def left(self, left):
-        """Sets the left of this DrawingObjectInsert.
-
-        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
-
-        :param left: The left of this DrawingObjectInsert.  # noqa: E501
-        :type: float
-        """
-        self._left = left
 
     @property
     def position(self):
@@ -188,6 +145,28 @@ class DrawingObjectInsert(object):
             self._relative_horizontal_position = relative_horizontal_position
         else:
             self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
+
+    @property
+    def left(self):
+        """Gets the left of this DrawingObjectInsert.  # noqa: E501
+
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :return: The left of this DrawingObjectInsert.  # noqa: E501
+        :rtype: float
+        """
+        return self._left
+
+    @left.setter
+    def left(self, left):
+        """Sets the left of this DrawingObjectInsert.
+
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :param left: The left of this DrawingObjectInsert.  # noqa: E501
+        :type: float
+        """
+        self._left = left
 
     @property
     def relative_vertical_position(self):
@@ -262,6 +241,28 @@ class DrawingObjectInsert(object):
         :type: float
         """
         self._width = width
+
+    @property
+    def height(self):
+        """Gets the height of this DrawingObjectInsert.  # noqa: E501
+
+        Gets or sets the height of the DrawingObject in points.  # noqa: E501
+
+        :return: The height of this DrawingObjectInsert.  # noqa: E501
+        :rtype: float
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        """Sets the height of this DrawingObjectInsert.
+
+        Gets or sets the height of the DrawingObject in points.  # noqa: E501
+
+        :param height: The height of this DrawingObjectInsert.  # noqa: E501
+        :type: float
+        """
+        self._height = height
 
     @property
     def wrap_type(self):

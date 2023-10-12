@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -42,42 +43,64 @@ class StyleUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'next_paragraph_style_name': 'str',
         'base_style_name': 'str',
         'is_quick_style': 'bool',
-        'name': 'str',
-        'next_paragraph_style_name': 'str'
+        'name': 'str'
     }
 
     attribute_map = {
+        'next_paragraph_style_name': 'NextParagraphStyleName',
         'base_style_name': 'BaseStyleName',
         'is_quick_style': 'IsQuickStyle',
-        'name': 'Name',
-        'next_paragraph_style_name': 'NextParagraphStyleName'
+        'name': 'Name'
     }
 
-    def __init__(self, base_style_name=None, is_quick_style=None, name=None, next_paragraph_style_name=None):  # noqa: E501
+    def __init__(self, next_paragraph_style_name=None, base_style_name=None, is_quick_style=None, name=None):  # noqa: E501
         """StyleUpdate - a model defined in Swagger"""  # noqa: E501
 
+        self._next_paragraph_style_name = None
         self._base_style_name = None
         self._is_quick_style = None
         self._name = None
-        self._next_paragraph_style_name = None
         self.discriminator = None
 
+        if next_paragraph_style_name is not None:
+            self.next_paragraph_style_name = next_paragraph_style_name
         if base_style_name is not None:
             self.base_style_name = base_style_name
         if is_quick_style is not None:
             self.is_quick_style = is_quick_style
         if name is not None:
             self.name = name
-        if next_paragraph_style_name is not None:
-            self.next_paragraph_style_name = next_paragraph_style_name
+
+    @property
+    def next_paragraph_style_name(self):
+        """Gets the next_paragraph_style_name of this StyleUpdate.  # noqa: E501
+
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style. This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.  # noqa: E501
+
+        :return: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_paragraph_style_name
+
+    @next_paragraph_style_name.setter
+    def next_paragraph_style_name(self, next_paragraph_style_name):
+        """Sets the next_paragraph_style_name of this StyleUpdate.
+
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style. This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.  # noqa: E501
+
+        :param next_paragraph_style_name: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
+        :type: str
+        """
+        self._next_paragraph_style_name = next_paragraph_style_name
 
     @property
     def base_style_name(self):
         """Gets the base_style_name of this StyleUpdate.  # noqa: E501
 
-        Gets or sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on. This will be an empty string if the style is not based on any other style and it can be set to an empty string.  # noqa: E501
 
         :return: The base_style_name of this StyleUpdate.  # noqa: E501
         :rtype: str
@@ -88,7 +111,7 @@ class StyleUpdate(object):
     def base_style_name(self, base_style_name):
         """Sets the base_style_name of this StyleUpdate.
 
-        Gets or sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on. This will be an empty string if the style is not based on any other style and it can be set to an empty string.  # noqa: E501
 
         :param base_style_name: The base_style_name of this StyleUpdate.  # noqa: E501
         :type: str
@@ -121,7 +144,7 @@ class StyleUpdate(object):
     def name(self):
         """Gets the name of this StyleUpdate.  # noqa: E501
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :return: The name of this StyleUpdate.  # noqa: E501
         :rtype: str
@@ -132,34 +155,12 @@ class StyleUpdate(object):
     def name(self, name):
         """Sets the name of this StyleUpdate.
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :param name: The name of this StyleUpdate.  # noqa: E501
         :type: str
         """
         self._name = name
-
-    @property
-    def next_paragraph_style_name(self):
-        """Gets the next_paragraph_style_name of this StyleUpdate.  # noqa: E501
-
-        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
-
-        :return: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._next_paragraph_style_name
-
-    @next_paragraph_style_name.setter
-    def next_paragraph_style_name(self, next_paragraph_style_name):
-        """Sets the next_paragraph_style_name of this StyleUpdate.
-
-        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
-
-        :param next_paragraph_style_name: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
-        :type: str
-        """
-        self._next_paragraph_style_name = next_paragraph_style_name
 
 
     def extract_files_content(self, filesContentResult):

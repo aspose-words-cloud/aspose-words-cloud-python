@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class PageSetup(object):
-    """Represents the page setup properties of a section.
+    """Represents the page setup properties of a section. PageSetup object contains all the page setup attributes of a section (left margin, bottom margin, paper size, and so on) as properties.
     """
 
     """
@@ -229,7 +230,7 @@ class PageSetup(object):
     def bidi(self):
         """Gets the bidi of this PageSetup.  # noqa: E501
 
-        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.  # noqa: E501
+        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text. When true, the columns in this section are laid out from right to left.  # noqa: E501
 
         :return: The bidi of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -240,7 +241,7 @@ class PageSetup(object):
     def bidi(self, bidi):
         """Sets the bidi of this PageSetup.
 
-        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.  # noqa: E501
+        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text. When true, the columns in this section are laid out from right to left.  # noqa: E501
 
         :param bidi: The bidi of this PageSetup.  # noqa: E501
         :type: bool
@@ -509,7 +510,7 @@ class PageSetup(object):
     def line_number_distance_from_text(self):
         """Gets the line_number_distance_from_text of this PageSetup.  # noqa: E501
 
-        Gets or sets the distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
+        Gets or sets the distance between the right edge of line numbers and the left edge of the document. Set this property to zero for automatic distance between the line numbers and text of the document.  # noqa: E501
 
         :return: The line_number_distance_from_text of this PageSetup.  # noqa: E501
         :rtype: float
@@ -520,7 +521,7 @@ class PageSetup(object):
     def line_number_distance_from_text(self, line_number_distance_from_text):
         """Sets the line_number_distance_from_text of this PageSetup.
 
-        Gets or sets the distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
+        Gets or sets the distance between the right edge of line numbers and the left edge of the document. Set this property to zero for automatic distance between the line numbers and text of the document.  # noqa: E501
 
         :param line_number_distance_from_text: The line_number_distance_from_text of this PageSetup.  # noqa: E501
         :type: float
@@ -583,7 +584,7 @@ class PageSetup(object):
     def orientation(self):
         """Gets the orientation of this PageSetup.  # noqa: E501
 
-        Gets or sets the orientation of the page.  # noqa: E501
+        Gets or sets the orientation of the page. Changing Orientation swaps PageWidth and PageHeight.  # noqa: E501
 
         :return: The orientation of this PageSetup.  # noqa: E501
         :rtype: str
@@ -594,7 +595,7 @@ class PageSetup(object):
     def orientation(self, orientation):
         """Sets the orientation of this PageSetup.
 
-        Gets or sets the orientation of the page.  # noqa: E501
+        Gets or sets the orientation of the page. Changing Orientation swaps PageWidth and PageHeight.  # noqa: E501
 
         :param orientation: The orientation of this PageSetup.  # noqa: E501
         :type: str
@@ -687,7 +688,7 @@ class PageSetup(object):
     def page_starting_number(self):
         """Gets the page_starting_number of this PageSetup.  # noqa: E501
 
-        Gets or sets the starting page number of the section.  # noqa: E501
+        Gets or sets the starting page number of the section. The RestartPageNumbering property, if set to false, will override the PageStartingNumber property so that page numbering can continue from the previous section.  # noqa: E501
 
         :return: The page_starting_number of this PageSetup.  # noqa: E501
         :rtype: int
@@ -698,7 +699,7 @@ class PageSetup(object):
     def page_starting_number(self, page_starting_number):
         """Sets the page_starting_number of this PageSetup.
 
-        Gets or sets the starting page number of the section.  # noqa: E501
+        Gets or sets the starting page number of the section. The RestartPageNumbering property, if set to false, will override the PageStartingNumber property so that page numbering can continue from the previous section.  # noqa: E501
 
         :param page_starting_number: The page_starting_number of this PageSetup.  # noqa: E501
         :type: int
@@ -731,7 +732,7 @@ class PageSetup(object):
     def paper_size(self):
         """Gets the paper_size of this PageSetup.  # noqa: E501
 
-        Gets or sets the paper size.  # noqa: E501
+        Gets or sets the paper size. Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.  # noqa: E501
 
         :return: The paper_size of this PageSetup.  # noqa: E501
         :rtype: str
@@ -742,7 +743,7 @@ class PageSetup(object):
     def paper_size(self, paper_size):
         """Sets the paper_size of this PageSetup.
 
-        Gets or sets the paper size.  # noqa: E501
+        Gets or sets the paper size. Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.  # noqa: E501
 
         :param paper_size: The paper_size of this PageSetup.  # noqa: E501
         :type: str
@@ -761,7 +762,7 @@ class PageSetup(object):
     def restart_page_numbering(self):
         """Gets the restart_page_numbering of this PageSetup.  # noqa: E501
 
-        Gets or sets a value indicating whether page numbering restarts at the beginning of the section.  # noqa: E501
+        Gets or sets a value indicating whether page numbering restarts at the beginning of the section. If set to false, the RestartPageNumbering property will override the PageStartingNumber property so that page numbering can continue from the previous section.  # noqa: E501
 
         :return: The restart_page_numbering of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -772,7 +773,7 @@ class PageSetup(object):
     def restart_page_numbering(self, restart_page_numbering):
         """Sets the restart_page_numbering of this PageSetup.
 
-        Gets or sets a value indicating whether page numbering restarts at the beginning of the section.  # noqa: E501
+        Gets or sets a value indicating whether page numbering restarts at the beginning of the section. If set to false, the RestartPageNumbering property will override the PageStartingNumber property so that page numbering can continue from the previous section.  # noqa: E501
 
         :param restart_page_numbering: The restart_page_numbering of this PageSetup.  # noqa: E501
         :type: bool

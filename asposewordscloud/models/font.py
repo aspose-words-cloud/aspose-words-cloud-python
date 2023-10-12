@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -306,7 +307,7 @@ class Font(object):
     def bidi(self):
         """Gets the bidi of this Font.  # noqa: E501
 
-        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics. This property, when on, shall not be used with strongly left-to-right text. Any behavior under that condition is unspecified. This property, when off, shall not be used with strong right-to-left text. Any behavior under that condition is unspecified.When the contents of this run are displayed, all characters shall be treated as complex script characters for formatting purposes. This means that BoldBi, ItalicBi, SizeBi and a corresponding font name will be used when rendering this run.Also, when the contents of this run are displayed, this property acts as a right-to-left override for characters which are classified as "weak types" and "neutral types".  # noqa: E501
 
         :return: The bidi of this Font.  # noqa: E501
         :rtype: bool
@@ -317,7 +318,7 @@ class Font(object):
     def bidi(self, bidi):
         """Sets the bidi of this Font.
 
-        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics. This property, when on, shall not be used with strongly left-to-right text. Any behavior under that condition is unspecified. This property, when off, shall not be used with strong right-to-left text. Any behavior under that condition is unspecified.When the contents of this run are displayed, all characters shall be treated as complex script characters for formatting purposes. This means that BoldBi, ItalicBi, SizeBi and a corresponding font name will be used when rendering this run.Also, when the contents of this run are displayed, this property acts as a right-to-left override for characters which are classified as "weak types" and "neutral types".  # noqa: E501
 
         :param bidi: The bidi of this Font.  # noqa: E501
         :type: bool
@@ -614,7 +615,7 @@ class Font(object):
     def locale_id(self):
         """Gets the locale_id of this Font.  # noqa: E501
 
-        Gets or sets the locale identifier (language) of the formatted characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :return: The locale_id of this Font.  # noqa: E501
         :rtype: int
@@ -625,7 +626,7 @@ class Font(object):
     def locale_id(self, locale_id):
         """Sets the locale_id of this Font.
 
-        Gets or sets the locale identifier (language) of the formatted characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :param locale_id: The locale_id of this Font.  # noqa: E501
         :type: int
@@ -636,7 +637,7 @@ class Font(object):
     def locale_id_bi(self):
         """Gets the locale_id_bi of this Font.  # noqa: E501
 
-        Gets or sets the locale identifier (language) of the formatted right-to-left characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted right-to-left characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :return: The locale_id_bi of this Font.  # noqa: E501
         :rtype: int
@@ -647,7 +648,7 @@ class Font(object):
     def locale_id_bi(self, locale_id_bi):
         """Sets the locale_id_bi of this Font.
 
-        Gets or sets the locale identifier (language) of the formatted right-to-left characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted right-to-left characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :param locale_id_bi: The locale_id_bi of this Font.  # noqa: E501
         :type: int
@@ -658,7 +659,7 @@ class Font(object):
     def locale_id_far_east(self):
         """Gets the locale_id_far_east of this Font.  # noqa: E501
 
-        Gets or sets the locale identifier (language) of the formatted Asian characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted Asian characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :return: The locale_id_far_east of this Font.  # noqa: E501
         :rtype: int
@@ -669,7 +670,7 @@ class Font(object):
     def locale_id_far_east(self, locale_id_far_east):
         """Sets the locale_id_far_east of this Font.
 
-        Gets or sets the locale identifier (language) of the formatted Asian characters.  # noqa: E501
+        Gets or sets the locale identifier (language) of the formatted Asian characters. For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.  # noqa: E501
 
         :param locale_id_far_east: The locale_id_far_east of this Font.  # noqa: E501
         :type: int

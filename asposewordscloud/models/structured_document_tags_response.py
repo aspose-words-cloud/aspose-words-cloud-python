@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class StructuredDocumentTagsResponse(object):
-    """The REST response with a collection of StructuredDocumentTags.
+    """The REST response with a collection of StructuredDocumentTags. This response should be returned by the service when handling: GET /structuredDocumentTags.
     """
 
     """

@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -144,7 +145,7 @@ class ListLevel(object):
     def start_at(self):
         """Gets the start_at of this ListLevel.  # noqa: E501
 
-        Gets or sets the starting number for this list level.  # noqa: E501
+        Gets or sets the starting number for this list level. Default value is 1.  # noqa: E501
 
         :return: The start_at of this ListLevel.  # noqa: E501
         :rtype: int
@@ -155,7 +156,7 @@ class ListLevel(object):
     def start_at(self, start_at):
         """Sets the start_at of this ListLevel.
 
-        Gets or sets the starting number for this list level.  # noqa: E501
+        Gets or sets the starting number for this list level. Default value is 1.  # noqa: E501
 
         :param start_at: The start_at of this ListLevel.  # noqa: E501
         :type: int
@@ -196,7 +197,7 @@ class ListLevel(object):
     def number_format(self):
         """Gets the number_format of this ListLevel.  # noqa: E501
 
-        Gets or sets the number format for the list level.  # noqa: E501
+        Gets or sets the number format for the list level. Among normal text characters, the string can contain placeholder characters \\x0000 to \\x0008 representing the numbers from the corresponding list levels. For example, the string "\\x0000.\\x0001)" will generate a list label that looks something like "1.5)". The number "1" is the current number from the 1st list level, the number "5" is the current number from the 2nd list level. Null is not allowed, but an empty string meaning no number is valid.  # noqa: E501
 
         :return: The number_format of this ListLevel.  # noqa: E501
         :rtype: str
@@ -207,7 +208,7 @@ class ListLevel(object):
     def number_format(self, number_format):
         """Sets the number_format of this ListLevel.
 
-        Gets or sets the number format for the list level.  # noqa: E501
+        Gets or sets the number format for the list level. Among normal text characters, the string can contain placeholder characters \\x0000 to \\x0008 representing the numbers from the corresponding list levels. For example, the string "\\x0000.\\x0001)" will generate a list label that looks something like "1.5)". The number "1" is the current number from the 1st list level, the number "5" is the current number from the 2nd list level. Null is not allowed, but an empty string meaning no number is valid.  # noqa: E501
 
         :param number_format: The number_format of this ListLevel.  # noqa: E501
         :type: str
@@ -218,7 +219,7 @@ class ListLevel(object):
     def alignment(self):
         """Gets the alignment of this ListLevel.  # noqa: E501
 
-        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+        Gets or sets the justification of the actual number of the list item. The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition property.  # noqa: E501
 
         :return: The alignment of this ListLevel.  # noqa: E501
         :rtype: str
@@ -229,7 +230,7 @@ class ListLevel(object):
     def alignment(self, alignment):
         """Sets the alignment of this ListLevel.
 
-        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+        Gets or sets the justification of the actual number of the list item. The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition property.  # noqa: E501
 
         :param alignment: The alignment of this ListLevel.  # noqa: E501
         :type: str
@@ -270,7 +271,7 @@ class ListLevel(object):
     def restart_after_level(self):
         """Gets the restart_after_level of this ListLevel.  # noqa: E501
 
-        Gets or sets the list level, that must appear before the specified list level restarts numbering.  # noqa: E501
+        Gets or sets the list level, that must appear before the specified list level restarts numbering. The value of -1 means the numbering will continue.  # noqa: E501
 
         :return: The restart_after_level of this ListLevel.  # noqa: E501
         :rtype: int
@@ -281,7 +282,7 @@ class ListLevel(object):
     def restart_after_level(self, restart_after_level):
         """Sets the restart_after_level of this ListLevel.
 
-        Gets or sets the list level, that must appear before the specified list level restarts numbering.  # noqa: E501
+        Gets or sets the list level, that must appear before the specified list level restarts numbering. The value of -1 means the numbering will continue.  # noqa: E501
 
         :param restart_after_level: The restart_after_level of this ListLevel.  # noqa: E501
         :type: int
@@ -344,7 +345,7 @@ class ListLevel(object):
     def tab_position(self):
         """Gets the tab_position of this ListLevel.  # noqa: E501
 
-        Gets or sets the tab position (in points) for the list level.  # noqa: E501
+        Gets or sets the tab position (in points) for the list level. Has effect only when Aspose.Words.Lists.ListLevel.TrailingCharacter is a tab. Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TextPosition.  # noqa: E501
 
         :return: The tab_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -355,7 +356,7 @@ class ListLevel(object):
     def tab_position(self, tab_position):
         """Sets the tab_position of this ListLevel.
 
-        Gets or sets the tab position (in points) for the list level.  # noqa: E501
+        Gets or sets the tab position (in points) for the list level. Has effect only when Aspose.Words.Lists.ListLevel.TrailingCharacter is a tab. Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TextPosition.  # noqa: E501
 
         :param tab_position: The tab_position of this ListLevel.  # noqa: E501
         :type: float
@@ -366,7 +367,7 @@ class ListLevel(object):
     def number_position(self):
         """Gets the number_position of this ListLevel.  # noqa: E501
 
-        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+        Gets or sets the position (in points) of the number or bullet for the list level. Aspose.Words.Lists.ListLevel.NumberPosition corresponds to LeftIndent plus FirstLineIndent of the paragraph. Aspose.Words.Lists.ListLevel.TextPosition Aspose.Words.Lists.ListLevel.TabPosition.  # noqa: E501
 
         :return: The number_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -377,7 +378,7 @@ class ListLevel(object):
     def number_position(self, number_position):
         """Sets the number_position of this ListLevel.
 
-        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+        Gets or sets the position (in points) of the number or bullet for the list level. Aspose.Words.Lists.ListLevel.NumberPosition corresponds to LeftIndent plus FirstLineIndent of the paragraph. Aspose.Words.Lists.ListLevel.TextPosition Aspose.Words.Lists.ListLevel.TabPosition.  # noqa: E501
 
         :param number_position: The number_position of this ListLevel.  # noqa: E501
         :type: float
@@ -388,7 +389,7 @@ class ListLevel(object):
     def text_position(self):
         """Gets the text_position of this ListLevel.  # noqa: E501
 
-        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+        Gets or sets the position (in points) for the second line of wrapping text for the list level. Aspose.Words.Lists.ListLevel.TextPosition corresponds to LeftIndent of the paragraph. Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TabPosition.  # noqa: E501
 
         :return: The text_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -399,7 +400,7 @@ class ListLevel(object):
     def text_position(self, text_position):
         """Sets the text_position of this ListLevel.
 
-        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+        Gets or sets the position (in points) for the second line of wrapping text for the list level. Aspose.Words.Lists.ListLevel.TextPosition corresponds to LeftIndent of the paragraph. Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TabPosition.  # noqa: E501
 
         :param text_position: The text_position of this ListLevel.  # noqa: E501
         :type: float
@@ -410,7 +411,7 @@ class ListLevel(object):
     def linked_style(self):
         """Gets the linked_style of this ListLevel.  # noqa: E501
 
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+        Gets or sets the paragraph style that is linked to this list level. This property is null when the list level is not linked to a paragraph style. This property can be set to null.  # noqa: E501
 
         :return: The linked_style of this ListLevel.  # noqa: E501
         :rtype: Style
@@ -421,7 +422,7 @@ class ListLevel(object):
     def linked_style(self, linked_style):
         """Sets the linked_style of this ListLevel.
 
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+        Gets or sets the paragraph style that is linked to this list level. This property is null when the list level is not linked to a paragraph style. This property can be set to null.  # noqa: E501
 
         :param linked_style: The linked_style of this ListLevel.  # noqa: E501
         :type: Style

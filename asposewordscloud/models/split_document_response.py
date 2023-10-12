@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class SplitDocumentResponse(object):
-    """The REST response with a result of document splitting.
+    """The REST response with a result of document splitting. This response should be returned by the service when handling: POST /{name}/split.
     """
 
     """

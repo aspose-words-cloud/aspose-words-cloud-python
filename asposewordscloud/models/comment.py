@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -163,7 +164,7 @@ class Comment(object):
     def author(self):
         """Gets the author of this Comment.  # noqa: E501
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The author of this Comment.  # noqa: E501
         :rtype: str
@@ -174,7 +175,7 @@ class Comment(object):
     def author(self, author):
         """Sets the author of this Comment.
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :param author: The author of this Comment.  # noqa: E501
         :type: str
@@ -185,7 +186,7 @@ class Comment(object):
     def initial(self):
         """Gets the initial of this Comment.  # noqa: E501
 
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The initial of this Comment.  # noqa: E501
         :rtype: str
@@ -196,7 +197,7 @@ class Comment(object):
     def initial(self, initial):
         """Sets the initial of this Comment.
 
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
 
         :param initial: The initial of this Comment.  # noqa: E501
         :type: str
@@ -229,7 +230,7 @@ class Comment(object):
     def text(self):
         """Gets the text of this Comment.  # noqa: E501
 
-        Gets or sets text of the comment.  # noqa: E501
+        Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.  # noqa: E501
 
         :return: The text of this Comment.  # noqa: E501
         :rtype: str
@@ -240,7 +241,7 @@ class Comment(object):
     def text(self, text):
         """Sets the text of this Comment.
 
-        Gets or sets text of the comment.  # noqa: E501
+        Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.  # noqa: E501
 
         :param text: The text of this Comment.  # noqa: E501
         :type: str

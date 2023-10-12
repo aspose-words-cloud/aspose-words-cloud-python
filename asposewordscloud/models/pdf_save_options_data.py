@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -290,7 +291,7 @@ class PdfSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self):
         """Gets the allow_embedding_post_script_fonts of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :return: The allow_embedding_post_script_fonts of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -301,7 +302,7 @@ class PdfSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
         """Sets the allow_embedding_post_script_fonts of this PdfSaveOptionsData.
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -334,7 +335,7 @@ class PdfSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -345,7 +346,7 @@ class PdfSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -364,7 +365,7 @@ class PdfSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -375,7 +376,7 @@ class PdfSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -394,7 +395,7 @@ class PdfSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -405,7 +406,7 @@ class PdfSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -446,7 +447,7 @@ class PdfSaveOptionsData(object):
     def iml_rendering_mode(self):
         """Gets the iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :return: The iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -457,7 +458,7 @@ class PdfSaveOptionsData(object):
     def iml_rendering_mode(self, iml_rendering_mode):
         """Sets the iml_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :param iml_rendering_mode: The iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -542,7 +543,7 @@ class PdfSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -553,7 +554,7 @@ class PdfSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -564,7 +565,7 @@ class PdfSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :return: The zip_output of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -575,7 +576,7 @@ class PdfSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :param zip_output: The zip_output of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -586,7 +587,7 @@ class PdfSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The color_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -597,7 +598,7 @@ class PdfSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this PdfSaveOptionsData.
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param color_mode: The color_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -756,7 +757,7 @@ class PdfSaveOptionsData(object):
     def cache_background_graphics(self):
         """Gets the cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to cache graphics placed in document's background.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
 
         :return: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -767,7 +768,7 @@ class PdfSaveOptionsData(object):
     def cache_background_graphics(self, cache_background_graphics):
         """Sets the cache_background_graphics of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to cache graphics placed in document's background.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
 
         :param cache_background_graphics: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -882,7 +883,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self):
         """Gets the display_doc_title of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary. If false, the title bar should instead display the name of the PDF file containing the document. The default value is false.  # noqa: E501
 
         :return: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -893,7 +894,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self, display_doc_title):
         """Sets the display_doc_title of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary. If false, the title bar should instead display the name of the PDF file containing the document. The default value is false.  # noqa: E501
 
         :param display_doc_title: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -926,7 +927,7 @@ class PdfSaveOptionsData(object):
     def embed_attachments(self):
         """Gets the embed_attachments of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to embed attachments to the PDF document.  # noqa: E501
+        Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
 
         :return: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -937,7 +938,7 @@ class PdfSaveOptionsData(object):
     def embed_attachments(self, embed_attachments):
         """Sets the embed_attachments of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to embed attachments to the PDF document.  # noqa: E501
+        Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
 
         :param embed_attachments: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1014,7 +1015,7 @@ class PdfSaveOptionsData(object):
     def export_language_to_span_tag(self):
         """Gets the export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.  # noqa: E501
+        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
 
         :return: The export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1025,7 +1026,7 @@ class PdfSaveOptionsData(object):
     def export_language_to_span_tag(self, export_language_to_span_tag):
         """Sets the export_language_to_span_tag of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.  # noqa: E501
+        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
 
         :param export_language_to_span_tag: The export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1096,7 +1097,7 @@ class PdfSaveOptionsData(object):
     def image_color_space_export_mode(self):
         """Gets the image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls how the color space will be selected for the images in PDF document.  # noqa: E501
+        Gets or sets the option that controls how the color space will be selected for the images in PDF document. The default value is "Auto". If "SimpleCmyk" value is specified, ImageCompression option is ignored and Flate compression is used for all images in the document.  # noqa: E501
 
         :return: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1107,7 +1108,7 @@ class PdfSaveOptionsData(object):
     def image_color_space_export_mode(self, image_color_space_export_mode):
         """Sets the image_color_space_export_mode of this PdfSaveOptionsData.
 
-        Gets or sets the option that controls how the color space will be selected for the images in PDF document.  # noqa: E501
+        Gets or sets the option that controls how the color space will be selected for the images in PDF document. The default value is "Auto". If "SimpleCmyk" value is specified, ImageCompression option is ignored and Flate compression is used for all images in the document.  # noqa: E501
 
         :param image_color_space_export_mode: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -1148,7 +1149,7 @@ class PdfSaveOptionsData(object):
     def interpolate_images(self):
         """Gets the interpolate_images of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.  # noqa: E501
+        Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead. When the resolution of a source image is significantly lower than that of the output device, each source sample covers many device pixels. As a result, images can appear jaggy or blocky. These visual artifacts can be reduced by applying an image interpolation algorithm during rendering. Instead of painting all pixels covered by a source sample with the same color, image interpolation attempts to produce a smooth transition between adjacent sample values. A conforming Reader may choose to not implement this feature of PDF, or may use any specific implementation of interpolation that it wishes. The default value is false.  # noqa: E501
 
         :return: The interpolate_images of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1159,7 +1160,7 @@ class PdfSaveOptionsData(object):
     def interpolate_images(self, interpolate_images):
         """Sets the interpolate_images of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.  # noqa: E501
+        Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead. When the resolution of a source image is significantly lower than that of the output device, each source sample covers many device pixels. As a result, images can appear jaggy or blocky. These visual artifacts can be reduced by applying an image interpolation algorithm during rendering. Instead of painting all pixels covered by a source sample with the same color, image interpolation attempts to produce a smooth transition between adjacent sample values. A conforming Reader may choose to not implement this feature of PDF, or may use any specific implementation of interpolation that it wishes. The default value is false.  # noqa: E501
 
         :param interpolate_images: The interpolate_images of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1244,7 +1245,7 @@ class PdfSaveOptionsData(object):
     def preblend_images(self):
         """Gets the preblend_images of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to preblend transparent images with black background color.  # noqa: E501
+        Gets or sets a value indicating whether to preblend transparent images with black background color. Preblending images may improve PDF document visual appearance in Adobe Reader and remove anti-aliasing artifacts.In order to properly display preblended images, PDF viewer application must support /Matte entry in soft-mask image dictionary. Also preblending images may decrease PDF rendering performance.The default value is false.  # noqa: E501
 
         :return: The preblend_images of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1255,7 +1256,7 @@ class PdfSaveOptionsData(object):
     def preblend_images(self, preblend_images):
         """Sets the preblend_images of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether to preblend transparent images with black background color.  # noqa: E501
+        Gets or sets a value indicating whether to preblend transparent images with black background color. Preblending images may improve PDF document visual appearance in Adobe Reader and remove anti-aliasing artifacts.In order to properly display preblended images, PDF viewer application must support /Matte entry in soft-mask image dictionary. Also preblending images may decrease PDF rendering performance.The default value is false.  # noqa: E501
 
         :param preblend_images: The preblend_images of this PdfSaveOptionsData.  # noqa: E501
         :type: bool

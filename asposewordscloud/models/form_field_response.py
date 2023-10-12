@@ -26,12 +26,13 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
 
 class FormFieldResponse(object):
-    """The REST response with a form field.
+    """The REST response with a form field. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/form fields/{1}" REST API requests.
     """
 
     """

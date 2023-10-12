@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import typing_extensions
 import datetime
 import six
 import json
@@ -42,36 +43,34 @@ class OutlineOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bookmarks_outline_levels': 'list[BookmarksOutlineLevelData]',
         'create_missing_outline_levels': 'bool',
         'create_outlines_for_headings_in_tables': 'bool',
         'default_bookmarks_outline_level': 'int',
         'expanded_outline_levels': 'int',
-        'headings_outline_levels': 'int'
+        'headings_outline_levels': 'int',
+        'bookmarks_outline_levels': 'list[BookmarksOutlineLevelData]'
     }
 
     attribute_map = {
-        'bookmarks_outline_levels': 'BookmarksOutlineLevels',
         'create_missing_outline_levels': 'CreateMissingOutlineLevels',
         'create_outlines_for_headings_in_tables': 'CreateOutlinesForHeadingsInTables',
         'default_bookmarks_outline_level': 'DefaultBookmarksOutlineLevel',
         'expanded_outline_levels': 'ExpandedOutlineLevels',
-        'headings_outline_levels': 'HeadingsOutlineLevels'
+        'headings_outline_levels': 'HeadingsOutlineLevels',
+        'bookmarks_outline_levels': 'BookmarksOutlineLevels'
     }
 
-    def __init__(self, bookmarks_outline_levels=None, create_missing_outline_levels=None, create_outlines_for_headings_in_tables=None, default_bookmarks_outline_level=None, expanded_outline_levels=None, headings_outline_levels=None):  # noqa: E501
+    def __init__(self, create_missing_outline_levels=None, create_outlines_for_headings_in_tables=None, default_bookmarks_outline_level=None, expanded_outline_levels=None, headings_outline_levels=None, bookmarks_outline_levels=None):  # noqa: E501
         """OutlineOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._bookmarks_outline_levels = None
         self._create_missing_outline_levels = None
         self._create_outlines_for_headings_in_tables = None
         self._default_bookmarks_outline_level = None
         self._expanded_outline_levels = None
         self._headings_outline_levels = None
+        self._bookmarks_outline_levels = None
         self.discriminator = None
 
-        if bookmarks_outline_levels is not None:
-            self.bookmarks_outline_levels = bookmarks_outline_levels
         if create_missing_outline_levels is not None:
             self.create_missing_outline_levels = create_missing_outline_levels
         if create_outlines_for_headings_in_tables is not None:
@@ -82,28 +81,8 @@ class OutlineOptionsData(object):
             self.expanded_outline_levels = expanded_outline_levels
         if headings_outline_levels is not None:
             self.headings_outline_levels = headings_outline_levels
-
-    @property
-    def bookmarks_outline_levels(self):
-        """Gets the bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
-
-        Gets or sets the individual bookmarks outline level.  # noqa: E501
-
-        :return: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
-        :rtype: list[BookmarksOutlineLevelData]
-        """
-        return self._bookmarks_outline_levels
-
-    @bookmarks_outline_levels.setter
-    def bookmarks_outline_levels(self, bookmarks_outline_levels):
-        """Sets the bookmarks_outline_levels of this OutlineOptionsData.
-
-        Gets or sets the individual bookmarks outline level.  # noqa: E501
-
-        :param bookmarks_outline_levels: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
-        :type: list[BookmarksOutlineLevelData]
-        """
-        self._bookmarks_outline_levels = bookmarks_outline_levels
+        if bookmarks_outline_levels is not None:
+            self.bookmarks_outline_levels = bookmarks_outline_levels
 
     @property
     def create_missing_outline_levels(self):
@@ -131,7 +110,7 @@ class OutlineOptionsData(object):
     def create_outlines_for_headings_in_tables(self):
         """Gets the create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.  # noqa: E501
+        Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables. The default value is false.  # noqa: E501
 
         :return: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
         :rtype: bool
@@ -142,7 +121,7 @@ class OutlineOptionsData(object):
     def create_outlines_for_headings_in_tables(self, create_outlines_for_headings_in_tables):
         """Sets the create_outlines_for_headings_in_tables of this OutlineOptionsData.
 
-        Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.  # noqa: E501
+        Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables. The default value is false.  # noqa: E501
 
         :param create_outlines_for_headings_in_tables: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
         :type: bool
@@ -214,6 +193,28 @@ class OutlineOptionsData(object):
         :type: int
         """
         self._headings_outline_levels = headings_outline_levels
+
+    @property
+    def bookmarks_outline_levels(self):
+        """Gets the bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
+
+        Gets or sets the individual bookmarks outline level.  # noqa: E501
+
+        :return: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
+        :rtype: list[BookmarksOutlineLevelData]
+        """
+        return self._bookmarks_outline_levels
+
+    @bookmarks_outline_levels.setter
+    def bookmarks_outline_levels(self, bookmarks_outline_levels):
+        """Sets the bookmarks_outline_levels of this OutlineOptionsData.
+
+        Gets or sets the individual bookmarks outline level.  # noqa: E501
+
+        :param bookmarks_outline_levels: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
+        :type: list[BookmarksOutlineLevelData]
+        """
+        self._bookmarks_outline_levels = bookmarks_outline_levels
 
 
     def extract_files_content(self, filesContentResult):
