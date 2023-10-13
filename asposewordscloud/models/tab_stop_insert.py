@@ -155,6 +155,18 @@ class TabStopInsert(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._alignment is None:
+            raise ValueError("Property Alignment in TabStopInsert is required.")  # noqa: E501
+
+        if self._leader is None:
+            raise ValueError("Property Leader in TabStopInsert is required.")  # noqa: E501
+
+        if self._position is None:
+            raise ValueError("Property Position in TabStopInsert is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

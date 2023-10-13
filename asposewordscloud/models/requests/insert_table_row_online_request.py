@@ -61,12 +61,17 @@ class InsertTableRowOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_table_row_online`")  # noqa: E501
+
         # verify the required parameter 'table_path' is set
         if self.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row_online`")  # noqa: E501
+
         # verify the required parameter 'row' is set
         if self.row is None:
             raise ValueError("Missing the required parameter `row` when calling `insert_table_row_online`")  # noqa: E501
+
+        self.row.validate()
+
 
         path = '/v4.0/words/online/post/{tablePath}/rows'
         path_params = {}

@@ -57,9 +57,11 @@ class DeleteAllParagraphTabStopsOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_all_paragraph_tab_stops_online`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_all_paragraph_tab_stops_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/delete/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}

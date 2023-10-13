@@ -61,9 +61,13 @@ class CompareDocumentRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `compare_document`")  # noqa: E501
+
         # verify the required parameter 'compare_data' is set
         if self.compare_data is None:
             raise ValueError("Missing the required parameter `compare_data` when calling `compare_document`")  # noqa: E501
+
+        self.compare_data.validate()
+
 
         path = '/v4.0/words/{name}/compareDocument'
         path_params = {}

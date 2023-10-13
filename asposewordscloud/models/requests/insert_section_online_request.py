@@ -59,9 +59,11 @@ class InsertSectionOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_section_online`")  # noqa: E501
+
         # verify the required parameter 'section_index' is set
         if self.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `insert_section_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/post/sections/{sectionIndex}'
         path_params = {}

@@ -59,9 +59,13 @@ class InsertListOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_list_online`")  # noqa: E501
+
         # verify the required parameter 'list_insert' is set
         if self.list_insert is None:
             raise ValueError("Missing the required parameter `list_insert` when calling `insert_list_online`")  # noqa: E501
+
+        self.list_insert.validate()
+
 
         path = '/v4.0/words/online/post/lists'
         path_params = {}

@@ -274,6 +274,24 @@ class ListInfo(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._list_id is None:
+            raise ValueError("Property ListId in ListInfo is required.")  # noqa: E501
+
+        if self._is_multi_level is None:
+            raise ValueError("Property IsMultiLevel in ListInfo is required.")  # noqa: E501
+
+        if self._is_restart_at_each_section is None:
+            raise ValueError("Property IsRestartAtEachSection in ListInfo is required.")  # noqa: E501
+
+        if self._is_list_style_definition is None:
+            raise ValueError("Property IsListStyleDefinition in ListInfo is required.")  # noqa: E501
+
+        if self._is_list_style_reference is None:
+            raise ValueError("Property IsListStyleReference in ListInfo is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

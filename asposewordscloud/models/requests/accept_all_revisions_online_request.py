@@ -54,6 +54,7 @@ class AcceptAllRevisionsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `accept_all_revisions_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/put/revisions/acceptAll'
         path_params = {}
 

@@ -58,6 +58,7 @@ class DeleteCommentsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_comments_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/delete/comments'
         path_params = {}
 

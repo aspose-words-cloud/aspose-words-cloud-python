@@ -436,6 +436,15 @@ class FormFieldCheckbox(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._name is None:
+            raise ValueError("Property Name in FormFieldCheckbox is required.")  # noqa: E501
+
+        if self._checked is None:
+            raise ValueError("Property Checked in FormFieldCheckbox is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -65,9 +65,11 @@ class DeleteHeadersFootersRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_headers_footers`")  # noqa: E501
+
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
         path_params = {}

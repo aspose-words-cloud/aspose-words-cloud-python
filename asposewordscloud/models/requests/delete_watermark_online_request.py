@@ -58,6 +58,7 @@ class DeleteWatermarkOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_watermark_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/post/watermarks/deleteLast'
         path_params = {}
 

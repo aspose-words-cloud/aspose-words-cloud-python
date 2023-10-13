@@ -48,6 +48,9 @@ class LoadWebDocumentRequest(BaseRequestObject):
         if self.data is None:
             raise ValueError("Missing the required parameter `data` when calling `load_web_document`")  # noqa: E501
 
+        self.data.validate()
+
+
         path = '/v4.0/words/loadWebDocument'
         path_params = {}
 

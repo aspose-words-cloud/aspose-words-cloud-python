@@ -55,12 +55,15 @@ class GetTableCellFormatOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_table_cell_format_online`")  # noqa: E501
+
         # verify the required parameter 'table_row_path' is set
         if self.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell_format_online`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_cell_format_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/get/{tableRowPath}/cells/{index}/cellformat'
         path_params = {}

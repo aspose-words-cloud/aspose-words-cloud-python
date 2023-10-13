@@ -59,9 +59,13 @@ class ReplaceTextOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `replace_text_online`")  # noqa: E501
+
         # verify the required parameter 'replace_text' is set
         if self.replace_text is None:
             raise ValueError("Missing the required parameter `replace_text` when calling `replace_text_online`")  # noqa: E501
+
+        self.replace_text.validate()
+
 
         path = '/v4.0/words/online/put/replaceText'
         path_params = {}

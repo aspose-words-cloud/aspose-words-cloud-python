@@ -65,12 +65,17 @@ class UpdateListRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_list`")  # noqa: E501
+
         # verify the required parameter 'list_id' is set
         if self.list_id is None:
             raise ValueError("Missing the required parameter `list_id` when calling `update_list`")  # noqa: E501
+
         # verify the required parameter 'list_update' is set
         if self.list_update is None:
             raise ValueError("Missing the required parameter `list_update` when calling `update_list`")  # noqa: E501
+
+        self.list_update.validate()
+
 
         path = '/v4.0/words/{name}/lists/{listId}'
         path_params = {}

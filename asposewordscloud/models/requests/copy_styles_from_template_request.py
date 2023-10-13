@@ -63,9 +63,11 @@ class CopyStylesFromTemplateRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `copy_styles_from_template`")  # noqa: E501
+
         # verify the required parameter 'template_name' is set
         if self.template_name is None:
             raise ValueError("Missing the required parameter `template_name` when calling `copy_styles_from_template`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/styles/copy_from'
         path_params = {}

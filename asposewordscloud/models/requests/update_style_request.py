@@ -65,12 +65,17 @@ class UpdateStyleRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_style`")  # noqa: E501
+
         # verify the required parameter 'style_name' is set
         if self.style_name is None:
             raise ValueError("Missing the required parameter `style_name` when calling `update_style`")  # noqa: E501
+
         # verify the required parameter 'style_update' is set
         if self.style_update is None:
             raise ValueError("Missing the required parameter `style_update` when calling `update_style`")  # noqa: E501
+
+        self.style_update.validate()
+
 
         path = '/v4.0/words/{name}/styles/{styleName}/update'
         path_params = {}

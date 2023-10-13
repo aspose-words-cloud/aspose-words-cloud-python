@@ -67,15 +67,21 @@ class UpdateTableRowFormatRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_row_format`")  # noqa: E501
+
         # verify the required parameter 'table_path' is set
         if self.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_row_format`")  # noqa: E501
+
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `update_table_row_format`")  # noqa: E501
+
+        self.format.validate()
+
 
         path = '/v4.0/words/{name}/{tablePath}/rows/{index}/rowformat'
         path_params = {}

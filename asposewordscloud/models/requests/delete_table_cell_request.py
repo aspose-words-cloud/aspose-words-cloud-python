@@ -65,12 +65,15 @@ class DeleteTableCellRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_table_cell`")  # noqa: E501
+
         # verify the required parameter 'table_row_path' is set
         if self.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `delete_table_cell`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table_cell`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}'
         path_params = {}

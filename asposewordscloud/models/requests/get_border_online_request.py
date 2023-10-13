@@ -55,9 +55,11 @@ class GetBorderOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_border_online`")  # noqa: E501
+
         # verify the required parameter 'border_type' is set
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `get_border_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/get/{nodePath}/borders/{borderType}'
         path_params = {}

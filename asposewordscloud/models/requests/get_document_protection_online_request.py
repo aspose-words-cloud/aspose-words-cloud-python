@@ -52,6 +52,7 @@ class GetDocumentProtectionOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_document_protection_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/get/protection'
         path_params = {}
 

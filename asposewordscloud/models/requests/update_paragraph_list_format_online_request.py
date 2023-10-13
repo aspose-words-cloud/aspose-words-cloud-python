@@ -63,12 +63,17 @@ class UpdateParagraphListFormatOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_paragraph_list_format_online`")  # noqa: E501
+
         # verify the required parameter 'list_format_dto' is set
         if self.list_format_dto is None:
             raise ValueError("Missing the required parameter `list_format_dto` when calling `update_paragraph_list_format_online`")  # noqa: E501
+
+        self.list_format_dto.validate()
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_paragraph_list_format_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/put/{nodePath}/paragraphs/{index}/listFormat'
         path_params = {}

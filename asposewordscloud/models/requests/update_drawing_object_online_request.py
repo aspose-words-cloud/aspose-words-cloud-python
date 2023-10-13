@@ -65,15 +65,21 @@ class UpdateDrawingObjectOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_drawing_object_online`")  # noqa: E501
+
         # verify the required parameter 'drawing_object' is set
         if self.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `update_drawing_object_online`")  # noqa: E501
+
+        self.drawing_object.validate()
+
         # verify the required parameter 'image_file' is set
         if self.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `update_drawing_object_online`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_drawing_object_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/put/{nodePath}/drawingObjects/{index}'
         path_params = {}

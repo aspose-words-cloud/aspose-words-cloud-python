@@ -53,9 +53,11 @@ class CopyFileRequest(BaseRequestObject):
         # verify the required parameter 'dest_path' is set
         if self.dest_path is None:
             raise ValueError("Missing the required parameter `dest_path` when calling `copy_file`")  # noqa: E501
+
         # verify the required parameter 'src_path' is set
         if self.src_path is None:
             raise ValueError("Missing the required parameter `src_path` when calling `copy_file`")  # noqa: E501
+
 
         path = '/v4.0/words/storage/file/copy/{srcPath}'
         path_params = {}

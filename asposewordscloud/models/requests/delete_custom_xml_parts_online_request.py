@@ -58,6 +58,7 @@ class DeleteCustomXmlPartsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_custom_xml_parts_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/delete/customXmlParts'
         path_params = {}
 

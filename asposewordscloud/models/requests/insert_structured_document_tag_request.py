@@ -65,9 +65,13 @@ class InsertStructuredDocumentTagRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_structured_document_tag`")  # noqa: E501
+
         # verify the required parameter 'structured_document_tag' is set
         if self.structured_document_tag is None:
             raise ValueError("Missing the required parameter `structured_document_tag` when calling `insert_structured_document_tag`")  # noqa: E501
+
+        self.structured_document_tag.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/sdt'
         path_params = {}

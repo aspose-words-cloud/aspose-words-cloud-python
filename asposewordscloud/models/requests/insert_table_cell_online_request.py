@@ -61,12 +61,17 @@ class InsertTableCellOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_table_cell_online`")  # noqa: E501
+
         # verify the required parameter 'table_row_path' is set
         if self.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell_online`")  # noqa: E501
+
         # verify the required parameter 'cell' is set
         if self.cell is None:
             raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell_online`")  # noqa: E501
+
+        self.cell.validate()
+
 
         path = '/v4.0/words/online/post/{tableRowPath}/cells'
         path_params = {}

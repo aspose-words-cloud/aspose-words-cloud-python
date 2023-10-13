@@ -63,9 +63,13 @@ class InsertCustomXmlPartRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_custom_xml_part`")  # noqa: E501
+
         # verify the required parameter 'custom_xml_part' is set
         if self.custom_xml_part is None:
             raise ValueError("Missing the required parameter `custom_xml_part` when calling `insert_custom_xml_part`")  # noqa: E501
+
+        self.custom_xml_part.validate()
+
 
         path = '/v4.0/words/{name}/customXmlParts'
         path_params = {}

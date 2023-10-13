@@ -56,6 +56,7 @@ class GetStylesRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_styles`")  # noqa: E501
 
+
         path = '/v4.0/words/{name}/styles'
         path_params = {}
         if self.name is not None:

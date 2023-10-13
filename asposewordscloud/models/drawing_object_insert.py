@@ -298,6 +298,30 @@ class DrawingObjectInsert(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._relative_horizontal_position is None:
+            raise ValueError("Property RelativeHorizontalPosition in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._left is None:
+            raise ValueError("Property Left in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._relative_vertical_position is None:
+            raise ValueError("Property RelativeVerticalPosition in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._top is None:
+            raise ValueError("Property Top in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._width is None:
+            raise ValueError("Property Width in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._height is None:
+            raise ValueError("Property Height in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._wrap_type is None:
+            raise ValueError("Property WrapType in DrawingObjectInsert is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

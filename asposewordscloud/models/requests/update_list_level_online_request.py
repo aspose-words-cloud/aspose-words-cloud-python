@@ -63,15 +63,21 @@ class UpdateListLevelOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_list_level_online`")  # noqa: E501
+
         # verify the required parameter 'list_id' is set
         if self.list_id is None:
             raise ValueError("Missing the required parameter `list_id` when calling `update_list_level_online`")  # noqa: E501
+
         # verify the required parameter 'list_update' is set
         if self.list_update is None:
             raise ValueError("Missing the required parameter `list_update` when calling `update_list_level_online`")  # noqa: E501
+
+        self.list_update.validate()
+
         # verify the required parameter 'list_level' is set
         if self.list_level is None:
             raise ValueError("Missing the required parameter `list_level` when calling `update_list_level_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/put/lists/{listId}/listLevels/{listLevel}'
         path_params = {}

@@ -63,9 +63,13 @@ class InsertListRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_list`")  # noqa: E501
+
         # verify the required parameter 'list_insert' is set
         if self.list_insert is None:
             raise ValueError("Missing the required parameter `list_insert` when calling `insert_list`")  # noqa: E501
+
+        self.list_insert.validate()
+
 
         path = '/v4.0/words/{name}/lists'
         path_params = {}

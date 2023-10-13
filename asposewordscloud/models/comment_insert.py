@@ -220,6 +220,18 @@ class CommentInsert(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._author is None:
+            raise ValueError("Property Author in CommentInsert is required.")  # noqa: E501
+
+        if self._initial is None:
+            raise ValueError("Property Initial in CommentInsert is required.")  # noqa: E501
+
+        if self._text is None:
+            raise ValueError("Property Text in CommentInsert is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

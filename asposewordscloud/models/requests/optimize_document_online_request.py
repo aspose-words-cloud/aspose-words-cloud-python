@@ -59,9 +59,13 @@ class OptimizeDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `optimize_document_online`")  # noqa: E501
+
         # verify the required parameter 'options' is set
         if self.options is None:
             raise ValueError("Missing the required parameter `options` when calling `optimize_document_online`")  # noqa: E501
+
+        self.options.validate()
+
 
         path = '/v4.0/words/online/put/compatibility/optimize'
         path_params = {}

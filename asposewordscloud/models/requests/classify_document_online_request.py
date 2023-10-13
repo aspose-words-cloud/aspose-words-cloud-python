@@ -56,6 +56,7 @@ class ClassifyDocumentOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `classify_document_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/get/classify'
         path_params = {}
 

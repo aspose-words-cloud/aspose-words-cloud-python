@@ -59,9 +59,13 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `compare_document_online`")  # noqa: E501
+
         # verify the required parameter 'compare_data' is set
         if self.compare_data is None:
             raise ValueError("Missing the required parameter `compare_data` when calling `compare_document_online`")  # noqa: E501
+
+        self.compare_data.validate()
+
 
         path = '/v4.0/words/online/put/compareDocument'
         path_params = {}

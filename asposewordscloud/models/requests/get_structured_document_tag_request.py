@@ -59,9 +59,11 @@ class GetStructuredDocumentTagRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_structured_document_tag`")  # noqa: E501
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_structured_document_tag`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/{nodePath}/sdt/{index}'
         path_params = {}

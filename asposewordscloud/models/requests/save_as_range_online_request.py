@@ -57,12 +57,17 @@ class SaveAsRangeOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `save_as_range_online`")  # noqa: E501
+
         # verify the required parameter 'range_start_identifier' is set
         if self.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `save_as_range_online`")  # noqa: E501
+
         # verify the required parameter 'document_parameters' is set
         if self.document_parameters is None:
             raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range_online`")  # noqa: E501
+
+        self.document_parameters.validate()
+
 
         path = '/v4.0/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
         path_params = {}

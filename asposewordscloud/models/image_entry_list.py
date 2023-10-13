@@ -116,6 +116,9 @@ class ImageEntryList(object):
                 element.extract_files_content(filesContentResult)
 
 
+    def validate(self):
+        """Validate all required properties in model"""
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

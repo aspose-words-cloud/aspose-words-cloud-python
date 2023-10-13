@@ -59,9 +59,13 @@ class InsertStyleOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_style_online`")  # noqa: E501
+
         # verify the required parameter 'style_insert' is set
         if self.style_insert is None:
             raise ValueError("Missing the required parameter `style_insert` when calling `insert_style_online`")  # noqa: E501
+
+        self.style_insert.validate()
+
 
         path = '/v4.0/words/online/post/styles/insert'
         path_params = {}

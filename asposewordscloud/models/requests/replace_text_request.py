@@ -63,9 +63,13 @@ class ReplaceTextRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `replace_text`")  # noqa: E501
+
         # verify the required parameter 'replace_text' is set
         if self.replace_text is None:
             raise ValueError("Missing the required parameter `replace_text` when calling `replace_text`")  # noqa: E501
+
+        self.replace_text.validate()
+
 
         path = '/v4.0/words/{name}/replaceText'
         path_params = {}

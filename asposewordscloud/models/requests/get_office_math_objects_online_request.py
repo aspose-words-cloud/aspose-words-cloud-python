@@ -54,6 +54,7 @@ class GetOfficeMathObjectsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_office_math_objects_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/get/{nodePath}/OfficeMathObjects'
         path_params = {}
         if self.node_path is not None:

@@ -58,6 +58,7 @@ class UpdateFieldsRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_fields`")  # noqa: E501
 
+
         path = '/v4.0/words/{name}/updateFields'
         path_params = {}
         if self.name is not None:

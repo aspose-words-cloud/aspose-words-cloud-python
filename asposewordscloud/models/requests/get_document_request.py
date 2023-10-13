@@ -56,6 +56,7 @@ class GetDocumentRequest(BaseRequestObject):
         if self.document_name is None:
             raise ValueError("Missing the required parameter `document_name` when calling `get_document`")  # noqa: E501
 
+
         path = '/v4.0/words/{documentName}'
         path_params = {}
         if self.document_name is not None:

@@ -788,6 +788,9 @@ class StructuredDocumentTag(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

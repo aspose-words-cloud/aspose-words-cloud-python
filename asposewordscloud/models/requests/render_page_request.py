@@ -61,12 +61,15 @@ class RenderPageRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_page`")  # noqa: E501
+
         # verify the required parameter 'page_index' is set
         if self.page_index is None:
             raise ValueError("Missing the required parameter `page_index` when calling `render_page`")  # noqa: E501
+
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_page`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/pages/{pageIndex}/render'
         path_params = {}

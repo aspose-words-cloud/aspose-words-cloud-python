@@ -201,6 +201,12 @@ class HeaderFooter(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._type is None:
+            raise ValueError("Property Type in HeaderFooter is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

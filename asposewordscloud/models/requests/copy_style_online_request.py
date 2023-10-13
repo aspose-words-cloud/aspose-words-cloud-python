@@ -59,9 +59,13 @@ class CopyStyleOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `copy_style_online`")  # noqa: E501
+
         # verify the required parameter 'style_copy' is set
         if self.style_copy is None:
             raise ValueError("Missing the required parameter `style_copy` when calling `copy_style_online`")  # noqa: E501
+
+        self.style_copy.validate()
+
 
         path = '/v4.0/words/online/post/styles/copy'
         path_params = {}

@@ -63,12 +63,17 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_drawing_object_online`")  # noqa: E501
+
         # verify the required parameter 'drawing_object' is set
         if self.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `insert_drawing_object_online`")  # noqa: E501
+
+        self.drawing_object.validate()
+
         # verify the required parameter 'image_file' is set
         if self.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/post/{nodePath}/drawingObjects'
         path_params = {}

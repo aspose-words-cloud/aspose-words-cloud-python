@@ -63,9 +63,13 @@ class InsertParagraphOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_paragraph_online`")  # noqa: E501
+
         # verify the required parameter 'paragraph' is set
         if self.paragraph is None:
             raise ValueError("Missing the required parameter `paragraph` when calling `insert_paragraph_online`")  # noqa: E501
+
+        self.paragraph.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/paragraphs'
         path_params = {}

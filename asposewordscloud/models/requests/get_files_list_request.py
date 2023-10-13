@@ -48,6 +48,7 @@ class GetFilesListRequest(BaseRequestObject):
         if self.path is None:
             raise ValueError("Missing the required parameter `path` when calling `get_files_list`")  # noqa: E501
 
+
         path = '/v4.0/words/storage/folder/{path}'
         path_params = {}
         if self.path is not None:

@@ -53,9 +53,11 @@ class SearchOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `search_online`")  # noqa: E501
+
         # verify the required parameter 'pattern' is set
         if self.pattern is None:
             raise ValueError("Missing the required parameter `pattern` when calling `search_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/get/search'
         path_params = {}

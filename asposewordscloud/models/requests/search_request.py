@@ -57,9 +57,11 @@ class SearchRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `search`")  # noqa: E501
+
         # verify the required parameter 'pattern' is set
         if self.pattern is None:
             raise ValueError("Missing the required parameter `pattern` when calling `search`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/search'
         path_params = {}

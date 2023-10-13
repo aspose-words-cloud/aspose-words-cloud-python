@@ -65,12 +65,15 @@ class InsertHeaderFooterRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_header_footer`")  # noqa: E501
+
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer`")  # noqa: E501
+
         # verify the required parameter 'header_footer_type' is set
         if self.header_footer_type is None:
             raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
         path_params = {}

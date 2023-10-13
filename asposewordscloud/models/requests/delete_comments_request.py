@@ -62,6 +62,7 @@ class DeleteCommentsRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_comments`")  # noqa: E501
 
+
         path = '/v4.0/words/{name}/comments'
         path_params = {}
         if self.name is not None:

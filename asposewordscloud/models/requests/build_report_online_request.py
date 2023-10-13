@@ -51,12 +51,17 @@ class BuildReportOnlineRequest(BaseRequestObject):
         # verify the required parameter 'template' is set
         if self.template is None:
             raise ValueError("Missing the required parameter `template` when calling `build_report_online`")  # noqa: E501
+
         # verify the required parameter 'data' is set
         if self.data is None:
             raise ValueError("Missing the required parameter `data` when calling `build_report_online`")  # noqa: E501
+
         # verify the required parameter 'report_engine_settings' is set
         if self.report_engine_settings is None:
             raise ValueError("Missing the required parameter `report_engine_settings` when calling `build_report_online`")  # noqa: E501
+
+        self.report_engine_settings.validate()
+
 
         path = '/v4.0/words/buildReport'
         path_params = {}

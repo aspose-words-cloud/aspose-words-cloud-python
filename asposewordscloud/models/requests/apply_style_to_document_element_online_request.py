@@ -61,12 +61,17 @@ class ApplyStyleToDocumentElementOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `apply_style_to_document_element_online`")  # noqa: E501
+
         # verify the required parameter 'styled_node_path' is set
         if self.styled_node_path is None:
             raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_document_element_online`")  # noqa: E501
+
         # verify the required parameter 'style_apply' is set
         if self.style_apply is None:
             raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element_online`")  # noqa: E501
+
+        self.style_apply.validate()
+
 
         path = '/v4.0/words/online/put/{styledNodePath}/style'
         path_params = {}

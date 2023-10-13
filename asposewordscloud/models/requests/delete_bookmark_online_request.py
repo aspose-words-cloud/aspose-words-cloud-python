@@ -59,9 +59,11 @@ class DeleteBookmarkOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_bookmark_online`")  # noqa: E501
+
         # verify the required parameter 'bookmark_name' is set
         if self.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `delete_bookmark_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/delete/bookmarks/{bookmarkName}'
         path_params = {}

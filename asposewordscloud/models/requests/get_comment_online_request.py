@@ -53,9 +53,11 @@ class GetCommentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_comment_online`")  # noqa: E501
+
         # verify the required parameter 'comment_index' is set
         if self.comment_index is None:
             raise ValueError("Missing the required parameter `comment_index` when calling `get_comment_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/get/comments/{commentIndex}'
         path_params = {}

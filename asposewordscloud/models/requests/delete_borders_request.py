@@ -64,6 +64,7 @@ class DeleteBordersRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_borders`")  # noqa: E501
 
+
         path = '/v4.0/words/{name}/{nodePath}/borders'
         path_params = {}
         if self.name is not None:

@@ -65,9 +65,13 @@ class InsertTableRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table`")  # noqa: E501
+
         # verify the required parameter 'table' is set
         if self.table is None:
             raise ValueError("Missing the required parameter `table` when calling `insert_table`")  # noqa: E501
+
+        self.table.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/tables'
         path_params = {}

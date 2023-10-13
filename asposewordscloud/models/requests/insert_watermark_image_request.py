@@ -68,6 +68,7 @@ class InsertWatermarkImageRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_watermark_image`")  # noqa: E501
 
+
         path = '/v4.0/words/{name}/watermarks/images'
         path_params = {}
         if self.name is not None:

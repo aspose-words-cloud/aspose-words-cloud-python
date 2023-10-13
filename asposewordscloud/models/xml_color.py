@@ -154,6 +154,15 @@ class XmlColor(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._xml_alpha is None:
+            raise ValueError("Property XmlAlpha in XmlColor is required.")  # noqa: E501
+
+        if self._xml_alpha_specified is None:
+            raise ValueError("Property XmlAlphaSpecified in XmlColor is required.")  # noqa: E501
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

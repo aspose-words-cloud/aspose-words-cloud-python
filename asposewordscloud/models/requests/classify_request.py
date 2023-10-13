@@ -48,6 +48,7 @@ class ClassifyRequest(BaseRequestObject):
         if self.text is None:
             raise ValueError("Missing the required parameter `text` when calling `classify`")  # noqa: E501
 
+
         path = '/v4.0/words/classify'
         path_params = {}
 

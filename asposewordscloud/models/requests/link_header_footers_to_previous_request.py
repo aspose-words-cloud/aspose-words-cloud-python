@@ -65,9 +65,11 @@ class LinkHeaderFootersToPreviousRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `link_header_footers_to_previous`")  # noqa: E501
+
         # verify the required parameter 'section_index' is set
         if self.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `link_header_footers_to_previous`")  # noqa: E501
+
 
         path = '/v4.0/words/{name}/sections/{sectionIndex}/link'
         path_params = {}

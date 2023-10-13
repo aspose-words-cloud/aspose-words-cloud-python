@@ -55,9 +55,11 @@ class GetHeaderFootersOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_header_footers_online`")  # noqa: E501
+
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `get_header_footers_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/get/{sectionPath}/headersfooters'
         path_params = {}

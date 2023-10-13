@@ -63,15 +63,21 @@ class UpdateTableRowFormatOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_table_row_format_online`")  # noqa: E501
+
         # verify the required parameter 'table_path' is set
         if self.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format_online`")  # noqa: E501
+
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `update_table_row_format_online`")  # noqa: E501
+
+        self.format.validate()
+
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_row_format_online`")  # noqa: E501
+
 
         path = '/v4.0/words/online/put/{tablePath}/rows/{index}/rowformat'
         path_params = {}

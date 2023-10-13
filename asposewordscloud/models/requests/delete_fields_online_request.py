@@ -60,6 +60,7 @@ class DeleteFieldsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_fields_online`")  # noqa: E501
 
+
         path = '/v4.0/words/online/delete/{nodePath}/fields'
         path_params = {}
         if self.node_path is not None:
