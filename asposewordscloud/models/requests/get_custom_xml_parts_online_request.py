@@ -52,7 +52,6 @@ class GetCustomXmlPartsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_custom_xml_parts_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/get/customXmlParts'
         path_params = {}
 

@@ -115,6 +115,17 @@ class TableLinkCollection(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._table_link_list is not None:
+            for elementTableLinkList in this.TableLinkList:
+                if elementTableLinkList is not None:
+                    elementTableLinkList.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

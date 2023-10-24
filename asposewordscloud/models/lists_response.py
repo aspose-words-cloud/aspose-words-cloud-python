@@ -115,6 +115,10 @@ class ListsResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._lists is not None:
+            self._lists.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

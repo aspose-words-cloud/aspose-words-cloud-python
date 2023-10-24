@@ -90,7 +90,6 @@ class RunUpdate(object):
         if self._text is None:
             raise ValueError("Property Text in RunUpdate is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

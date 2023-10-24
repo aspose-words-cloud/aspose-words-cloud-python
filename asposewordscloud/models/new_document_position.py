@@ -117,7 +117,6 @@ class NewDocumentPosition(object):
         if self._node_id is None:
             raise ValueError("Property NodeId in NewDocumentPosition is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

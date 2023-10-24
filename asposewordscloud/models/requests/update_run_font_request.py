@@ -67,20 +67,17 @@ class UpdateRunFontRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_run_font`")  # noqa: E501
-
         # verify the required parameter 'paragraph_path' is set
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `update_run_font`")  # noqa: E501
-
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_run_font`")  # noqa: E501
-
         # verify the required parameter 'font_dto' is set
         if self.font_dto is None:
             raise ValueError("Missing the required parameter `font_dto` when calling `update_run_font`")  # noqa: E501
-
-        self.font_dto.validate()
+        if self.font_dto is not None:
+            self.font_dto.validate()
 
 
         path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'

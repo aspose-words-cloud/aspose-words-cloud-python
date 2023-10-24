@@ -55,11 +55,9 @@ class GetHeaderFooterOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_header_footer_online`")  # noqa: E501
-
         # verify the required parameter 'header_footer_index' is set
         if self.header_footer_index is None:
             raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/get/headersfooters/{headerFooterIndex}'
         path_params = {}

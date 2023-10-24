@@ -278,18 +278,32 @@ class ListInfo(object):
         """Validate all required properties in model"""
         if self._list_id is None:
             raise ValueError("Property ListId in ListInfo is required.")  # noqa: E501
-
         if self._is_multi_level is None:
             raise ValueError("Property IsMultiLevel in ListInfo is required.")  # noqa: E501
-
         if self._is_restart_at_each_section is None:
             raise ValueError("Property IsRestartAtEachSection in ListInfo is required.")  # noqa: E501
-
         if self._is_list_style_definition is None:
             raise ValueError("Property IsListStyleDefinition in ListInfo is required.")  # noqa: E501
-
         if self._is_list_style_reference is None:
             raise ValueError("Property IsListStyleReference in ListInfo is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+
+        if self._style is not None:
+            self._style.validate()
+
+
+
+        if self._list_levels is not None:
+            self._list_levels.validate()
 
 
     def to_dict(self):

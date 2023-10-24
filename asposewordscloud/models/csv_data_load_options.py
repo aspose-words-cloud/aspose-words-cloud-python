@@ -170,16 +170,12 @@ class CsvDataLoadOptions(object):
         """Validate all required properties in model"""
         if self._comment_char is None:
             raise ValueError("Property CommentChar in CsvDataLoadOptions is required.")  # noqa: E501
-
         if self._delimiter is None:
             raise ValueError("Property Delimiter in CsvDataLoadOptions is required.")  # noqa: E501
-
         if self._has_headers is None:
             raise ValueError("Property HasHeaders in CsvDataLoadOptions is required.")  # noqa: E501
-
         if self._quote_char is None:
             raise ValueError("Property QuoteChar in CsvDataLoadOptions is required.")  # noqa: E501
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

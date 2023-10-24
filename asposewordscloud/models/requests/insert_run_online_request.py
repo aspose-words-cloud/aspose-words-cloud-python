@@ -63,16 +63,14 @@ class InsertRunOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_run_online`")  # noqa: E501
-
         # verify the required parameter 'paragraph_path' is set
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `insert_run_online`")  # noqa: E501
-
         # verify the required parameter 'run' is set
         if self.run is None:
             raise ValueError("Missing the required parameter `run` when calling `insert_run_online`")  # noqa: E501
-
-        self.run.validate()
+        if self.run is not None:
+            self.run.validate()
 
 
         path = '/v4.0/words/online/post/{paragraphPath}/runs'

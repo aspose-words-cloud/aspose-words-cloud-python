@@ -61,16 +61,14 @@ class UpdateBookmarkOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_bookmark_online`")  # noqa: E501
-
         # verify the required parameter 'bookmark_name' is set
         if self.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `update_bookmark_online`")  # noqa: E501
-
         # verify the required parameter 'bookmark_data' is set
         if self.bookmark_data is None:
             raise ValueError("Missing the required parameter `bookmark_data` when calling `update_bookmark_online`")  # noqa: E501
-
-        self.bookmark_data.validate()
+        if self.bookmark_data is not None:
+            self.bookmark_data.validate()
 
 
         path = '/v4.0/words/online/put/bookmarks/{bookmarkName}'

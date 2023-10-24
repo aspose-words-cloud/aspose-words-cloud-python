@@ -115,6 +115,17 @@ class ListLevels(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._list_level is not None:
+            for elementListLevel in this.ListLevel:
+                if elementListLevel is not None:
+                    elementListLevel.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

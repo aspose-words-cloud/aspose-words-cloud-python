@@ -115,6 +115,10 @@ class BookmarksResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._bookmarks is not None:
+            self._bookmarks.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

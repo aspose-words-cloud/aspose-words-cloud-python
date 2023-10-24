@@ -224,12 +224,22 @@ class CommentInsert(object):
         """Validate all required properties in model"""
         if self._author is None:
             raise ValueError("Property Author in CommentInsert is required.")  # noqa: E501
-
         if self._initial is None:
             raise ValueError("Property Initial in CommentInsert is required.")  # noqa: E501
-
         if self._text is None:
             raise ValueError("Property Text in CommentInsert is required.")  # noqa: E501
+
+        if self._range_start is not None:
+            self._range_start.validate()
+
+
+
+        if self._range_end is not None:
+            self._range_end.validate()
+
+
+
+
 
 
     def to_dict(self):

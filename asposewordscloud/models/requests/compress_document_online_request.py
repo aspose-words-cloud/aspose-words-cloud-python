@@ -55,12 +55,11 @@ class CompressDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `compress_document_online`")  # noqa: E501
-
         # verify the required parameter 'compress_options' is set
         if self.compress_options is None:
             raise ValueError("Missing the required parameter `compress_options` when calling `compress_document_online`")  # noqa: E501
-
-        self.compress_options.validate()
+        if self.compress_options is not None:
+            self.compress_options.validate()
 
 
         path = '/v4.0/words/online/put/compress'

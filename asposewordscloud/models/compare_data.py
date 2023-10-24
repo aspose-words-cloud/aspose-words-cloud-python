@@ -197,9 +197,14 @@ class CompareData(object):
         """Validate all required properties in model"""
         if self._author is None:
             raise ValueError("Property Author in CompareData is required.")  # noqa: E501
-
         if self._comparing_with_document is None:
             raise ValueError("Property ComparingWithDocument in CompareData is required.")  # noqa: E501
+
+        if self._compare_options is not None:
+            self._compare_options.validate()
+
+
+
 
 
     def to_dict(self):

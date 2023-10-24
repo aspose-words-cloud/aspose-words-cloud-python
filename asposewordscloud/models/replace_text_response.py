@@ -144,6 +144,10 @@ class ReplaceTextResponse(object):
         if self._matches is None:
             raise ValueError("Property Matches in ReplaceTextResponse is required.")  # noqa: E501
 
+        if self._document_link is not None:
+            self._document_link.validate()
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

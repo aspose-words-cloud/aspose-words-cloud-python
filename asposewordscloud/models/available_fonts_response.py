@@ -169,6 +169,26 @@ class AvailableFontsResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._additional_fonts is not None:
+            for elementAdditionalFonts in this.AdditionalFonts:
+                if elementAdditionalFonts is not None:
+                    elementAdditionalFonts.validate()
+
+
+
+        if self._custom_fonts is not None:
+            for elementCustomFonts in this.CustomFonts:
+                if elementCustomFonts is not None:
+                    elementCustomFonts.validate()
+
+
+
+        if self._system_fonts is not None:
+            for elementSystemFonts in this.SystemFonts:
+                if elementSystemFonts is not None:
+                    elementSystemFonts.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

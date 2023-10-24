@@ -65,16 +65,14 @@ class CreateOrUpdateDocumentPropertyRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `create_or_update_document_property`")  # noqa: E501
-
         # verify the required parameter 'property_name' is set
         if self.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `create_or_update_document_property`")  # noqa: E501
-
         # verify the required parameter '_property' is set
         if self._property is None:
             raise ValueError("Missing the required parameter `_property` when calling `create_or_update_document_property`")  # noqa: E501
-
-        self._property.validate()
+        if self._property is not None:
+            self._property.validate()
 
 
         path = '/v4.0/words/{name}/documentProperties/{propertyName}'

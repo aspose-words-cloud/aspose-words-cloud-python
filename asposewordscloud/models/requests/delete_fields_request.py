@@ -64,7 +64,6 @@ class DeleteFieldsRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_fields`")  # noqa: E501
 
-
         path = '/v4.0/words/{name}/{nodePath}/fields'
         path_params = {}
         if self.name is not None:

@@ -52,7 +52,6 @@ class GetBookmarksOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_bookmarks_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/get/bookmarks'
         path_params = {}
 

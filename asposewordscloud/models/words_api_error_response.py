@@ -115,6 +115,10 @@ class WordsApiErrorResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._error is not None:
+            self._error.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

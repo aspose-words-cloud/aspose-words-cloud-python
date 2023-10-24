@@ -413,9 +413,23 @@ class FormFieldDropDown(object):
         """Validate all required properties in model"""
         if self._name is None:
             raise ValueError("Property Name in FormFieldDropDown is required.")  # noqa: E501
-
         if self._drop_down_items is None:
             raise ValueError("Property DropDownItems in FormFieldDropDown is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

@@ -115,6 +115,15 @@ class SearchResult(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._range_start is not None:
+            self._range_start.validate()
+
+
+
+        if self._range_end is not None:
+            self._range_end.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -98,7 +98,6 @@ class OptimizationOptions(object):
         if self._ms_word_version is None:
             raise ValueError("Property MsWordVersion in OptimizationOptions is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

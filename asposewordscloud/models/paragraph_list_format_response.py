@@ -115,6 +115,10 @@ class ParagraphListFormatResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._list_format is not None:
+            self._list_format.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

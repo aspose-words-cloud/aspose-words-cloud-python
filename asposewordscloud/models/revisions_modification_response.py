@@ -115,6 +115,10 @@ class RevisionsModificationResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._result is not None:
+            self._result.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -409,6 +409,35 @@ class DrawingObject(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._render_links is not None:
+            for elementRenderLinks in this.RenderLinks:
+                if elementRenderLinks is not None:
+                    elementRenderLinks.validate()
+
+
+
+
+
+        if self._ole_data_link is not None:
+            self._ole_data_link.validate()
+
+
+
+        if self._image_data_link is not None:
+            self._image_data_link.validate()
+
+
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

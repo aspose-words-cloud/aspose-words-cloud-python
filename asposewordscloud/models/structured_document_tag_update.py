@@ -791,6 +791,41 @@ class StructuredDocumentTagUpdate(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._list_items is not None:
+            for elementListItems in this.ListItems:
+                if elementListItems is not None:
+                    elementListItems.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -54,7 +54,6 @@ class UpdateFieldsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_fields_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/put/updateFields'
         path_params = {}
 

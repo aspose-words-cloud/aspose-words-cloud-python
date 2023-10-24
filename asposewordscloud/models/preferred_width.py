@@ -125,7 +125,6 @@ class PreferredWidth(object):
         if self._type is None:
             raise ValueError("Property Type in PreferredWidth is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -142,6 +142,12 @@ class Hyperlink(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

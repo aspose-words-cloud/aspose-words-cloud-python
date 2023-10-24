@@ -63,11 +63,9 @@ class SplitDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `split_document_online`")  # noqa: E501
-
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `split_document_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/put/split'
         path_params = {}

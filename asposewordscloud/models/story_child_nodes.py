@@ -88,6 +88,12 @@ class StoryChildNodes(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._child_nodes is not None:
+            for elementChildNodes in this.ChildNodes:
+                if elementChildNodes is not None:
+                    elementChildNodes.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

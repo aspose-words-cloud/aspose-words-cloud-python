@@ -44,33 +44,25 @@ class XmlColor(object):
     """
     swagger_types = {
         'alpha': 'int',
-        'web': 'str',
-        'xml_alpha': 'int',
-        'xml_alpha_specified': 'bool'
+        'web': 'str'
     }
 
     attribute_map = {
         'alpha': 'Alpha',
-        'web': 'Web',
-        'xml_alpha': 'XmlAlpha',
-        'xml_alpha_specified': 'XmlAlphaSpecified'
+        'web': 'Web'
     }
 
-    def __init__(self, alpha=None, web=None, xml_alpha=None):  # noqa: E501
+    def __init__(self, alpha=None, web=None):  # noqa: E501
         """XmlColor - a model defined in Swagger"""  # noqa: E501
 
         self._alpha = None
         self._web = None
-        self._xml_alpha = None
-        self._xml_alpha_specified = None
         self.discriminator = None
 
         if alpha is not None:
             self.alpha = alpha
         if web is not None:
             self.web = web
-        if xml_alpha is not None:
-            self.xml_alpha = xml_alpha
 
     @property
     def alpha(self):
@@ -116,52 +108,12 @@ class XmlColor(object):
         """
         self._web = web
 
-    @property
-    def xml_alpha(self):
-        """Gets the xml_alpha of this XmlColor.  # noqa: E501
-
-        Gets or sets the Alpha wrapper for serialization.  # noqa: E501
-
-        :return: The xml_alpha of this XmlColor.  # noqa: E501
-        :rtype: int
-        """
-        return self._xml_alpha
-
-    @xml_alpha.setter
-    def xml_alpha(self, xml_alpha):
-        """Sets the xml_alpha of this XmlColor.
-
-        Gets or sets the Alpha wrapper for serialization.  # noqa: E501
-
-        :param xml_alpha: The xml_alpha of this XmlColor.  # noqa: E501
-        :type: int
-        """
-        self._xml_alpha = xml_alpha
-
-    @property
-    def xml_alpha_specified(self):
-        """Gets the xml_alpha_specified of this XmlColor.  # noqa: E501
-
-        Gets a value indicating whether Alpha is specified.  # noqa: E501
-
-        :return: The xml_alpha_specified of this XmlColor.  # noqa: E501
-        :rtype: bool
-        """
-        return self._xml_alpha_specified
-
-
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
     def validate(self):
         """Validate all required properties in model"""
-        if self._xml_alpha is None:
-            raise ValueError("Property XmlAlpha in XmlColor is required.")  # noqa: E501
-
-        if self._xml_alpha_specified is None:
-            raise ValueError("Property XmlAlphaSpecified in XmlColor is required.")  # noqa: E501
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

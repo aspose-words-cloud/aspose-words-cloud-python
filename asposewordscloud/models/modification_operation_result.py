@@ -115,6 +115,15 @@ class ModificationOperationResult(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._dest is not None:
+            self._dest.validate()
+
+
+
+        if self._source is not None:
+            self._source.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

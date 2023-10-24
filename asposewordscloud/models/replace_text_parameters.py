@@ -197,16 +197,12 @@ class ReplaceTextParameters(object):
         """Validate all required properties in model"""
         if self._is_match_case is None:
             raise ValueError("Property IsMatchCase in ReplaceTextParameters is required.")  # noqa: E501
-
         if self._is_match_whole_word is None:
             raise ValueError("Property IsMatchWholeWord in ReplaceTextParameters is required.")  # noqa: E501
-
         if self._is_old_value_regex is None:
             raise ValueError("Property IsOldValueRegex in ReplaceTextParameters is required.")  # noqa: E501
-
         if self._old_value is None:
             raise ValueError("Property OldValue in ReplaceTextParameters is required.")  # noqa: E501
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -61,16 +61,14 @@ class UpdateCustomXmlPartOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_custom_xml_part_online`")  # noqa: E501
-
         # verify the required parameter 'custom_xml_part_index' is set
         if self.custom_xml_part_index is None:
             raise ValueError("Missing the required parameter `custom_xml_part_index` when calling `update_custom_xml_part_online`")  # noqa: E501
-
         # verify the required parameter 'custom_xml_part' is set
         if self.custom_xml_part is None:
             raise ValueError("Missing the required parameter `custom_xml_part` when calling `update_custom_xml_part_online`")  # noqa: E501
-
-        self.custom_xml_part.validate()
+        if self.custom_xml_part is not None:
+            self.custom_xml_part.validate()
 
 
         path = '/v4.0/words/online/put/customXmlParts/{customXmlPartIndex}'

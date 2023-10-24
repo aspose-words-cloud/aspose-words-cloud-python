@@ -53,11 +53,9 @@ class GetDocumentHyperlinkByIndexOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_document_hyperlink_by_index_online`")  # noqa: E501
-
         # verify the required parameter 'hyperlink_index' is set
         if self.hyperlink_index is None:
             raise ValueError("Missing the required parameter `hyperlink_index` when calling `get_document_hyperlink_by_index_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/get/hyperlinks/{hyperlinkIndex}'
         path_params = {}

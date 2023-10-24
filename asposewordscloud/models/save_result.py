@@ -142,6 +142,22 @@ class SaveResult(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._dest_document is not None:
+            self._dest_document.validate()
+
+
+
+        if self._source_document is not None:
+            self._source_document.validate()
+
+
+
+        if self._additional_items is not None:
+            for elementAdditionalItems in this.AdditionalItems:
+                if elementAdditionalItems is not None:
+                    elementAdditionalItems.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

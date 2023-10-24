@@ -115,6 +115,17 @@ class CustomXmlPartsCollection(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._custom_xml_parts_list is not None:
+            for elementCustomXmlPartsList in this.CustomXmlPartsList:
+                if elementCustomXmlPartsList is not None:
+                    elementCustomXmlPartsList.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

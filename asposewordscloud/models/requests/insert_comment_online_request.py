@@ -59,12 +59,11 @@ class InsertCommentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_comment_online`")  # noqa: E501
-
         # verify the required parameter 'comment' is set
         if self.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `insert_comment_online`")  # noqa: E501
-
-        self.comment.validate()
+        if self.comment is not None:
+            self.comment.validate()
 
 
         path = '/v4.0/words/online/post/comments'

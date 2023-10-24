@@ -67,16 +67,14 @@ class UpdateTablePropertiesRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
-
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
-
         # verify the required parameter 'properties' is set
         if self.properties is None:
             raise ValueError("Missing the required parameter `properties` when calling `update_table_properties`")  # noqa: E501
-
-        self.properties.validate()
+        if self.properties is not None:
+            self.properties.validate()
 
 
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'

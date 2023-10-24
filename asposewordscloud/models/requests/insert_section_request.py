@@ -63,11 +63,9 @@ class InsertSectionRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_section`")  # noqa: E501
-
         # verify the required parameter 'section_index' is set
         if self.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `insert_section`")  # noqa: E501
-
 
         path = '/v4.0/words/{name}/sections/{sectionIndex}'
         path_params = {}

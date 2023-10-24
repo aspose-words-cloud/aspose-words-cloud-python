@@ -53,11 +53,9 @@ class GetListOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_list_online`")  # noqa: E501
-
         # verify the required parameter 'list_id' is set
         if self.list_id is None:
             raise ValueError("Missing the required parameter `list_id` when calling `get_list_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/get/lists/{listId}'
         path_params = {}

@@ -156,11 +156,13 @@ class DocumentEntry(object):
         """Validate all required properties in model"""
         if self._file_reference is None:
             raise ValueError("Property FileReference in DocumentEntry is required.")  # noqa: E501
-
-        self._file_reference.validate()
-
         if self._import_format_mode is None:
             raise ValueError("Property ImportFormatMode in DocumentEntry is required.")  # noqa: E501
+
+        if self._file_reference is not None:
+            self._file_reference.validate()
+
+
 
 
     def to_dict(self):

@@ -57,11 +57,9 @@ class GetStyleFromDocumentElementRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_style_from_document_element`")  # noqa: E501
-
         # verify the required parameter 'styled_node_path' is set
         if self.styled_node_path is None:
             raise ValueError("Missing the required parameter `styled_node_path` when calling `get_style_from_document_element`")  # noqa: E501
-
 
         path = '/v4.0/words/{name}/{styledNodePath}/style'
         path_params = {}

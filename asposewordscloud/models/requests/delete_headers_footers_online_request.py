@@ -61,11 +61,9 @@ class DeleteHeadersFootersOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_headers_footers_online`")  # noqa: E501
-
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/delete/{sectionPath}/headersfooters'
         path_params = {}

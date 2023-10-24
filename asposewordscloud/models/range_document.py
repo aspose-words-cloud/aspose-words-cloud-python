@@ -90,7 +90,6 @@ class RangeDocument(object):
         if self._document_name is None:
             raise ValueError("Property DocumentName in RangeDocument is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

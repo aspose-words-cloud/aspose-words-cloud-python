@@ -88,6 +88,12 @@ class FilesList(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._value is not None:
+            for elementValue in this.Value:
+                if elementValue is not None:
+                    elementValue.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

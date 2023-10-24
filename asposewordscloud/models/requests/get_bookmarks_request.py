@@ -56,7 +56,6 @@ class GetBookmarksRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_bookmarks`")  # noqa: E501
 
-
         path = '/v4.0/words/{name}/bookmarks'
         path_params = {}
         if self.name is not None:

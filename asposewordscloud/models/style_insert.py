@@ -125,7 +125,6 @@ class StyleInsert(object):
         if self._style_type is None:
             raise ValueError("Property StyleType in StyleInsert is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

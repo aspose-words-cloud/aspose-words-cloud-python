@@ -115,6 +115,10 @@ class BorderResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._border is not None:
+            self._border.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

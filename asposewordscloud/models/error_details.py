@@ -117,7 +117,6 @@ class ErrorDetails(object):
         if self._error_date_time is None:
             raise ValueError("Property ErrorDateTime in ErrorDetails is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

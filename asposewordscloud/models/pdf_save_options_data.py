@@ -1432,6 +1432,74 @@ class PdfSaveOptionsData(object):
         if self._file_name is None:
             raise ValueError("Property FileName in PdfSaveOptionsData is required.")  # noqa: E501
 
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._metafile_rendering_options is not None:
+            self._metafile_rendering_options.validate()
+
+
+
+
+
+
+
+
+
+
+
+        if self._digital_signature_details is not None:
+            self._digital_signature_details.validate()
+
+
+
+
+        if self._downsample_options is not None:
+            self._downsample_options.validate()
+
+
+
+
+
+        if self._encryption_details is not None:
+            self._encryption_details.validate()
+
+
+
+
+
+
+
+
+
+
+
+        if self._outline_options is not None:
+            self._outline_options.validate()
+
+
+
+
+
+
+
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

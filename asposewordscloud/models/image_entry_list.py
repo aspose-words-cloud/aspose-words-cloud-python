@@ -119,6 +119,12 @@ class ImageEntryList(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._image_entries is not None:
+            for elementImageEntries in this.ImageEntries:
+                if elementImageEntries is not None:
+                    elementImageEntries.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -59,12 +59,11 @@ class ProtectDocumentRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `protect_document`")  # noqa: E501
-
         # verify the required parameter 'protection_request' is set
         if self.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `protect_document`")  # noqa: E501
-
-        self.protection_request.validate()
+        if self.protection_request is not None:
+            self.protection_request.validate()
 
 
         path = '/v4.0/words/{name}/protection'

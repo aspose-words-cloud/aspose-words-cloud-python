@@ -115,6 +115,10 @@ class DocumentPropertyResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._document_property is not None:
+            self._document_property.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

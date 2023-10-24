@@ -115,6 +115,10 @@ class TableRowFormatResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._row_format is not None:
+            self._row_format.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

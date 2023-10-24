@@ -196,6 +196,11 @@ class ApiError(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._inner_error is not None:
+            self._inner_error.validate()
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

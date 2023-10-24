@@ -115,6 +115,12 @@ class TabStopsResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._tab_stops is not None:
+            for elementTabStops in this.TabStops:
+                if elementTabStops is not None:
+                    elementTabStops.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

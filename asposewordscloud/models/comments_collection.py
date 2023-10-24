@@ -115,6 +115,17 @@ class CommentsCollection(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._comment_list is not None:
+            for elementCommentList in this.CommentList:
+                if elementCommentList is not None:
+                    elementCommentList.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

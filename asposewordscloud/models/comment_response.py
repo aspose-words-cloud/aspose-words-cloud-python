@@ -115,6 +115,10 @@ class CommentResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._comment is not None:
+            self._comment.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

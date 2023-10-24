@@ -58,7 +58,6 @@ class AcceptAllRevisionsRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `accept_all_revisions`")  # noqa: E501
 
-
         path = '/v4.0/words/{name}/revisions/acceptAll'
         path_params = {}
         if self.name is not None:

@@ -115,6 +115,10 @@ class StructuredDocumentTagResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._structured_document_tag is not None:
+            self._structured_document_tag.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -63,12 +63,11 @@ class InsertPageNumbersRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_page_numbers`")  # noqa: E501
-
         # verify the required parameter 'page_number' is set
         if self.page_number is None:
             raise ValueError("Missing the required parameter `page_number` when calling `insert_page_numbers`")  # noqa: E501
-
-        self.page_number.validate()
+        if self.page_number is not None:
+            self.page_number.validate()
 
 
         path = '/v4.0/words/{name}/PageNumbers'

@@ -171,6 +171,11 @@ class ClassificationResponse(object):
         if self._best_class_probability is None:
             raise ValueError("Property BestClassProbability in ClassificationResponse is required.")  # noqa: E501
 
+        if self._best_results is not None:
+            for elementBestResults in this.BestResults:
+                if elementBestResults is not None:
+                    elementBestResults.validate()
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

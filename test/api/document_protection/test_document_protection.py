@@ -57,7 +57,7 @@ class TestDocumentProtection(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_protection_request = asposewordscloud.ProtectionRequest(new_password='123')
+        request_protection_request = asposewordscloud.ProtectionRequest(password='123', protection_type='ReadOnly')
         request = asposewordscloud.models.requests.ProtectDocumentOnlineRequest(document=request_document, protection_request=request_protection_request)
 
         result = self.words_api.protect_document_online(request)

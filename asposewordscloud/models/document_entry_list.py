@@ -121,9 +121,10 @@ class DocumentEntryList(object):
         if self._document_entries is None:
             raise ValueError("Property DocumentEntries in DocumentEntryList is required.")  # noqa: E501
 
-        for elementDocumentEntries in this.DocumentEntries:
-            if elementDocumentEntries is not None:
-                elementDocumentEntries.validate()
+        if self._document_entries is not None:
+            for elementDocumentEntries in this.DocumentEntries:
+                if elementDocumentEntries is not None:
+                    elementDocumentEntries.validate()
 
 
     def to_dict(self):

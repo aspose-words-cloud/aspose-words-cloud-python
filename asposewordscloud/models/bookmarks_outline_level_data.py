@@ -117,7 +117,6 @@ class BookmarksOutlineLevelData(object):
         if self._bookmarks_outline_level is None:
             raise ValueError("Property BookmarksOutlineLevel in BookmarksOutlineLevelData is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

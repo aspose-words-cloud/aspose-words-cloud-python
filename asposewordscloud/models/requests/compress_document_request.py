@@ -59,12 +59,11 @@ class CompressDocumentRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `compress_document`")  # noqa: E501
-
         # verify the required parameter 'compress_options' is set
         if self.compress_options is None:
             raise ValueError("Missing the required parameter `compress_options` when calling `compress_document`")  # noqa: E501
-
-        self.compress_options.validate()
+        if self.compress_options is not None:
+            self.compress_options.validate()
 
 
         path = '/v4.0/words/{name}/compress'

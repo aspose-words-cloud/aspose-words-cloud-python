@@ -58,7 +58,6 @@ class RejectAllRevisionsRequest(BaseRequestObject):
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `reject_all_revisions`")  # noqa: E501
 
-
         path = '/v4.0/words/{name}/revisions/rejectAll'
         path_params = {}
         if self.name is not None:

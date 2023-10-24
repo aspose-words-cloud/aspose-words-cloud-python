@@ -115,6 +115,13 @@ class FilesUploadResult(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._errors is not None:
+            for elementErrors in this.Errors:
+                if elementErrors is not None:
+                    elementErrors.validate()
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

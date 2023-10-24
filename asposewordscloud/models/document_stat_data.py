@@ -197,12 +197,23 @@ class DocumentStatData(object):
         """Validate all required properties in model"""
         if self._page_count is None:
             raise ValueError("Property PageCount in DocumentStatData is required.")  # noqa: E501
-
         if self._paragraph_count is None:
             raise ValueError("Property ParagraphCount in DocumentStatData is required.")  # noqa: E501
-
         if self._word_count is None:
             raise ValueError("Property WordCount in DocumentStatData is required.")  # noqa: E501
+
+        if self._footnotes_stat_data is not None:
+            self._footnotes_stat_data.validate()
+
+
+
+
+
+
+        if self._page_stat_data is not None:
+            for elementPageStatData in this.PageStatData:
+                if elementPageStatData is not None:
+                    elementPageStatData.validate()
 
 
     def to_dict(self):

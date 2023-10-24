@@ -277,6 +277,29 @@ class Comment(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._range_start is not None:
+            self._range_start.validate()
+
+
+
+        if self._range_end is not None:
+            self._range_end.validate()
+
+
+
+
+
+
+
+        if self._content is not None:
+            self._content.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -52,7 +52,6 @@ class GetDocumentPropertiesOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_document_properties_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/get/documentProperties'
         path_params = {}
 

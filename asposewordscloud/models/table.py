@@ -169,6 +169,23 @@ class Table(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._table_row_list is not None:
+            for elementTableRowList in this.TableRowList:
+                if elementTableRowList is not None:
+                    elementTableRowList.validate()
+
+
+
+        if self._table_properties is not None:
+            self._table_properties.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

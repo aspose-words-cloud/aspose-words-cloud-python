@@ -115,6 +115,10 @@ class DrawingObjectResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._drawing_object is not None:
+            self._drawing_object.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

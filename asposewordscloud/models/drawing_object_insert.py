@@ -302,24 +302,28 @@ class DrawingObjectInsert(object):
         """Validate all required properties in model"""
         if self._relative_horizontal_position is None:
             raise ValueError("Property RelativeHorizontalPosition in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._left is None:
             raise ValueError("Property Left in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._relative_vertical_position is None:
             raise ValueError("Property RelativeVerticalPosition in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._top is None:
             raise ValueError("Property Top in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._width is None:
             raise ValueError("Property Width in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._height is None:
             raise ValueError("Property Height in DrawingObjectInsert is required.")  # noqa: E501
-
         if self._wrap_type is None:
             raise ValueError("Property WrapType in DrawingObjectInsert is required.")  # noqa: E501
+
+        if self._position is not None:
+            self._position.validate()
+
+
+
+
+
+
+
 
 
     def to_dict(self):

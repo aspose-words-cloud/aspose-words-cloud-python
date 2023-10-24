@@ -142,6 +142,10 @@ class SearchResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._search_results is not None:
+            self._search_results.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

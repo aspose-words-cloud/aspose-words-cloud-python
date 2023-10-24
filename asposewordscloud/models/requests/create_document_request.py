@@ -50,7 +50,6 @@ class CreateDocumentRequest(BaseRequestObject):
         if self.file_name is None:
             raise ValueError("Missing the required parameter `file_name` when calling `create_document`")  # noqa: E501
 
-
         path = '/v4.0/words/create'
         path_params = {}
 

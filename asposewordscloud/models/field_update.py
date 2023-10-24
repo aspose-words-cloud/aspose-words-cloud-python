@@ -117,7 +117,6 @@ class FieldUpdate(object):
         if self._field_code is None:
             raise ValueError("Property FieldCode in FieldUpdate is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -117,6 +117,10 @@ class LoadWebDocumentData(object):
         if self._loading_document_url is None:
             raise ValueError("Property LoadingDocumentUrl in LoadWebDocumentData is required.")  # noqa: E501
 
+        if self._save_options is not None:
+            self._save_options.validate()
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

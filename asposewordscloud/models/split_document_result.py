@@ -142,6 +142,22 @@ class SplitDocumentResult(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._source_document is not None:
+            self._source_document.validate()
+
+
+
+        if self._zipped_pages is not None:
+            self._zipped_pages.validate()
+
+
+
+        if self._pages is not None:
+            for elementPages in this.Pages:
+                if elementPages is not None:
+                    elementPages.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

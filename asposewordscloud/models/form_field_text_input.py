@@ -475,12 +475,27 @@ class FormFieldTextInput(object):
         """Validate all required properties in model"""
         if self._name is None:
             raise ValueError("Property Name in FormFieldTextInput is required.")  # noqa: E501
-
         if self._text_input_format is None:
             raise ValueError("Property TextInputFormat in FormFieldTextInput is required.")  # noqa: E501
-
         if self._text_input_default is None:
             raise ValueError("Property TextInputDefault in FormFieldTextInput is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

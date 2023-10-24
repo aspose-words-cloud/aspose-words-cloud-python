@@ -49,11 +49,9 @@ class UploadFileRequest(BaseRequestObject):
         # verify the required parameter 'file_content' is set
         if self.file_content is None:
             raise ValueError("Missing the required parameter `file_content` when calling `upload_file`")  # noqa: E501
-
         # verify the required parameter 'path' is set
         if self.path is None:
             raise ValueError("Missing the required parameter `path` when calling `upload_file`")  # noqa: E501
-
 
         path = '/v4.0/words/storage/file/{path}'
         path_params = {}

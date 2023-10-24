@@ -542,6 +542,24 @@ class DocSaveOptionsData(object):
         if self._file_name is None:
             raise ValueError("Property FileName in DocSaveOptionsData is required.")  # noqa: E501
 
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

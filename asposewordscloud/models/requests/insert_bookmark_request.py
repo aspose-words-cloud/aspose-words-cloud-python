@@ -63,12 +63,11 @@ class InsertBookmarkRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_bookmark`")  # noqa: E501
-
         # verify the required parameter 'bookmark' is set
         if self.bookmark is None:
             raise ValueError("Missing the required parameter `bookmark` when calling `insert_bookmark`")  # noqa: E501
-
-        self.bookmark.validate()
+        if self.bookmark is not None:
+            self.bookmark.validate()
 
 
         path = '/v4.0/words/{name}/bookmarks'

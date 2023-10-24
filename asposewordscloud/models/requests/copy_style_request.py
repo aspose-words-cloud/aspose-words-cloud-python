@@ -63,12 +63,11 @@ class CopyStyleRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `copy_style`")  # noqa: E501
-
         # verify the required parameter 'style_copy' is set
         if self.style_copy is None:
             raise ValueError("Missing the required parameter `style_copy` when calling `copy_style`")  # noqa: E501
-
-        self.style_copy.validate()
+        if self.style_copy is not None:
+            self.style_copy.validate()
 
 
         path = '/v4.0/words/{name}/styles/copy'

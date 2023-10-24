@@ -440,9 +440,24 @@ class FormFieldCheckbox(object):
         """Validate all required properties in model"""
         if self._name is None:
             raise ValueError("Property Name in FormFieldCheckbox is required.")  # noqa: E501
-
         if self._checked is None:
             raise ValueError("Property Checked in FormFieldCheckbox is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

@@ -115,6 +115,10 @@ class HeaderFooterResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._header_footer is not None:
+            self._header_footer.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

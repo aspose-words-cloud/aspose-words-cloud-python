@@ -115,6 +115,17 @@ class Bookmarks(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._bookmark_list is not None:
+            for elementBookmarkList in this.BookmarkList:
+                if elementBookmarkList is not None:
+                    elementBookmarkList.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

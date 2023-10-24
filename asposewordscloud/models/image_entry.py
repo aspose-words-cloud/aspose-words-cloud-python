@@ -93,7 +93,8 @@ class ImageEntry(object):
         if self._file_reference is None:
             raise ValueError("Property FileReference in ImageEntry is required.")  # noqa: E501
 
-        self._file_reference.validate()
+        if self._file_reference is not None:
+            self._file_reference.validate()
 
 
     def to_dict(self):

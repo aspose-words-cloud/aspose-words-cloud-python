@@ -59,11 +59,9 @@ class DeleteDocumentPropertyOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_document_property_online`")  # noqa: E501
-
         # verify the required parameter 'property_name' is set
         if self.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `delete_document_property_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/delete/documentProperties/{propertyName}'
         path_params = {}

@@ -666,6 +666,32 @@ class PsSaveOptionsData(object):
         if self._file_name is None:
             raise ValueError("Property FileName in PsSaveOptionsData is required.")  # noqa: E501
 
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._metafile_rendering_options is not None:
+            self._metafile_rendering_options.validate()
+
+
+
+
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

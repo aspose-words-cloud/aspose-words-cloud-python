@@ -115,6 +115,10 @@ class ParagraphLinkCollectionResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._paragraphs is not None:
+            self._paragraphs.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

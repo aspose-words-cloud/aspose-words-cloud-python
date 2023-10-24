@@ -67,16 +67,14 @@ class UpdateBorderRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_border`")  # noqa: E501
-
         # verify the required parameter 'border_type' is set
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `update_border`")  # noqa: E501
-
         # verify the required parameter 'border_properties' is set
         if self.border_properties is None:
             raise ValueError("Missing the required parameter `border_properties` when calling `update_border`")  # noqa: E501
-
-        self.border_properties.validate()
+        if self.border_properties is not None:
+            self.border_properties.validate()
 
 
         path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'

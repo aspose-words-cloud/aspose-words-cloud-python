@@ -177,6 +177,13 @@ class FootnoteUpdate(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._position is not None:
+            self._position.validate()
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

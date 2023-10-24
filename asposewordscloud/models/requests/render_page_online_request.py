@@ -57,15 +57,12 @@ class RenderPageOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `render_page_online`")  # noqa: E501
-
         # verify the required parameter 'page_index' is set
         if self.page_index is None:
             raise ValueError("Missing the required parameter `page_index` when calling `render_page_online`")  # noqa: E501
-
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_page_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/get/pages/{pageIndex}/render'
         path_params = {}

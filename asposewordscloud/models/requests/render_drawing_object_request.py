@@ -65,15 +65,12 @@ class RenderDrawingObjectRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_drawing_object`")  # noqa: E501
-
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_drawing_object`")  # noqa: E501
-
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
-
 
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/render'
         path_params = {}

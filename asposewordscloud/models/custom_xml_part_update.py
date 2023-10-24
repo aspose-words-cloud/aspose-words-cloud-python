@@ -144,6 +144,11 @@ class CustomXmlPartUpdate(object):
         if self._data is None:
             raise ValueError("Property Data in CustomXmlPartUpdate is required.")  # noqa: E501
 
+        if self._link is not None:
+            self._link.validate()
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

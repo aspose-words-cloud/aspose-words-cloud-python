@@ -197,10 +197,8 @@ class StorageFile(object):
         """Validate all required properties in model"""
         if self._is_folder is None:
             raise ValueError("Property IsFolder in StorageFile is required.")  # noqa: E501
-
         if self._size is None:
             raise ValueError("Property Size in StorageFile is required.")  # noqa: E501
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

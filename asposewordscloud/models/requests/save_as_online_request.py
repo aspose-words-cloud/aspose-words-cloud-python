@@ -55,12 +55,11 @@ class SaveAsOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `save_as_online`")  # noqa: E501
-
         # verify the required parameter 'save_options_data' is set
         if self.save_options_data is None:
             raise ValueError("Missing the required parameter `save_options_data` when calling `save_as_online`")  # noqa: E501
-
-        self.save_options_data.validate()
+        if self.save_options_data is not None:
+            self.save_options_data.validate()
 
 
         path = '/v4.0/words/online/put/saveAs'

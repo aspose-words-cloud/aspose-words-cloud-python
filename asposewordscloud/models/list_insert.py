@@ -98,7 +98,6 @@ class ListInsert(object):
         if self._template is None:
             raise ValueError("Property Template in ListInsert is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

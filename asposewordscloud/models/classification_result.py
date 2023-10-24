@@ -117,7 +117,6 @@ class ClassificationResult(object):
         if self._class_probability is None:
             raise ValueError("Property ClassProbability in ClassificationResult is required.")  # noqa: E501
 
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

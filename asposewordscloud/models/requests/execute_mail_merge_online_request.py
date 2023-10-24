@@ -55,10 +55,11 @@ class ExecuteMailMergeOnlineRequest(BaseRequestObject):
         # verify the required parameter 'template' is set
         if self.template is None:
             raise ValueError("Missing the required parameter `template` when calling `execute_mail_merge_online`")  # noqa: E501
-
         # verify the required parameter 'data' is set
         if self.data is None:
             raise ValueError("Missing the required parameter `data` when calling `execute_mail_merge_online`")  # noqa: E501
+        if self.options is not None:
+            self.options.validate()
 
 
         path = '/v4.0/words/MailMerge'

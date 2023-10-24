@@ -55,11 +55,9 @@ class GetRangeTextOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_range_text_online`")  # noqa: E501
-
         # verify the required parameter 'range_start_identifier' is set
         if self.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `get_range_text_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/get/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
         path_params = {}

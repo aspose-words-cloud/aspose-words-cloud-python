@@ -657,9 +657,30 @@ class TextSaveOptionsData(object):
         """Validate all required properties in model"""
         if self._file_name is None:
             raise ValueError("Property FileName in TextSaveOptionsData is required.")  # noqa: E501
-
         if self._max_characters_per_line is None:
             raise ValueError("Property MaxCharactersPerLine in TextSaveOptionsData is required.")  # noqa: E501
+
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

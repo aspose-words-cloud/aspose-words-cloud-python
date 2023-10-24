@@ -169,6 +169,14 @@ class InfoResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._additional_info is not None:
+            for elementAdditionalInfo in this.AdditionalInfo:
+                if elementAdditionalInfo is not None:
+                    elementAdditionalInfo.validate()
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

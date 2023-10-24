@@ -61,16 +61,14 @@ class UpdateSectionPageSetupOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_section_page_setup_online`")  # noqa: E501
-
         # verify the required parameter 'section_index' is set
         if self.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `update_section_page_setup_online`")  # noqa: E501
-
         # verify the required parameter 'page_setup' is set
         if self.page_setup is None:
             raise ValueError("Missing the required parameter `page_setup` when calling `update_section_page_setup_online`")  # noqa: E501
-
-        self.page_setup.validate()
+        if self.page_setup is not None:
+            self.page_setup.validate()
 
 
         path = '/v4.0/words/online/put/sections/{sectionIndex}/pageSetup'

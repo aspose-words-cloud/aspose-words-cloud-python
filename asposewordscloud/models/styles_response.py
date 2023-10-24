@@ -115,6 +115,12 @@ class StylesResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._styles is not None:
+            for elementStyles in this.Styles:
+                if elementStyles is not None:
+                    elementStyles.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

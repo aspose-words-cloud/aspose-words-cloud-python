@@ -67,16 +67,14 @@ class InsertRunRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_run`")  # noqa: E501
-
         # verify the required parameter 'paragraph_path' is set
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `insert_run`")  # noqa: E501
-
         # verify the required parameter 'run' is set
         if self.run is None:
             raise ValueError("Missing the required parameter `run` when calling `insert_run`")  # noqa: E501
-
-        self.run.validate()
+        if self.run is not None:
+            self.run.validate()
 
 
         path = '/v4.0/words/{name}/{paragraphPath}/runs'

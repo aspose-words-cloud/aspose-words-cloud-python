@@ -59,16 +59,14 @@ class ReplaceWithTextOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `replace_with_text_online`")  # noqa: E501
-
         # verify the required parameter 'range_start_identifier' is set
         if self.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `replace_with_text_online`")  # noqa: E501
-
         # verify the required parameter 'range_text' is set
         if self.range_text is None:
             raise ValueError("Missing the required parameter `range_text` when calling `replace_with_text_online`")  # noqa: E501
-
-        self.range_text.validate()
+        if self.range_text is not None:
+            self.range_text.validate()
 
 
         path = '/v4.0/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}'

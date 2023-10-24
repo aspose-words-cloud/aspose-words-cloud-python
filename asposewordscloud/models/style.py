@@ -402,18 +402,32 @@ class Style(object):
         """Validate all required properties in model"""
         if self._built_in is None:
             raise ValueError("Property BuiltIn in Style is required.")  # noqa: E501
-
         if self._is_quick_style is None:
             raise ValueError("Property IsQuickStyle in Style is required.")  # noqa: E501
-
         if self._type is None:
             raise ValueError("Property Type in Style is required.")  # noqa: E501
-
         if self._is_heading is None:
             raise ValueError("Property IsHeading in Style is required.")  # noqa: E501
-
         if self._style_identifier is None:
             raise ValueError("Property StyleIdentifier in Style is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._font is not None:
+            self._font.validate()
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

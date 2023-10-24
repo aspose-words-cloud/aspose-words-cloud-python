@@ -67,20 +67,17 @@ class UpdateRunRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_run`")  # noqa: E501
-
         # verify the required parameter 'paragraph_path' is set
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `update_run`")  # noqa: E501
-
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_run`")  # noqa: E501
-
         # verify the required parameter 'run' is set
         if self.run is None:
             raise ValueError("Missing the required parameter `run` when calling `update_run`")  # noqa: E501
-
-        self.run.validate()
+        if self.run is not None:
+            self.run.validate()
 
 
         path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'

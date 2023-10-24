@@ -64,7 +64,6 @@ class InsertWatermarkImageOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_watermark_image_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/post/watermarks/images'
         path_params = {}
 

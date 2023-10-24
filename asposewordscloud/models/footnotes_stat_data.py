@@ -116,10 +116,8 @@ class FootnotesStatData(object):
         """Validate all required properties in model"""
         if self._paragraph_count is None:
             raise ValueError("Property ParagraphCount in FootnotesStatData is required.")  # noqa: E501
-
         if self._word_count is None:
             raise ValueError("Property WordCount in FootnotesStatData is required.")  # noqa: E501
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

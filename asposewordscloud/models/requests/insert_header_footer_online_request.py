@@ -61,15 +61,12 @@ class InsertHeaderFooterOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_header_footer_online`")  # noqa: E501
-
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer_online`")  # noqa: E501
-
         # verify the required parameter 'header_footer_type' is set
         if self.header_footer_type is None:
             raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer_online`")  # noqa: E501
-
 
         path = '/v4.0/words/online/put/{sectionPath}/headersfooters'
         path_params = {}

@@ -63,16 +63,14 @@ class UpdateFieldOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_field_online`")  # noqa: E501
-
         # verify the required parameter 'field' is set
         if self.field is None:
             raise ValueError("Missing the required parameter `field` when calling `update_field_online`")  # noqa: E501
-
-        self.field.validate()
-
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_field_online`")  # noqa: E501
+        if self.field is not None:
+            self.field.validate()
 
 
         path = '/v4.0/words/online/put/{nodePath}/fields/{index}'

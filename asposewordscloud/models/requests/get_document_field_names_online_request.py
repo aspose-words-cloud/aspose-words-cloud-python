@@ -54,7 +54,6 @@ class GetDocumentFieldNamesOnlineRequest(BaseRequestObject):
         if self.template is None:
             raise ValueError("Missing the required parameter `template` when calling `get_document_field_names_online`")  # noqa: E501
 
-
         path = '/v4.0/words/online/get/mailMerge/FieldNames'
         path_params = {}
 

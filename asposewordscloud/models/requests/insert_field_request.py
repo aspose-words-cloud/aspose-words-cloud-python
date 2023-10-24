@@ -67,12 +67,11 @@ class InsertFieldRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_field`")  # noqa: E501
-
         # verify the required parameter 'field' is set
         if self.field is None:
             raise ValueError("Missing the required parameter `field` when calling `insert_field`")  # noqa: E501
-
-        self.field.validate()
+        if self.field is not None:
+            self.field.validate()
 
 
         path = '/v4.0/words/{name}/{nodePath}/fields'

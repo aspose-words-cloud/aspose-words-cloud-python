@@ -55,12 +55,11 @@ class UnprotectDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `unprotect_document_online`")  # noqa: E501
-
         # verify the required parameter 'protection_request' is set
         if self.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `unprotect_document_online`")  # noqa: E501
-
-        self.protection_request.validate()
+        if self.protection_request is not None:
+            self.protection_request.validate()
 
 
         path = '/v4.0/words/online/delete/protection'

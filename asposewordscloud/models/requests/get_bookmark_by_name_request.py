@@ -57,11 +57,9 @@ class GetBookmarkByNameRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_bookmark_by_name`")  # noqa: E501
-
         # verify the required parameter 'bookmark_name' is set
         if self.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `get_bookmark_by_name`")  # noqa: E501
-
 
         path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
         path_params = {}

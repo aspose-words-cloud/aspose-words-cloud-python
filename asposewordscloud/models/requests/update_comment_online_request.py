@@ -61,16 +61,14 @@ class UpdateCommentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `update_comment_online`")  # noqa: E501
-
         # verify the required parameter 'comment_index' is set
         if self.comment_index is None:
             raise ValueError("Missing the required parameter `comment_index` when calling `update_comment_online`")  # noqa: E501
-
         # verify the required parameter 'comment' is set
         if self.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `update_comment_online`")  # noqa: E501
-
-        self.comment.validate()
+        if self.comment is not None:
+            self.comment.validate()
 
 
         path = '/v4.0/words/online/put/comments/{commentIndex}'

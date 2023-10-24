@@ -115,6 +115,10 @@ class TablePropertiesResponse(object):
     def validate(self):
         """Validate all required properties in model"""
 
+        if self._properties is not None:
+            self._properties.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

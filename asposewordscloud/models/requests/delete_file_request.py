@@ -50,7 +50,6 @@ class DeleteFileRequest(BaseRequestObject):
         if self.path is None:
             raise ValueError("Missing the required parameter `path` when calling `delete_file`")  # noqa: E501
 
-
         path = '/v4.0/words/storage/file/{path}'
         path_params = {}
         if self.path is not None:

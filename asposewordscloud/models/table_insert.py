@@ -143,9 +143,12 @@ class TableInsert(object):
         """Validate all required properties in model"""
         if self._columns_count is None:
             raise ValueError("Property ColumnsCount in TableInsert is required.")  # noqa: E501
-
         if self._rows_count is None:
             raise ValueError("Property RowsCount in TableInsert is required.")  # noqa: E501
+
+        if self._position is not None:
+            self._position.validate()
+
 
 
     def to_dict(self):
