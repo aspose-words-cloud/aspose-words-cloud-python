@@ -176,7 +176,7 @@ class Table(object):
 
 
         if self._table_row_list is not None:
-            for elementTableRowList in this.TableRowList:
+            for elementTableRowList in self._table_row_list:
                 if elementTableRowList is not None:
                     elementTableRowList.validate()
 

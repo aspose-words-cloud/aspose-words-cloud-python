@@ -121,7 +121,7 @@ class Lists(object):
 
 
         if self._list_info is not None:
-            for elementListInfo in this.ListInfo:
+            for elementListInfo in self._list_info:
                 if elementListInfo is not None:
                     elementListInfo.validate()
 

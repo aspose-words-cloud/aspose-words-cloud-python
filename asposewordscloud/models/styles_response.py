@@ -116,7 +116,7 @@ class StylesResponse(object):
         """Validate all required properties in model"""
 
         if self._styles is not None:
-            for elementStyles in this.Styles:
+            for elementStyles in self._styles:
                 if elementStyles is not None:
                     elementStyles.validate()
 

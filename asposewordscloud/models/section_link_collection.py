@@ -121,7 +121,7 @@ class SectionLinkCollection(object):
 
 
         if self._section_link_list is not None:
-            for elementSectionLinkList in this.SectionLinkList:
+            for elementSectionLinkList in self._section_link_list:
                 if elementSectionLinkList is not None:
                     elementSectionLinkList.validate()
 

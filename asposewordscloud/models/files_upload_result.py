@@ -116,7 +116,7 @@ class FilesUploadResult(object):
         """Validate all required properties in model"""
 
         if self._errors is not None:
-            for elementErrors in this.Errors:
+            for elementErrors in self._errors:
                 if elementErrors is not None:
                     elementErrors.validate()
 

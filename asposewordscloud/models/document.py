@@ -238,7 +238,7 @@ class Document(object):
             raise ValueError("Property SourceFormat in Document is required.")  # noqa: E501
 
         if self._links is not None:
-            for elementLinks in this.Links:
+            for elementLinks in self._links:
                 if elementLinks is not None:
                     elementLinks.validate()
 

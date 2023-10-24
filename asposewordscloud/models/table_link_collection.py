@@ -121,7 +121,7 @@ class TableLinkCollection(object):
 
 
         if self._table_link_list is not None:
-            for elementTableLinkList in this.TableLinkList:
+            for elementTableLinkList in self._table_link_list:
                 if elementTableLinkList is not None:
                     elementTableLinkList.validate()
 

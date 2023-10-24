@@ -170,21 +170,21 @@ class AvailableFontsResponse(object):
         """Validate all required properties in model"""
 
         if self._additional_fonts is not None:
-            for elementAdditionalFonts in this.AdditionalFonts:
+            for elementAdditionalFonts in self._additional_fonts:
                 if elementAdditionalFonts is not None:
                     elementAdditionalFonts.validate()
 
 
 
         if self._custom_fonts is not None:
-            for elementCustomFonts in this.CustomFonts:
+            for elementCustomFonts in self._custom_fonts:
                 if elementCustomFonts is not None:
                     elementCustomFonts.validate()
 
 
 
         if self._system_fonts is not None:
-            for elementSystemFonts in this.SystemFonts:
+            for elementSystemFonts in self._system_fonts:
                 if elementSystemFonts is not None:
                     elementSystemFonts.validate()
 

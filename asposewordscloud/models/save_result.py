@@ -153,7 +153,7 @@ class SaveResult(object):
 
 
         if self._additional_items is not None:
-            for elementAdditionalItems in this.AdditionalItems:
+            for elementAdditionalItems in self._additional_items:
                 if elementAdditionalItems is not None:
                     elementAdditionalItems.validate()
 

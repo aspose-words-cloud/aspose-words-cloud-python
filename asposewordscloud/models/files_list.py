@@ -89,7 +89,7 @@ class FilesList(object):
         """Validate all required properties in model"""
 
         if self._value is not None:
-            for elementValue in this.Value:
+            for elementValue in self._value:
                 if elementValue is not None:
                     elementValue.validate()
 

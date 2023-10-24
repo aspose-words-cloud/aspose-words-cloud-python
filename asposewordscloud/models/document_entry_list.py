@@ -122,7 +122,7 @@ class DocumentEntryList(object):
             raise ValueError("Property DocumentEntries in DocumentEntryList is required.")  # noqa: E501
 
         if self._document_entries is not None:
-            for elementDocumentEntries in this.DocumentEntries:
+            for elementDocumentEntries in self._document_entries:
                 if elementDocumentEntries is not None:
                     elementDocumentEntries.validate()
 

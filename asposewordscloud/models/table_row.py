@@ -176,7 +176,7 @@ class TableRow(object):
 
 
         if self._table_cell_list is not None:
-            for elementTableCellList in this.TableCellList:
+            for elementTableCellList in self._table_cell_list:
                 if elementTableCellList is not None:
                     elementTableCellList.validate()
 

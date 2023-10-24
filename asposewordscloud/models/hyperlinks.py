@@ -121,7 +121,7 @@ class Hyperlinks(object):
 
 
         if self._hyperlink_list is not None:
-            for elementHyperlinkList in this.HyperlinkList:
+            for elementHyperlinkList in self._hyperlink_list:
                 if elementHyperlinkList is not None:
                     elementHyperlinkList.validate()
 

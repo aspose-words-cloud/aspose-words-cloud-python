@@ -416,7 +416,7 @@ class DrawingObject(object):
 
 
         if self._render_links is not None:
-            for elementRenderLinks in this.RenderLinks:
+            for elementRenderLinks in self._render_links:
                 if elementRenderLinks is not None:
                     elementRenderLinks.validate()
 

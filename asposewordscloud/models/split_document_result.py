@@ -153,7 +153,7 @@ class SplitDocumentResult(object):
 
 
         if self._pages is not None:
-            for elementPages in this.Pages:
+            for elementPages in self._pages:
                 if elementPages is not None:
                     elementPages.validate()
 

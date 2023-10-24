@@ -116,7 +116,7 @@ class TabStopsResponse(object):
         """Validate all required properties in model"""
 
         if self._tab_stops is not None:
-            for elementTabStops in this.TabStops:
+            for elementTabStops in self._tab_stops:
                 if elementTabStops is not None:
                     elementTabStops.validate()
 

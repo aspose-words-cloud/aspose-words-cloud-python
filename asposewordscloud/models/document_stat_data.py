@@ -211,7 +211,7 @@ class DocumentStatData(object):
 
 
         if self._page_stat_data is not None:
-            for elementPageStatData in this.PageStatData:
+            for elementPageStatData in self._page_stat_data:
                 if elementPageStatData is not None:
                     elementPageStatData.validate()
 

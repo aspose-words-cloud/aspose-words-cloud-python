@@ -121,7 +121,7 @@ class CommentsCollection(object):
 
 
         if self._comment_list is not None:
-            for elementCommentList in this.CommentList:
+            for elementCommentList in self._comment_list:
                 if elementCommentList is not None:
                     elementCommentList.validate()
 

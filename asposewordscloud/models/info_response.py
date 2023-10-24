@@ -170,7 +170,7 @@ class InfoResponse(object):
         """Validate all required properties in model"""
 
         if self._additional_info is not None:
-            for elementAdditionalInfo in this.AdditionalInfo:
+            for elementAdditionalInfo in self._additional_info:
                 if elementAdditionalInfo is not None:
                     elementAdditionalInfo.validate()
 

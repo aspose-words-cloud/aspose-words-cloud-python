@@ -172,7 +172,7 @@ class ClassificationResponse(object):
             raise ValueError("Property BestClassProbability in ClassificationResponse is required.")  # noqa: E501
 
         if self._best_results is not None:
-            for elementBestResults in this.BestResults:
+            for elementBestResults in self._best_results:
                 if elementBestResults is not None:
                     elementBestResults.validate()
 

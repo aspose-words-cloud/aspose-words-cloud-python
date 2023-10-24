@@ -121,7 +121,7 @@ class ParagraphLinkCollection(object):
 
 
         if self._paragraph_link_list is not None:
-            for elementParagraphLinkList in this.ParagraphLinkList:
+            for elementParagraphLinkList in self._paragraph_link_list:
                 if elementParagraphLinkList is not None:
                     elementParagraphLinkList.validate()
 

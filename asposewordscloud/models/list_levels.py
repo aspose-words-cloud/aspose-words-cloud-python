@@ -121,7 +121,7 @@ class ListLevels(object):
 
 
         if self._list_level is not None:
-            for elementListLevel in this.ListLevel:
+            for elementListLevel in self._list_level:
                 if elementListLevel is not None:
                     elementListLevel.validate()
 

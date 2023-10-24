@@ -798,7 +798,7 @@ class StructuredDocumentTagUpdate(object):
 
 
         if self._list_items is not None:
-            for elementListItems in this.ListItems:
+            for elementListItems in self._list_items:
                 if elementListItems is not None:
                     elementListItems.validate()
 

@@ -121,7 +121,7 @@ class SearchResultsCollection(object):
 
 
         if self._results_list is not None:
-            for elementResultsList in this.ResultsList:
+            for elementResultsList in self._results_list:
                 if elementResultsList is not None:
                     elementResultsList.validate()
 

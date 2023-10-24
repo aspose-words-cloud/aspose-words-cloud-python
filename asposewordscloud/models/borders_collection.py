@@ -121,7 +121,7 @@ class BordersCollection(object):
 
 
         if self._list is not None:
-            for elementList in this.List:
+            for elementList in self._list:
                 if elementList is not None:
                     elementList.validate()
 

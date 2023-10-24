@@ -213,7 +213,7 @@ class HeaderFooter(object):
 
 
         if self._child_nodes is not None:
-            for elementChildNodes in this.ChildNodes:
+            for elementChildNodes in self._child_nodes:
                 if elementChildNodes is not None:
                     elementChildNodes.validate()
 

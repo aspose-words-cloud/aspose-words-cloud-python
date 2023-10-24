@@ -120,7 +120,7 @@ class ImageEntryList(object):
         """Validate all required properties in model"""
 
         if self._image_entries is not None:
-            for elementImageEntries in this.ImageEntries:
+            for elementImageEntries in self._image_entries:
                 if elementImageEntries is not None:
                     elementImageEntries.validate()
 

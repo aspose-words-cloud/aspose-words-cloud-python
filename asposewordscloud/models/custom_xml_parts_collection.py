@@ -121,7 +121,7 @@ class CustomXmlPartsCollection(object):
 
 
         if self._custom_xml_parts_list is not None:
-            for elementCustomXmlPartsList in this.CustomXmlPartsList:
+            for elementCustomXmlPartsList in self._custom_xml_parts_list:
                 if elementCustomXmlPartsList is not None:
                     elementCustomXmlPartsList.validate()
 

@@ -121,7 +121,7 @@ class Bookmarks(object):
 
 
         if self._bookmark_list is not None:
-            for elementBookmarkList in this.BookmarkList:
+            for elementBookmarkList in self._bookmark_list:
                 if elementBookmarkList is not None:
                     elementBookmarkList.validate()
 

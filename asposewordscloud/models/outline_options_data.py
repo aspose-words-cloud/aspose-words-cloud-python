@@ -224,7 +224,7 @@ class OutlineOptionsData(object):
         """Validate all required properties in model"""
 
         if self._bookmarks_outline_levels is not None:
-            for elementBookmarksOutlineLevels in this.BookmarksOutlineLevels:
+            for elementBookmarksOutlineLevels in self._bookmarks_outline_levels:
                 if elementBookmarksOutlineLevels is not None:
                     elementBookmarksOutlineLevels.validate()
 
