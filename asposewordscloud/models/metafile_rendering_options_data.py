@@ -46,6 +46,7 @@ class MetafileRenderingOptionsData(object):
         'emf_plus_dual_rendering_mode': 'str',
         'emulate_raster_operations': 'bool',
         'emulate_rendering_to_size_on_page': 'bool',
+        'emulate_rendering_to_size_on_page_resolution': 'int',
         'rendering_mode': 'str',
         'use_emf_embedded_to_wmf': 'bool'
     }
@@ -54,16 +55,18 @@ class MetafileRenderingOptionsData(object):
         'emf_plus_dual_rendering_mode': 'EmfPlusDualRenderingMode',
         'emulate_raster_operations': 'EmulateRasterOperations',
         'emulate_rendering_to_size_on_page': 'EmulateRenderingToSizeOnPage',
+        'emulate_rendering_to_size_on_page_resolution': 'EmulateRenderingToSizeOnPageResolution',
         'rendering_mode': 'RenderingMode',
         'use_emf_embedded_to_wmf': 'UseEmfEmbeddedToWmf'
     }
 
-    def __init__(self, emf_plus_dual_rendering_mode=None, emulate_raster_operations=None, emulate_rendering_to_size_on_page=None, rendering_mode=None, use_emf_embedded_to_wmf=None):  # noqa: E501
+    def __init__(self, emf_plus_dual_rendering_mode=None, emulate_raster_operations=None, emulate_rendering_to_size_on_page=None, emulate_rendering_to_size_on_page_resolution=None, rendering_mode=None, use_emf_embedded_to_wmf=None):  # noqa: E501
         """MetafileRenderingOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._emf_plus_dual_rendering_mode = None
         self._emulate_raster_operations = None
         self._emulate_rendering_to_size_on_page = None
+        self._emulate_rendering_to_size_on_page_resolution = None
         self._rendering_mode = None
         self._use_emf_embedded_to_wmf = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class MetafileRenderingOptionsData(object):
             self.emulate_raster_operations = emulate_raster_operations
         if emulate_rendering_to_size_on_page is not None:
             self.emulate_rendering_to_size_on_page = emulate_rendering_to_size_on_page
+        if emulate_rendering_to_size_on_page_resolution is not None:
+            self.emulate_rendering_to_size_on_page_resolution = emulate_rendering_to_size_on_page_resolution
         if rendering_mode is not None:
             self.rendering_mode = rendering_mode
         if use_emf_embedded_to_wmf is not None:
@@ -152,6 +157,28 @@ class MetafileRenderingOptionsData(object):
         :type: bool
         """
         self._emulate_rendering_to_size_on_page = emulate_rendering_to_size_on_page
+
+    @property
+    def emulate_rendering_to_size_on_page_resolution(self):
+        """Gets the emulate_rendering_to_size_on_page_resolution of this MetafileRenderingOptionsData.  # noqa: E501
+
+        Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page. This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of the metafile in MS Word with a 100% zoom factor.  # noqa: E501
+
+        :return: The emulate_rendering_to_size_on_page_resolution of this MetafileRenderingOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._emulate_rendering_to_size_on_page_resolution
+
+    @emulate_rendering_to_size_on_page_resolution.setter
+    def emulate_rendering_to_size_on_page_resolution(self, emulate_rendering_to_size_on_page_resolution):
+        """Sets the emulate_rendering_to_size_on_page_resolution of this MetafileRenderingOptionsData.
+
+        Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page. This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of the metafile in MS Word with a 100% zoom factor.  # noqa: E501
+
+        :param emulate_rendering_to_size_on_page_resolution: The emulate_rendering_to_size_on_page_resolution of this MetafileRenderingOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._emulate_rendering_to_size_on_page_resolution = emulate_rendering_to_size_on_page_resolution
 
     @property
     def rendering_mode(self):
