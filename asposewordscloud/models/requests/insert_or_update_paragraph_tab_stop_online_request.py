@@ -65,6 +65,9 @@ class InsertOrUpdateParagraphTabStopOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `insert_or_update_paragraph_tab_stop_online`")  # noqa: E501
+        if self.tab_stop_insert_dto is not None:
+            self.tab_stop_insert_dto.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}

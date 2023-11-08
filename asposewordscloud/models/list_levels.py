@@ -112,6 +112,20 @@ class ListLevels(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._list_level is not None:
+            for elementListLevel in self._list_level:
+                if elementListLevel is not None:
+                    elementListLevel.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

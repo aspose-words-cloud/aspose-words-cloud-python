@@ -201,6 +201,33 @@ class HeaderFooter(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._type is None:
+            raise ValueError("Property Type in HeaderFooter is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._child_nodes is not None:
+            for elementChildNodes in self._child_nodes:
+                if elementChildNodes is not None:
+                    elementChildNodes.validate()
+
+
+
+        if self._paragraphs is not None:
+            self._paragraphs.validate()
+
+
+
+        if self._drawing_objects is not None:
+            self._drawing_objects.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -166,6 +166,29 @@ class AvailableFontsResponse(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._additional_fonts is not None:
+            for elementAdditionalFonts in self._additional_fonts:
+                if elementAdditionalFonts is not None:
+                    elementAdditionalFonts.validate()
+
+
+
+        if self._custom_fonts is not None:
+            for elementCustomFonts in self._custom_fonts:
+                if elementCustomFonts is not None:
+                    elementCustomFonts.validate()
+
+
+
+        if self._system_fonts is not None:
+            for elementSystemFonts in self._system_fonts:
+                if elementSystemFonts is not None:
+                    elementSystemFonts.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

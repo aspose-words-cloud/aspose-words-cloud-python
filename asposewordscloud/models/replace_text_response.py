@@ -139,6 +139,16 @@ class ReplaceTextResponse(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._matches is None:
+            raise ValueError("Property Matches in ReplaceTextResponse is required.")  # noqa: E501
+
+        if self._document_link is not None:
+            self._document_link.validate()
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

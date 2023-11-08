@@ -166,6 +166,26 @@ class TableRow(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._table_cell_list is not None:
+            for elementTableCellList in self._table_cell_list:
+                if elementTableCellList is not None:
+                    elementTableCellList.validate()
+
+
+
+        if self._row_format is not None:
+            self._row_format.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

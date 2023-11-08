@@ -71,6 +71,9 @@ class UpdateCommentRequest(BaseRequestObject):
         # verify the required parameter 'comment' is set
         if self.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `update_comment`")  # noqa: E501
+        if self.comment is not None:
+            self.comment.validate()
+
 
         path = '/v4.0/words/{name}/comments/{commentIndex}'
         path_params = {}

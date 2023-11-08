@@ -73,6 +73,9 @@ class UpdateParagraphListFormatRequest(BaseRequestObject):
         # verify the required parameter 'list_format_dto' is set
         if self.list_format_dto is None:
             raise ValueError("Missing the required parameter `list_format_dto` when calling `update_paragraph_list_format`")  # noqa: E501
+        if self.list_format_dto is not None:
+            self.list_format_dto.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/listFormat'
         path_params = {}

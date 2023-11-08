@@ -62,6 +62,9 @@ class InsertPageNumbersOnlineRequest(BaseRequestObject):
         # verify the required parameter 'page_number' is set
         if self.page_number is None:
             raise ValueError("Missing the required parameter `page_number` when calling `insert_page_numbers_online`")  # noqa: E501
+        if self.page_number is not None:
+            self.page_number.validate()
+
 
         path = '/v4.0/words/online/put/PageNumbers'
         path_params = {}

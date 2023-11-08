@@ -69,6 +69,9 @@ class UpdateStructuredDocumentTagOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_structured_document_tag_online`")  # noqa: E501
+        if self.structured_document_tag is not None:
+            self.structured_document_tag.validate()
+
 
         path = '/v4.0/words/online/put/{nodePath}/sdt/{index}'
         path_params = {}

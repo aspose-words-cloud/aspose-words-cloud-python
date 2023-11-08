@@ -71,6 +71,9 @@ class ApplyStyleToDocumentElementRequest(BaseRequestObject):
         # verify the required parameter 'style_apply' is set
         if self.style_apply is None:
             raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
+        if self.style_apply is not None:
+            self.style_apply.validate()
+
 
         path = '/v4.0/words/{name}/{styledNodePath}/style'
         path_params = {}

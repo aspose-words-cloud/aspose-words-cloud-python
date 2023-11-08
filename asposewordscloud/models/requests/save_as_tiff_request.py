@@ -96,6 +96,9 @@ class SaveAsTiffRequest(BaseRequestObject):
         # verify the required parameter 'save_options' is set
         if self.save_options is None:
             raise ValueError("Missing the required parameter `save_options` when calling `save_as_tiff`")  # noqa: E501
+        if self.save_options is not None:
+            self.save_options.validate()
+
 
         path = '/v4.0/words/{name}/saveAs/tiff'
         path_params = {}

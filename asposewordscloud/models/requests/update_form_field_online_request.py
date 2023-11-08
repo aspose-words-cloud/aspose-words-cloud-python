@@ -69,6 +69,9 @@ class UpdateFormFieldOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_form_field_online`")  # noqa: E501
+        if self.form_field is not None:
+            self.form_field.validate()
+
 
         path = '/v4.0/words/online/put/{nodePath}/formfields/{index}'
         path_params = {}

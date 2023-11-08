@@ -66,6 +66,9 @@ class InsertFieldOnlineRequest(BaseRequestObject):
         # verify the required parameter 'field' is set
         if self.field is None:
             raise ValueError("Missing the required parameter `field` when calling `insert_field_online`")  # noqa: E501
+        if self.field is not None:
+            self.field.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/fields'
         path_params = {}

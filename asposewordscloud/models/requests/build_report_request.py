@@ -67,6 +67,9 @@ class BuildReportRequest(BaseRequestObject):
         # verify the required parameter 'report_engine_settings' is set
         if self.report_engine_settings is None:
             raise ValueError("Missing the required parameter `report_engine_settings` when calling `build_report`")  # noqa: E501
+        if self.report_engine_settings is not None:
+            self.report_engine_settings.validate()
+
 
         path = '/v4.0/words/{name}/buildReport'
         path_params = {}

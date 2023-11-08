@@ -73,6 +73,9 @@ class UpdateFieldRequest(BaseRequestObject):
         # verify the required parameter 'field' is set
         if self.field is None:
             raise ValueError("Missing the required parameter `field` when calling `update_field`")  # noqa: E501
+        if self.field is not None:
+            self.field.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
         path_params = {}

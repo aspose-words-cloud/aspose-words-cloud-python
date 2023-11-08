@@ -139,6 +139,25 @@ class SaveResult(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._dest_document is not None:
+            self._dest_document.validate()
+
+
+
+        if self._source_document is not None:
+            self._source_document.validate()
+
+
+
+        if self._additional_items is not None:
+            for elementAdditionalItems in self._additional_items:
+                if elementAdditionalItems is not None:
+                    elementAdditionalItems.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

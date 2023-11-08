@@ -66,6 +66,9 @@ class InsertWatermarkTextRequest(BaseRequestObject):
         # verify the required parameter 'watermark_text' is set
         if self.watermark_text is None:
             raise ValueError("Missing the required parameter `watermark_text` when calling `insert_watermark_text`")  # noqa: E501
+        if self.watermark_text is not None:
+            self.watermark_text.validate()
+
 
         path = '/v4.0/words/{name}/watermarks/texts'
         path_params = {}

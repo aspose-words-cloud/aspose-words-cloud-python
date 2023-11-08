@@ -62,6 +62,9 @@ class InsertBookmarkOnlineRequest(BaseRequestObject):
         # verify the required parameter 'bookmark' is set
         if self.bookmark is None:
             raise ValueError("Missing the required parameter `bookmark` when calling `insert_bookmark_online`")  # noqa: E501
+        if self.bookmark is not None:
+            self.bookmark.validate()
+
 
         path = '/v4.0/words/online/post/bookmarks'
         path_params = {}

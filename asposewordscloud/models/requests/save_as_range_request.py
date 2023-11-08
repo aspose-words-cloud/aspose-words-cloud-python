@@ -67,6 +67,9 @@ class SaveAsRangeRequest(BaseRequestObject):
         # verify the required parameter 'document_parameters' is set
         if self.document_parameters is None:
             raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range`")  # noqa: E501
+        if self.document_parameters is not None:
+            self.document_parameters.validate()
+
 
         path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
         path_params = {}

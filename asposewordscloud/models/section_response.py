@@ -112,6 +112,13 @@ class SectionResponse(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._section is not None:
+            self._section.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

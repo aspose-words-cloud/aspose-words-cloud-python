@@ -62,6 +62,9 @@ class InsertCommentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'comment' is set
         if self.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `insert_comment_online`")  # noqa: E501
+        if self.comment is not None:
+            self.comment.validate()
+
 
         path = '/v4.0/words/online/post/comments'
         path_params = {}

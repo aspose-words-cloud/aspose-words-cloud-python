@@ -166,6 +166,18 @@ class BookmarkInsert(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._start_range is not None:
+            self._start_range.validate()
+
+
+
+        if self._end_range is not None:
+            self._end_range.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -72,6 +72,9 @@ class FileReference(object):
         if self._source == 'Request':
             filesContentResult.append(self)
 
+    def validate(self):
+        """Validate all required properties in model"""
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

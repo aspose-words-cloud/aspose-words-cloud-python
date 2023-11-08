@@ -70,6 +70,9 @@ class InsertParagraphRequest(BaseRequestObject):
         # verify the required parameter 'paragraph' is set
         if self.paragraph is None:
             raise ValueError("Missing the required parameter `paragraph` when calling `insert_paragraph`")  # noqa: E501
+        if self.paragraph is not None:
+            self.paragraph.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/paragraphs'
         path_params = {}

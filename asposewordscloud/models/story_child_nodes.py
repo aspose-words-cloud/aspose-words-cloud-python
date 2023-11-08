@@ -85,6 +85,15 @@ class StoryChildNodes(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._child_nodes is not None:
+            for elementChildNodes in self._child_nodes:
+                if elementChildNodes is not None:
+                    elementChildNodes.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

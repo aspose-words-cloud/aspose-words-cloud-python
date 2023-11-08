@@ -64,6 +64,9 @@ class InsertStructuredDocumentTagOnlineRequest(BaseRequestObject):
         # verify the required parameter 'structured_document_tag' is set
         if self.structured_document_tag is None:
             raise ValueError("Missing the required parameter `structured_document_tag` when calling `insert_structured_document_tag_online`")  # noqa: E501
+        if self.structured_document_tag is not None:
+            self.structured_document_tag.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/sdt'
         path_params = {}

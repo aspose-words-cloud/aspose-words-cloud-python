@@ -73,6 +73,9 @@ class UpdateStructuredDocumentTagRequest(BaseRequestObject):
         # verify the required parameter 'structured_document_tag' is set
         if self.structured_document_tag is None:
             raise ValueError("Missing the required parameter `structured_document_tag` when calling `update_structured_document_tag`")  # noqa: E501
+        if self.structured_document_tag is not None:
+            self.structured_document_tag.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/sdt/{index}'
         path_params = {}

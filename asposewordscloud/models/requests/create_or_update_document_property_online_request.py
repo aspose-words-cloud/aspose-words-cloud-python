@@ -67,6 +67,9 @@ class CreateOrUpdateDocumentPropertyOnlineRequest(BaseRequestObject):
         # verify the required parameter '_property' is set
         if self._property is None:
             raise ValueError("Missing the required parameter `_property` when calling `create_or_update_document_property_online`")  # noqa: E501
+        if self._property is not None:
+            self._property.validate()
+
 
         path = '/v4.0/words/online/put/documentProperties/{propertyName}'
         path_params = {}

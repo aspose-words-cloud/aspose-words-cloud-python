@@ -64,6 +64,9 @@ class InsertTableOnlineRequest(BaseRequestObject):
         # verify the required parameter 'table' is set
         if self.table is None:
             raise ValueError("Missing the required parameter `table` when calling `insert_table_online`")  # noqa: E501
+        if self.table is not None:
+            self.table.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/tables'
         path_params = {}

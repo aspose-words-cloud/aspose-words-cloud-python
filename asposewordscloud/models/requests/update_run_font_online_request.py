@@ -72,6 +72,9 @@ class UpdateRunFontOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_run_font_online`")  # noqa: E501
+        if self.font_dto is not None:
+            self.font_dto.validate()
+
 
         path = '/v4.0/words/online/put/{paragraphPath}/runs/{index}/font'
         path_params = {}

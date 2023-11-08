@@ -76,6 +76,9 @@ class UpdateListLevelRequest(BaseRequestObject):
         # verify the required parameter 'list_update' is set
         if self.list_update is None:
             raise ValueError("Missing the required parameter `list_update` when calling `update_list_level`")  # noqa: E501
+        if self.list_update is not None:
+            self.list_update.validate()
+
 
         path = '/v4.0/words/{name}/lists/{listId}/listLevels/{listLevel}'
         path_params = {}

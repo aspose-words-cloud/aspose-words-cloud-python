@@ -72,6 +72,9 @@ class UpdateListLevelOnlineRequest(BaseRequestObject):
         # verify the required parameter 'list_level' is set
         if self.list_level is None:
             raise ValueError("Missing the required parameter `list_level` when calling `update_list_level_online`")  # noqa: E501
+        if self.list_update is not None:
+            self.list_update.validate()
+
 
         path = '/v4.0/words/online/put/lists/{listId}/listLevels/{listLevel}'
         path_params = {}

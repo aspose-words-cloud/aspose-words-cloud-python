@@ -69,6 +69,9 @@ class UpdateParagraphFormatOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_paragraph_format_online`")  # noqa: E501
+        if self.paragraph_format_dto is not None:
+            self.paragraph_format_dto.validate()
+
 
         path = '/v4.0/words/online/put/{nodePath}/paragraphs/{index}/format'
         path_params = {}

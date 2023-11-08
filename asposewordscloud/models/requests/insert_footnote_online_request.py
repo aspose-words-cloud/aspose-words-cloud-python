@@ -64,6 +64,9 @@ class InsertFootnoteOnlineRequest(BaseRequestObject):
         # verify the required parameter 'footnote_dto' is set
         if self.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `insert_footnote_online`")  # noqa: E501
+        if self.footnote_dto is not None:
+            self.footnote_dto.validate()
+
 
         path = '/v4.0/words/online/post/{nodePath}/footnotes'
         path_params = {}

@@ -16,6 +16,19 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 23.11
+
+- Support of required properties in models.
+- Property StyleName marked as required for InsertStyle operation.
+- Property StyleName marked as required for CopyStyle operation.
+- Property StyleName marked as required for ApplyStyleToDocumentElement operation.
+- Properties SdtType and Level marked as required for InsertStructuredDocumentTag operation.
+- Property Text marked as required for InsertParagraphoperation.
+- Property Value marked as required for CreateOrUpdateDocumentProperty operation.
+- Property NewValue marked as required for ReplaceText operation.
+- Property Text marked as required for ReplaceWithText operation.
+
+
 ## Enhancements in Version 23.9
 
 - Support for class inheritance in responses from the server.

@@ -62,6 +62,9 @@ class SaveAsRequest(BaseRequestObject):
         # verify the required parameter 'save_options_data' is set
         if self.save_options_data is None:
             raise ValueError("Missing the required parameter `save_options_data` when calling `save_as`")  # noqa: E501
+        if self.save_options_data is not None:
+            self.save_options_data.validate()
+
 
         path = '/v4.0/words/{name}/saveAs'
         path_params = {}

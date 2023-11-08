@@ -166,6 +166,17 @@ class InfoResponse(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._additional_info is not None:
+            for elementAdditionalInfo in self._additional_info:
+                if elementAdditionalInfo is not None:
+                    elementAdditionalInfo.validate()
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
