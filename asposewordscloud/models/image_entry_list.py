@@ -116,6 +116,17 @@ class ImageEntryList(object):
                 element.extract_files_content(filesContentResult)
 
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._image_entries is None:
+            raise ValueError("Property ImageEntries in ImageEntryList is required.")  # noqa: E501
+
+        if self._image_entries is not None:
+            for elementImageEntries in self._image_entries:
+                if elementImageEntries is not None:
+                    elementImageEntries.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

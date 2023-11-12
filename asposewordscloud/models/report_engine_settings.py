@@ -228,6 +228,28 @@ class ReportEngineSettings(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._data_source_type is None:
+            raise ValueError("Property DataSourceType in ReportEngineSettings is required.")  # noqa: E501
+
+        if self._csv_data_load_options is not None:
+            self._csv_data_load_options.validate()
+
+
+
+
+
+        if self._json_data_load_options is not None:
+            self._json_data_load_options.validate()
+
+
+
+
+        if self._xml_data_load_options is not None:
+            self._xml_data_load_options.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

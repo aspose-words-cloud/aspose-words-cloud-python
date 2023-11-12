@@ -228,6 +228,30 @@ class Document(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._is_encrypted is None:
+            raise ValueError("Property IsEncrypted in Document is required.")  # noqa: E501
+        if self._is_signed is None:
+            raise ValueError("Property IsSigned in Document is required.")  # noqa: E501
+        if self._source_format is None:
+            raise ValueError("Property SourceFormat in Document is required.")  # noqa: E501
+
+        if self._links is not None:
+            for elementLinks in self._links:
+                if elementLinks is not None:
+                    elementLinks.validate()
+
+
+
+        if self._document_properties is not None:
+            self._document_properties.validate()
+
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

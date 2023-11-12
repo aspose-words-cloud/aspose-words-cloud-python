@@ -67,6 +67,9 @@ class InsertTableCellOnlineRequest(BaseRequestObject):
         # verify the required parameter 'cell' is set
         if self.cell is None:
             raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell_online`")  # noqa: E501
+        if self.cell is not None:
+            self.cell.validate()
+
 
         path = '/v4.0/words/online/post/{tableRowPath}/cells'
         path_params = {}

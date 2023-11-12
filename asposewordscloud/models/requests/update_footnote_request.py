@@ -73,6 +73,9 @@ class UpdateFootnoteRequest(BaseRequestObject):
         # verify the required parameter 'footnote_dto' is set
         if self.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote`")  # noqa: E501
+        if self.footnote_dto is not None:
+            self.footnote_dto.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
         path_params = {}

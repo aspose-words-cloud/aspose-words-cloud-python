@@ -67,6 +67,9 @@ class UpdateStyleOnlineRequest(BaseRequestObject):
         # verify the required parameter 'style_update' is set
         if self.style_update is None:
             raise ValueError("Missing the required parameter `style_update` when calling `update_style_online`")  # noqa: E501
+        if self.style_update is not None:
+            self.style_update.validate()
+
 
         path = '/v4.0/words/online/put/styles/{styleName}/update'
         path_params = {}

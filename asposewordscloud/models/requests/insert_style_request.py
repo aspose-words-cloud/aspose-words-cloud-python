@@ -66,6 +66,9 @@ class InsertStyleRequest(BaseRequestObject):
         # verify the required parameter 'style_insert' is set
         if self.style_insert is None:
             raise ValueError("Missing the required parameter `style_insert` when calling `insert_style`")  # noqa: E501
+        if self.style_insert is not None:
+            self.style_insert.validate()
+
 
         path = '/v4.0/words/{name}/styles/insert'
         path_params = {}

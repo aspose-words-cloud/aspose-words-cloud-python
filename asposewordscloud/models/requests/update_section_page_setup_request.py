@@ -71,6 +71,9 @@ class UpdateSectionPageSetupRequest(BaseRequestObject):
         # verify the required parameter 'page_setup' is set
         if self.page_setup is None:
             raise ValueError("Missing the required parameter `page_setup` when calling `update_section_page_setup`")  # noqa: E501
+        if self.page_setup is not None:
+            self.page_setup.validate()
+
 
         path = '/v4.0/words/{name}/sections/{sectionIndex}/pageSetup'
         path_params = {}

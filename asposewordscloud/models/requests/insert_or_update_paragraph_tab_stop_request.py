@@ -69,6 +69,9 @@ class InsertOrUpdateParagraphTabStopRequest(BaseRequestObject):
         # verify the required parameter 'tab_stop_insert_dto' is set
         if self.tab_stop_insert_dto is None:
             raise ValueError("Missing the required parameter `tab_stop_insert_dto` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
+        if self.tab_stop_insert_dto is not None:
+            self.tab_stop_insert_dto.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}

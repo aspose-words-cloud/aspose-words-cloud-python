@@ -433,6 +433,51 @@ class ListLevel(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._start_at is None:
+            raise ValueError("Property StartAt in ListLevel is required.")  # noqa: E501
+        if self._number_style is None:
+            raise ValueError("Property NumberStyle in ListLevel is required.")  # noqa: E501
+        if self._alignment is None:
+            raise ValueError("Property Alignment in ListLevel is required.")  # noqa: E501
+        if self._is_legal is None:
+            raise ValueError("Property IsLegal in ListLevel is required.")  # noqa: E501
+        if self._restart_after_level is None:
+            raise ValueError("Property RestartAfterLevel in ListLevel is required.")  # noqa: E501
+        if self._trailing_character is None:
+            raise ValueError("Property TrailingCharacter in ListLevel is required.")  # noqa: E501
+        if self._tab_position is None:
+            raise ValueError("Property TabPosition in ListLevel is required.")  # noqa: E501
+        if self._number_position is None:
+            raise ValueError("Property NumberPosition in ListLevel is required.")  # noqa: E501
+        if self._text_position is None:
+            raise ValueError("Property TextPosition in ListLevel is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+
+
+
+        if self._font is not None:
+            self._font.validate()
+
+
+
+
+
+
+        if self._linked_style is not None:
+            self._linked_style.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

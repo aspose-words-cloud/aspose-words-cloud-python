@@ -42,7 +42,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
+        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name', text_input_format='')
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remote_file_name, index=0, form_field=request_form_field, node_path='sections/0', folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_form_field(request)
@@ -58,7 +58,7 @@ class TestFormField(BaseTestContext):
         field_folder = 'DocumentElements/FormFields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
-        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
+        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name', text_input_format='')
         request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document=request_document, index=0, form_field=request_form_field, node_path='sections/0')
 
         result = self.words_api.update_form_field_online(request)
@@ -75,7 +75,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
+        request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name', text_input_format='')
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remote_file_name, index=0, form_field=request_form_field, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_form_field(request)

@@ -166,6 +166,20 @@ class ListFormat(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._list_level_number is None:
+            raise ValueError("Property ListLevelNumber in ListFormat is required.")  # noqa: E501
+        if self._is_list_item is None:
+            raise ValueError("Property IsListItem in ListFormat is required.")  # noqa: E501
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

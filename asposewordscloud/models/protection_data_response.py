@@ -139,6 +139,18 @@ class ProtectionDataResponse(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._document_link is not None:
+            self._document_link.validate()
+
+
+
+        if self._protection_data is not None:
+            self._protection_data.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

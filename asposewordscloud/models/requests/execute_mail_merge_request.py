@@ -69,6 +69,9 @@ class ExecuteMailMergeRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `execute_mail_merge`")  # noqa: E501
+        if self.options is not None:
+            self.options.validate()
+
 
         path = '/v4.0/words/{name}/MailMerge'
         path_params = {}

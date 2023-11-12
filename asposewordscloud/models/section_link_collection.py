@@ -112,6 +112,20 @@ class SectionLinkCollection(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._section_link_list is not None:
+            for elementSectionLinkList in self._section_link_list:
+                if elementSectionLinkList is not None:
+                    elementSectionLinkList.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

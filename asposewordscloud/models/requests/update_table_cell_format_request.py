@@ -76,6 +76,9 @@ class UpdateTableCellFormatRequest(BaseRequestObject):
         # verify the required parameter 'format' is set
         if self.format is None:
             raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
+        if self.format is not None:
+            self.format.validate()
+
 
         path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
         path_params = {}

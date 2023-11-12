@@ -88,6 +88,15 @@ class ImageEntry(object):
             self._file_reference.extract_files_content(filesContentResult)
 
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._file_reference is None:
+            raise ValueError("Property FileReference in ImageEntry is required.")  # noqa: E501
+
+        if self._file_reference is not None:
+            self._file_reference.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

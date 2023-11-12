@@ -60,15 +60,15 @@ class StructuredDocumentTagUpdate(object):
         'style_name': 'str',
         'calendar_type': 'str',
         'is_temporary': 'bool',
-        'level': 'str',
-        'sdt_type': 'str',
         'placeholder_name': 'str',
         'lock_content_control': 'bool',
         'lock_contents': 'bool',
         'is_showing_placeholder_text': 'bool',
         'tag': 'str',
         'id': 'int',
-        'word_open_xml': 'str'
+        'word_open_xml': 'str',
+        'level': 'str',
+        'sdt_type': 'str'
     }
 
     attribute_map = {
@@ -89,18 +89,18 @@ class StructuredDocumentTagUpdate(object):
         'style_name': 'StyleName',
         'calendar_type': 'CalendarType',
         'is_temporary': 'IsTemporary',
-        'level': 'Level',
-        'sdt_type': 'SdtType',
         'placeholder_name': 'PlaceholderName',
         'lock_content_control': 'LockContentControl',
         'lock_contents': 'LockContents',
         'is_showing_placeholder_text': 'IsShowingPlaceholderText',
         'tag': 'Tag',
         'id': 'Id',
-        'word_open_xml': 'WordOpenXML'
+        'word_open_xml': 'WordOpenXML',
+        'level': 'Level',
+        'sdt_type': 'SdtType'
     }
 
-    def __init__(self, link=None, node_id=None, list_items=None, checked=None, appearance=None, date_display_locale=None, date_display_format=None, full_date=None, title=None, date_storage_format=None, building_block_gallery=None, building_block_category=None, multiline=None, color=None, style_name=None, calendar_type=None, is_temporary=None, level=None, sdt_type=None, placeholder_name=None, lock_content_control=None, lock_contents=None, is_showing_placeholder_text=None, tag=None, id=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, list_items=None, checked=None, appearance=None, date_display_locale=None, date_display_format=None, full_date=None, title=None, date_storage_format=None, building_block_gallery=None, building_block_category=None, multiline=None, color=None, style_name=None, calendar_type=None, is_temporary=None, placeholder_name=None, lock_content_control=None, lock_contents=None, is_showing_placeholder_text=None, tag=None, id=None, level=None, sdt_type=None):  # noqa: E501
         """StructuredDocumentTagUpdate - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -120,8 +120,6 @@ class StructuredDocumentTagUpdate(object):
         self._style_name = None
         self._calendar_type = None
         self._is_temporary = None
-        self._level = None
-        self._sdt_type = None
         self._placeholder_name = None
         self._lock_content_control = None
         self._lock_contents = None
@@ -129,6 +127,8 @@ class StructuredDocumentTagUpdate(object):
         self._tag = None
         self._id = None
         self._word_open_xml = None
+        self._level = None
+        self._sdt_type = None
         self.discriminator = None
 
         if link is not None:
@@ -165,10 +165,6 @@ class StructuredDocumentTagUpdate(object):
             self.calendar_type = calendar_type
         if is_temporary is not None:
             self.is_temporary = is_temporary
-        if level is not None:
-            self.level = level
-        if sdt_type is not None:
-            self.sdt_type = sdt_type
         if placeholder_name is not None:
             self.placeholder_name = placeholder_name
         if lock_content_control is not None:
@@ -181,6 +177,10 @@ class StructuredDocumentTagUpdate(object):
             self.tag = tag
         if id is not None:
             self.id = id
+        if level is not None:
+            self.level = level
+        if sdt_type is not None:
+            self.sdt_type = sdt_type
 
     @property
     def link(self):
@@ -581,66 +581,6 @@ class StructuredDocumentTagUpdate(object):
         self._is_temporary = is_temporary
 
     @property
-    def level(self):
-        """Gets the level of this StructuredDocumentTagUpdate.  # noqa: E501
-
-        Gets or sets the level at which this SDT occurs in the document tree.  # noqa: E501
-
-        :return: The level of this StructuredDocumentTagUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._level
-
-    @level.setter
-    def level(self, level):
-        """Sets the level of this StructuredDocumentTagUpdate.
-
-        Gets or sets the level at which this SDT occurs in the document tree.  # noqa: E501
-
-        :param level: The level of this StructuredDocumentTagUpdate.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Unknown", "Inline", "Block", "Row", "Cell"]  # noqa: E501
-        if not level.isdigit():
-            if level not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `level` ({0}), must be one of {1}"  # noqa: E501
-                    .format(level, allowed_values))
-            self._level = level
-        else:
-            self._level = allowed_values[int(level) if six.PY3 else long(level)]
-
-    @property
-    def sdt_type(self):
-        """Gets the sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
-
-        Gets or sets type of this Structured document tag.  # noqa: E501
-
-        :return: The sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._sdt_type
-
-    @sdt_type.setter
-    def sdt_type(self, sdt_type):
-        """Sets the sdt_type of this StructuredDocumentTagUpdate.
-
-        Gets or sets type of this Structured document tag.  # noqa: E501
-
-        :param sdt_type: The sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["None", "Bibliography", "Citation", "Equation", "DropDownList", "ComboBox", "Date", "BuildingBlockGallery", "DocPartObj", "Group", "Picture", "RichText", "PlainText", "Checkbox", "RepeatingSection", "RepeatingSectionItem", "EntityPicker"]  # noqa: E501
-        if not sdt_type.isdigit():
-            if sdt_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `sdt_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(sdt_type, allowed_values))
-            self._sdt_type = sdt_type
-        else:
-            self._sdt_type = allowed_values[int(sdt_type) if six.PY3 else long(sdt_type)]
-
-    @property
     def placeholder_name(self):
         """Gets the placeholder_name of this StructuredDocumentTagUpdate.  # noqa: E501
 
@@ -784,9 +724,107 @@ class StructuredDocumentTagUpdate(object):
         return self._word_open_xml
 
 
+    @property
+    def level(self):
+        """Gets the level of this StructuredDocumentTagUpdate.  # noqa: E501
+
+        Gets or sets the level at which this SDT occurs in the document tree.  # noqa: E501
+
+        :return: The level of this StructuredDocumentTagUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """Sets the level of this StructuredDocumentTagUpdate.
+
+        Gets or sets the level at which this SDT occurs in the document tree.  # noqa: E501
+
+        :param level: The level of this StructuredDocumentTagUpdate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Unknown", "Inline", "Block", "Row", "Cell"]  # noqa: E501
+        if not level.isdigit():
+            if level not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `level` ({0}), must be one of {1}"  # noqa: E501
+                    .format(level, allowed_values))
+            self._level = level
+        else:
+            self._level = allowed_values[int(level) if six.PY3 else long(level)]
+
+    @property
+    def sdt_type(self):
+        """Gets the sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
+
+        Gets or sets type of this Structured document tag.  # noqa: E501
+
+        :return: The sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._sdt_type
+
+    @sdt_type.setter
+    def sdt_type(self, sdt_type):
+        """Sets the sdt_type of this StructuredDocumentTagUpdate.
+
+        Gets or sets type of this Structured document tag.  # noqa: E501
+
+        :param sdt_type: The sdt_type of this StructuredDocumentTagUpdate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["None", "Bibliography", "Citation", "Equation", "DropDownList", "ComboBox", "Date", "BuildingBlockGallery", "DocPartObj", "Group", "Picture", "RichText", "PlainText", "Checkbox", "RepeatingSection", "RepeatingSectionItem", "EntityPicker"]  # noqa: E501
+        if not sdt_type.isdigit():
+            if sdt_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `sdt_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(sdt_type, allowed_values))
+            self._sdt_type = sdt_type
+        else:
+            self._sdt_type = allowed_values[int(sdt_type) if six.PY3 else long(sdt_type)]
+
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
+
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+        if self._list_items is not None:
+            for elementListItems in self._list_items:
+                if elementListItems is not None:
+                    elementListItems.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

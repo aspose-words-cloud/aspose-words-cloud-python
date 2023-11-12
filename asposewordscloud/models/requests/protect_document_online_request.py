@@ -58,6 +58,9 @@ class ProtectDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'protection_request' is set
         if self.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `protect_document_online`")  # noqa: E501
+        if self.protection_request is not None:
+            self.protection_request.validate()
+
 
         path = '/v4.0/words/online/put/protection'
         path_params = {}

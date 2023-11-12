@@ -193,6 +193,20 @@ class CompareData(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._author is None:
+            raise ValueError("Property Author in CompareData is required.")  # noqa: E501
+        if self._comparing_with_document is None:
+            raise ValueError("Property ComparingWithDocument in CompareData is required.")  # noqa: E501
+
+        if self._compare_options is not None:
+            self._compare_options.validate()
+
+
+
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

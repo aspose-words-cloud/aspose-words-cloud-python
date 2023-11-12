@@ -71,6 +71,9 @@ class InsertTableRowRequest(BaseRequestObject):
         # verify the required parameter 'row' is set
         if self.row is None:
             raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
+        if self.row is not None:
+            self.row.validate()
+
 
         path = '/v4.0/words/{name}/{tablePath}/rows'
         path_params = {}

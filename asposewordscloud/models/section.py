@@ -220,6 +220,40 @@ class Section(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+        if self._child_nodes is not None:
+            for elementChildNodes in self._child_nodes:
+                if elementChildNodes is not None:
+                    elementChildNodes.validate()
+
+
+
+        if self._paragraphs is not None:
+            self._paragraphs.validate()
+
+
+
+        if self._page_setup is not None:
+            self._page_setup.validate()
+
+
+
+        if self._header_footers is not None:
+            self._header_footers.validate()
+
+
+
+        if self._tables is not None:
+            self._tables.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

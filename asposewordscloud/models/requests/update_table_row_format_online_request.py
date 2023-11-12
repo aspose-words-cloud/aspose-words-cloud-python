@@ -72,6 +72,9 @@ class UpdateTableRowFormatOnlineRequest(BaseRequestObject):
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_row_format_online`")  # noqa: E501
+        if self.format is not None:
+            self.format.validate()
+
 
         path = '/v4.0/words/online/put/{tablePath}/rows/{index}/rowformat'
         path_params = {}

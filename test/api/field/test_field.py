@@ -232,7 +232,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}')
+        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}', is_top=True, set_page_number_on_first_page=True)
         request = asposewordscloud.models.requests.InsertPageNumbersRequest(name=remote_file_name, page_number=request_page_number, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_page_numbers(request)
@@ -247,7 +247,7 @@ class TestField(BaseTestContext):
         local_file_name = 'test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb')
-        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}')
+        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}', is_top=True, set_page_number_on_first_page=True)
         request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document=request_document, page_number=request_page_number)
 
         result = self.words_api.insert_page_numbers_online(request)

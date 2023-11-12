@@ -193,6 +193,13 @@ class PageNumber(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+        if self._is_top is None:
+            raise ValueError("Property IsTop in PageNumber is required.")  # noqa: E501
+        if self._set_page_number_on_first_page is None:
+            raise ValueError("Property SetPageNumberOnFirstPage in PageNumber is required.")  # noqa: E501
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

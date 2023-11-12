@@ -70,6 +70,9 @@ class InsertFormFieldRequest(BaseRequestObject):
         # verify the required parameter 'form_field' is set
         if self.form_field is None:
             raise ValueError("Missing the required parameter `form_field` when calling `insert_form_field`")  # noqa: E501
+        if self.form_field is not None:
+            self.form_field.validate()
+
 
         path = '/v4.0/words/{name}/{nodePath}/formfields'
         path_params = {}

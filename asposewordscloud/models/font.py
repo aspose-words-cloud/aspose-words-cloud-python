@@ -1189,6 +1189,69 @@ class Font(object):
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
 
+    def validate(self):
+        """Validate all required properties in model"""
+
+        if self._link is not None:
+            self._link.validate()
+
+
+
+
+
+
+
+        if self._border is not None:
+            self._border.validate()
+
+
+
+        if self._color is not None:
+            self._color.validate()
+
+
+
+
+
+
+
+
+        if self._highlight_color is not None:
+            self._highlight_color.validate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._underline_color is not None:
+            self._underline_color.validate()
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

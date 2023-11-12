@@ -62,6 +62,9 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document_list' is set
         if self.document_list is None:
             raise ValueError("Missing the required parameter `document_list` when calling `append_document_online`")  # noqa: E501
+        if self.document_list is not None:
+            self.document_list.validate()
+
 
         path = '/v4.0/words/online/put/appendDocument'
         path_params = {}

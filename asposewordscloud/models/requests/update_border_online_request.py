@@ -69,6 +69,9 @@ class UpdateBorderOnlineRequest(BaseRequestObject):
         # verify the required parameter 'border_type' is set
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `update_border_online`")  # noqa: E501
+        if self.border_properties is not None:
+            self.border_properties.validate()
+
 
         path = '/v4.0/words/online/put/{nodePath}/borders/{borderType}'
         path_params = {}
