@@ -217,3 +217,31 @@ class TestMathObject(BaseTestContext):
 
         self.words_api.delete_office_math_object(request)
 
+
+    #
+    # Test for deleting math objects.
+    #
+    def test_delete_office_math_objects(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/MathObjects'
+        local_file = 'DocumentElements/MathObjects/MathObjects.docx'
+        remote_file_name = 'TestDeleteOfficeMathObject.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectsRequest(name=remote_file_name, folder=remote_data_folder)
+
+        self.words_api.delete_office_math_objects(request)
+
+
+    #
+    # Test for deleting math objects online.
+    #
+    def test_delete_office_math_objects_online(self):
+        local_file = 'DocumentElements/MathObjects/MathObjects.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectsOnlineRequest(document=request_document)
+
+        result = self.words_api.delete_office_math_objects_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

@@ -19,6 +19,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 ## Enhancements in Version 23.12
 
 - Properties Name, Text, StartRange, EndRange marked as required for InsertBookmark operation.
+- Implemented DeleteOfficeMathObjects operation to delete all office math objects from document.
 
 
 ## Enhancements in Version 23.11
