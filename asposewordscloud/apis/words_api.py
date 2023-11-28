@@ -20644,14 +20644,14 @@ class WordsApi(Encryptor, object):
 
 
     def protect_document(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
+        :param protection_request ProtectionRequestBase : Use ProtectionRequestV2 model to provide protection options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -20676,7 +20676,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -20726,14 +20726,14 @@ class WordsApi(Encryptor, object):
 
 
     def protect_document_online(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param document file : The document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
+        :param protection_request ProtectionRequestBase : Use ProtectionRequestV2 model to provide protection options. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -20756,7 +20756,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def protect_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23203,7 +23203,6 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -23254,9 +23253,6 @@ class WordsApi(Encryptor, object):
         del params['kwargs']
         http_params = request.create_http_request(self.api_client)
 
-        # HTTP header `Accept`
-        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
@@ -23285,7 +23281,6 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
