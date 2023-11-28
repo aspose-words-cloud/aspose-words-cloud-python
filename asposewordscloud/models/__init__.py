@@ -176,6 +176,7 @@ from asposewordscloud.models.preferred_width import PreferredWidth
 from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse
 from asposewordscloud.models.protection_request import ProtectionRequest
+from asposewordscloud.models.protection_request_v2 import ProtectionRequestV2
 from asposewordscloud.models.ps_save_options_data import PsSaveOptionsData
 from asposewordscloud.models.public_key_response import PublicKeyResponse
 from asposewordscloud.models.range_document import RangeDocument

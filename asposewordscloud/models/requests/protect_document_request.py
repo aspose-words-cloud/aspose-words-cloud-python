@@ -36,7 +36,7 @@ class ProtectDocumentRequest(BaseRequestObject):
     Request model for protect_document operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param protection_request Protection request.
+    :param protection_request Use ProtectionRequestV2 model to provide protection options.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

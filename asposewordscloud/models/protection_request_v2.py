@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="protection_data.py">
+# <copyright company="Aspose" file="protection_request_v2.py">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,8 +31,8 @@ import datetime
 import six
 import json
 
-class ProtectionData(object):
-    """Container for the data about protection of the document.
+class ProtectionRequestV2(object):
+    """Request on changing of protection.
     """
 
     """
@@ -43,40 +43,67 @@ class ProtectionData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'protection_password': 'str',
         'protection_type': 'str'
     }
 
     attribute_map = {
+        'protection_password': 'ProtectionPassword',
         'protection_type': 'ProtectionType'
     }
 
-    def __init__(self, protection_type=None):  # noqa: E501
-        """ProtectionData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, protection_password=None, protection_type=None):  # noqa: E501
+        """ProtectionRequestV2 - a model defined in Swagger"""  # noqa: E501
 
+        self._protection_password = None
         self._protection_type = None
         self.discriminator = None
 
+        if protection_password is not None:
+            self.protection_password = protection_password
         if protection_type is not None:
             self.protection_type = protection_type
 
     @property
+    def protection_password(self):
+        """Gets the protection_password of this ProtectionRequestV2.  # noqa: E501
+
+        Gets or sets the new password for the document protection. This property is required, but empty value is allowed.  # noqa: E501
+
+        :return: The protection_password of this ProtectionRequestV2.  # noqa: E501
+        :rtype: str
+        """
+        return self._protection_password
+
+    @protection_password.setter
+    def protection_password(self, protection_password):
+        """Sets the protection_password of this ProtectionRequestV2.
+
+        Gets or sets the new password for the document protection. This property is required, but empty value is allowed.  # noqa: E501
+
+        :param protection_password: The protection_password of this ProtectionRequestV2.  # noqa: E501
+        :type: str
+        """
+        self._protection_password = protection_password
+
+    @property
     def protection_type(self):
-        """Gets the protection_type of this ProtectionData.  # noqa: E501
+        """Gets the protection_type of this ProtectionRequestV2.  # noqa: E501
 
-        Gets or sets type of the protection.  # noqa: E501
+        Gets or sets the new type of the document protection.  # noqa: E501
 
-        :return: The protection_type of this ProtectionData.  # noqa: E501
+        :return: The protection_type of this ProtectionRequestV2.  # noqa: E501
         :rtype: str
         """
         return self._protection_type
 
     @protection_type.setter
     def protection_type(self, protection_type):
-        """Sets the protection_type of this ProtectionData.
+        """Sets the protection_type of this ProtectionRequestV2.
 
-        Gets or sets type of the protection.  # noqa: E501
+        Gets or sets the new type of the document protection.  # noqa: E501
 
-        :param protection_type: The protection_type of this ProtectionData.  # noqa: E501
+        :param protection_type: The protection_type of this ProtectionRequestV2.  # noqa: E501
         :type: str
         """
         allowed_values = ["AllowOnlyRevisions", "AllowOnlyComments", "AllowOnlyFormFields", "ReadOnly", "NoProtection"]  # noqa: E501
@@ -95,8 +122,10 @@ class ProtectionData(object):
 
     def validate(self):
         """Validate all required properties in model"""
+        if self._protection_password is None:
+            raise ValueError("Property ProtectionPassword in ProtectionRequestV2 is required.")  # noqa: E501
         if self._protection_type is None:
-            raise ValueError("Property ProtectionType in ProtectionData is required.")  # noqa: E501
+            raise ValueError("Property ProtectionType in ProtectionRequestV2 is required.")  # noqa: E501
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -162,7 +191,7 @@ class ProtectionData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ProtectionData):
+        if not isinstance(other, ProtectionRequestV2):
             return False
 
         return self.__dict__ == other.__dict__
