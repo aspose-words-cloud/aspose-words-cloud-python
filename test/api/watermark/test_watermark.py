@@ -75,7 +75,7 @@ class TestWatermark(BaseTestContext):
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
         self.upload_file(remote_image_path, open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'))
 
-        request_watermark_data_image = asposewordscloud.FileReference.fromRemoteFilePath(remote_data_folder + '/' + remote_file_name)
+        request_watermark_data_image = asposewordscloud.FileReference.fromRemoteFilePath(remote_image_path)
         request_watermark_data = asposewordscloud.WatermarkDataImage(image=request_watermark_data_image)
         request = asposewordscloud.models.requests.InsertWatermarkRequest(name=remote_file_name, watermark_data=request_watermark_data, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
@@ -90,7 +90,7 @@ class TestWatermark(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_watermark_data_image_stream = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_watermark_data_image_stream = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb')
         request_watermark_data_image = asposewordscloud.FileReference.fromLocalFileContent(request_watermark_data_image_stream)
         request_watermark_data = asposewordscloud.WatermarkDataImage(image=request_watermark_data_image)
         request = asposewordscloud.models.requests.InsertWatermarkOnlineRequest(document=request_document, watermark_data=request_watermark_data)
