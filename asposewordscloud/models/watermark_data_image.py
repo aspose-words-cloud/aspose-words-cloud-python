@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="watermark_text.py">
+# <copyright company="Aspose" file="watermark_data_image.py">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,9 +31,8 @@ import datetime
 import six
 import json
 
-@typing_extensions.deprecated("This model will be removed in the future.")
-class WatermarkText(object):
-    """Class for insert watermark text request building.
+class WatermarkDataImage(object):
+    """Class for insert watermark image request building.
     """
 
     """
@@ -44,81 +43,117 @@ class WatermarkText(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rotation_angle': 'float',
-        'text': 'str'
+        'image': 'FileReference',
+        'is_washout': 'bool',
+        'scale': 'float'
     }
 
     attribute_map = {
-        'rotation_angle': 'RotationAngle',
-        'text': 'Text'
+        'image': 'Image',
+        'is_washout': 'IsWashout',
+        'scale': 'Scale'
     }
 
-    def __init__(self, rotation_angle=None, text=None):  # noqa: E501
-        """WatermarkText - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, image=None, is_washout=None, scale=None):  # noqa: E501
+        """WatermarkDataImage - a model defined in Swagger"""  # noqa: E501
 
-        self._rotation_angle = None
-        self._text = None
+        self._image = None
+        self._is_washout = None
+        self._scale = None
         self.discriminator = None
 
-        if rotation_angle is not None:
-            self.rotation_angle = rotation_angle
-        if text is not None:
-            self.text = text
+        if image is not None:
+            self.image = image
+        if is_washout is not None:
+            self.is_washout = is_washout
+        if scale is not None:
+            self.scale = scale
 
     @property
-    def rotation_angle(self):
-        """Gets the rotation_angle of this WatermarkText.  # noqa: E501
+    def image(self):
+        """Gets the image of this WatermarkDataImage.  # noqa: E501
 
-        Gets or sets the watermark rotation angle.  # noqa: E501
+        Gets or sets the watermark image.  # noqa: E501
 
-        :return: The rotation_angle of this WatermarkText.  # noqa: E501
+        :return: The image of this WatermarkDataImage.  # noqa: E501
+        :rtype: FileReference
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image):
+        """Sets the image of this WatermarkDataImage.
+
+        Gets or sets the watermark image.  # noqa: E501
+
+        :param image: The image of this WatermarkDataImage.  # noqa: E501
+        :type: FileReference
+        """
+        self._image = image
+
+    @property
+    def is_washout(self):
+        """Gets the is_washout of this WatermarkDataImage.  # noqa: E501
+
+        Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.  # noqa: E501
+
+        :return: The is_washout of this WatermarkDataImage.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_washout
+
+    @is_washout.setter
+    def is_washout(self, is_washout):
+        """Sets the is_washout of this WatermarkDataImage.
+
+        Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.  # noqa: E501
+
+        :param is_washout: The is_washout of this WatermarkDataImage.  # noqa: E501
+        :type: bool
+        """
+        self._is_washout = is_washout
+
+    @property
+    def scale(self):
+        """Gets the scale of this WatermarkDataImage.  # noqa: E501
+
+        Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.  # noqa: E501
+
+        :return: The scale of this WatermarkDataImage.  # noqa: E501
         :rtype: float
         """
-        return self._rotation_angle
+        return self._scale
 
-    @rotation_angle.setter
-    def rotation_angle(self, rotation_angle):
-        """Sets the rotation_angle of this WatermarkText.
+    @scale.setter
+    def scale(self, scale):
+        """Sets the scale of this WatermarkDataImage.
 
-        Gets or sets the watermark rotation angle.  # noqa: E501
+        Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.  # noqa: E501
 
-        :param rotation_angle: The rotation_angle of this WatermarkText.  # noqa: E501
+        :param scale: The scale of this WatermarkDataImage.  # noqa: E501
         :type: float
         """
-        self._rotation_angle = rotation_angle
-
-    @property
-    def text(self):
-        """Gets the text of this WatermarkText.  # noqa: E501
-
-        Gets or sets the watermark text.  # noqa: E501
-
-        :return: The text of this WatermarkText.  # noqa: E501
-        :rtype: str
-        """
-        return self._text
-
-    @text.setter
-    def text(self, text):
-        """Sets the text of this WatermarkText.
-
-        Gets or sets the watermark text.  # noqa: E501
-
-        :param text: The text of this WatermarkText.  # noqa: E501
-        :type: str
-        """
-        self._text = text
+        self._scale = scale
 
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
+        if self._image is not None:
+            self._image.extract_files_content(filesContentResult)
+
+
+
 
     def validate(self):
         """Validate all required properties in model"""
-        if self._rotation_angle is None:
-            raise ValueError("Property RotationAngle in WatermarkText is required.")  # noqa: E501
-        if self._text is None:
-            raise ValueError("Property Text in WatermarkText is required.")  # noqa: E501
+        if self._image is None:
+            raise ValueError("Property Image in WatermarkDataImage is required.")  # noqa: E501
+
+        if self._image is not None:
+            self._image.validate()
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -184,7 +219,7 @@ class WatermarkText(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, WatermarkText):
+        if not isinstance(other, WatermarkDataImage):
             return False
 
         return self.__dict__ == other.__dict__

@@ -37,7 +37,6 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
     Initializes a new instance.
     :param document The document.
     :param compare_data Compare data.
-    :param comparing_document The comparing document.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -45,10 +44,9 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
     :param encrypted_password2 encrypted password for the second document.
     """
 
-    def __init__(self, document, compare_data, comparing_document=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, encrypted_password2=None):
+    def __init__(self, document, compare_data, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, encrypted_password2=None):
         self.document = document
         self.compare_data = compare_data
-        self.comparing_document = comparing_document
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
@@ -107,8 +105,7 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
             form_params.append(['document', self.document, 'file'])  # noqa: E501
         if self.compare_data is not None:
             form_params.append(['compareData', self.compare_data, 'json'])  # noqa: E501
-        if self.comparing_document is not None:
-            form_params.append(['comparingDocument', self.comparing_document, 'file'])  # noqa: E501
+            self.compare_data.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
             form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501

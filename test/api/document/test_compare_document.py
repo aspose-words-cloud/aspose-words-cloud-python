@@ -46,7 +46,8 @@ class TestCompareDocument(BaseTestContext):
         self.upload_file(remote_folder + '/' + remote_name1, open(os.path.join(self.local_test_folder, local_folder + '/' + local_name1), 'rb'))
         self.upload_file(remote_folder + '/' + remote_name2, open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb'))
 
-        request_compare_data = asposewordscloud.CompareData(author='author', comparing_with_document=remote_folder + '/' + remote_name2, date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
+        request_compare_data_file_reference = asposewordscloud.FileReference.fromRemoteFilePath(remote_folder + '/' + remote_name2)
+        request_compare_data = asposewordscloud.CompareData(author='author', date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'), file_reference=request_compare_data_file_reference)
         request = asposewordscloud.models.requests.CompareDocumentRequest(name=remote_name1, compare_data=request_compare_data, folder=remote_folder, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
 
         result = self.words_api.compare_document(request)
@@ -67,7 +68,8 @@ class TestCompareDocument(BaseTestContext):
         self.upload_file(remote_folder + '/' + remote_name2, open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb'))
 
         request_document = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name1), 'rb')
-        request_compare_data = asposewordscloud.CompareData(author='author', comparing_with_document=remote_folder + '/' + remote_name2, date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
+        request_compare_data_file_reference = asposewordscloud.FileReference.fromRemoteFilePath(remote_folder + '/' + remote_name2)
+        request_compare_data = asposewordscloud.CompareData(author='author', date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'), file_reference=request_compare_data_file_reference)
         request = asposewordscloud.models.requests.CompareDocumentOnlineRequest(document=request_document, compare_data=request_compare_data, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
 
         result = self.words_api.compare_document_online(request)
@@ -87,9 +89,10 @@ class TestCompareDocument(BaseTestContext):
         self.upload_file(remote_folder + '/' + remote_name2, open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb'))
 
         request_document = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name1), 'rb')
-        request_compare_data = asposewordscloud.CompareData(author='author', comparing_with_document=remote_folder + '/' + remote_name2, date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
-        request_comparing_document = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb')
-        request = asposewordscloud.models.requests.CompareDocumentOnlineRequest(document=request_document, compare_data=request_compare_data, comparing_document=request_comparing_document, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
+        request_compare_data_file_reference_stream = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb')
+        request_compare_data_file_reference = asposewordscloud.FileReference.fromLocalFileContent(request_compare_data_file_reference_stream)
+        request_compare_data = asposewordscloud.CompareData(author='author', date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'), file_reference=request_compare_data_file_reference)
+        request = asposewordscloud.models.requests.CompareDocumentOnlineRequest(document=request_document, compare_data=request_compare_data, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
 
         result = self.words_api.compare_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

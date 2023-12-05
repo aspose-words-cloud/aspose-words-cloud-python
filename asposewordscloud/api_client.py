@@ -322,6 +322,8 @@ class ApiClient(object):
         'TiffSaveOptionsData, _': asposewordscloud.models.TiffSaveOptionsData,
         'TimeZoneInfoData, _': asposewordscloud.models.TimeZoneInfoData,
         'UserInformation, _': asposewordscloud.models.UserInformation,
+        'WatermarkDataImage, _': asposewordscloud.models.WatermarkDataImage,
+        'WatermarkDataText, _': asposewordscloud.models.WatermarkDataText,
         'WatermarkText, _': asposewordscloud.models.WatermarkText,
         'WordMLSaveOptionsData, _': asposewordscloud.models.WordMLSaveOptionsData,
         'WordsApiErrorResponse, _': asposewordscloud.models.WordsApiErrorResponse,

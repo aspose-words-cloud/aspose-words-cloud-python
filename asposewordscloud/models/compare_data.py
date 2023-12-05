@@ -47,6 +47,7 @@ class CompareData(object):
         'compare_options': 'CompareOptions',
         'comparing_with_document': 'str',
         'date_time': 'datetime',
+        'file_reference': 'FileReference',
         'result_document_format': 'str'
     }
 
@@ -55,16 +56,18 @@ class CompareData(object):
         'compare_options': 'CompareOptions',
         'comparing_with_document': 'ComparingWithDocument',
         'date_time': 'DateTime',
+        'file_reference': 'FileReference',
         'result_document_format': 'ResultDocumentFormat'
     }
 
-    def __init__(self, author=None, compare_options=None, comparing_with_document=None, date_time=None, result_document_format=None):  # noqa: E501
+    def __init__(self, author=None, compare_options=None, comparing_with_document=None, date_time=None, file_reference=None, result_document_format=None):  # noqa: E501
         """CompareData - a model defined in Swagger"""  # noqa: E501
 
         self._author = None
         self._compare_options = None
         self._comparing_with_document = None
         self._date_time = None
+        self._file_reference = None
         self._result_document_format = None
         self.discriminator = None
 
@@ -76,6 +79,8 @@ class CompareData(object):
             self.comparing_with_document = comparing_with_document
         if date_time is not None:
             self.date_time = date_time
+        if file_reference is not None:
+            self.file_reference = file_reference
         if result_document_format is not None:
             self.result_document_format = result_document_format
 
@@ -168,6 +173,28 @@ class CompareData(object):
         self._date_time = date_time
 
     @property
+    def file_reference(self):
+        """Gets the file_reference of this CompareData.  # noqa: E501
+
+        Gets or sets the file reference.  # noqa: E501
+
+        :return: The file_reference of this CompareData.  # noqa: E501
+        :rtype: FileReference
+        """
+        return self._file_reference
+
+    @file_reference.setter
+    def file_reference(self, file_reference):
+        """Sets the file_reference of this CompareData.
+
+        Gets or sets the file reference.  # noqa: E501
+
+        :param file_reference: The file_reference of this CompareData.  # noqa: E501
+        :type: FileReference
+        """
+        self._file_reference = file_reference
+
+    @property
     def result_document_format(self):
         """Gets the result_document_format of this CompareData.  # noqa: E501
 
@@ -192,18 +219,27 @@ class CompareData(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
+        if self._file_reference is not None:
+            self._file_reference.extract_files_content(filesContentResult)
+
+
 
     def validate(self):
         """Validate all required properties in model"""
         if self._author is None:
             raise ValueError("Property Author in CompareData is required.")  # noqa: E501
-        if self._comparing_with_document is None:
-            raise ValueError("Property ComparingWithDocument in CompareData is required.")  # noqa: E501
+        if self._file_reference is None:
+            raise ValueError("Property FileReference in CompareData is required.")  # noqa: E501
 
         if self._compare_options is not None:
             self._compare_options.validate()
 
 
+
+
+
+        if self._file_reference is not None:
+            self._file_reference.validate()
 
 
 
