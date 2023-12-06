@@ -56,7 +56,7 @@ class StructuredDocumentTagInsert(object):
         'building_block_gallery': 'str',
         'building_block_category': 'str',
         'multiline': 'bool',
-        'color': 'str',
+        'color': 'XmlColor',
         'style_name': 'str',
         'calendar_type': 'str',
         'is_temporary': 'bool',
@@ -491,7 +491,7 @@ class StructuredDocumentTagInsert(object):
         Gets or sets the color of the structured document tag.  # noqa: E501
 
         :return: The color of this StructuredDocumentTagInsert.  # noqa: E501
-        :rtype: str
+        :rtype: XmlColor
         """
         return self._color
 
@@ -502,7 +502,7 @@ class StructuredDocumentTagInsert(object):
         Gets or sets the color of the structured document tag.  # noqa: E501
 
         :param color: The color of this StructuredDocumentTagInsert.  # noqa: E501
-        :type: str
+        :type: XmlColor
         """
         self._color = color
 
@@ -816,6 +816,10 @@ class StructuredDocumentTagInsert(object):
 
 
 
+
+
+        if self._color is not None:
+            self._color.validate()
 
 
 

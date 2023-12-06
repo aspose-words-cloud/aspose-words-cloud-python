@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="compare_document_request.py">
+# <copyright company="Aspose" file="insert_watermark_request.py">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,44 +31,46 @@ from asposewordscloud.models import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class CompareDocumentRequest(BaseRequestObject):
+class InsertWatermarkRequest(BaseRequestObject):
     """
-    Request model for compare_document operation.
+    Request model for insert_watermark operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param compare_data Compare data.
+    :param watermark_data The watermark data.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param encrypted_password2 encrypted password for the second document.
+    :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, compare_data, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, encrypted_password2=None):
+    def __init__(self, name, watermark_data, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.compare_data = compare_data
+        self.watermark_data = watermark_data
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
-        self.encrypted_password2 = encrypted_password2
+        self.revision_author = revision_author
+        self.revision_date_time = revision_date_time
 
     def create_http_request(self, api_client):
         # verify the required parameter 'name' is set
         if self.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `compare_document`")  # noqa: E501
-        # verify the required parameter 'compare_data' is set
-        if self.compare_data is None:
-            raise ValueError("Missing the required parameter `compare_data` when calling `compare_document`")  # noqa: E501
-        if self.compare_data is not None:
-            self.compare_data.validate()
+            raise ValueError("Missing the required parameter `name` when calling `insert_watermark`")  # noqa: E501
+        # verify the required parameter 'watermark_data' is set
+        if self.watermark_data is None:
+            raise ValueError("Missing the required parameter `watermark_data` when calling `insert_watermark`")  # noqa: E501
+        if self.watermark_data is not None:
+            self.watermark_data.validate()
 
 
-        path = '/v4.0/words/{name}/compareDocument'
+        path = '/v4.0/words/{name}/watermarks/insert'
         path_params = {}
         if self.name is not None:
             path_params['name'] = self.name  # noqa: E501
@@ -103,8 +105,10 @@ class CompareDocumentRequest(BaseRequestObject):
                 query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
-        if self.encrypted_password2 is not None:
-                query_params.append(('encryptedPassword2', self.encrypted_password2))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`
@@ -113,15 +117,15 @@ class CompareDocumentRequest(BaseRequestObject):
 
         file_content_params = []
         form_params = []
-        if self.compare_data is not None:
-            form_params.append(['compareData', self.compare_data, 'json'])  # noqa: E501
-            self.compare_data.extract_files_content(file_content_params)
+        if self.watermark_data is not None:
+            form_params.append(['watermarkData', self.watermark_data, 'json'])  # noqa: E501
+            self.watermark_data.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
             form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "body": None,
             "query_params": query_params,
