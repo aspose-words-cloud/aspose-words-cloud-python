@@ -31,6 +31,7 @@ import datetime
 import six
 import json
 
+@typing_extensions.deprecated("This model will be removed in the future.")
 class WatermarkText(object):
     """Class for insert watermark text request building.
     """

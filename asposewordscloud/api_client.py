@@ -246,6 +246,7 @@ class ApiClient(object):
         'ProtectionData, _': asposewordscloud.models.ProtectionData,
         'ProtectionDataResponse, _': asposewordscloud.models.ProtectionDataResponse,
         'ProtectionRequest, _': asposewordscloud.models.ProtectionRequest,
+        'ProtectionRequestV2, _': asposewordscloud.models.ProtectionRequestV2,
         'PsSaveOptionsData, _': asposewordscloud.models.PsSaveOptionsData,
         'PublicKeyResponse, _': asposewordscloud.models.PublicKeyResponse,
         'RangeDocument, _': asposewordscloud.models.RangeDocument,
@@ -321,6 +322,8 @@ class ApiClient(object):
         'TiffSaveOptionsData, _': asposewordscloud.models.TiffSaveOptionsData,
         'TimeZoneInfoData, _': asposewordscloud.models.TimeZoneInfoData,
         'UserInformation, _': asposewordscloud.models.UserInformation,
+        'WatermarkDataImage, _': asposewordscloud.models.WatermarkDataImage,
+        'WatermarkDataText, _': asposewordscloud.models.WatermarkDataText,
         'WatermarkText, _': asposewordscloud.models.WatermarkText,
         'WordMLSaveOptionsData, _': asposewordscloud.models.WordMLSaveOptionsData,
         'WordsApiErrorResponse, _': asposewordscloud.models.WordsApiErrorResponse,
@@ -342,12 +345,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '23.11'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '23.12'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 23.11'
+        self.user_agent = 'python sdk 23.12'
 
     def __del__(self):
         if not self.pool is None:

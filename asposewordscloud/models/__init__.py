@@ -176,6 +176,7 @@ from asposewordscloud.models.preferred_width import PreferredWidth
 from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse
 from asposewordscloud.models.protection_request import ProtectionRequest
+from asposewordscloud.models.protection_request_v2 import ProtectionRequestV2
 from asposewordscloud.models.ps_save_options_data import PsSaveOptionsData
 from asposewordscloud.models.public_key_response import PublicKeyResponse
 from asposewordscloud.models.range_document import RangeDocument
@@ -251,6 +252,8 @@ from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.tiff_save_options_data import TiffSaveOptionsData
 from asposewordscloud.models.time_zone_info_data import TimeZoneInfoData
 from asposewordscloud.models.user_information import UserInformation
+from asposewordscloud.models.watermark_data_image import WatermarkDataImage
+from asposewordscloud.models.watermark_data_text import WatermarkDataText
 from asposewordscloud.models.watermark_text import WatermarkText
 from asposewordscloud.models.word_ml_save_options_data import WordMLSaveOptionsData
 from asposewordscloud.models.words_api_error_response import WordsApiErrorResponse

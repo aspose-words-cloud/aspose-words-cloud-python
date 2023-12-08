@@ -1049,7 +1049,6 @@ class WordsApi(Encryptor, object):
         :param is_async bool
         :param document file : The document. (required)
         :param compare_data CompareData : Compare data. (required)
-        :param comparing_document file : The comparing document.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -5303,6 +5302,167 @@ class WordsApi(Encryptor, object):
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_office_math_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+
+    def delete_office_math_objects(self, request, **kwargs):  # noqa: E501
+        """Removes all office math objects from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The filename of the input document. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_office_math_objects_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes all office math objects from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteOfficeMathObjectsRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_office_math_objects" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+
+    def delete_office_math_objects_online(self, request, **kwargs):  # noqa: E501
+        """Removes all office math objects from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: files_collection
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_office_math_objects_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes all office math objects from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteOfficeMathObjectsOnlineRequest object with parameters
+        :return: files_collection
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_office_math_objects_online" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -19671,6 +19831,90 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
 
+    def insert_watermark(self, request, **kwargs):  # noqa: E501
+        """Insert a watermark to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The filename of the input document. (required)
+        :param watermark_data WatermarkDataBase : The watermark data. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_watermark_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Insert a watermark to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertWatermarkRequest object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_watermark" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_image(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
 
@@ -19707,6 +19951,7 @@ class WordsApi(Encryptor, object):
             data = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_image_with_http_info(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
 
@@ -19756,7 +20001,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
-
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_image_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
 
@@ -19791,6 +20036,7 @@ class WordsApi(Encryptor, object):
             data = self.insert_watermark_image_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_image_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
 
@@ -19841,6 +20087,88 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
 
+    def insert_watermark_online(self, request, **kwargs):  # noqa: E501
+        """Insert a watermark to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param watermark_data WatermarkDataBase : The watermark data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertWatermarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_watermark_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Insert a watermark to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertWatermarkOnlineRequest object with parameters
+        :return: InsertWatermarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_watermark_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_text(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
 
@@ -19875,6 +20203,7 @@ class WordsApi(Encryptor, object):
             data = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_text_with_http_info(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
 
@@ -19924,7 +20253,7 @@ class WordsApi(Encryptor, object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=http_params['collection_formats']))
 
-
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_text_online(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
 
@@ -19957,6 +20286,7 @@ class WordsApi(Encryptor, object):
             data = self.insert_watermark_text_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
+    @typing_extensions.deprecated("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")
     def insert_watermark_text_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
 
@@ -20483,14 +20813,14 @@ class WordsApi(Encryptor, object):
 
 
     def protect_document(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
+        :param protection_request ProtectionRequestBase : Use ProtectionRequestV2 model to provide protection options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -20515,7 +20845,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -20565,14 +20895,14 @@ class WordsApi(Encryptor, object):
 
 
     def protect_document_online(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param document file : The document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
+        :param protection_request ProtectionRequestBase : Use ProtectionRequestV2 model to provide protection options. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -20595,7 +20925,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def protect_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds protection to the document.  # noqa: E501
+        """Changes the document protection. The previous protection will be overwritten if it exist.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23042,7 +23372,6 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -23093,9 +23422,6 @@ class WordsApi(Encryptor, object):
         del params['kwargs']
         http_params = request.create_http_request(self.api_client)
 
-        # HTTP header `Accept`
-        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
@@ -23124,7 +23450,6 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param protection_request ProtectionRequest : Protection request. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

@@ -168,6 +168,14 @@ class BookmarkInsert(object):
 
     def validate(self):
         """Validate all required properties in model"""
+        if self._name is None:
+            raise ValueError("Property Name in BookmarkInsert is required.")  # noqa: E501
+        if self._text is None:
+            raise ValueError("Property Text in BookmarkInsert is required.")  # noqa: E501
+        if self._start_range is None:
+            raise ValueError("Property StartRange in BookmarkInsert is required.")  # noqa: E501
+        if self._end_range is None:
+            raise ValueError("Property EndRange in BookmarkInsert is required.")  # noqa: E501
 
         if self._start_range is not None:
             self._start_range.validate()

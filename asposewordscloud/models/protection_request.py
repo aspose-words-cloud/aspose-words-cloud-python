@@ -31,6 +31,7 @@ import datetime
 import six
 import json
 
+@typing_extensions.deprecated("ProtectionRequest is deprecated and remains for backwards compatibility only.")
 class ProtectionRequest(object):
     """Request on changing of protection.
     """

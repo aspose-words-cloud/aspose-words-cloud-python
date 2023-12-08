@@ -36,7 +36,7 @@ class ProtectDocumentOnlineRequest(BaseRequestObject):
     Request model for protect_document_online operation.
     Initializes a new instance.
     :param document The document.
-    :param protection_request Protection request.
+    :param protection_request Use ProtectionRequestV2 model to provide protection options.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

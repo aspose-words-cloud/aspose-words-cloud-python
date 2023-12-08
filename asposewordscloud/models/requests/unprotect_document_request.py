@@ -36,7 +36,6 @@ class UnprotectDocumentRequest(BaseRequestObject):
     Request model for unprotect_document operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param protection_request Protection request.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -45,9 +44,8 @@ class UnprotectDocumentRequest(BaseRequestObject):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, protection_request, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None):
+    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None):
         self.name = name
-        self.protection_request = protection_request
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -59,12 +57,6 @@ class UnprotectDocumentRequest(BaseRequestObject):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `unprotect_document`")  # noqa: E501
-        # verify the required parameter 'protection_request' is set
-        if self.protection_request is None:
-            raise ValueError("Missing the required parameter `protection_request` when calling `unprotect_document`")  # noqa: E501
-        if self.protection_request is not None:
-            self.protection_request.validate()
-
 
         path = '/v4.0/words/{name}/protection'
         path_params = {}
@@ -103,14 +95,9 @@ class UnprotectDocumentRequest(BaseRequestObject):
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
 
         header_params = {}
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
 
         file_content_params = []
         form_params = []
-        if self.protection_request is not None:
-            form_params.append(['protectionRequest', self.protection_request, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
             form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
