@@ -53,7 +53,7 @@ class SaveAsRangeOnlineRequest(BaseRequestObject):
         self.password = password
         self.encrypted_password = encrypted_password
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `save_as_range_online`")  # noqa: E501
@@ -114,7 +114,9 @@ class SaveAsRangeOnlineRequest(BaseRequestObject):
             form_params.append(['documentParameters', self.document_parameters, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

@@ -34,26 +34,32 @@ import uuid
 class FileReference(object):
     swagger_types = {
         'source': 'str',
-        'reference': 'str'
+        'reference': 'str',
+        'password': 'str',
+        'encryptedPassword': 'str'
     }
 
     attribute_map = {
         'source': 'Source',
-        'reference': 'Reference'
+        'reference': 'Reference',
+        'password': 'Password',
+        'encryptedPassword': 'EncryptedPassword'
     }
 
-    def __init__(self, source, reference, content):  # noqa: E501
+    def __init__(self, source, reference, content, password):  # noqa: E501
         self._source = source
         self._reference = reference
         self._content = content
+        self._password = password
+        self._encryptedPassword = None
 
     @staticmethod
-    def fromRemoteFilePath(remoteFilePath):
-        return FileReference('Storage', remoteFilePath, None)
+    def fromRemoteFilePath(remoteFilePath, password = None):
+        return FileReference('Storage', remoteFilePath, None, password)
 
     @staticmethod
-    def fromLocalFileContent(localFileContent):
-        return FileReference('Request', str(uuid.uuid4()), localFileContent)
+    def fromLocalFileContent(localFileContent, password = None):
+        return FileReference('Request', str(uuid.uuid4()), localFileContent, password)
 
     @property
     def source(self):
@@ -67,10 +73,23 @@ class FileReference(object):
     def content(self):
         return self._content
 
+    @property
+    def password(self):
+        return self._password
+
+    @property
+    def encryptedPassword(self):
+        return self._encryptedPassword
+
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
         if self._source == 'Request':
             filesContentResult.append(self)
+
+    def encryptPassword(encryptor):
+        if self._password is not None:
+            self._encryptedPassword = encryptor.encrypt(self._password)
+            self._password = None
 
     def validate(self):
         """Validate all required properties in model"""

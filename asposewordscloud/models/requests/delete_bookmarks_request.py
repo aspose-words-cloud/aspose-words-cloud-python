@@ -57,7 +57,7 @@ class DeleteBookmarksRequest(BaseRequestObject):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_bookmarks`")  # noqa: E501
@@ -108,7 +108,9 @@ class DeleteBookmarksRequest(BaseRequestObject):
         form_params = []
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "DELETE",

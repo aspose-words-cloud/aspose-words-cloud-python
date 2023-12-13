@@ -89,7 +89,7 @@ class SaveAsTiffRequest(BaseRequestObject):
         self.zip_output = zip_output
         self.fonts_location = fonts_location
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `save_as_tiff`")  # noqa: E501
@@ -181,7 +181,9 @@ class SaveAsTiffRequest(BaseRequestObject):
             form_params.append(['saveOptions', self.save_options, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

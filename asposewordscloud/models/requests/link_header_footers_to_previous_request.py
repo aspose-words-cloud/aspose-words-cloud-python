@@ -61,7 +61,7 @@ class LinkHeaderFootersToPreviousRequest(BaseRequestObject):
         self.revision_date_time = revision_date_time
         self.mode = mode
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `link_header_footers_to_previous`")  # noqa: E501
@@ -121,7 +121,9 @@ class LinkHeaderFootersToPreviousRequest(BaseRequestObject):
         form_params = []
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

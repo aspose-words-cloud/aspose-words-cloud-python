@@ -973,7 +973,7 @@ class ApiClient(object):
         return instance
 
     def request_to_batch_part(self, request, encryptor):
-        http_request = request.create_http_request(self)
+        http_request = request.create_http_request(self, encryptor)
         if http_request['form_params'] and http_request['body']:
             raise ValueError("body parameter cannot be used with post_params parameter.")
 
