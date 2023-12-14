@@ -86,7 +86,7 @@ class FileReference(object):
         if self._source == 'Request':
             filesContentResult.append(self)
 
-    def encryptPassword(encryptor):
+    def encryptPassword(self, encryptor):
         if self._password is not None:
             self._encryptedPassword = encryptor.encrypt(self._password)
             self._password = None
