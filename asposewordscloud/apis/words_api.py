@@ -126,7 +126,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -202,7 +202,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -286,7 +286,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -368,7 +368,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -453,7 +453,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -536,7 +536,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -619,7 +619,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -697,7 +697,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -773,7 +773,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -855,7 +855,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -932,7 +932,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -972,7 +972,6 @@ class WordsApi(Encryptor, object):
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param encrypted_password2 str : encrypted password for the second document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1015,7 +1014,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1053,7 +1052,6 @@ class WordsApi(Encryptor, object):
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param encrypted_password2 str : encrypted password for the second document.
         :return: CompareDocumentOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1096,7 +1094,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1178,7 +1176,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1258,7 +1256,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1341,7 +1339,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1420,7 +1418,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -1495,7 +1493,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -1576,7 +1574,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1658,7 +1656,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -1742,7 +1740,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -1816,7 +1814,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -1889,7 +1887,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -1971,7 +1969,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2054,7 +2052,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2137,7 +2135,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -2215,7 +2213,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2299,7 +2297,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -2378,7 +2376,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2461,7 +2459,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -2539,7 +2537,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2624,7 +2622,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -2704,7 +2702,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2788,7 +2786,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -2867,7 +2865,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -2951,7 +2949,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3030,7 +3028,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3113,7 +3111,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3191,7 +3189,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3275,7 +3273,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3354,7 +3352,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3437,7 +3435,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3515,7 +3513,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3599,7 +3597,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3678,7 +3676,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3763,7 +3761,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -3843,7 +3841,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -3928,7 +3926,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4008,7 +4006,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -4092,7 +4090,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4171,7 +4169,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -4248,7 +4246,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4322,7 +4320,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4404,7 +4402,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4484,7 +4482,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -4569,7 +4567,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4649,7 +4647,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -4734,7 +4732,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4814,7 +4812,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -4899,7 +4897,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -4979,7 +4977,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5062,7 +5060,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5140,7 +5138,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5225,7 +5223,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5305,7 +5303,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5388,7 +5386,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5466,7 +5464,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5551,7 +5549,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5633,7 +5631,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5713,7 +5711,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5796,7 +5794,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -5880,7 +5878,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -5959,7 +5957,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6044,7 +6042,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6124,7 +6122,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6208,7 +6206,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6287,7 +6285,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6372,7 +6370,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6452,7 +6450,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6537,7 +6535,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6619,7 +6617,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6699,7 +6697,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6782,7 +6780,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -6867,7 +6865,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -6947,7 +6945,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7030,7 +7028,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7108,7 +7106,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7185,7 +7183,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7269,7 +7267,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7349,7 +7347,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7424,7 +7422,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7502,7 +7500,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7578,7 +7576,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7658,7 +7656,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7733,7 +7731,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7815,7 +7813,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -7892,7 +7890,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -7973,7 +7971,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8049,7 +8047,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8130,7 +8128,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8206,7 +8204,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8286,7 +8284,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8361,7 +8359,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8442,7 +8440,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8518,7 +8516,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8598,7 +8596,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8673,7 +8671,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8753,7 +8751,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8832,7 +8830,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -8909,7 +8907,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -8991,7 +8989,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9068,7 +9066,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9150,7 +9148,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9227,7 +9225,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9308,7 +9306,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9384,7 +9382,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9465,7 +9463,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9541,7 +9539,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9622,7 +9620,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9698,7 +9696,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9778,7 +9776,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -9853,7 +9851,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -9933,7 +9931,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10008,7 +10006,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10089,7 +10087,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10165,7 +10163,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10245,7 +10243,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10320,7 +10318,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10403,7 +10401,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10481,7 +10479,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10564,7 +10562,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10643,7 +10641,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10720,7 +10718,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10801,7 +10799,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -10877,7 +10875,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -10953,7 +10951,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11032,7 +11030,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11109,7 +11107,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11190,7 +11188,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11266,7 +11264,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11348,7 +11346,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11425,7 +11423,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11506,7 +11504,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11582,7 +11580,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11664,7 +11662,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11744,7 +11742,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -11822,7 +11820,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11902,7 +11900,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -11984,7 +11982,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12061,7 +12059,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -12135,7 +12133,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12213,7 +12211,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12289,7 +12287,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -12369,7 +12367,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12444,7 +12442,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -12526,7 +12524,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12603,7 +12601,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -12684,7 +12682,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12760,7 +12758,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -12842,7 +12840,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12921,7 +12919,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -12998,7 +12996,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13080,7 +13078,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13157,7 +13155,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13237,7 +13235,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13318,7 +13316,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13394,7 +13392,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13476,7 +13474,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13553,7 +13551,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13627,7 +13625,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13706,7 +13704,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13783,7 +13781,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -13865,7 +13863,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -13944,7 +13942,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14021,7 +14019,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14101,7 +14099,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14182,7 +14180,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14258,7 +14256,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14339,7 +14337,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14415,7 +14413,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14496,7 +14494,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14572,7 +14570,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14652,7 +14650,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14727,7 +14725,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14809,7 +14807,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -14886,7 +14884,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -14967,7 +14965,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15043,7 +15041,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15124,7 +15122,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15202,7 +15200,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15278,7 +15276,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15357,7 +15355,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15437,7 +15435,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15512,7 +15510,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15594,7 +15592,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15673,7 +15671,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15752,7 +15750,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -15829,7 +15827,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15909,7 +15907,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -15989,7 +15987,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16071,7 +16069,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -16148,7 +16146,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16230,7 +16228,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -16309,7 +16307,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -16386,7 +16384,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16466,7 +16464,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16547,7 +16545,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -16623,7 +16621,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16707,7 +16705,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16789,7 +16787,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16873,7 +16871,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -16955,7 +16953,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17039,7 +17037,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17121,7 +17119,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17207,7 +17205,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17291,7 +17289,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17377,7 +17375,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17461,7 +17459,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17546,7 +17544,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17629,7 +17627,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17715,7 +17713,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17799,7 +17797,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17884,7 +17882,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -17967,7 +17965,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18051,7 +18049,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18133,7 +18131,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18217,7 +18215,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18299,7 +18297,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18383,7 +18381,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18465,7 +18463,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18551,7 +18549,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18635,7 +18633,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18721,7 +18719,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18805,7 +18803,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -18889,7 +18887,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -18968,7 +18966,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19053,7 +19051,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19136,7 +19134,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19220,7 +19218,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19302,7 +19300,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19387,7 +19385,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19472,7 +19470,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19555,7 +19553,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19638,7 +19636,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19723,7 +19721,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19806,7 +19804,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19890,7 +19888,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -19977,7 +19975,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20062,7 +20060,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20144,7 +20142,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20229,7 +20227,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20312,7 +20310,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20397,7 +20395,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -20470,7 +20468,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20549,7 +20547,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -20624,7 +20622,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -20705,7 +20703,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20787,7 +20785,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20869,7 +20867,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -20949,7 +20947,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21030,7 +21028,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21106,7 +21104,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21189,7 +21187,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21267,7 +21265,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21352,7 +21350,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21432,7 +21430,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21517,7 +21515,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21597,7 +21595,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21680,7 +21678,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21758,7 +21756,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -21843,7 +21841,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -21923,7 +21921,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22008,7 +22006,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -22088,7 +22086,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22172,7 +22170,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22254,7 +22252,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22338,7 +22336,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22420,7 +22418,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22494,7 +22492,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -22573,7 +22571,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22653,7 +22651,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22736,7 +22734,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22817,7 +22815,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -22917,7 +22915,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23015,7 +23013,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23096,7 +23094,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -23172,7 +23170,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23258,7 +23256,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -23339,7 +23337,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23420,7 +23418,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -23496,7 +23494,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23581,7 +23579,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23664,7 +23662,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23750,7 +23748,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23834,7 +23832,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -23919,7 +23917,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24002,7 +24000,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24087,7 +24085,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24170,7 +24168,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24257,7 +24255,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24342,7 +24340,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24428,7 +24426,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24512,7 +24510,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24593,7 +24591,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
@@ -24669,7 +24667,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24755,7 +24753,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24839,7 +24837,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -24925,7 +24923,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25009,7 +25007,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25094,7 +25092,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25180,7 +25178,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25264,7 +25262,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25347,7 +25345,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25433,7 +25431,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25517,7 +25515,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25603,7 +25601,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25687,7 +25685,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25773,7 +25771,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25859,7 +25857,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -25943,7 +25941,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26027,7 +26025,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26112,7 +26110,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26195,7 +26193,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26281,7 +26279,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26365,7 +26363,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26450,7 +26448,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26533,7 +26531,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26619,7 +26617,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26703,7 +26701,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26789,7 +26787,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26873,7 +26871,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -26959,7 +26957,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -27043,7 +27041,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(
@@ -27120,7 +27118,7 @@ class WordsApi(Encryptor, object):
                 )
             params[key] = val
         del params['kwargs']
-        http_params = request.create_http_request(self.api_client)
+        http_params = request.create_http_request(self.api_client, self)
 
         # HTTP header `Accept`
         http_params['header_params']['Accept'] = self.api_client.select_header_accept(

@@ -65,7 +65,7 @@ class ExecuteMailMergeRequest(BaseRequestObject):
         self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
         self.dest_file_name = dest_file_name
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `execute_mail_merge`")  # noqa: E501
@@ -130,7 +130,9 @@ class ExecuteMailMergeRequest(BaseRequestObject):
             form_params.append(['options', self.options, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

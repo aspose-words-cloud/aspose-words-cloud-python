@@ -49,7 +49,7 @@ class GetDocumentFieldNamesOnlineRequest(BaseRequestObject):
         self.encrypted_password = encrypted_password
         self.use_non_merge_fields = use_non_merge_fields
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'template' is set
         if self.template is None:
             raise ValueError("Missing the required parameter `template` when calling `get_document_field_names_online`")  # noqa: E501
@@ -93,7 +93,9 @@ class GetDocumentFieldNamesOnlineRequest(BaseRequestObject):
             form_params.append(['template', self.template, 'file'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

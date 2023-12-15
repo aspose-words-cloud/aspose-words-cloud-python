@@ -43,7 +43,7 @@ class ClassifyRequest(BaseRequestObject):
         self.text = text
         self.best_classes_count = best_classes_count
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'text' is set
         if self.text is None:
             raise ValueError("Missing the required parameter `text` when calling `classify`")  # noqa: E501
@@ -81,7 +81,9 @@ class ClassifyRequest(BaseRequestObject):
             form_params.append(['text', self.text, 'string'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

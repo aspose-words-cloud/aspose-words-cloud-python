@@ -41,19 +41,17 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param encrypted_password2 encrypted password for the second document.
     """
 
-    def __init__(self, document, compare_data, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, encrypted_password2=None):
+    def __init__(self, document, compare_data, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None):
         self.document = document
         self.compare_data = compare_data
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
-        self.encrypted_password2 = encrypted_password2
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `compare_document_online`")  # noqa: E501
@@ -91,8 +89,6 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
                 query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
-        if self.encrypted_password2 is not None:
-                query_params.append(('encryptedPassword2', self.encrypted_password2))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`
@@ -108,7 +104,9 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
             self.compare_data.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

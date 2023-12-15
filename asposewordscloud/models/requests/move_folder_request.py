@@ -47,7 +47,7 @@ class MoveFolderRequest(BaseRequestObject):
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'dest_path' is set
         if self.dest_path is None:
             raise ValueError("Missing the required parameter `dest_path` when calling `move_folder`")  # noqa: E501
@@ -91,7 +91,9 @@ class MoveFolderRequest(BaseRequestObject):
         form_params = []
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",
