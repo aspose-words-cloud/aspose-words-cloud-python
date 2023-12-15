@@ -97,3 +97,24 @@ class TestCompareDocument(BaseTestContext):
         result = self.words_api.compare_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for document comparison with password protection.
+    #
+    def test_compare_document_with_password(self):
+        remote_folder = self.remote_test_folder + '/DocumentActions/CompareDocument'
+        local_name = 'DocWithPassword.docx'
+        remote_name1 = 'TestCompareDocument1.docx'
+        remote_name2 = 'TestCompareDocument2.docx'
+
+        self.upload_file(remote_folder + '/' + remote_name1, open(os.path.join(self.local_test_folder, 'Common/' + local_name), 'rb'))
+        self.upload_file(remote_folder + '/' + remote_name2, open(os.path.join(self.local_test_folder, 'Common/' + local_name), 'rb'))
+
+        request_compare_data_file_reference = asposewordscloud.FileReference.fromRemoteFilePath(remote_folder + '/' + remote_name2, "12345")
+        request_compare_data = asposewordscloud.CompareData(author='author', date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'), file_reference=request_compare_data_file_reference)
+        request = asposewordscloud.models.requests.CompareDocumentRequest(name=remote_name1, compare_data=request_compare_data, folder=remote_folder, password='12345', dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.docx')
+
+        result = self.words_api.compare_document(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.document, 'Validate CompareDocumentWithPassword response')
+        self.assertEqual('TestCompareDocumentOut.docx', result.document.file_name)

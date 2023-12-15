@@ -23,6 +23,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - Parameter ProtectionRequest was removed from the UnprotectDocument operation. Now removing protection from a document does not require a password.
 - Model ProtectionRequest marked as deprecated, please use ProtectionRequestV2 instead for perform ProtectDocument operation. To change the password or protection type of protected document, the old password is no required.
 - Added fields Password and EncryptedPassword to FileReference for documents encrypted by password.
+- Removed parameter encryptedPassword2 from CompareDocument method. Please use FileReference password instead.
 - Rename aspose-client header.
 
 ## Enhancements in Version 23.11
