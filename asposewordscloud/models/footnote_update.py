@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="footnote_update.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,7 +43,7 @@ class FootnoteUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'position': 'NewDocumentPosition',
+        'position': 'Position',
         'footnote_type': 'str',
         'reference_mark': 'str',
         'text': 'str'
@@ -78,10 +78,10 @@ class FootnoteUpdate(object):
     def position(self):
         """Gets the position of this FootnoteUpdate.  # noqa: E501
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the link to range start node.  # noqa: E501
 
         :return: The position of this FootnoteUpdate.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :rtype: Position
         """
         return self._position
 
@@ -89,10 +89,10 @@ class FootnoteUpdate(object):
     def position(self, position):
         """Sets the position of this FootnoteUpdate.
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the link to range start node.  # noqa: E501
 
         :param position: The position of this FootnoteUpdate.  # noqa: E501
-        :type: NewDocumentPosition
+        :type: Position
         """
         self._position = position
 

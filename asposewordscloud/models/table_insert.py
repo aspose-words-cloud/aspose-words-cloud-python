@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,7 +44,7 @@ class TableInsert(object):
     """
     swagger_types = {
         'columns_count': 'int',
-        'position': 'NewDocumentPosition',
+        'position': 'Position',
         'rows_count': 'int'
     }
 
@@ -95,10 +95,10 @@ class TableInsert(object):
     def position(self):
         """Gets the position of this TableInsert.  # noqa: E501
 
-        Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
+        Gets or sets the position to insert the table. The table will be inserted using the specified position.  # noqa: E501
 
         :return: The position of this TableInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :rtype: Position
         """
         return self._position
 
@@ -106,10 +106,10 @@ class TableInsert(object):
     def position(self, position):
         """Sets the position of this TableInsert.
 
-        Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
+        Gets or sets the position to insert the table. The table will be inserted using the specified position.  # noqa: E501
 
         :param position: The position of this TableInsert.  # noqa: E501
-        :type: NewDocumentPosition
+        :type: Position
         """
         self._position = position
 

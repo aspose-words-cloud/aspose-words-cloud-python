@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,25 +44,30 @@ class FieldInsert(object):
     """
     swagger_types = {
         'locale_id': 'str',
-        'field_code': 'str'
+        'field_code': 'str',
+        'position': 'Position'
     }
 
     attribute_map = {
         'locale_id': 'LocaleId',
-        'field_code': 'FieldCode'
+        'field_code': 'FieldCode',
+        'position': 'Position'
     }
 
-    def __init__(self, locale_id=None, field_code=None):  # noqa: E501
+    def __init__(self, locale_id=None, field_code=None, position=None):  # noqa: E501
         """FieldInsert - a model defined in Swagger"""  # noqa: E501
 
         self._locale_id = None
         self._field_code = None
+        self._position = None
         self.discriminator = None
 
         if locale_id is not None:
             self.locale_id = locale_id
         if field_code is not None:
             self.field_code = field_code
+        if position is not None:
+            self.position = position
 
     @property
     def locale_id(self):
@@ -108,6 +113,28 @@ class FieldInsert(object):
         """
         self._field_code = field_code
 
+    @property
+    def position(self):
+        """Gets the position of this FieldInsert.  # noqa: E501
+
+        Gets or sets the position of the node that will be used to determine the placement of a new field.  # noqa: E501
+
+        :return: The position of this FieldInsert.  # noqa: E501
+        :rtype: Position
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this FieldInsert.
+
+        Gets or sets the position of the node that will be used to determine the placement of a new field.  # noqa: E501
+
+        :param position: The position of this FieldInsert.  # noqa: E501
+        :type: Position
+        """
+        self._position = position
+
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
@@ -116,6 +143,10 @@ class FieldInsert(object):
         """Validate all required properties in model"""
         if self._field_code is None:
             raise ValueError("Property FieldCode in FieldInsert is required.")  # noqa: E501
+
+        if self._position is not None:
+            self._position.validate()
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

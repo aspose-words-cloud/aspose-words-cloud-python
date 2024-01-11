@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17332,7 +17332,6 @@ class WordsApi(Encryptor, object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new field will be inserted before the node with the specified node Id.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17416,7 +17415,6 @@ class WordsApi(Encryptor, object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new field will be inserted before the node with the specified node Id.
         :return: InsertFieldOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18506,7 +18504,6 @@ class WordsApi(Encryptor, object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new paragraph will be inserted before the node with the specified index.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18590,7 +18587,6 @@ class WordsApi(Encryptor, object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new paragraph will be inserted before the node with the specified index.
         :return: InsertParagraphOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18666,8 +18662,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param run RunInsert : Run data. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -18676,7 +18672,6 @@ class WordsApi(Encryptor, object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new Run object will be inserted before the node with the specified node Id.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18752,15 +18747,14 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param run RunInsert : Run data. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : The index of the node. A new Run object will be inserted before the node with the specified node Id.
         :return: InsertRunOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19418,8 +19412,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param table_row_path str : The path to the table row in the document tree. (required)
         :param cell TableCellInsert : Table cell parameters. (required)
+        :param table_row_path str : The path to the table row in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -19503,8 +19497,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param table_row_path str : The path to the table row in the document tree. (required)
         :param cell TableCellInsert : Table cell parameters. (required)
+        :param table_row_path str : The path to the table row in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -19669,8 +19663,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param table_path str : The path to the table in the document tree. (required)
         :param row TableRowInsert : Table row parameters. (required)
+        :param node_path str : The path to the table in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -19754,8 +19748,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param table_path str : The path to the table in the document tree. (required)
         :param row TableRowInsert : Table row parameters. (required)
+        :param node_path str : The path to the table in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

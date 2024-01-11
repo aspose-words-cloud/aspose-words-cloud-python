@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_table.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -408,7 +408,7 @@ class TestTable(BaseTestContext):
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         request_row = asposewordscloud.TableRowInsert(columns_count=5)
-        request = asposewordscloud.models.requests.InsertTableRowRequest(name=remote_file_name, row=request_row, table_path='sections/0/tables/2', folder=remote_data_folder)
+        request = asposewordscloud.models.requests.InsertTableRowRequest(name=remote_file_name, row=request_row, node_path='sections/0/tables/2', folder=remote_data_folder)
 
         result = self.words_api.insert_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -424,7 +424,7 @@ class TestTable(BaseTestContext):
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
         request_row = asposewordscloud.TableRowInsert(columns_count=5)
-        request = asposewordscloud.models.requests.InsertTableRowOnlineRequest(document=request_document, row=request_row, table_path='sections/0/tables/2')
+        request = asposewordscloud.models.requests.InsertTableRowOnlineRequest(document=request_document, row=request_row, node_path='sections/0/tables/2')
 
         result = self.words_api.insert_table_row_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

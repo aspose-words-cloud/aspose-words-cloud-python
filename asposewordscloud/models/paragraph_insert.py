@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="paragraph_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,21 +43,26 @@ class ParagraphInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'text': 'str'
+        'text': 'str',
+        'position': 'Position'
     }
 
     attribute_map = {
-        'text': 'Text'
+        'text': 'Text',
+        'position': 'Position'
     }
 
-    def __init__(self, text=None):  # noqa: E501
+    def __init__(self, text=None, position=None):  # noqa: E501
         """ParagraphInsert - a model defined in Swagger"""  # noqa: E501
 
         self._text = None
+        self._position = None
         self.discriminator = None
 
         if text is not None:
             self.text = text
+        if position is not None:
+            self.position = position
 
     @property
     def text(self):
@@ -81,6 +86,28 @@ class ParagraphInsert(object):
         """
         self._text = text
 
+    @property
+    def position(self):
+        """Gets the position of this ParagraphInsert.  # noqa: E501
+
+        Gets or sets the position of the node that will be used to determine the placement of a new paragraph.  # noqa: E501
+
+        :return: The position of this ParagraphInsert.  # noqa: E501
+        :rtype: Position
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this ParagraphInsert.
+
+        Gets or sets the position of the node that will be used to determine the placement of a new paragraph.  # noqa: E501
+
+        :param position: The position of this ParagraphInsert.  # noqa: E501
+        :type: Position
+        """
+        self._position = position
+
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
@@ -89,6 +116,10 @@ class ParagraphInsert(object):
         """Validate all required properties in model"""
         if self._text is None:
             raise ValueError("Property Text in ParagraphInsert is required.")  # noqa: E501
+
+        if self._position is not None:
+            self._position.validate()
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

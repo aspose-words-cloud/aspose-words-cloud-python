@@ -16,6 +16,15 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 24.1
+
+- Added support for InsertAfterNode in the insert API without NodePath.
+- Added support for inserting nodes (runs/rows/cells/bookmarks) without NodePath.
+- Added support for transparency in the Watermark API.
+- Added support for password and encryptedPassword fields in FileReference.
+- Fixed missing href value in document responses.
+
+
 ## Enhancements in Version 23.12
 
 - Properties Name, Text, StartRange, EndRange marked as required for InsertBookmark operation.

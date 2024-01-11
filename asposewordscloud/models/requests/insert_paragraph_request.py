@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_paragraph_request.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,10 +46,9 @@ class InsertParagraphRequest(BaseRequestObject):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param insert_before_node The index of the node. A new paragraph will be inserted before the node with the specified index.
     """
 
-    def __init__(self, name, paragraph, node_path=None, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
+    def __init__(self, name, paragraph, node_path=None, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
         self.paragraph = paragraph
         self.node_path = node_path
@@ -61,7 +60,6 @@ class InsertParagraphRequest(BaseRequestObject):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
-        self.insert_before_node = insert_before_node
 
     def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
@@ -117,8 +115,6 @@ class InsertParagraphRequest(BaseRequestObject):
                 query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
         if self.revision_date_time is not None:
                 query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
-        if self.insert_before_node is not None:
-                query_params.append(('insertBeforeNode', self.insert_before_node))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`

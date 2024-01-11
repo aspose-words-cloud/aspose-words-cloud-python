@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_row_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,23 +44,28 @@ class TableRowInsert(object):
     """
     swagger_types = {
         'columns_count': 'int',
+        'existing_row_position': 'Position',
         'insert_after': 'int'
     }
 
     attribute_map = {
         'columns_count': 'ColumnsCount',
+        'existing_row_position': 'ExistingRowPosition',
         'insert_after': 'InsertAfter'
     }
 
-    def __init__(self, columns_count=None, insert_after=None):  # noqa: E501
+    def __init__(self, columns_count=None, existing_row_position=None, insert_after=None):  # noqa: E501
         """TableRowInsert - a model defined in Swagger"""  # noqa: E501
 
         self._columns_count = None
+        self._existing_row_position = None
         self._insert_after = None
         self.discriminator = None
 
         if columns_count is not None:
             self.columns_count = columns_count
+        if existing_row_position is not None:
+            self.existing_row_position = existing_row_position
         if insert_after is not None:
             self.insert_after = insert_after
 
@@ -85,6 +90,28 @@ class TableRowInsert(object):
         :type: int
         """
         self._columns_count = columns_count
+
+    @property
+    def existing_row_position(self):
+        """Gets the existing_row_position of this TableRowInsert.  # noqa: E501
+
+        Gets or sets the position of the table row that will be used to determine the placement of a new row.  # noqa: E501
+
+        :return: The existing_row_position of this TableRowInsert.  # noqa: E501
+        :rtype: Position
+        """
+        return self._existing_row_position
+
+    @existing_row_position.setter
+    def existing_row_position(self, existing_row_position):
+        """Sets the existing_row_position of this TableRowInsert.
+
+        Gets or sets the position of the table row that will be used to determine the placement of a new row.  # noqa: E501
+
+        :param existing_row_position: The existing_row_position of this TableRowInsert.  # noqa: E501
+        :type: Position
+        """
+        self._existing_row_position = existing_row_position
 
     @property
     def insert_after(self):
@@ -116,6 +143,11 @@ class TableRowInsert(object):
         """Validate all required properties in model"""
         if self._columns_count is None:
             raise ValueError("Property ColumnsCount in TableRowInsert is required.")  # noqa: E501
+
+        if self._existing_row_position is not None:
+            self._existing_row_position.validate()
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

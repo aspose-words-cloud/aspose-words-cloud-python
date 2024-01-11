@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_row_online_request.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,8 +36,8 @@ class InsertTableRowOnlineRequest(BaseRequestObject):
     Request model for insert_table_row_online operation.
     Initializes a new instance.
     :param document The document.
-    :param table_path The path to the table in the document tree.
     :param row Table row parameters.
+    :param node_path The path to the table in the document tree.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -46,10 +46,10 @@ class InsertTableRowOnlineRequest(BaseRequestObject):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, document, table_path, row, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, document, row, node_path=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.document = document
-        self.table_path = table_path
         self.row = row
+        self.node_path = node_path
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
@@ -61,9 +61,6 @@ class InsertTableRowOnlineRequest(BaseRequestObject):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_table_row_online`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if self.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row_online`")  # noqa: E501
         # verify the required parameter 'row' is set
         if self.row is None:
             raise ValueError("Missing the required parameter `row` when calling `insert_table_row_online`")  # noqa: E501
@@ -71,12 +68,12 @@ class InsertTableRowOnlineRequest(BaseRequestObject):
             self.row.validate()
 
 
-        path = '/v4.0/words/online/post/{tablePath}/rows'
+        path = '/v4.0/words/online/post/{nodePath}/rows'
         path_params = {}
-        if self.table_path is not None:
-            path_params['tablePath'] = self.table_path  # noqa: E501
+        if self.node_path is not None:
+            path_params['nodePath'] = self.node_path  # noqa: E501
         else:
-            path_params['tablePath'] = ''  # noqa: E501
+            path_params['nodePath'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
