@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="copy_folder_request.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,7 +47,7 @@ class CopyFolderRequest(BaseRequestObject):
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'dest_path' is set
         if self.dest_path is None:
             raise ValueError("Missing the required parameter `dest_path` when calling `copy_folder`")  # noqa: E501
@@ -91,7 +91,9 @@ class CopyFolderRequest(BaseRequestObject):
         form_params = []
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

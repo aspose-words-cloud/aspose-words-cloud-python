@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_bookmark.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -195,8 +195,8 @@ class TestBookmark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_bookmark_start_range = asposewordscloud.NewDocumentPosition(node_id='0.0.0.0', offset=0)
-        request_bookmark_end_range = asposewordscloud.NewDocumentPosition(node_id='0.0.0.0', offset=0)
+        request_bookmark_start_range = asposewordscloud.PositionInsideNode(node_id='0.0.0.0', offset=0)
+        request_bookmark_end_range = asposewordscloud.PositionInsideNode(node_id='0.0.0.0', offset=0)
         request_bookmark = asposewordscloud.BookmarkInsert(start_range=request_bookmark_start_range, end_range=request_bookmark_end_range, name='new_bookmark', text='Some text')
         request = asposewordscloud.models.requests.InsertBookmarkRequest(name=remote_file_name, bookmark=request_bookmark, folder=remote_data_folder)
 
@@ -211,8 +211,8 @@ class TestBookmark(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_bookmark_start_range = asposewordscloud.NewDocumentPosition(node_id='0.0.0.0', offset=0)
-        request_bookmark_end_range = asposewordscloud.NewDocumentPosition(node_id='0.0.0.0', offset=0)
+        request_bookmark_start_range = asposewordscloud.PositionInsideNode(node_id='0.0.0.0', offset=0)
+        request_bookmark_end_range = asposewordscloud.PositionInsideNode(node_id='0.0.0.0', offset=0)
         request_bookmark = asposewordscloud.BookmarkInsert(start_range=request_bookmark_start_range, end_range=request_bookmark_end_range, name='new_bookmark', text='Some text')
         request = asposewordscloud.models.requests.InsertBookmarkOnlineRequest(document=request_document, bookmark=request_bookmark)
 

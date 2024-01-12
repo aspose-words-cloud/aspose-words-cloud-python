@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_row_request.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,8 +36,8 @@ class InsertTableRowRequest(BaseRequestObject):
     Request model for insert_table_row operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param table_path The path to the table in the document tree.
     :param row Table row parameters.
+    :param node_path The path to the table in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -48,10 +48,10 @@ class InsertTableRowRequest(BaseRequestObject):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, table_path, row, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, row, node_path=None, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.table_path = table_path
         self.row = row
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -61,13 +61,10 @@ class InsertTableRowRequest(BaseRequestObject):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if self.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
         # verify the required parameter 'row' is set
         if self.row is None:
             raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
@@ -75,16 +72,16 @@ class InsertTableRowRequest(BaseRequestObject):
             self.row.validate()
 
 
-        path = '/v4.0/words/{name}/{tablePath}/rows'
+        path = '/v4.0/words/{name}/{nodePath}/rows'
         path_params = {}
         if self.name is not None:
             path_params['name'] = self.name  # noqa: E501
         else:
             path_params['name'] = ''  # noqa: E501
-        if self.table_path is not None:
-            path_params['tablePath'] = self.table_path  # noqa: E501
+        if self.node_path is not None:
+            path_params['nodePath'] = self.node_path  # noqa: E501
         else:
-            path_params['tablePath'] = ''  # noqa: E501
+            path_params['nodePath'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
@@ -130,7 +127,9 @@ class InsertTableRowRequest(BaseRequestObject):
             form_params.append(['row', self.row, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "POST",

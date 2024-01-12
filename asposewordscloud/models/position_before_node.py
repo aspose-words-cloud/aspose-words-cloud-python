@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="new_document_position.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+# <copyright company="Aspose" file="position_before_node.py">
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,8 +31,8 @@ import datetime
 import six
 import json
 
-class NewDocumentPosition(object):
-    """DTO container with a new position in the document tree.
+class PositionBeforeNode(object):
+    """Describes the location of the node before specified node.
     """
 
     """
@@ -44,69 +44,57 @@ class NewDocumentPosition(object):
     """
     swagger_types = {
         'node_id': 'str',
-        'offset': 'int'
+        'type': 'str'
     }
 
     attribute_map = {
         'node_id': 'NodeId',
-        'offset': 'Offset'
+        'type': 'Type'
     }
 
-    def __init__(self, node_id=None, offset=None):  # noqa: E501
-        """NewDocumentPosition - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, node_id=None):  # noqa: E501
+        """PositionBeforeNode - a model defined in Swagger"""  # noqa: E501
 
         self._node_id = None
-        self._offset = None
+        self._type = "Before"
         self.discriminator = None
 
         if node_id is not None:
             self.node_id = node_id
-        if offset is not None:
-            self.offset = offset
 
     @property
     def node_id(self):
-        """Gets the node_id of this NewDocumentPosition.  # noqa: E501
+        """Gets the node_id of this PositionBeforeNode.  # noqa: E501
 
         Gets or sets the node id.  # noqa: E501
 
-        :return: The node_id of this NewDocumentPosition.  # noqa: E501
+        :return: The node_id of this PositionBeforeNode.  # noqa: E501
         :rtype: str
         """
         return self._node_id
 
     @node_id.setter
     def node_id(self, node_id):
-        """Sets the node_id of this NewDocumentPosition.
+        """Sets the node_id of this PositionBeforeNode.
 
         Gets or sets the node id.  # noqa: E501
 
-        :param node_id: The node_id of this NewDocumentPosition.  # noqa: E501
+        :param node_id: The node_id of this PositionBeforeNode.  # noqa: E501
         :type: str
         """
         self._node_id = node_id
 
     @property
-    def offset(self):
-        """Gets the offset of this NewDocumentPosition.  # noqa: E501
+    def type(self):
+        """Gets the type of this PositionBeforeNode.  # noqa: E501
 
-        Gets or sets the offset in the node.  # noqa: E501
+        Gets position type.  # noqa: E501
 
-        :return: The offset of this NewDocumentPosition.  # noqa: E501
-        :rtype: int
+        :return: The type of this PositionBeforeNode.  # noqa: E501
+        :rtype: str
         """
-        return self._offset
+        return self._type
 
-    @offset.setter
-    def offset(self, offset):
-        """Sets the offset of this NewDocumentPosition.
-
-        Gets or sets the offset in the node.  # noqa: E501
-
-        :param offset: The offset of this NewDocumentPosition.  # noqa: E501
-        :type: int
-        """
-        self._offset = offset
 
 
     def extract_files_content(self, filesContentResult):
@@ -115,7 +103,7 @@ class NewDocumentPosition(object):
     def validate(self):
         """Validate all required properties in model"""
         if self._node_id is None:
-            raise ValueError("Property NodeId in NewDocumentPosition is required.")  # noqa: E501
+            raise ValueError("Property NodeId in PositionBeforeNode is required.")  # noqa: E501
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -181,7 +169,7 @@ class NewDocumentPosition(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, NewDocumentPosition):
+        if not isinstance(other, PositionBeforeNode):
             return False
 
         return self.__dict__ == other.__dict__

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="comment_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,8 +43,8 @@ class CommentInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'range_start': 'NewDocumentPosition',
-        'range_end': 'NewDocumentPosition',
+        'range_start': 'PositionInsideNode',
+        'range_end': 'PositionInsideNode',
         'author': 'str',
         'initial': 'str',
         'date_time': 'datetime',
@@ -91,7 +91,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The range_start of this CommentInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :rtype: PositionInsideNode
         """
         return self._range_start
 
@@ -102,7 +102,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :param range_start: The range_start of this CommentInsert.  # noqa: E501
-        :type: NewDocumentPosition
+        :type: PositionInsideNode
         """
         self._range_start = range_start
 
@@ -113,7 +113,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range end node.  # noqa: E501
 
         :return: The range_end of this CommentInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :rtype: PositionInsideNode
         """
         return self._range_end
 
@@ -124,7 +124,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range end node.  # noqa: E501
 
         :param range_end: The range_end of this CommentInsert.  # noqa: E501
-        :type: NewDocumentPosition
+        :type: PositionInsideNode
         """
         self._range_end = range_end
 

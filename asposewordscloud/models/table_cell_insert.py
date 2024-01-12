@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_cell_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,21 +43,48 @@ class TableCellInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'existing_cell_position': 'Position',
         'insert_after': 'int'
     }
 
     attribute_map = {
+        'existing_cell_position': 'ExistingCellPosition',
         'insert_after': 'InsertAfter'
     }
 
-    def __init__(self, insert_after=None):  # noqa: E501
+    def __init__(self, existing_cell_position=None, insert_after=None):  # noqa: E501
         """TableCellInsert - a model defined in Swagger"""  # noqa: E501
 
+        self._existing_cell_position = None
         self._insert_after = None
         self.discriminator = None
 
+        if existing_cell_position is not None:
+            self.existing_cell_position = existing_cell_position
         if insert_after is not None:
             self.insert_after = insert_after
+
+    @property
+    def existing_cell_position(self):
+        """Gets the existing_cell_position of this TableCellInsert.  # noqa: E501
+
+        Gets or sets the position of the table cell that will be used to determine the placement of a new cell.  # noqa: E501
+
+        :return: The existing_cell_position of this TableCellInsert.  # noqa: E501
+        :rtype: Position
+        """
+        return self._existing_cell_position
+
+    @existing_cell_position.setter
+    def existing_cell_position(self, existing_cell_position):
+        """Sets the existing_cell_position of this TableCellInsert.
+
+        Gets or sets the position of the table cell that will be used to determine the placement of a new cell.  # noqa: E501
+
+        :param existing_cell_position: The existing_cell_position of this TableCellInsert.  # noqa: E501
+        :type: Position
+        """
+        self._existing_cell_position = existing_cell_position
 
     @property
     def insert_after(self):
@@ -87,6 +114,11 @@ class TableCellInsert(object):
 
     def validate(self):
         """Validate all required properties in model"""
+
+        if self._existing_cell_position is not None:
+            self._existing_cell_position.validate()
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

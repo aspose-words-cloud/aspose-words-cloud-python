@@ -141,7 +141,6 @@ from asposewordscloud.models.markdown_save_options_data import MarkdownSaveOptio
 from asposewordscloud.models.metafile_rendering_options_data import MetafileRenderingOptionsData
 from asposewordscloud.models.mhtml_save_options_data import MhtmlSaveOptionsData
 from asposewordscloud.models.modification_operation_result import ModificationOperationResult
-from asposewordscloud.models.new_document_position import NewDocumentPosition
 from asposewordscloud.models.node_link import NodeLink
 from asposewordscloud.models.odt_save_options_data import OdtSaveOptionsData
 from asposewordscloud.models.office_math_link import OfficeMathLink
@@ -172,6 +171,9 @@ from asposewordscloud.models.pdf_encryption_details_data import PdfEncryptionDet
 from asposewordscloud.models.pdf_permissions import PdfPermissions
 from asposewordscloud.models.pdf_save_options_data import PdfSaveOptionsData
 from asposewordscloud.models.png_save_options_data import PngSaveOptionsData
+from asposewordscloud.models.position_after_node import PositionAfterNode
+from asposewordscloud.models.position_before_node import PositionBeforeNode
+from asposewordscloud.models.position_inside_node import PositionInsideNode
 from asposewordscloud.models.preferred_width import PreferredWidth
 from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse

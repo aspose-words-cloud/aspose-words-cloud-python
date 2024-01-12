@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="drawing_object_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,7 +43,7 @@ class DrawingObjectInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'position': 'NewDocumentPosition',
+        'position': 'Position',
         'relative_horizontal_position': 'str',
         'left': 'float',
         'relative_vertical_position': 'str',
@@ -98,10 +98,10 @@ class DrawingObjectInsert(object):
     def position(self):
         """Gets the position of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
+        Gets or sets the position, where the DrawingObject will be inserted.  # noqa: E501
 
         :return: The position of this DrawingObjectInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :rtype: Position
         """
         return self._position
 
@@ -109,10 +109,10 @@ class DrawingObjectInsert(object):
     def position(self, position):
         """Sets the position of this DrawingObjectInsert.
 
-        Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
+        Gets or sets the position, where the DrawingObject will be inserted.  # noqa: E501
 
         :param position: The position of this DrawingObjectInsert.  # noqa: E501
-        :type: NewDocumentPosition
+        :type: Position
         """
         self._position = position
 

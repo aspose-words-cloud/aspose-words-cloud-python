@@ -15,8 +15,8 @@ class BatchRequest(object):
     def depends_on(self, parent_request):
         self.parent_id = parent_request.id
 
-    def create_http_request(self, api_client):
-        http_request = self.request.create_http_request(api_client)
+    def create_http_request(self, api_client, encryptor):
+        http_request = self.request.create_http_request(api_client, encryptor)
         http_request["header_params"]["RequestId"] = self.id
 
         if self.parent_id is not None:

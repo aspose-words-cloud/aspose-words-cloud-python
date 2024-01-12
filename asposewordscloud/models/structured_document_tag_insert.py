@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="structured_document_tag_insert.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,7 +68,8 @@ class StructuredDocumentTagInsert(object):
         'id': 'int',
         'word_open_xml': 'str',
         'level': 'str',
-        'sdt_type': 'str'
+        'sdt_type': 'str',
+        'position': 'Position'
     }
 
     attribute_map = {
@@ -97,10 +98,11 @@ class StructuredDocumentTagInsert(object):
         'id': 'Id',
         'word_open_xml': 'WordOpenXML',
         'level': 'Level',
-        'sdt_type': 'SdtType'
+        'sdt_type': 'SdtType',
+        'position': 'Position'
     }
 
-    def __init__(self, link=None, node_id=None, list_items=None, checked=None, appearance=None, date_display_locale=None, date_display_format=None, full_date=None, title=None, date_storage_format=None, building_block_gallery=None, building_block_category=None, multiline=None, color=None, style_name=None, calendar_type=None, is_temporary=None, placeholder_name=None, lock_content_control=None, lock_contents=None, is_showing_placeholder_text=None, tag=None, id=None, level=None, sdt_type=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, list_items=None, checked=None, appearance=None, date_display_locale=None, date_display_format=None, full_date=None, title=None, date_storage_format=None, building_block_gallery=None, building_block_category=None, multiline=None, color=None, style_name=None, calendar_type=None, is_temporary=None, placeholder_name=None, lock_content_control=None, lock_contents=None, is_showing_placeholder_text=None, tag=None, id=None, level=None, sdt_type=None, position=None):  # noqa: E501
         """StructuredDocumentTagInsert - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -129,6 +131,7 @@ class StructuredDocumentTagInsert(object):
         self._word_open_xml = None
         self._level = None
         self._sdt_type = None
+        self._position = None
         self.discriminator = None
 
         if link is not None:
@@ -181,6 +184,8 @@ class StructuredDocumentTagInsert(object):
             self.level = level
         if sdt_type is not None:
             self.sdt_type = sdt_type
+        if position is not None:
+            self.position = position
 
     @property
     def link(self):
@@ -784,6 +789,28 @@ class StructuredDocumentTagInsert(object):
         else:
             self._sdt_type = allowed_values[int(sdt_type) if six.PY3 else long(sdt_type)]
 
+    @property
+    def position(self):
+        """Gets the position of this StructuredDocumentTagInsert.  # noqa: E501
+
+        Gets or sets the position of the node that will be used to determine the placement of a new node.  # noqa: E501
+
+        :return: The position of this StructuredDocumentTagInsert.  # noqa: E501
+        :rtype: Position
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this StructuredDocumentTagInsert.
+
+        Gets or sets the position of the node that will be used to determine the placement of a new node.  # noqa: E501
+
+        :param position: The position of this StructuredDocumentTagInsert.  # noqa: E501
+        :type: Position
+        """
+        self._position = position
+
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
@@ -832,6 +859,11 @@ class StructuredDocumentTagInsert(object):
 
 
 
+
+
+
+        if self._position is not None:
+            self._position.validate()
 
 
     def to_dict(self):

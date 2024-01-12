@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_run_online_request.py">
-#   Copyright (c) 2023 Aspose.Words for Cloud
+#   Copyright (c) 2024 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,36 +36,31 @@ class InsertRunOnlineRequest(BaseRequestObject):
     Request model for insert_run_online operation.
     Initializes a new instance.
     :param document The document.
-    :param paragraph_path The path to the paragraph in the document tree.
     :param run Run data.
+    :param paragraph_path The path to the paragraph in the document tree.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
     """
 
-    def __init__(self, document, paragraph_path, run, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
+    def __init__(self, document, run, paragraph_path=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.document = document
-        self.paragraph_path = paragraph_path
         self.run = run
+        self.paragraph_path = paragraph_path
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
-        self.insert_before_node = insert_before_node
 
-    def create_http_request(self, api_client):
+    def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'document' is set
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `insert_run_online`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if self.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `insert_run_online`")  # noqa: E501
         # verify the required parameter 'run' is set
         if self.run is None:
             raise ValueError("Missing the required parameter `run` when calling `insert_run_online`")  # noqa: E501
@@ -108,8 +103,6 @@ class InsertRunOnlineRequest(BaseRequestObject):
                 query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
         if self.revision_date_time is not None:
                 query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
-        if self.insert_before_node is not None:
-                query_params.append(('insertBeforeNode', self.insert_before_node))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`
@@ -124,7 +117,9 @@ class InsertRunOnlineRequest(BaseRequestObject):
             form_params.append(['run', self.run, 'json'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
+            file_content_value.encryptPassword(encryptor)
+            if file_content_value.source == 'Request':
+                form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",
