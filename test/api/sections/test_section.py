@@ -125,6 +125,31 @@ class TestSection(BaseTestContext):
 
 
     #
+    # Test for merge a section with the next one.
+    #
+    def test_merge_with_next(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Section'
+        remote_file_name = 'TestMergeWithNext.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'DocumentElements/Sections/Source.docx'), 'rb'))
+
+        request = asposewordscloud.models.requests.MergeWithNextRequest(name=remote_file_name, section_index=0, folder=remote_data_folder)
+
+        self.words_api.merge_with_next(request)
+
+
+    #
+    # Test for merge a section with the next one online.
+    #
+    def test_merge_with_next_online(self):
+        request_document = open(os.path.join(self.local_test_folder, 'DocumentElements/Sections/Source.docx'), 'rb')
+        request = asposewordscloud.models.requests.MergeWithNextOnlineRequest(document=request_document, section_index=0)
+
+        result = self.words_api.merge_with_next_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for insertion a section.
     #
     def test_insert_section(self):
