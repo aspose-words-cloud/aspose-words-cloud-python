@@ -49,7 +49,8 @@ class DrawingObjectUpdate(object):
         'top': 'float',
         'width': 'float',
         'height': 'float',
-        'wrap_type': 'str'
+        'wrap_type': 'str',
+        'aspect_ratio_locked': 'bool'
     }
 
     attribute_map = {
@@ -59,10 +60,11 @@ class DrawingObjectUpdate(object):
         'top': 'Top',
         'width': 'Width',
         'height': 'Height',
-        'wrap_type': 'WrapType'
+        'wrap_type': 'WrapType',
+        'aspect_ratio_locked': 'AspectRatioLocked'
     }
 
-    def __init__(self, relative_horizontal_position=None, left=None, relative_vertical_position=None, top=None, width=None, height=None, wrap_type=None):  # noqa: E501
+    def __init__(self, relative_horizontal_position=None, left=None, relative_vertical_position=None, top=None, width=None, height=None, wrap_type=None, aspect_ratio_locked=None):  # noqa: E501
         """DrawingObjectUpdate - a model defined in Swagger"""  # noqa: E501
 
         self._relative_horizontal_position = None
@@ -72,6 +74,7 @@ class DrawingObjectUpdate(object):
         self._width = None
         self._height = None
         self._wrap_type = None
+        self._aspect_ratio_locked = None
         self.discriminator = None
 
         if relative_horizontal_position is not None:
@@ -88,6 +91,8 @@ class DrawingObjectUpdate(object):
             self.height = height
         if wrap_type is not None:
             self.wrap_type = wrap_type
+        if aspect_ratio_locked is not None:
+            self.aspect_ratio_locked = aspect_ratio_locked
 
     @property
     def relative_horizontal_position(self):
@@ -266,6 +271,28 @@ class DrawingObjectUpdate(object):
             self._wrap_type = wrap_type
         else:
             self._wrap_type = allowed_values[int(wrap_type) if six.PY3 else long(wrap_type)]
+
+    @property
+    def aspect_ratio_locked(self):
+        """Gets the aspect_ratio_locked of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets a value indicating whether AspectRatioLocked option on or off.  # noqa: E501
+
+        :return: The aspect_ratio_locked of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aspect_ratio_locked
+
+    @aspect_ratio_locked.setter
+    def aspect_ratio_locked(self, aspect_ratio_locked):
+        """Sets the aspect_ratio_locked of this DrawingObjectUpdate.
+
+        Gets or sets a value indicating whether AspectRatioLocked option on or off.  # noqa: E501
+
+        :param aspect_ratio_locked: The aspect_ratio_locked of this DrawingObjectUpdate.  # noqa: E501
+        :type: bool
+        """
+        self._aspect_ratio_locked = aspect_ratio_locked
 
 
     def extract_files_content(self, filesContentResult):
