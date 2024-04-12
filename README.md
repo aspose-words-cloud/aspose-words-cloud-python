@@ -19,6 +19,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 ## Enhancements in Version 24.4
 
 - Added the 'MergeWithNext' method to merge a section with the next one.
+- Added the 'LockAspectRatio' propperty for DrawingObjectInsert and DrawingObjectUpdate methods.
 
 
 ## Enhancements in Version 24.3
