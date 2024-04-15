@@ -459,7 +459,7 @@ class TableProperties(object):
         :param text_wrapping: The text_wrapping of this TableProperties.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Default", "None", "Around"]  # noqa: E501
+        allowed_values = ["None", "Default", "Around"]  # noqa: E501
         if not text_wrapping.isdigit():
             if text_wrapping not in allowed_values:
                 raise ValueError(

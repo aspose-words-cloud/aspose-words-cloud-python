@@ -290,7 +290,7 @@ class StructuredDocumentTag(object):
         :param appearance: The appearance of this StructuredDocumentTag.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Default", "BoundingBox", "Tags", "Hidden"]  # noqa: E501
+        allowed_values = ["BoundingBox", "Default", "Tags", "Hidden"]  # noqa: E501
         if not appearance.isdigit():
             if appearance not in allowed_values:
                 raise ValueError(
