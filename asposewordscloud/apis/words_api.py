@@ -17153,8 +17153,9 @@ class WordsApi(Encryptor, object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
-        :param image_file file : File with image. (required)
         :param node_path str : The path to the node in the document tree.
+        :param image_file file : File with image.
+        :param url str : The link to the image.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17239,8 +17240,9 @@ class WordsApi(Encryptor, object):
         :param is_async bool
         :param document file : The document. (required)
         :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
-        :param image_file file : File with image. (required)
         :param node_path str : The path to the node in the document tree.
+        :param image_file file : File with image.
+        :param url str : The link to the image.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -24359,9 +24361,10 @@ class WordsApi(Encryptor, object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param drawing_object DrawingObjectUpdate : Drawing object parameters. (required)
-        :param image_file file : File with image. (required)
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
+        :param image_file file : File with image.
+        :param url str : The link to the image.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -24446,9 +24449,10 @@ class WordsApi(Encryptor, object):
         :param is_async bool
         :param document file : The document. (required)
         :param drawing_object DrawingObjectUpdate : Drawing object parameters. (required)
-        :param image_file file : File with image. (required)
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
+        :param image_file file : File with image.
+        :param url str : The link to the image.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

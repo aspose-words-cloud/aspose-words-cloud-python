@@ -37,9 +37,10 @@ class UpdateDrawingObjectRequest(BaseRequestObject):
     Initializes a new instance.
     :param name The filename of the input document.
     :param drawing_object Drawing object parameters.
-    :param image_file File with image.
     :param index Object index.
     :param node_path The path to the node in the document tree.
+    :param image_file File with image.
+    :param url The link to the image.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -50,12 +51,13 @@ class UpdateDrawingObjectRequest(BaseRequestObject):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, drawing_object, image_file, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, drawing_object, index, node_path=None, image_file=None, url=None, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
         self.drawing_object = drawing_object
-        self.image_file = image_file
         self.index = index
         self.node_path = node_path
+        self.image_file = image_file
+        self.url = url
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -72,9 +74,6 @@ class UpdateDrawingObjectRequest(BaseRequestObject):
         # verify the required parameter 'drawing_object' is set
         if self.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `update_drawing_object`")  # noqa: E501
-        # verify the required parameter 'image_file' is set
-        if self.image_file is None:
-            raise ValueError("Missing the required parameter `image_file` when calling `update_drawing_object`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_drawing_object`")  # noqa: E501
@@ -113,6 +112,8 @@ class UpdateDrawingObjectRequest(BaseRequestObject):
         path = path.replace('//', '/')
 
         query_params = []
+        if self.url is not None:
+                query_params.append(('url', self.url))  # noqa: E501
         if self.folder is not None:
                 query_params.append(('folder', self.folder))  # noqa: E501
         if self.storage is not None:

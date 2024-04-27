@@ -16,6 +16,11 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 24.5
+
+- Added an url parameter to InsertImage / UpdateImage methods. It allows to link to an image from a web URL.
+
+
 ## Enhancements in Version 24.4
 
 - Added the 'MergeWithNext' method to merge a section with the next one.

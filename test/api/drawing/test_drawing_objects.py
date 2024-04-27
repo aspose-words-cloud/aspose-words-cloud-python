@@ -309,6 +309,23 @@ class TestDrawingObjects(BaseTestContext):
 
 
     #
+    # Test for adding a link to a drawing object.
+    #
+    def test_insert_drawing_object_link(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/DrawingObjectss'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestInsetDrawingObject.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request_drawing_object = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
+        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name=remote_file_name, drawing_object=request_drawing_object, url='https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png', node_path='', folder=remote_data_folder)
+
+        result = self.words_api.insert_drawing_object(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting drawing object.
     #
     def test_delete_drawing_object(self):
@@ -397,6 +414,23 @@ class TestDrawingObjects(BaseTestContext):
         request_drawing_object = asposewordscloud.DrawingObjectUpdate(left=0)
         request_image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb')
         request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remote_file_name, drawing_object=request_drawing_object, image_file=request_image_file, index=0, folder=remote_data_folder)
+
+        result = self.words_api.update_drawing_object(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for updating drawing object to a link to it.
+    #
+    def test_update_drawing_object_link(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/DrawingObjectss'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestUpdateDrawingObjectLink.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request_drawing_object = asposewordscloud.DrawingObjectUpdate(left=0)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remote_file_name, drawing_object=request_drawing_object, url='https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png', index=0, node_path='', folder=remote_data_folder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')

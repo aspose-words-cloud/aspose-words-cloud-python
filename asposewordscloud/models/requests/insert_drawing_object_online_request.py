@@ -37,8 +37,9 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
     Initializes a new instance.
     :param document The document.
     :param drawing_object Drawing object parameters.
-    :param image_file File with image.
     :param node_path The path to the node in the document tree.
+    :param image_file File with image.
+    :param url The link to the image.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -47,11 +48,12 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, document, drawing_object, image_file, node_path=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, document, drawing_object, node_path=None, image_file=None, url=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.document = document
         self.drawing_object = drawing_object
-        self.image_file = image_file
         self.node_path = node_path
+        self.image_file = image_file
+        self.url = url
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
@@ -66,9 +68,6 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
         # verify the required parameter 'drawing_object' is set
         if self.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `insert_drawing_object_online`")  # noqa: E501
-        # verify the required parameter 'image_file' is set
-        if self.image_file is None:
-            raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object_online`")  # noqa: E501
         if self.drawing_object is not None:
             self.drawing_object.validate()
 
@@ -96,6 +95,8 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
         path = path.replace('//', '/')
 
         query_params = []
+        if self.url is not None:
+                query_params.append(('url', self.url))  # noqa: E501
         if self.load_encoding is not None:
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
