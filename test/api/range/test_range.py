@@ -169,7 +169,7 @@ class TestRange(BaseTestContext):
 
         result = self.words_api.translate_node_id(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertEqual('sections/0/body/paragraphs/0', result.text)
+        self.assertEqual('sections/0/body/paragraphs/0', result.path)
 
     #
     # Test to translate node id to node path online.
