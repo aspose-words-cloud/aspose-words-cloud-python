@@ -165,7 +165,7 @@ class TestRange(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.TranslateNodeIdRequest(name=remote_file_name, node_id='id0.0.0')
+        request = asposewordscloud.models.requests.TranslateNodeIdRequest(name=remote_file_name, node_id='id0.0.0', folder=remote_data_folder)
 
         result = self.words_api.translate_node_id(request)
         self.assertIsNotNone(result, 'Error has occurred.')
