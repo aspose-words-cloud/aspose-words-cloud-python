@@ -154,3 +154,32 @@ class TestRange(BaseTestContext):
         result = self.words_api.replace_with_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test to translate node id to node path.
+    #
+    def test_translate_node_id(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Range'
+        local_file = 'DocumentElements/Range/RangeGet.doc'
+        remote_file_name = 'TestTranslateNodeId.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.TranslateNodeIdRequest(name=remote_file_name, node_id='id0.0.0')
+
+        result = self.words_api.translate_node_id(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertEqual('sections/0/body/paragraphs/0', result.text)
+
+    #
+    # Test to translate node id to node path online.
+    #
+    def test_translate_node_id_online(self):
+        local_file = 'DocumentElements/Range/RangeGet.doc'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.TranslateNodeIdOnlineRequest(document=request_document, node_id='id0.0.0')
+
+        result = self.words_api.translate_node_id_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

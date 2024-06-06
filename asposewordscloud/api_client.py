@@ -323,6 +323,7 @@ class ApiClient(object):
         'TextSaveOptionsData, _': asposewordscloud.models.TextSaveOptionsData,
         'TiffSaveOptionsData, _': asposewordscloud.models.TiffSaveOptionsData,
         'TimeZoneInfoData, _': asposewordscloud.models.TimeZoneInfoData,
+        'TranslateNodeIdResponse, _': asposewordscloud.models.TranslateNodeIdResponse,
         'UserInformation, _': asposewordscloud.models.UserInformation,
         'WatermarkDataImage, _': asposewordscloud.models.WatermarkDataImage,
         'WatermarkDataText, _': asposewordscloud.models.WatermarkDataText,
