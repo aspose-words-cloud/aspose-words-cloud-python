@@ -258,6 +258,7 @@ from asposewordscloud.models.tab_stops_response import TabStopsResponse
 from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.tiff_save_options_data import TiffSaveOptionsData
 from asposewordscloud.models.time_zone_info_data import TimeZoneInfoData
+from asposewordscloud.models.translate_node_id_response import TranslateNodeIdResponse
 from asposewordscloud.models.user_information import UserInformation
 from asposewordscloud.models.watermark_data_image import WatermarkDataImage
 from asposewordscloud.models.watermark_data_text import WatermarkDataText

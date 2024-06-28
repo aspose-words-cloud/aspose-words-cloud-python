@@ -23519,6 +23519,163 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
 
+    def translate_node_id(self, request, **kwargs):  # noqa: E501
+        """Translate a node id to a node path.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The filename of the input document. (required)
+        :param node_id str : The node identifier. Identifier examples: id0.0.0. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :return: TranslateNodeIdResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.translate_node_id_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.translate_node_id_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.translate_node_id_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.translate_node_id_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def translate_node_id_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Translate a node id to a node path.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request TranslateNodeIdRequest object with parameters
+        :return: TranslateNodeIdResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translate_node_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client, self)
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+
+    def translate_node_id_online(self, request, **kwargs):  # noqa: E501
+        """Translate a node id to a node path.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_id str : The node identifier. Identifier examples: id0.0.0. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :return: TranslateNodeIdResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.translate_node_id_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.translate_node_id_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.translate_node_id_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.translate_node_id_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def translate_node_id_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Translate a node id to a node path.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request TranslateNodeIdOnlineRequest object with parameters
+        :return: TranslateNodeIdResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translate_node_id_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client, self)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=None,
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+
     def unprotect_document(self, request, **kwargs):  # noqa: E501
         """Removes protection from the document.  # noqa: E501
 
