@@ -214,7 +214,7 @@ class Document(object):
         :param source_format: The source_format of this Document.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"]  # noqa: E501
+        allowed_values = ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg", "Azw3"]  # noqa: E501
         if not source_format.isdigit():
             if source_format not in allowed_values:
                 raise ValueError(

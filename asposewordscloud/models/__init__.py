@@ -8,6 +8,7 @@ from __future__ import absolute_import
 from asposewordscloud.models.file_reference import FileReference
 from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
+from asposewordscloud.models.azw3_save_options_data import Azw3SaveOptionsData
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData

@@ -78,6 +78,7 @@ class ApiClient(object):
     MODEL_TYPES_MAPPING = {
         'ApiError, _': asposewordscloud.models.ApiError,
         'AvailableFontsResponse, _': asposewordscloud.models.AvailableFontsResponse,
+        'Azw3SaveOptionsData, _': asposewordscloud.models.Azw3SaveOptionsData,
         'BmpSaveOptionsData, _': asposewordscloud.models.BmpSaveOptionsData,
         'Bookmark, _': asposewordscloud.models.Bookmark,
         'BookmarkData, _': asposewordscloud.models.BookmarkData,
