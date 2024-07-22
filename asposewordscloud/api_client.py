@@ -78,6 +78,7 @@ class ApiClient(object):
     MODEL_TYPES_MAPPING = {
         'ApiError, _': asposewordscloud.models.ApiError,
         'AvailableFontsResponse, _': asposewordscloud.models.AvailableFontsResponse,
+        'Azw3SaveOptionsData, _': asposewordscloud.models.Azw3SaveOptionsData,
         'BmpSaveOptionsData, _': asposewordscloud.models.BmpSaveOptionsData,
         'Bookmark, _': asposewordscloud.models.Bookmark,
         'BookmarkData, _': asposewordscloud.models.BookmarkData,
@@ -348,12 +349,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.6'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.7'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 24.6'
+        self.user_agent = 'python sdk 24.7'
 
     def __del__(self):
         if not self.pool is None:

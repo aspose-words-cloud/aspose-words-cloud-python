@@ -795,7 +795,7 @@ class PdfSaveOptionsData(object):
         :param compliance: The compliance of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA4", "PdfUa1"]  # noqa: E501
+        allowed_values = ["Pdf17", "Pdf20", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfA4", "PdfA4Ua2", "PdfUa1", "PdfUa2"]  # noqa: E501
         if not compliance.isdigit():
             if compliance not in allowed_values:
                 raise ValueError(
