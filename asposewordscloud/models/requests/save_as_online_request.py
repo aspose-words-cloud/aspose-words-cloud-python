@@ -40,15 +40,17 @@ class SaveAsOnlineRequest(BaseRequestObject):
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+    :param open_type_support The value indicates whether OpenType support is on.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, save_options_data, load_encoding=None, password=None, encrypted_password=None, fonts_location=None):
+    def __init__(self, document, save_options_data, load_encoding=None, password=None, encrypted_password=None, open_type_support=None, fonts_location=None):
         self.document = document
         self.save_options_data = save_options_data
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
+        self.open_type_support = open_type_support
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client, encryptor):
@@ -87,6 +89,8 @@ class SaveAsOnlineRequest(BaseRequestObject):
                 query_params.append(('password', self.password))  # noqa: E501
         if self.encrypted_password is not None:
                 query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
+        if self.open_type_support is not None:
+                query_params.append(('openTypeSupport', self.open_type_support))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 

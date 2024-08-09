@@ -64,6 +64,7 @@ class SvgSaveOptionsData(object):
         'page_index': 'int',
         'export_embedded_images': 'bool',
         'fit_to_view_port': 'bool',
+        'max_image_resolution': 'int',
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
         'show_page_border': 'bool',
@@ -93,6 +94,7 @@ class SvgSaveOptionsData(object):
         'page_index': 'PageIndex',
         'export_embedded_images': 'ExportEmbeddedImages',
         'fit_to_view_port': 'FitToViewPort',
+        'max_image_resolution': 'MaxImageResolution',
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
         'show_page_border': 'ShowPageBorder',
@@ -100,7 +102,7 @@ class SvgSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, max_image_resolution=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
         """SvgSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -124,6 +126,7 @@ class SvgSaveOptionsData(object):
         self._page_index = None
         self._export_embedded_images = None
         self._fit_to_view_port = None
+        self._max_image_resolution = None
         self._resources_folder = None
         self._resources_folder_alias = None
         self._show_page_border = None
@@ -173,6 +176,8 @@ class SvgSaveOptionsData(object):
             self.export_embedded_images = export_embedded_images
         if fit_to_view_port is not None:
             self.fit_to_view_port = fit_to_view_port
+        if max_image_resolution is not None:
+            self.max_image_resolution = max_image_resolution
         if resources_folder is not None:
             self.resources_folder = resources_folder
         if resources_folder_alias is not None:
@@ -693,6 +698,28 @@ class SvgSaveOptionsData(object):
         self._fit_to_view_port = fit_to_view_port
 
     @property
+    def max_image_resolution(self):
+        """Gets the max_image_resolution of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value in pixels per inch that limits resolution of exported raster images. If the value of this property is non-zero, it limits resolution of exported raster images. That is, higher-resolution images are resampled down to the limit and lower-resolution images are exported as is.  # noqa: E501
+
+        :return: The max_image_resolution of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_image_resolution
+
+    @max_image_resolution.setter
+    def max_image_resolution(self, max_image_resolution):
+        """Sets the max_image_resolution of this SvgSaveOptionsData.
+
+        Gets or sets a value in pixels per inch that limits resolution of exported raster images. If the value of this property is non-zero, it limits resolution of exported raster images. That is, higher-resolution images are resampled down to the limit and lower-resolution images are exported as is.  # noqa: E501
+
+        :param max_image_resolution: The max_image_resolution of this SvgSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._max_image_resolution = max_image_resolution
+
+    @property
     def resources_folder(self):
         """Gets the resources_folder of this SvgSaveOptionsData.  # noqa: E501
 
@@ -828,6 +855,7 @@ class SvgSaveOptionsData(object):
 
         if self._metafile_rendering_options is not None:
             self._metafile_rendering_options.validate()
+
 
 
 
