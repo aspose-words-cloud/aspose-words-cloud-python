@@ -13,6 +13,7 @@ from test.api.document.test_document_with_format import TestDocumentWithFormat
 from test.api.document.test_load_web_document import TestLoadWebDocument
 from test.api.document.test_password_encryption import TestPasswordEncryption
 from test.api.document.test_revisions import TestRevisions
+from test.api.document.test_signature import TestSignature
 from test.api.document.test_split_document_to_format import TestSplitDocumentToFormat
 from test.api.document_properties.test_document_properties import TestDocumentProperties
 from test.api.document_protection.test_document_protection import TestDocumentProtection

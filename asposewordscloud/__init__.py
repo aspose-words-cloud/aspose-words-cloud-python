@@ -216,6 +216,8 @@ from asposewordscloud.models.section_link_collection_response import SectionLink
 from asposewordscloud.models.section_page_setup_response import SectionPageSetupResponse
 from asposewordscloud.models.section_response import SectionResponse
 from asposewordscloud.models.shading import Shading
+from asposewordscloud.models.signature import Signature
+from asposewordscloud.models.signature_collection_response import SignatureCollectionResponse
 from asposewordscloud.models.sign_options import SignOptions
 from asposewordscloud.models.split_document_response import SplitDocumentResponse
 from asposewordscloud.models.split_document_result import SplitDocumentResult
