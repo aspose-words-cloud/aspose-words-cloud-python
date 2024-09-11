@@ -47,7 +47,7 @@ class Signature(object):
         'issuer_name': 'str',
         'is_valid': 'bool',
         'signature_type': 'str',
-        'signature_value': 'file',
+        'signature_value': 'str',
         'sign_time': 'datetime',
         'subject_name': 'str'
     }
@@ -189,10 +189,10 @@ class Signature(object):
     def signature_value(self):
         """Gets the signature_value of this Signature.  # noqa: E501
 
-        Gets or sets an array of bytes representing a signature value.  # noqa: E501
+        Gets or sets an array of bytes representing a signature value as base64 string.  # noqa: E501
 
         :return: The signature_value of this Signature.  # noqa: E501
-        :rtype: file
+        :rtype: str
         """
         return self._signature_value
 
@@ -200,10 +200,10 @@ class Signature(object):
     def signature_value(self, signature_value):
         """Sets the signature_value of this Signature.
 
-        Gets or sets an array of bytes representing a signature value.  # noqa: E501
+        Gets or sets an array of bytes representing a signature value as base64 string.  # noqa: E501
 
         :param signature_value: The signature_value of this Signature.  # noqa: E501
-        :type: file
+        :type: str
         """
         self._signature_value = signature_value
 
