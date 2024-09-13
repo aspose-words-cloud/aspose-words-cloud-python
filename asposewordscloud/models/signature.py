@@ -175,15 +175,7 @@ class Signature(object):
         :param signature_type: The signature_type of this Signature.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Unknown", "CryptoApi", "XmlDsig"]  # noqa: E501
-        if not signature_type.isdigit():
-            if signature_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `signature_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(signature_type, allowed_values))
-            self._signature_type = signature_type
-        else:
-            self._signature_type = allowed_values[int(signature_type) if six.PY3 else long(signature_type)]
+        self._signature_type = signature_type
 
     @property
     def signature_value(self):
@@ -259,8 +251,6 @@ class Signature(object):
         """Validate all required properties in model"""
         if self._is_valid is None:
             raise ValueError("Property IsValid in Signature is required.")  # noqa: E501
-        if self._signature_type is None:
-            raise ValueError("Property SignatureType in Signature is required.")  # noqa: E501
         if self._sign_time is None:
             raise ValueError("Property SignTime in Signature is required.")  # noqa: E501
 
