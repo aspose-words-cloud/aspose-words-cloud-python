@@ -42,6 +42,7 @@ from asposewordscloud.models.custom_xml_part_response import CustomXmlPartRespon
 from asposewordscloud.models.custom_xml_parts_collection import CustomXmlPartsCollection
 from asposewordscloud.models.custom_xml_parts_response import CustomXmlPartsResponse
 from asposewordscloud.models.custom_xml_part_update import CustomXmlPartUpdate
+from asposewordscloud.models.digital_signature_details import DigitalSignatureDetails
 from asposewordscloud.models.docm_save_options_data import DocmSaveOptionsData
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
@@ -210,6 +211,9 @@ from asposewordscloud.models.section_link_collection_response import SectionLink
 from asposewordscloud.models.section_page_setup_response import SectionPageSetupResponse
 from asposewordscloud.models.section_response import SectionResponse
 from asposewordscloud.models.shading import Shading
+from asposewordscloud.models.signature import Signature
+from asposewordscloud.models.signature_collection_response import SignatureCollectionResponse
+from asposewordscloud.models.sign_options import SignOptions
 from asposewordscloud.models.split_document_response import SplitDocumentResponse
 from asposewordscloud.models.split_document_result import SplitDocumentResult
 from asposewordscloud.models.stat_data_response import StatDataResponse

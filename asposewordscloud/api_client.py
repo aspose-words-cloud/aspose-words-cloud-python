@@ -112,6 +112,7 @@ class ApiClient(object):
         'CustomXmlPartsCollection, _': asposewordscloud.models.CustomXmlPartsCollection,
         'CustomXmlPartsResponse, _': asposewordscloud.models.CustomXmlPartsResponse,
         'CustomXmlPartUpdate, _': asposewordscloud.models.CustomXmlPartUpdate,
+        'DigitalSignatureDetails, _': asposewordscloud.models.DigitalSignatureDetails,
         'DocmSaveOptionsData, _': asposewordscloud.models.DocmSaveOptionsData,
         'DocSaveOptionsData, _': asposewordscloud.models.DocSaveOptionsData,
         'Document, _': asposewordscloud.models.Document,
@@ -280,6 +281,9 @@ class ApiClient(object):
         'SectionPageSetupResponse, _': asposewordscloud.models.SectionPageSetupResponse,
         'SectionResponse, _': asposewordscloud.models.SectionResponse,
         'Shading, _': asposewordscloud.models.Shading,
+        'Signature, _': asposewordscloud.models.Signature,
+        'SignatureCollectionResponse, _': asposewordscloud.models.SignatureCollectionResponse,
+        'SignOptions, _': asposewordscloud.models.SignOptions,
         'SplitDocumentResponse, _': asposewordscloud.models.SplitDocumentResponse,
         'SplitDocumentResult, _': asposewordscloud.models.SplitDocumentResult,
         'StatDataResponse, _': asposewordscloud.models.StatDataResponse,
@@ -349,12 +353,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.8'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.9'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 24.8'
+        self.user_agent = 'python sdk 24.9'
 
     def __del__(self):
         if not self.pool is None:

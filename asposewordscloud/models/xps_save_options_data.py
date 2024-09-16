@@ -63,6 +63,7 @@ class XpsSaveOptionsData(object):
         'page_count': 'int',
         'page_index': 'int',
         'bookmarks_outline_level': 'int',
+        'digital_signature_details': 'DigitalSignatureDetails',
         'headings_outline_levels': 'int',
         'outline_options': 'OutlineOptionsData',
         'use_book_fold_printing_settings': 'bool',
@@ -90,13 +91,14 @@ class XpsSaveOptionsData(object):
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
         'bookmarks_outline_level': 'BookmarksOutlineLevel',
+        'digital_signature_details': 'DigitalSignatureDetails',
         'headings_outline_levels': 'HeadingsOutlineLevels',
         'outline_options': 'OutlineOptions',
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, digital_signature_details=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
         """XpsSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -119,6 +121,7 @@ class XpsSaveOptionsData(object):
         self._page_count = None
         self._page_index = None
         self._bookmarks_outline_level = None
+        self._digital_signature_details = None
         self._headings_outline_levels = None
         self._outline_options = None
         self._use_book_fold_printing_settings = None
@@ -165,6 +168,8 @@ class XpsSaveOptionsData(object):
             self.page_index = page_index
         if bookmarks_outline_level is not None:
             self.bookmarks_outline_level = bookmarks_outline_level
+        if digital_signature_details is not None:
+            self.digital_signature_details = digital_signature_details
         if headings_outline_levels is not None:
             self.headings_outline_levels = headings_outline_levels
         if outline_options is not None:
@@ -661,6 +666,28 @@ class XpsSaveOptionsData(object):
         self._bookmarks_outline_level = bookmarks_outline_level
 
     @property
+    def digital_signature_details(self):
+        """Gets the digital_signature_details of this XpsSaveOptionsData.  # noqa: E501
+
+        Gets or sets the details for signing the output document.  # noqa: E501
+
+        :return: The digital_signature_details of this XpsSaveOptionsData.  # noqa: E501
+        :rtype: DigitalSignatureDetails
+        """
+        return self._digital_signature_details
+
+    @digital_signature_details.setter
+    def digital_signature_details(self, digital_signature_details):
+        """Sets the digital_signature_details of this XpsSaveOptionsData.
+
+        Gets or sets the details for signing the output document.  # noqa: E501
+
+        :param digital_signature_details: The digital_signature_details of this XpsSaveOptionsData.  # noqa: E501
+        :type: DigitalSignatureDetails
+        """
+        self._digital_signature_details = digital_signature_details
+
+    @property
     def headings_outline_levels(self):
         """Gets the headings_outline_levels of this XpsSaveOptionsData.  # noqa: E501
 
@@ -771,6 +798,11 @@ class XpsSaveOptionsData(object):
 
 
 
+
+
+
+        if self._digital_signature_details is not None:
+            self._digital_signature_details.validate()
 
 
 

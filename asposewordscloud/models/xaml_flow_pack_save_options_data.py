@@ -57,6 +57,7 @@ class XamlFlowPackSaveOptionsData(object):
         'zip_output': 'bool',
         'images_folder': 'str',
         'images_folder_alias': 'str',
+        'replace_backslash_with_yen_sign': 'bool',
         'save_format': 'str'
     }
 
@@ -75,10 +76,11 @@ class XamlFlowPackSaveOptionsData(object):
         'zip_output': 'ZipOutput',
         'images_folder': 'ImagesFolder',
         'images_folder_alias': 'ImagesFolderAlias',
+        'replace_backslash_with_yen_sign': 'ReplaceBackslashWithYenSign',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, images_folder=None, images_folder_alias=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, images_folder=None, images_folder_alias=None, replace_backslash_with_yen_sign=None):  # noqa: E501
         """XamlFlowPackSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -95,6 +97,7 @@ class XamlFlowPackSaveOptionsData(object):
         self._zip_output = None
         self._images_folder = None
         self._images_folder_alias = None
+        self._replace_backslash_with_yen_sign = None
         self._save_format = "xamlflow_pack"
         self.discriminator = None
 
@@ -126,6 +129,8 @@ class XamlFlowPackSaveOptionsData(object):
             self.images_folder = images_folder
         if images_folder_alias is not None:
             self.images_folder_alias = images_folder_alias
+        if replace_backslash_with_yen_sign is not None:
+            self.replace_backslash_with_yen_sign = replace_backslash_with_yen_sign
 
     @property
     def allow_embedding_post_script_fonts(self):
@@ -468,6 +473,28 @@ class XamlFlowPackSaveOptionsData(object):
         self._images_folder_alias = images_folder_alias
 
     @property
+    def replace_backslash_with_yen_sign(self):
+        """Gets the replace_backslash_with_yen_sign of this XamlFlowPackSaveOptionsData.  # noqa: E501
+
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+
+        :return: The replace_backslash_with_yen_sign of this XamlFlowPackSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._replace_backslash_with_yen_sign
+
+    @replace_backslash_with_yen_sign.setter
+    def replace_backslash_with_yen_sign(self, replace_backslash_with_yen_sign):
+        """Sets the replace_backslash_with_yen_sign of this XamlFlowPackSaveOptionsData.
+
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+
+        :param replace_backslash_with_yen_sign: The replace_backslash_with_yen_sign of this XamlFlowPackSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._replace_backslash_with_yen_sign = replace_backslash_with_yen_sign
+
+    @property
     def save_format(self):
         """Gets the save_format of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
@@ -490,6 +517,7 @@ class XamlFlowPackSaveOptionsData(object):
 
         if self._custom_time_zone_info_data is not None:
             self._custom_time_zone_info_data.validate()
+
 
 
 

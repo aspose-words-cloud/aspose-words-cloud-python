@@ -87,6 +87,7 @@ class PdfSaveOptionsData(object):
         'text_compression': 'str',
         'use_book_fold_printing_settings': 'bool',
         'use_core_fonts': 'bool',
+        'use_sdt_tag_as_form_field_name': 'bool',
         'zoom_behavior': 'str',
         'zoom_factor': 'int',
         'save_format': 'str'
@@ -137,12 +138,13 @@ class PdfSaveOptionsData(object):
         'text_compression': 'TextCompression',
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
         'use_core_fonts': 'UseCoreFonts',
+        'use_sdt_tag_as_form_field_name': 'UseSdtTagAsFormFieldName',
         'zoom_behavior': 'ZoomBehavior',
         'zoom_factor': 'ZoomFactor',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -189,6 +191,7 @@ class PdfSaveOptionsData(object):
         self._text_compression = None
         self._use_book_fold_printing_settings = None
         self._use_core_fonts = None
+        self._use_sdt_tag_as_form_field_name = None
         self._zoom_behavior = None
         self._zoom_factor = None
         self._save_format = "pdf"
@@ -282,6 +285,8 @@ class PdfSaveOptionsData(object):
             self.use_book_fold_printing_settings = use_book_fold_printing_settings
         if use_core_fonts is not None:
             self.use_core_fonts = use_core_fonts
+        if use_sdt_tag_as_form_field_name is not None:
+            self.use_sdt_tag_as_form_field_name = use_sdt_tag_as_form_field_name
         if zoom_behavior is not None:
             self.zoom_behavior = zoom_behavior
         if zoom_factor is not None:
@@ -1360,6 +1365,28 @@ class PdfSaveOptionsData(object):
         self._use_core_fonts = use_core_fonts
 
     @property
+    def use_sdt_tag_as_form_field_name(self):
+        """Gets the use_sdt_tag_as_form_field_name of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF. The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build unique PDF form field names.  # noqa: E501
+
+        :return: The use_sdt_tag_as_form_field_name of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_sdt_tag_as_form_field_name
+
+    @use_sdt_tag_as_form_field_name.setter
+    def use_sdt_tag_as_form_field_name(self, use_sdt_tag_as_form_field_name):
+        """Sets the use_sdt_tag_as_form_field_name of this PdfSaveOptionsData.
+
+        Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF. The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build unique PDF form field names.  # noqa: E501
+
+        :param use_sdt_tag_as_form_field_name: The use_sdt_tag_as_form_field_name of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._use_sdt_tag_as_form_field_name = use_sdt_tag_as_form_field_name
+
+    @property
     def zoom_behavior(self):
         """Gets the zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
 
@@ -1490,6 +1517,7 @@ class PdfSaveOptionsData(object):
 
         if self._outline_options is not None:
             self._outline_options.validate()
+
 
 
 
