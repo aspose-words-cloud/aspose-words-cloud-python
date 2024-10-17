@@ -97,3 +97,35 @@ class TestRevisions(BaseTestContext):
         self.assertIsNotNone(result.model, 'Validate RejectAllRevisionsOnline response')
         self.assertIsNotNone(result.model.result, 'Validate RejectAllRevisionsOnline response')
         self.assertIsNotNone(result.model.result.dest, 'Validate RejectAllRevisionsOnline response')
+
+    #
+    # Test for getting revisions from document.
+    #
+    def test_get_all_revisions(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/Revisions'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestAcceptAllRevisions.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.GetAllRevisionsRequest(name=remote_file_name, folder=remote_data_folder)
+
+        result = self.words_api.get_all_revisions(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.revisions, 'Validate GetAllRevisions response')
+        self.assertEqual(6, len(result.revisions))
+
+    #
+    # Test for getting revisions online from document.
+    #
+    def test_get_all_revisions_online(self):
+        local_file = 'Common/test_multi_pages.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetAllRevisionsOnlineRequest(document=request_document)
+
+        result = self.words_api.get_all_revisions_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.document, 'Validate GetAllRevisionsOnline response')
+        self.assertIsNotNone(result.model, 'Validate GetAllRevisionsOnline response')
+        self.assertIsNotNone(result.model.revisions, 'Validate GetAllRevisionsOnline response')
