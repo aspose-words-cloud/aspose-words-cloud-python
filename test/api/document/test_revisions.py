@@ -113,7 +113,7 @@ class TestRevisions(BaseTestContext):
         result = self.words_api.get_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.revisions, 'Validate GetAllRevisions response')
-        self.assertEqual(6, len(result.revisions))
+        self.assertEqual(6, len(result.revisions.revisions))
 
     #
     # Test for getting revisions online from document.
@@ -126,6 +126,5 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.get_all_revisions_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertIsNotNone(result.document, 'Validate GetAllRevisionsOnline response')
-        self.assertIsNotNone(result.model, 'Validate GetAllRevisionsOnline response')
-        self.assertIsNotNone(result.model.revisions, 'Validate GetAllRevisionsOnline response')
+        self.assertIsNotNone(result.revisions, 'Validate GetAllRevisionsOnline response')
+        self.assertEqual(6, len(result.revisions.revisions))
