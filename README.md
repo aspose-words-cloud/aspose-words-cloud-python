@@ -19,6 +19,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 ## Enhancements in Version 24.11
 
 - Added GetAllRevisions method to obtain all available revisions in document.
+- Added AppendAllEntriesToOneSection parameter to AppendDocument method to append entries to the same section.
 
 
 ## Enhancements in Version 24.9
