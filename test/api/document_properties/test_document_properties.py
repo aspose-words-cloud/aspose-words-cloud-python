@@ -48,7 +48,7 @@ class TestDocumentProperties(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document_properties, 'Validate GetDocumentProperties response')
         self.assertIsNotNone(result.document_properties.list, 'Validate GetDocumentProperties response')
-        self.assertEqual(24, len(result.document_properties.list))
+        self.assertEqual(27, len(result.document_properties.list))
         self.assertIsNotNone(result.document_properties.list[0], 'Validate GetDocumentProperties response')
         self.assertEqual('Author', result.document_properties.list[0].name)
         self.assertEqual('', result.document_properties.list[0].value)
