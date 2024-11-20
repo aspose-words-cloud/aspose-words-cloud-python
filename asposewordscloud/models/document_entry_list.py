@@ -43,26 +43,53 @@ class DocumentEntryList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'append_all_entries_to_one_section': 'bool',
         'apply_base_document_headers_and_footers_to_appending_documents': 'bool',
         'document_entries': 'list[DocumentEntry]'
     }
 
     attribute_map = {
+        'append_all_entries_to_one_section': 'AppendAllEntriesToOneSection',
         'apply_base_document_headers_and_footers_to_appending_documents': 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         'document_entries': 'DocumentEntries'
     }
 
-    def __init__(self, apply_base_document_headers_and_footers_to_appending_documents=None, document_entries=None):  # noqa: E501
+    def __init__(self, append_all_entries_to_one_section=None, apply_base_document_headers_and_footers_to_appending_documents=None, document_entries=None):  # noqa: E501
         """DocumentEntryList - a model defined in Swagger"""  # noqa: E501
 
+        self._append_all_entries_to_one_section = None
         self._apply_base_document_headers_and_footers_to_appending_documents = None
         self._document_entries = None
         self.discriminator = None
 
+        if append_all_entries_to_one_section is not None:
+            self.append_all_entries_to_one_section = append_all_entries_to_one_section
         if apply_base_document_headers_and_footers_to_appending_documents is not None:
             self.apply_base_document_headers_and_footers_to_appending_documents = apply_base_document_headers_and_footers_to_appending_documents
         if document_entries is not None:
             self.document_entries = document_entries
+
+    @property
+    def append_all_entries_to_one_section(self):
+        """Gets the append_all_entries_to_one_section of this DocumentEntryList.  # noqa: E501
+
+        Gets or sets a value indicating whether to append all documents to the same section.  # noqa: E501
+
+        :return: The append_all_entries_to_one_section of this DocumentEntryList.  # noqa: E501
+        :rtype: bool
+        """
+        return self._append_all_entries_to_one_section
+
+    @append_all_entries_to_one_section.setter
+    def append_all_entries_to_one_section(self, append_all_entries_to_one_section):
+        """Sets the append_all_entries_to_one_section of this DocumentEntryList.
+
+        Gets or sets a value indicating whether to append all documents to the same section.  # noqa: E501
+
+        :param append_all_entries_to_one_section: The append_all_entries_to_one_section of this DocumentEntryList.  # noqa: E501
+        :type: bool
+        """
+        self._append_all_entries_to_one_section = append_all_entries_to_one_section
 
     @property
     def apply_base_document_headers_and_footers_to_appending_documents(self):

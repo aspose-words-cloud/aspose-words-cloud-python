@@ -195,7 +195,10 @@ from asposewordscloud.models.replace_text_parameters import ReplaceTextParameter
 from asposewordscloud.models.replace_text_response import ReplaceTextResponse
 from asposewordscloud.models.report_build_options import ReportBuildOptions
 from asposewordscloud.models.report_engine_settings import ReportEngineSettings
+from asposewordscloud.models.revision import Revision
+from asposewordscloud.models.revision_collection import RevisionCollection
 from asposewordscloud.models.revisions_modification_response import RevisionsModificationResponse
+from asposewordscloud.models.revisions_response import RevisionsResponse
 from asposewordscloud.models.rtf_save_options_data import RtfSaveOptionsData
 from asposewordscloud.models.run import Run
 from asposewordscloud.models.run_insert import RunInsert

@@ -260,7 +260,10 @@ class ApiClient(object):
         'ReplaceTextResponse, _': asposewordscloud.models.ReplaceTextResponse,
         'ReportBuildOptions, _': None,
         'ReportEngineSettings, _': asposewordscloud.models.ReportEngineSettings,
+        'Revision, _': asposewordscloud.models.Revision,
+        'RevisionCollection, _': asposewordscloud.models.RevisionCollection,
         'RevisionsModificationResponse, _': asposewordscloud.models.RevisionsModificationResponse,
+        'RevisionsResponse, _': asposewordscloud.models.RevisionsResponse,
         'RtfSaveOptionsData, _': asposewordscloud.models.RtfSaveOptionsData,
         'Run, _': asposewordscloud.models.Run,
         'RunInsert, _': asposewordscloud.models.RunInsert,
@@ -353,12 +356,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.10'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '24.11'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 24.10'
+        self.user_agent = 'python sdk 24.11'
 
     def __del__(self):
         if not self.pool is None:
