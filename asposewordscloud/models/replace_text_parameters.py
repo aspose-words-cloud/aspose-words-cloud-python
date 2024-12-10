@@ -43,6 +43,7 @@ class ReplaceTextParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'apply_superscript': 'bool',
         'is_match_case': 'bool',
         'is_match_whole_word': 'bool',
         'is_old_value_regex': 'bool',
@@ -51,6 +52,7 @@ class ReplaceTextParameters(object):
     }
 
     attribute_map = {
+        'apply_superscript': 'ApplySuperscript',
         'is_match_case': 'IsMatchCase',
         'is_match_whole_word': 'IsMatchWholeWord',
         'is_old_value_regex': 'IsOldValueRegex',
@@ -58,9 +60,10 @@ class ReplaceTextParameters(object):
         'old_value': 'OldValue'
     }
 
-    def __init__(self, is_match_case=None, is_match_whole_word=None, is_old_value_regex=None, new_value=None, old_value=None):  # noqa: E501
+    def __init__(self, apply_superscript=None, is_match_case=None, is_match_whole_word=None, is_old_value_regex=None, new_value=None, old_value=None):  # noqa: E501
         """ReplaceTextParameters - a model defined in Swagger"""  # noqa: E501
 
+        self._apply_superscript = None
         self._is_match_case = None
         self._is_match_whole_word = None
         self._is_old_value_regex = None
@@ -68,6 +71,8 @@ class ReplaceTextParameters(object):
         self._old_value = None
         self.discriminator = None
 
+        if apply_superscript is not None:
+            self.apply_superscript = apply_superscript
         if is_match_case is not None:
             self.is_match_case = is_match_case
         if is_match_whole_word is not None:
@@ -78,6 +83,28 @@ class ReplaceTextParameters(object):
             self.new_value = new_value
         if old_value is not None:
             self.old_value = old_value
+
+    @property
+    def apply_superscript(self):
+        """Gets the apply_superscript of this ReplaceTextParameters.  # noqa: E501
+
+        Gets or sets a value indicating whether apply superscript to font or not.  # noqa: E501
+
+        :return: The apply_superscript of this ReplaceTextParameters.  # noqa: E501
+        :rtype: bool
+        """
+        return self._apply_superscript
+
+    @apply_superscript.setter
+    def apply_superscript(self, apply_superscript):
+        """Sets the apply_superscript of this ReplaceTextParameters.
+
+        Gets or sets a value indicating whether apply superscript to font or not.  # noqa: E501
+
+        :param apply_superscript: The apply_superscript of this ReplaceTextParameters.  # noqa: E501
+        :type: bool
+        """
+        self._apply_superscript = apply_superscript
 
     @property
     def is_match_case(self):

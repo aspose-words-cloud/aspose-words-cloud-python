@@ -84,6 +84,7 @@ class PdfSaveOptionsData(object):
         'page_mode': 'str',
         'preblend_images': 'bool',
         'preserve_form_fields': 'bool',
+        'render_choice_form_field_border': 'bool',
         'text_compression': 'str',
         'use_book_fold_printing_settings': 'bool',
         'use_core_fonts': 'bool',
@@ -135,6 +136,7 @@ class PdfSaveOptionsData(object):
         'page_mode': 'PageMode',
         'preblend_images': 'PreblendImages',
         'preserve_form_fields': 'PreserveFormFields',
+        'render_choice_form_field_border': 'RenderChoiceFormFieldBorder',
         'text_compression': 'TextCompression',
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
         'use_core_fonts': 'UseCoreFonts',
@@ -144,7 +146,7 @@ class PdfSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, render_choice_form_field_border=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -188,6 +190,7 @@ class PdfSaveOptionsData(object):
         self._page_mode = None
         self._preblend_images = None
         self._preserve_form_fields = None
+        self._render_choice_form_field_border = None
         self._text_compression = None
         self._use_book_fold_printing_settings = None
         self._use_core_fonts = None
@@ -279,6 +282,8 @@ class PdfSaveOptionsData(object):
             self.preblend_images = preblend_images
         if preserve_form_fields is not None:
             self.preserve_form_fields = preserve_form_fields
+        if render_choice_form_field_border is not None:
+            self.render_choice_form_field_border = render_choice_form_field_border
         if text_compression is not None:
             self.text_compression = text_compression
         if use_book_fold_printing_settings is not None:
@@ -1291,6 +1296,28 @@ class PdfSaveOptionsData(object):
         self._preserve_form_fields = preserve_form_fields
 
     @property
+    def render_choice_form_field_border(self):
+        """Gets the render_choice_form_field_border of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether to render PDF choice form field border. PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.  # noqa: E501
+
+        :return: The render_choice_form_field_border of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._render_choice_form_field_border
+
+    @render_choice_form_field_border.setter
+    def render_choice_form_field_border(self, render_choice_form_field_border):
+        """Sets the render_choice_form_field_border of this PdfSaveOptionsData.
+
+        Gets or sets a value indicating whether to render PDF choice form field border. PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.  # noqa: E501
+
+        :param render_choice_form_field_border: The render_choice_form_field_border of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._render_choice_form_field_border = render_choice_form_field_border
+
+    @property
     def text_compression(self):
         """Gets the text_compression of this PdfSaveOptionsData.  # noqa: E501
 
@@ -1517,6 +1544,7 @@ class PdfSaveOptionsData(object):
 
         if self._outline_options is not None:
             self._outline_options.validate()
+
 
 
 
