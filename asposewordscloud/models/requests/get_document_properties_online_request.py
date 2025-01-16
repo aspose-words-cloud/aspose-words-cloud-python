@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_properties_online_request.py">
-#   Copyright (c) 2024 Aspose.Words for Cloud
+#   Copyright (c) 2025 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
