@@ -69,6 +69,7 @@ class HtmlFixedSaveOptionsData(object):
         'export_embedded_images': 'bool',
         'export_form_fields': 'bool',
         'font_format': 'str',
+        'id_prefix': 'str',
         'page_horizontal_alignment': 'str',
         'page_margins': 'float',
         'resources_folder': 'str',
@@ -106,6 +107,7 @@ class HtmlFixedSaveOptionsData(object):
         'export_embedded_images': 'ExportEmbeddedImages',
         'export_form_fields': 'ExportFormFields',
         'font_format': 'FontFormat',
+        'id_prefix': 'IdPrefix',
         'page_horizontal_alignment': 'PageHorizontalAlignment',
         'page_margins': 'PageMargins',
         'resources_folder': 'ResourcesFolder',
@@ -116,7 +118,7 @@ class HtmlFixedSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, id_prefix=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -145,6 +147,7 @@ class HtmlFixedSaveOptionsData(object):
         self._export_embedded_images = None
         self._export_form_fields = None
         self._font_format = None
+        self._id_prefix = None
         self._page_horizontal_alignment = None
         self._page_margins = None
         self._resources_folder = None
@@ -207,6 +210,8 @@ class HtmlFixedSaveOptionsData(object):
             self.export_form_fields = export_form_fields
         if font_format is not None:
             self.font_format = font_format
+        if id_prefix is not None:
+            self.id_prefix = id_prefix
         if page_horizontal_alignment is not None:
             self.page_horizontal_alignment = page_horizontal_alignment
         if page_margins is not None:
@@ -851,6 +856,28 @@ class HtmlFixedSaveOptionsData(object):
             self._font_format = allowed_values[int(font_format) if six.PY3 else long(font_format)]
 
     @property
+    def id_prefix(self):
+        """Gets the id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+
+        :return: The id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._id_prefix
+
+    @id_prefix.setter
+    def id_prefix(self, id_prefix):
+        """Sets the id_prefix of this HtmlFixedSaveOptionsData.
+
+        Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+
+        :param id_prefix: The id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._id_prefix = id_prefix
+
+    @property
     def page_horizontal_alignment(self):
         """Gets the page_horizontal_alignment of this HtmlFixedSaveOptionsData.  # noqa: E501
 
@@ -1052,6 +1079,7 @@ class HtmlFixedSaveOptionsData(object):
 
         if self._metafile_rendering_options is not None:
             self._metafile_rendering_options.validate()
+
 
 
 
