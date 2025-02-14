@@ -64,6 +64,7 @@ class SvgSaveOptionsData(object):
         'page_index': 'int',
         'export_embedded_images': 'bool',
         'fit_to_view_port': 'bool',
+        'id_prefix': 'str',
         'max_image_resolution': 'int',
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
@@ -94,6 +95,7 @@ class SvgSaveOptionsData(object):
         'page_index': 'PageIndex',
         'export_embedded_images': 'ExportEmbeddedImages',
         'fit_to_view_port': 'FitToViewPort',
+        'id_prefix': 'IdPrefix',
         'max_image_resolution': 'MaxImageResolution',
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
@@ -102,7 +104,7 @@ class SvgSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, max_image_resolution=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, id_prefix=None, max_image_resolution=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
         """SvgSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -126,6 +128,7 @@ class SvgSaveOptionsData(object):
         self._page_index = None
         self._export_embedded_images = None
         self._fit_to_view_port = None
+        self._id_prefix = None
         self._max_image_resolution = None
         self._resources_folder = None
         self._resources_folder_alias = None
@@ -176,6 +179,8 @@ class SvgSaveOptionsData(object):
             self.export_embedded_images = export_embedded_images
         if fit_to_view_port is not None:
             self.fit_to_view_port = fit_to_view_port
+        if id_prefix is not None:
+            self.id_prefix = id_prefix
         if max_image_resolution is not None:
             self.max_image_resolution = max_image_resolution
         if resources_folder is not None:
@@ -698,6 +703,28 @@ class SvgSaveOptionsData(object):
         self._fit_to_view_port = fit_to_view_port
 
     @property
+    def id_prefix(self):
+        """Gets the id_prefix of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+
+        :return: The id_prefix of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._id_prefix
+
+    @id_prefix.setter
+    def id_prefix(self, id_prefix):
+        """Sets the id_prefix of this SvgSaveOptionsData.
+
+        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+
+        :param id_prefix: The id_prefix of this SvgSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._id_prefix = id_prefix
+
+    @property
     def max_image_resolution(self):
         """Gets the max_image_resolution of this SvgSaveOptionsData.  # noqa: E501
 
@@ -855,6 +882,7 @@ class SvgSaveOptionsData(object):
 
         if self._metafile_rendering_options is not None:
             self._metafile_rendering_options.validate()
+
 
 
 
