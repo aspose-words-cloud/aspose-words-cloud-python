@@ -50,6 +50,7 @@ class PdfSaveOptionsData(object):
         'dml_rendering_mode': 'str',
         'file_name': 'str',
         'iml_rendering_mode': 'str',
+        'update_ambiguous_text_font': 'bool',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -62,6 +63,7 @@ class PdfSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
+        'attachments_embedding_mode': 'str',
         'cache_background_graphics': 'bool',
         'compliance': 'str',
         'create_note_hyperlinks': 'bool',
@@ -102,6 +104,7 @@ class PdfSaveOptionsData(object):
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
         'iml_rendering_mode': 'ImlRenderingMode',
+        'update_ambiguous_text_font': 'UpdateAmbiguousTextFont',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -114,6 +117,7 @@ class PdfSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
+        'attachments_embedding_mode': 'AttachmentsEmbeddingMode',
         'cache_background_graphics': 'CacheBackgroundGraphics',
         'compliance': 'Compliance',
         'create_note_hyperlinks': 'CreateNoteHyperlinks',
@@ -146,7 +150,7 @@ class PdfSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, render_choice_form_field_border=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, attachments_embedding_mode=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, render_choice_form_field_border=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -156,6 +160,7 @@ class PdfSaveOptionsData(object):
         self._dml_rendering_mode = None
         self._file_name = None
         self._iml_rendering_mode = None
+        self._update_ambiguous_text_font = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -168,6 +173,7 @@ class PdfSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
+        self._attachments_embedding_mode = None
         self._cache_background_graphics = None
         self._compliance = None
         self._create_note_hyperlinks = None
@@ -214,6 +220,8 @@ class PdfSaveOptionsData(object):
             self.file_name = file_name
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
+        if update_ambiguous_text_font is not None:
+            self.update_ambiguous_text_font = update_ambiguous_text_font
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -238,6 +246,8 @@ class PdfSaveOptionsData(object):
             self.page_count = page_count
         if page_index is not None:
             self.page_index = page_index
+        if attachments_embedding_mode is not None:
+            self.attachments_embedding_mode = attachments_embedding_mode
         if cache_background_graphics is not None:
             self.cache_background_graphics = cache_background_graphics
         if compliance is not None:
@@ -482,6 +492,28 @@ class PdfSaveOptionsData(object):
             self._iml_rendering_mode = iml_rendering_mode
         else:
             self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
+
+    @property
+    def update_ambiguous_text_font(self):
+        """Gets the update_ambiguous_text_font of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.  # noqa: E501
+
+        :return: The update_ambiguous_text_font of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_ambiguous_text_font
+
+    @update_ambiguous_text_font.setter
+    def update_ambiguous_text_font(self, update_ambiguous_text_font):
+        """Sets the update_ambiguous_text_font of this PdfSaveOptionsData.
+
+        Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.  # noqa: E501
+
+        :param update_ambiguous_text_font: The update_ambiguous_text_font of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_ambiguous_text_font = update_ambiguous_text_font
 
     @property
     def update_created_time_property(self):
@@ -762,6 +794,36 @@ class PdfSaveOptionsData(object):
         :type: int
         """
         self._page_index = page_index
+
+    @property
+    def attachments_embedding_mode(self):
+        """Gets the attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
+
+        :return: The attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._attachments_embedding_mode
+
+    @attachments_embedding_mode.setter
+    def attachments_embedding_mode(self, attachments_embedding_mode):
+        """Sets the attachments_embedding_mode of this PdfSaveOptionsData.
+
+        Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
+
+        :param attachments_embedding_mode: The attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["None", "Annotations", "DocumentEmbeddedFiles"]  # noqa: E501
+        if not attachments_embedding_mode.isdigit():
+            if attachments_embedding_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `attachments_embedding_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(attachments_embedding_mode, allowed_values))
+            self._attachments_embedding_mode = attachments_embedding_mode
+        else:
+            self._attachments_embedding_mode = allowed_values[int(attachments_embedding_mode) if six.PY3 else long(attachments_embedding_mode)]
 
     @property
     def cache_background_graphics(self):
@@ -1503,8 +1565,10 @@ class PdfSaveOptionsData(object):
 
 
 
+
         if self._metafile_rendering_options is not None:
             self._metafile_rendering_options.validate()
+
 
 
 
