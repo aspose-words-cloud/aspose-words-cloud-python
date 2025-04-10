@@ -44,6 +44,7 @@ class CompareOptions(object):
     """
     swagger_types = {
         'accept_all_revisions_before_comparison': 'bool',
+        'granularity': 'str',
         'ignore_case_changes': 'bool',
         'ignore_comments': 'bool',
         'ignore_fields': 'bool',
@@ -57,6 +58,7 @@ class CompareOptions(object):
 
     attribute_map = {
         'accept_all_revisions_before_comparison': 'AcceptAllRevisionsBeforeComparison',
+        'granularity': 'Granularity',
         'ignore_case_changes': 'IgnoreCaseChanges',
         'ignore_comments': 'IgnoreComments',
         'ignore_fields': 'IgnoreFields',
@@ -68,10 +70,11 @@ class CompareOptions(object):
         'target': 'Target'
     }
 
-    def __init__(self, accept_all_revisions_before_comparison=None, ignore_case_changes=None, ignore_comments=None, ignore_fields=None, ignore_footnotes=None, ignore_formatting=None, ignore_headers_and_footers=None, ignore_tables=None, ignore_textboxes=None, target=None):  # noqa: E501
+    def __init__(self, accept_all_revisions_before_comparison=None, granularity=None, ignore_case_changes=None, ignore_comments=None, ignore_fields=None, ignore_footnotes=None, ignore_formatting=None, ignore_headers_and_footers=None, ignore_tables=None, ignore_textboxes=None, target=None):  # noqa: E501
         """CompareOptions - a model defined in Swagger"""  # noqa: E501
 
         self._accept_all_revisions_before_comparison = None
+        self._granularity = None
         self._ignore_case_changes = None
         self._ignore_comments = None
         self._ignore_fields = None
@@ -85,6 +88,8 @@ class CompareOptions(object):
 
         if accept_all_revisions_before_comparison is not None:
             self.accept_all_revisions_before_comparison = accept_all_revisions_before_comparison
+        if granularity is not None:
+            self.granularity = granularity
         if ignore_case_changes is not None:
             self.ignore_case_changes = ignore_case_changes
         if ignore_comments is not None:
@@ -125,6 +130,36 @@ class CompareOptions(object):
         :type: bool
         """
         self._accept_all_revisions_before_comparison = accept_all_revisions_before_comparison
+
+    @property
+    def granularity(self):
+        """Gets the granularity of this CompareOptions.  # noqa: E501
+
+        Gets or sets the option indicating whether changes are tracked by character or by word.  # noqa: E501
+
+        :return: The granularity of this CompareOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._granularity
+
+    @granularity.setter
+    def granularity(self, granularity):
+        """Sets the granularity of this CompareOptions.
+
+        Gets or sets the option indicating whether changes are tracked by character or by word.  # noqa: E501
+
+        :param granularity: The granularity of this CompareOptions.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CharLevel", "WordLevel"]  # noqa: E501
+        if not granularity.isdigit():
+            if granularity not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `granularity` ({0}), must be one of {1}"  # noqa: E501
+                    .format(granularity, allowed_values))
+            self._granularity = granularity
+        else:
+            self._granularity = allowed_values[int(granularity) if six.PY3 else long(granularity)]
 
     @property
     def ignore_case_changes(self):

@@ -50,6 +50,7 @@ class XamlFlowSaveOptionsData(object):
         'dml_rendering_mode': 'str',
         'file_name': 'str',
         'iml_rendering_mode': 'str',
+        'update_ambiguous_text_font': 'bool',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -69,6 +70,7 @@ class XamlFlowSaveOptionsData(object):
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
         'iml_rendering_mode': 'ImlRenderingMode',
+        'update_ambiguous_text_font': 'UpdateAmbiguousTextFont',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -80,7 +82,7 @@ class XamlFlowSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, images_folder=None, images_folder_alias=None, replace_backslash_with_yen_sign=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, images_folder=None, images_folder_alias=None, replace_backslash_with_yen_sign=None):  # noqa: E501
         """XamlFlowSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -90,6 +92,7 @@ class XamlFlowSaveOptionsData(object):
         self._dml_rendering_mode = None
         self._file_name = None
         self._iml_rendering_mode = None
+        self._update_ambiguous_text_font = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -115,6 +118,8 @@ class XamlFlowSaveOptionsData(object):
             self.file_name = file_name
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
+        if update_ambiguous_text_font is not None:
+            self.update_ambiguous_text_font = update_ambiguous_text_font
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -319,6 +324,28 @@ class XamlFlowSaveOptionsData(object):
             self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
 
     @property
+    def update_ambiguous_text_font(self):
+        """Gets the update_ambiguous_text_font of this XamlFlowSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.  # noqa: E501
+
+        :return: The update_ambiguous_text_font of this XamlFlowSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_ambiguous_text_font
+
+    @update_ambiguous_text_font.setter
+    def update_ambiguous_text_font(self, update_ambiguous_text_font):
+        """Sets the update_ambiguous_text_font of this XamlFlowSaveOptionsData.
+
+        Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.  # noqa: E501
+
+        :param update_ambiguous_text_font: The update_ambiguous_text_font of this XamlFlowSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_ambiguous_text_font = update_ambiguous_text_font
+
+    @property
     def update_created_time_property(self):
         """Gets the update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
 
@@ -517,6 +544,7 @@ class XamlFlowSaveOptionsData(object):
 
         if self._custom_time_zone_info_data is not None:
             self._custom_time_zone_info_data.validate()
+
 
 
 
