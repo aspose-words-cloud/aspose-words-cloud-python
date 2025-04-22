@@ -31,6 +31,8 @@ from asposewordscloud.models.classification_result import ClassificationResult
 from asposewordscloud.models.comment import Comment
 from asposewordscloud.models.comment_insert import CommentInsert
 from asposewordscloud.models.comment_link import CommentLink
+from asposewordscloud.models.comment_range_end import CommentRangeEnd
+from asposewordscloud.models.comment_range_start import CommentRangeStart
 from asposewordscloud.models.comment_response import CommentResponse
 from asposewordscloud.models.comments_collection import CommentsCollection
 from asposewordscloud.models.comments_response import CommentsResponse
@@ -107,11 +109,14 @@ from asposewordscloud.models.footnotes_response import FootnotesResponse
 from asposewordscloud.models.footnotes_stat_data import FootnotesStatData
 from asposewordscloud.models.footnote_update import FootnoteUpdate
 from asposewordscloud.models.form_field_checkbox import FormFieldCheckbox
+from asposewordscloud.models.form_field_checkbox_link import FormFieldCheckboxLink
 from asposewordscloud.models.form_field_collection import FormFieldCollection
 from asposewordscloud.models.form_field_drop_down import FormFieldDropDown
+from asposewordscloud.models.form_field_drop_down_link import FormFieldDropDownLink
 from asposewordscloud.models.form_field_response import FormFieldResponse
 from asposewordscloud.models.form_fields_response import FormFieldsResponse
 from asposewordscloud.models.form_field_text_input import FormFieldTextInput
+from asposewordscloud.models.form_field_text_input_link import FormFieldTextInputLink
 from asposewordscloud.models.gif_save_options_data import GifSaveOptionsData
 from asposewordscloud.models.header_footer import HeaderFooter
 from asposewordscloud.models.header_footer_link import HeaderFooterLink
