@@ -96,6 +96,8 @@ class ApiClient(object):
         'Comment, _': asposewordscloud.models.Comment,
         'CommentInsert, _': asposewordscloud.models.CommentInsert,
         'CommentLink, _': asposewordscloud.models.CommentLink,
+        'CommentRangeEnd, _': asposewordscloud.models.CommentRangeEnd,
+        'CommentRangeStart, _': asposewordscloud.models.CommentRangeStart,
         'CommentResponse, _': asposewordscloud.models.CommentResponse,
         'CommentsCollection, _': asposewordscloud.models.CommentsCollection,
         'CommentsResponse, _': asposewordscloud.models.CommentsResponse,
@@ -172,11 +174,14 @@ class ApiClient(object):
         'FootnotesStatData, _': asposewordscloud.models.FootnotesStatData,
         'FootnoteUpdate, _': asposewordscloud.models.FootnoteUpdate,
         'FormFieldCheckbox, _': asposewordscloud.models.FormFieldCheckbox,
+        'FormFieldCheckboxLink, _': asposewordscloud.models.FormFieldCheckboxLink,
         'FormFieldCollection, _': asposewordscloud.models.FormFieldCollection,
         'FormFieldDropDown, _': asposewordscloud.models.FormFieldDropDown,
+        'FormFieldDropDownLink, _': asposewordscloud.models.FormFieldDropDownLink,
         'FormFieldResponse, _': asposewordscloud.models.FormFieldResponse,
         'FormFieldsResponse, _': asposewordscloud.models.FormFieldsResponse,
         'FormFieldTextInput, _': asposewordscloud.models.FormFieldTextInput,
+        'FormFieldTextInputLink, _': asposewordscloud.models.FormFieldTextInputLink,
         'GifSaveOptionsData, _': asposewordscloud.models.GifSaveOptionsData,
         'HeaderFooter, _': asposewordscloud.models.HeaderFooter,
         'HeaderFooterLink, _': asposewordscloud.models.HeaderFooterLink,
@@ -356,12 +361,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '25.4'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '25.5'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 25.4'
+        self.user_agent = 'python sdk 25.5'
 
     def __del__(self):
         if not self.pool is None:
