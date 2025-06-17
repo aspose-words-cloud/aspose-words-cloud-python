@@ -19,6 +19,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 ## Enhancements in Version 25.6
 
 - Added support for SVG images format in Watermark API.
+- Added 'RemoveJavaScriptFromLinks' property for HtmlSaveOptionsData class.
 
 
 ## Enhancements in Version 25.5
