@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "aspose-words-cloud"
+NAME = "aspose_words_cloud"
 VERSION = "25.7.0"
 # To install the library, run the following
 #
