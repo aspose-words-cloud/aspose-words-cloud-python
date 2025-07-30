@@ -33,8 +33,8 @@ setup(
     name=NAME,
     version=VERSION,
     description="Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate Microsoft Word file generation, manipulation, conversion & inspection features into your own python applications.",
-    author='Yaroslaw Ekimov',
-    author_email="yaroslaw.ekimov@aspose.com",
+    author='Aspose',
+    author_email="aspose.cloud@aspose.com",
     url="https://github.com/aspose-words-cloud/aspose-words-cloud-python",
 	classifiers=[
 		'Development Status :: 5 - Production/Stable',
