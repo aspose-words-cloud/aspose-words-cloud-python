@@ -71,7 +71,7 @@ def runtests(dockerImageVersion)
 node('words-linux') {
 	stage('oldpy'){
 		try {
-			runtests("3.7") 
+			runtests("3.8") 
 		} finally {
 			cleanWs()
 		}
@@ -79,7 +79,7 @@ node('words-linux') {
     
     stage('newpy'){
 		try {
-			runtests("3.10") 
+			runtests("3.13") 
 		} finally {
 			cleanWs()
 		}
