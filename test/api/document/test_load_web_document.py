@@ -45,3 +45,15 @@ class TestLoadWebDocument(BaseTestContext):
         self.assertIsNotNone(result.save_result, 'Validate LoadWebDocument response')
         self.assertIsNotNone(result.save_result.dest_document, 'Validate LoadWebDocument response')
         self.assertEqual('google.doc', result.save_result.dest_document.href)
+
+    #
+    # Test for loading web document online.
+    #
+    def test_load_web_document_online(self):
+        request_data_save_options = asposewordscloud.DocSaveOptionsData(file_name='google.doc', dml_effects_rendering_mode='None', dml_rendering_mode='DrawingML', zip_output=False)
+        request_data = asposewordscloud.LoadWebDocumentData(loading_document_url='http://google.com', save_options=request_data_save_options)
+        request = asposewordscloud.models.requests.LoadWebDocumentOnlineRequest(data=request_data)
+
+        result = self.words_api.load_web_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
