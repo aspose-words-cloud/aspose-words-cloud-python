@@ -19,6 +19,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 ## Enhancements in Version 25.11
 
 - Added 'OfficeMathExportMode' property for TextSaveOptionsData class.
+- Added 'ExportFloatingShapesAsInlineTag' property for PdfSaveOptionsData class.
 
 
 ## Enhancements in Version 25.8
