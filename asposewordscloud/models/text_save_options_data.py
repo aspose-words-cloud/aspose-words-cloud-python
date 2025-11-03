@@ -379,7 +379,7 @@ class TextSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -390,7 +390,7 @@ class TextSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this TextSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -511,7 +511,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :return: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -522,7 +522,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this TextSaveOptionsData.
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -629,7 +629,7 @@ class TextSaveOptionsData(object):
     def office_math_export_mode(self):
         """Gets the office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value that specifies how OfficeMath will be written to the output file. Default value is Text.  # noqa: E501
+        Gets or sets a value that specifies how OfficeMath will be written to the output file. The default value is Text.  # noqa: E501
 
         :return: The office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -640,7 +640,7 @@ class TextSaveOptionsData(object):
     def office_math_export_mode(self, office_math_export_mode):
         """Sets the office_math_export_mode of this TextSaveOptionsData.
 
-        Gets or sets a value that specifies how OfficeMath will be written to the output file. Default value is Text.  # noqa: E501
+        Gets or sets a value that specifies how OfficeMath will be written to the output file. The default value is Text.  # noqa: E501
 
         :param office_math_export_mode: The office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str

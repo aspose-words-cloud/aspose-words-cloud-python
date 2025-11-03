@@ -36,7 +36,7 @@ class SignDocumentRequest(BaseRequestObject):
     Request model for sign_document operation.
     Initializes a new instance.
     :param name Name of the document to sign.
-    :param certificate_path certifate file path.
+    :param certificate_path certificate file path.
     :param certificate_password certificate password.
     :param folder Original document folder.
     :param storage Original document storage.

@@ -439,7 +439,7 @@ class EmfSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this EmfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this EmfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -450,7 +450,7 @@ class EmfSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this EmfSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this EmfSaveOptionsData.  # noqa: E501
         :type: bool

@@ -409,7 +409,7 @@ class SvgSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -420,7 +420,7 @@ class SvgSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this SvgSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -733,7 +733,7 @@ class SvgSaveOptionsData(object):
     def id_prefix(self):
         """Gets the id_prefix of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. The default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
 
         :return: The id_prefix of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -744,7 +744,7 @@ class SvgSaveOptionsData(object):
     def id_prefix(self, id_prefix):
         """Sets the id_prefix of this SvgSaveOptionsData.
 
-        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+        Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. The default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
 
         :param id_prefix: The id_prefix of this SvgSaveOptionsData.  # noqa: E501
         :type: str

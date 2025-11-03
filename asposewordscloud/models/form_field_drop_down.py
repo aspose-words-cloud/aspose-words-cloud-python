@@ -277,7 +277,7 @@ class FormFieldDropDown(object):
     def own_help(self):
         """Gets the own_help of this FormFieldDropDown.  # noqa: E501
 
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If True, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If true, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
 
         :return: The own_help of this FormFieldDropDown.  # noqa: E501
         :rtype: bool
@@ -288,7 +288,7 @@ class FormFieldDropDown(object):
     def own_help(self, own_help):
         """Sets the own_help of this FormFieldDropDown.
 
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If True, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If true, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
 
         :param own_help: The own_help of this FormFieldDropDown.  # noqa: E501
         :type: bool

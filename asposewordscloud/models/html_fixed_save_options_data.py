@@ -444,7 +444,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -455,7 +455,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -724,7 +724,7 @@ class HtmlFixedSaveOptionsData(object):
     def css_class_names_prefix(self):
         """Gets the css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
+        Gets or sets the prefix which is added to all class names in style.css file. The default value is "aw".  # noqa: E501
 
         :return: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -735,7 +735,7 @@ class HtmlFixedSaveOptionsData(object):
     def css_class_names_prefix(self, css_class_names_prefix):
         """Sets the css_class_names_prefix of this HtmlFixedSaveOptionsData.
 
-        Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
+        Gets or sets the prefix which is added to all class names in style.css file. The default value is "aw".  # noqa: E501
 
         :param css_class_names_prefix: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -886,7 +886,7 @@ class HtmlFixedSaveOptionsData(object):
     def id_prefix(self):
         """Gets the id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+        Gets or sets a prefix that is prepended to all generated element IDs in the output document. The default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
 
         :return: The id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -897,7 +897,7 @@ class HtmlFixedSaveOptionsData(object):
     def id_prefix(self, id_prefix):
         """Sets the id_prefix of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
+        Gets or sets a prefix that is prepended to all generated element IDs in the output document. The default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.  # noqa: E501
 
         :param id_prefix: The id_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -938,7 +938,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_margins(self):
         """Gets the page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.  # noqa: E501
+        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. The default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.  # noqa: E501
 
         :return: The page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -949,7 +949,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_margins(self, page_margins):
         """Sets the page_margins of this HtmlFixedSaveOptionsData.
 
-        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.  # noqa: E501
+        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. The default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.  # noqa: E501
 
         :param page_margins: The page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: float

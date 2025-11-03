@@ -88,7 +88,7 @@ class SignOptions(object):
     def comments(self):
         """Gets the comments of this SignOptions.  # noqa: E501
 
-        Gets or sets comments on the digital signature. Default value is empty string.  # noqa: E501
+        Gets or sets comments on the digital signature. The default value is an empty string.  # noqa: E501
 
         :return: The comments of this SignOptions.  # noqa: E501
         :rtype: str
@@ -99,7 +99,7 @@ class SignOptions(object):
     def comments(self, comments):
         """Sets the comments of this SignOptions.
 
-        Gets or sets comments on the digital signature. Default value is empty string.  # noqa: E501
+        Gets or sets comments on the digital signature. The default value is an empty string.  # noqa: E501
 
         :param comments: The comments of this SignOptions.  # noqa: E501
         :type: str
@@ -110,7 +110,7 @@ class SignOptions(object):
     def decryption_password(self):
         """Gets the decryption_password of this SignOptions.  # noqa: E501
 
-        Gets or sets the password to decrypt source document. Default value is empty string.  # noqa: E501
+        Gets or sets the password to decrypt source document. The default value is an empty string.  # noqa: E501
 
         :return: The decryption_password of this SignOptions.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class SignOptions(object):
     def decryption_password(self, decryption_password):
         """Sets the decryption_password of this SignOptions.
 
-        Gets or sets the password to decrypt source document. Default value is empty string.  # noqa: E501
+        Gets or sets the password to decrypt source document. The default value is an empty string.  # noqa: E501
 
         :param decryption_password: The decryption_password of this SignOptions.  # noqa: E501
         :type: str
@@ -132,7 +132,7 @@ class SignOptions(object):
     def provider_id(self):
         """Gets the provider_id of this SignOptions.  # noqa: E501
 
-        Gets or sets the class Guid of the signature cryptography provider. Default value is Empty (all zeroes) Guid.  # noqa: E501
+        Gets or sets the class Guid of the signature cryptography provider. The default value is Empty (all zeroes) Guid.  # noqa: E501
 
         :return: The provider_id of this SignOptions.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class SignOptions(object):
     def provider_id(self, provider_id):
         """Sets the provider_id of this SignOptions.
 
-        Gets or sets the class Guid of the signature cryptography provider. Default value is Empty (all zeroes) Guid.  # noqa: E501
+        Gets or sets the class Guid of the signature cryptography provider. The default value is Empty (all zeroes) Guid.  # noqa: E501
 
         :param provider_id: The provider_id of this SignOptions.  # noqa: E501
         :type: str
@@ -154,7 +154,7 @@ class SignOptions(object):
     def signature_line_id(self):
         """Gets the signature_line_id of this SignOptions.  # noqa: E501
 
-        Gets or sets user defined signature line Guid. Default value is Empty (all zeroes) Guid.  # noqa: E501
+        Gets or sets user defined signature line Guid. The default value is Empty (all zeroes) Guid.  # noqa: E501
 
         :return: The signature_line_id of this SignOptions.  # noqa: E501
         :rtype: str
@@ -165,7 +165,7 @@ class SignOptions(object):
     def signature_line_id(self, signature_line_id):
         """Sets the signature_line_id of this SignOptions.
 
-        Gets or sets user defined signature line Guid. Default value is Empty (all zeroes) Guid.  # noqa: E501
+        Gets or sets user defined signature line Guid. The default value is Empty (all zeroes) Guid.  # noqa: E501
 
         :param signature_line_id: The signature_line_id of this SignOptions.  # noqa: E501
         :type: str
@@ -176,7 +176,7 @@ class SignOptions(object):
     def signature_line_image_filename(self):
         """Gets the signature_line_image_filename of this SignOptions.  # noqa: E501
 
-        Gets or sets the image that will be shown in associated SignatureLine. Default value is empty string.  # noqa: E501
+        Gets or sets the image that will be shown in associated SignatureLine. The default value is an empty string.  # noqa: E501
 
         :return: The signature_line_image_filename of this SignOptions.  # noqa: E501
         :rtype: str
@@ -187,7 +187,7 @@ class SignOptions(object):
     def signature_line_image_filename(self, signature_line_image_filename):
         """Sets the signature_line_image_filename of this SignOptions.
 
-        Gets or sets the image that will be shown in associated SignatureLine. Default value is empty string.  # noqa: E501
+        Gets or sets the image that will be shown in associated SignatureLine. The default value is an empty string.  # noqa: E501
 
         :param signature_line_image_filename: The signature_line_image_filename of this SignOptions.  # noqa: E501
         :type: str
@@ -198,7 +198,7 @@ class SignOptions(object):
     def sign_time(self):
         """Gets the sign_time of this SignOptions.  # noqa: E501
 
-        Gets or sets the date of signing. Default value is current time (Now).  # noqa: E501
+        Gets or sets the date of signing. The default value is current time (Now).  # noqa: E501
 
         :return: The sign_time of this SignOptions.  # noqa: E501
         :rtype: datetime
@@ -209,7 +209,7 @@ class SignOptions(object):
     def sign_time(self, sign_time):
         """Sets the sign_time of this SignOptions.
 
-        Gets or sets the date of signing. Default value is current time (Now).  # noqa: E501
+        Gets or sets the date of signing. The default value is current time (Now).  # noqa: E501
 
         :param sign_time: The sign_time of this SignOptions.  # noqa: E501
         :type: datetime

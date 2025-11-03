@@ -71,7 +71,7 @@ class WordsApi(Encryptor, object):
         self.rsa_key = None
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in the document.  # noqa: E501
+        """Accepts all the revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -103,7 +103,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in the document.  # noqa: E501
+        """Accepts all the revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -150,7 +150,7 @@ class WordsApi(Encryptor, object):
 
 
     def accept_all_revisions_online(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in the document.  # noqa: E501
+        """Accepts all the revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -180,7 +180,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def accept_all_revisions_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in the document.  # noqa: E501
+        """Accepts all the revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -575,8 +575,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param data str : A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
-        :param report_engine_settings ReportEngineSettings : An object providing a settings of report engine. (required)
+        :param data str : A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
+        :param report_engine_settings ReportEngineSettings : An object providing settings of a report engine. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -659,8 +659,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param template file : File with template. (required)
-        :param data str : A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
-        :param report_engine_settings ReportEngineSettings : An object providing a settings of report engine. (required)
+        :param data str : A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
+        :param report_engine_settings ReportEngineSettings : An object providing settings of a report engine. (required)
         :param document_file_name str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
         :return: file
                  If the method is called asynchronously,
@@ -13892,7 +13892,7 @@ class WordsApi(Encryptor, object):
 
 
     def get_public_key(self, request, **kwargs):  # noqa: E501
-        """Get assymetric public key.  # noqa: E501
+        """Get asymmetric public key.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -13916,7 +13916,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def get_public_key_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Get assymetric public key.  # noqa: E501
+        """Get asymmetric public key.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -24181,7 +24181,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : Name of the document to sign. (required)
-        :param certificate_path str : certifate file path. (required)
+        :param certificate_path str : certificate file path. (required)
         :param certificate_password str : certificate password. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -24262,7 +24262,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param certificate_path str : certifate file path. (required)
+        :param certificate_path str : certificate file path. (required)
         :param certificate_password str : certificate password. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
