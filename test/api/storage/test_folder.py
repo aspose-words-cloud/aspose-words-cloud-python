@@ -53,7 +53,7 @@ class TestFolder(BaseTestContext):
 
         self.upload_file(test_delete_folder + '/TestDeleteFolder.docx', open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFolderRequest(path=test_delete_folder)
+        request = asposewordscloud.models.requests.DeleteFolderRequest(path=test_delete_folder, recursive=True)
 
         self.words_api.delete_folder(request)
 
