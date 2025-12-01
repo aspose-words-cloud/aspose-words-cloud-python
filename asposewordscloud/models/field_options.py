@@ -123,7 +123,7 @@ class FieldOptions(object):
     def current_user(self):
         """Gets the current_user of this FieldOptions.  # noqa: E501
 
-        Gets or sets Curren tUser.  # noqa: E501
+        Gets or sets Current User.  # noqa: E501
 
         :return: The current_user of this FieldOptions.  # noqa: E501
         :rtype: UserInformation
@@ -134,7 +134,7 @@ class FieldOptions(object):
     def current_user(self, current_user):
         """Sets the current_user of this FieldOptions.
 
-        Gets or sets Curren tUser.  # noqa: E501
+        Gets or sets Current User.  # noqa: E501
 
         :param current_user: The current_user of this FieldOptions.  # noqa: E501
         :type: UserInformation

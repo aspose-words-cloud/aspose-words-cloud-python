@@ -454,7 +454,7 @@ class TiffSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this TiffSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this TiffSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -465,7 +465,7 @@ class TiffSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this TiffSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this TiffSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1058,7 +1058,7 @@ class TiffSaveOptionsData(object):
     def threshold_for_floyd_steinberg_dithering(self):
         """Gets the threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
 
-        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.  # noqa: E501
+        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. The default value is 128.  # noqa: E501
 
         :return: The threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -1069,7 +1069,7 @@ class TiffSaveOptionsData(object):
     def threshold_for_floyd_steinberg_dithering(self, threshold_for_floyd_steinberg_dithering):
         """Sets the threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.
 
-        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.  # noqa: E501
+        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. The default value is 128.  # noqa: E501
 
         :param threshold_for_floyd_steinberg_dithering: The threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
         :type: int

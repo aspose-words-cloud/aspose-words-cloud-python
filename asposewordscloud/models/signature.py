@@ -115,7 +115,7 @@ class Signature(object):
     def issuer_name(self):
         """Gets the issuer_name of this Signature.  # noqa: E501
 
-        Gets or sets the subject distinguished name of the certificate isuuer.  # noqa: E501
+        Gets or sets the subject distinguished name of the certificate issuer.  # noqa: E501
 
         :return: The issuer_name of this Signature.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class Signature(object):
     def issuer_name(self, issuer_name):
         """Sets the issuer_name of this Signature.
 
-        Gets or sets the subject distinguished name of the certificate isuuer.  # noqa: E501
+        Gets or sets the subject distinguished name of the certificate issuer.  # noqa: E501
 
         :param issuer_name: The issuer_name of this Signature.  # noqa: E501
         :type: str

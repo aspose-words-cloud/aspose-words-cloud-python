@@ -36,8 +36,8 @@ class BuildReportRequest(BaseRequestObject):
     Request model for build_report operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
-    :param report_engine_settings An object providing a settings of report engine.
+    :param data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+    :param report_engine_settings An object providing settings of a report engine.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

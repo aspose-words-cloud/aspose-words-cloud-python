@@ -376,7 +376,7 @@ class Style(object):
     def name(self):
         """Gets the name of this Style.  # noqa: E501
 
-        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
+        Gets or sets the name of the style. Cannot be an empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :return: The name of this Style.  # noqa: E501
         :rtype: str
@@ -387,7 +387,7 @@ class Style(object):
     def name(self, name):
         """Sets the name of this Style.
 
-        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
+        Gets or sets the name of the style. Cannot be an empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :param name: The name of this Style.  # noqa: E501
         :type: str

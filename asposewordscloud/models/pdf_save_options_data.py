@@ -93,6 +93,7 @@ class PdfSaveOptionsData(object):
         'use_sdt_tag_as_form_field_name': 'bool',
         'zoom_behavior': 'str',
         'zoom_factor': 'int',
+        'export_floating_shapes_as_inline_tag': 'bool',
         'save_format': 'str'
     }
 
@@ -147,10 +148,11 @@ class PdfSaveOptionsData(object):
         'use_sdt_tag_as_form_field_name': 'UseSdtTagAsFormFieldName',
         'zoom_behavior': 'ZoomBehavior',
         'zoom_factor': 'ZoomFactor',
+        'export_floating_shapes_as_inline_tag': 'ExportFloatingShapesAsInlineTag',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, attachments_embedding_mode=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, render_choice_form_field_border=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, attachments_embedding_mode=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, render_choice_form_field_border=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, use_sdt_tag_as_form_field_name=None, zoom_behavior=None, zoom_factor=None, export_floating_shapes_as_inline_tag=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -203,6 +205,7 @@ class PdfSaveOptionsData(object):
         self._use_sdt_tag_as_form_field_name = None
         self._zoom_behavior = None
         self._zoom_factor = None
+        self._export_floating_shapes_as_inline_tag = None
         self._save_format = "pdf"
         self.discriminator = None
 
@@ -306,6 +309,8 @@ class PdfSaveOptionsData(object):
             self.zoom_behavior = zoom_behavior
         if zoom_factor is not None:
             self.zoom_factor = zoom_factor
+        if export_floating_shapes_as_inline_tag is not None:
+            self.export_floating_shapes_as_inline_tag = export_floating_shapes_as_inline_tag
 
     @property
     def allow_embedding_post_script_fonts(self):
@@ -519,7 +524,7 @@ class PdfSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -530,7 +535,7 @@ class PdfSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -799,7 +804,7 @@ class PdfSaveOptionsData(object):
     def attachments_embedding_mode(self):
         """Gets the attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
+        Gets or sets a value determining how attachments are embedded to the PDF document. The default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
 
         :return: The attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -810,7 +815,7 @@ class PdfSaveOptionsData(object):
     def attachments_embedding_mode(self, attachments_embedding_mode):
         """Sets the attachments_embedding_mode of this PdfSaveOptionsData.
 
-        Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
+        Gets or sets a value determining how attachments are embedded to the PDF document. The default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.  # noqa: E501
 
         :param attachments_embedding_mode: The attachments_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -829,7 +834,7 @@ class PdfSaveOptionsData(object):
     def cache_background_graphics(self):
         """Gets the cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background. The default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
 
         :return: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -840,7 +845,7 @@ class PdfSaveOptionsData(object):
     def cache_background_graphics(self, cache_background_graphics):
         """Sets the cache_background_graphics of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background. The default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.  # noqa: E501
 
         :param cache_background_graphics: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -999,7 +1004,7 @@ class PdfSaveOptionsData(object):
     def embed_attachments(self):
         """Gets the embed_attachments of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
+        Gets or sets a value determining whether or not to embed attachments to the PDF document. The default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
 
         :return: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1010,7 +1015,7 @@ class PdfSaveOptionsData(object):
     def embed_attachments(self, embed_attachments):
         """Sets the embed_attachments of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
+        Gets or sets a value determining whether or not to embed attachments to the PDF document. The default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.  # noqa: E501
 
         :param embed_attachments: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1087,7 +1092,7 @@ class PdfSaveOptionsData(object):
     def export_language_to_span_tag(self):
         """Gets the export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
+        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. The default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
 
         :return: The export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1098,7 +1103,7 @@ class PdfSaveOptionsData(object):
     def export_language_to_span_tag(self, export_language_to_span_tag):
         """Sets the export_language_to_span_tag of this PdfSaveOptionsData.
 
-        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
+        Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. The default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.  # noqa: E501
 
         :param export_language_to_span_tag: The export_language_to_span_tag of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1528,6 +1533,28 @@ class PdfSaveOptionsData(object):
         self._zoom_factor = zoom_factor
 
     @property
+    def export_floating_shapes_as_inline_tag(self):
+        """Gets the export_floating_shapes_as_inline_tag of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure. The default value is false and floating shapes will be exported as block-level tags, placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags, placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.  # noqa: E501
+
+        :return: The export_floating_shapes_as_inline_tag of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._export_floating_shapes_as_inline_tag
+
+    @export_floating_shapes_as_inline_tag.setter
+    def export_floating_shapes_as_inline_tag(self, export_floating_shapes_as_inline_tag):
+        """Sets the export_floating_shapes_as_inline_tag of this PdfSaveOptionsData.
+
+        Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure. The default value is false and floating shapes will be exported as block-level tags, placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags, placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.  # noqa: E501
+
+        :param export_floating_shapes_as_inline_tag: The export_floating_shapes_as_inline_tag of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._export_floating_shapes_as_inline_tag = export_floating_shapes_as_inline_tag
+
+    @property
     def save_format(self):
         """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
 
@@ -1608,6 +1635,7 @@ class PdfSaveOptionsData(object):
 
         if self._outline_options is not None:
             self._outline_options.validate()
+
 
 
 

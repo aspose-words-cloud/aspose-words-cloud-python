@@ -349,7 +349,7 @@ class XamlFlowSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -360,7 +360,7 @@ class XamlFlowSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this XamlFlowSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: bool
@@ -503,7 +503,7 @@ class XamlFlowSaveOptionsData(object):
     def replace_backslash_with_yen_sign(self):
         """Gets the replace_backslash_with_yen_sign of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. The default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
 
         :return: The replace_backslash_with_yen_sign of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -514,7 +514,7 @@ class XamlFlowSaveOptionsData(object):
     def replace_backslash_with_yen_sign(self, replace_backslash_with_yen_sign):
         """Sets the replace_backslash_with_yen_sign of this XamlFlowSaveOptionsData.
 
-        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. The default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
 
         :param replace_backslash_with_yen_sign: The replace_backslash_with_yen_sign of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: bool

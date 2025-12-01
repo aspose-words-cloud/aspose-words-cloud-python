@@ -359,7 +359,7 @@ class MarkdownSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this MarkdownSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this MarkdownSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -370,7 +370,7 @@ class MarkdownSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this MarkdownSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this MarkdownSaveOptionsData.  # noqa: E501
         :type: bool
@@ -491,7 +491,7 @@ class MarkdownSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this MarkdownSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :return: The export_headers_footers_mode of this MarkdownSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -502,7 +502,7 @@ class MarkdownSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this MarkdownSaveOptionsData.
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this MarkdownSaveOptionsData.  # noqa: E501
         :type: str

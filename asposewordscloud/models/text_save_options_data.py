@@ -62,6 +62,7 @@ class TextSaveOptionsData(object):
         'paragraph_break': 'str',
         'add_bidi_marks': 'bool',
         'max_characters_per_line': 'int',
+        'office_math_export_mode': 'str',
         'preserve_table_layout': 'bool',
         'simplify_list_labels': 'bool',
         'save_format': 'str'
@@ -87,12 +88,13 @@ class TextSaveOptionsData(object):
         'paragraph_break': 'ParagraphBreak',
         'add_bidi_marks': 'AddBidiMarks',
         'max_characters_per_line': 'MaxCharactersPerLine',
+        'office_math_export_mode': 'OfficeMathExportMode',
         'preserve_table_layout': 'PreserveTableLayout',
         'simplify_list_labels': 'SimplifyListLabels',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_ambiguous_text_font=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, office_math_export_mode=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
         """TextSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -114,6 +116,7 @@ class TextSaveOptionsData(object):
         self._paragraph_break = None
         self._add_bidi_marks = None
         self._max_characters_per_line = None
+        self._office_math_export_mode = None
         self._preserve_table_layout = None
         self._simplify_list_labels = None
         self._save_format = "txt"
@@ -157,6 +160,8 @@ class TextSaveOptionsData(object):
             self.add_bidi_marks = add_bidi_marks
         if max_characters_per_line is not None:
             self.max_characters_per_line = max_characters_per_line
+        if office_math_export_mode is not None:
+            self.office_math_export_mode = office_math_export_mode
         if preserve_table_layout is not None:
             self.preserve_table_layout = preserve_table_layout
         if simplify_list_labels is not None:
@@ -374,7 +379,7 @@ class TextSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -385,7 +390,7 @@ class TextSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this TextSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -506,7 +511,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :return: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -517,7 +522,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this TextSaveOptionsData.
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. The default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -621,6 +626,36 @@ class TextSaveOptionsData(object):
         self._max_characters_per_line = max_characters_per_line
 
     @property
+    def office_math_export_mode(self):
+        """Gets the office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value that specifies how OfficeMath will be written to the output file. The default value is Text.  # noqa: E501
+
+        :return: The office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._office_math_export_mode
+
+    @office_math_export_mode.setter
+    def office_math_export_mode(self, office_math_export_mode):
+        """Sets the office_math_export_mode of this TextSaveOptionsData.
+
+        Gets or sets a value that specifies how OfficeMath will be written to the output file. The default value is Text.  # noqa: E501
+
+        :param office_math_export_mode: The office_math_export_mode of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Text", "Latex"]  # noqa: E501
+        if not office_math_export_mode.isdigit():
+            if office_math_export_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `office_math_export_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(office_math_export_mode, allowed_values))
+            self._office_math_export_mode = office_math_export_mode
+        else:
+            self._office_math_export_mode = allowed_values[int(office_math_export_mode) if six.PY3 else long(office_math_export_mode)]
+
+    @property
     def preserve_table_layout(self):
         """Gets the preserve_table_layout of this TextSaveOptionsData.  # noqa: E501
 
@@ -689,6 +724,7 @@ class TextSaveOptionsData(object):
 
         if self._custom_time_zone_info_data is not None:
             self._custom_time_zone_info_data.validate()
+
 
 
 

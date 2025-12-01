@@ -230,7 +230,7 @@ class StructuredDocumentTagUpdate(object):
     def list_items(self):
         """Gets the list_items of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The list_items of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: list[StructuredDocumentTagListItem]
@@ -241,7 +241,7 @@ class StructuredDocumentTagUpdate(object):
     def list_items(self, list_items):
         """Sets the list_items of this StructuredDocumentTagUpdate.
 
-        Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param list_items: The list_items of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: list[StructuredDocumentTagListItem]
@@ -252,7 +252,7 @@ class StructuredDocumentTagUpdate(object):
     def checked(self):
         """Gets the checked of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will only work for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will work only for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The checked of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: bool
@@ -263,7 +263,7 @@ class StructuredDocumentTagUpdate(object):
     def checked(self, checked):
         """Sets the checked of this StructuredDocumentTagUpdate.
 
-        Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will only work for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will work only for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param checked: The checked of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: bool
@@ -304,7 +304,7 @@ class StructuredDocumentTagUpdate(object):
     def date_display_locale(self):
         """Gets the date_display_locale of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets the language format for the date displayed in this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the language format for the date displayed in this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The date_display_locale of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: int
@@ -315,7 +315,7 @@ class StructuredDocumentTagUpdate(object):
     def date_display_locale(self, date_display_locale):
         """Sets the date_display_locale of this StructuredDocumentTagUpdate.
 
-        Gets or sets the language format for the date displayed in this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the language format for the date displayed in this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param date_display_locale: The date_display_locale of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: int
@@ -326,7 +326,7 @@ class StructuredDocumentTagUpdate(object):
     def date_display_format(self):
         """Gets the date_display_format of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The date_display_format of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: str
@@ -337,7 +337,7 @@ class StructuredDocumentTagUpdate(object):
     def date_display_format(self, date_display_format):
         """Sets the date_display_format of this StructuredDocumentTagUpdate.
 
-        Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param date_display_format: The date_display_format of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: str
@@ -348,7 +348,7 @@ class StructuredDocumentTagUpdate(object):
     def full_date(self):
         """Gets the full_date of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets the full date and time last entered into this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the full date and time last entered into this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The full_date of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: datetime
@@ -359,7 +359,7 @@ class StructuredDocumentTagUpdate(object):
     def full_date(self, full_date):
         """Sets the full_date of this StructuredDocumentTagUpdate.
 
-        Gets or sets the full date and time last entered into this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the full date and time last entered into this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param full_date: The full_date of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: datetime
@@ -392,7 +392,7 @@ class StructuredDocumentTagUpdate(object):
     def date_storage_format(self):
         """Gets the date_storage_format of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. The default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The date_storage_format of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: str
@@ -403,7 +403,7 @@ class StructuredDocumentTagUpdate(object):
     def date_storage_format(self, date_storage_format):
         """Sets the date_storage_format of this StructuredDocumentTagUpdate.
 
-        Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. The default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param date_storage_format: The date_storage_format of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: str
@@ -422,7 +422,7 @@ class StructuredDocumentTagUpdate(object):
     def building_block_gallery(self):
         """Gets the building_block_gallery of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets type of building block for this SDT. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets type of building block for this SDT. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The building_block_gallery of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: str
@@ -433,7 +433,7 @@ class StructuredDocumentTagUpdate(object):
     def building_block_gallery(self, building_block_gallery):
         """Sets the building_block_gallery of this StructuredDocumentTagUpdate.
 
-        Gets or sets type of building block for this SDT. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets type of building block for this SDT. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param building_block_gallery: The building_block_gallery of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: str
@@ -444,7 +444,7 @@ class StructuredDocumentTagUpdate(object):
     def building_block_category(self):
         """Gets the building_block_category of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The building_block_category of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: str
@@ -455,7 +455,7 @@ class StructuredDocumentTagUpdate(object):
     def building_block_category(self, building_block_category):
         """Sets the building_block_category of this StructuredDocumentTagUpdate.
 
-        Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param building_block_category: The building_block_category of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: str
@@ -466,7 +466,7 @@ class StructuredDocumentTagUpdate(object):
     def multiline(self):
         """Gets the multiline of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will only work for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will work only for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The multiline of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: bool
@@ -477,7 +477,7 @@ class StructuredDocumentTagUpdate(object):
     def multiline(self, multiline):
         """Sets the multiline of this StructuredDocumentTagUpdate.
 
-        Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will only work for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will work only for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param multiline: The multiline of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: bool
@@ -532,7 +532,7 @@ class StructuredDocumentTagUpdate(object):
     def calendar_type(self):
         """Gets the calendar_type of this StructuredDocumentTagUpdate.  # noqa: E501
 
-        Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :return: The calendar_type of this StructuredDocumentTagUpdate.  # noqa: E501
         :rtype: str
@@ -543,7 +543,7 @@ class StructuredDocumentTagUpdate(object):
     def calendar_type(self, calendar_type):
         """Sets the calendar_type of this StructuredDocumentTagUpdate.
 
-        Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.  # noqa: E501
+        Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.  # noqa: E501
 
         :param calendar_type: The calendar_type of this StructuredDocumentTagUpdate.  # noqa: E501
         :type: str

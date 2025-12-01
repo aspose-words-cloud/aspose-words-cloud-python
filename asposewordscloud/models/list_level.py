@@ -145,7 +145,7 @@ class ListLevel(object):
     def start_at(self):
         """Gets the start_at of this ListLevel.  # noqa: E501
 
-        Gets or sets the starting number for this list level. Default value is 1.  # noqa: E501
+        Gets or sets the starting number for this list level. The default value is 1.  # noqa: E501
 
         :return: The start_at of this ListLevel.  # noqa: E501
         :rtype: int
@@ -156,7 +156,7 @@ class ListLevel(object):
     def start_at(self, start_at):
         """Sets the start_at of this ListLevel.
 
-        Gets or sets the starting number for this list level. Default value is 1.  # noqa: E501
+        Gets or sets the starting number for this list level. The default value is 1.  # noqa: E501
 
         :param start_at: The start_at of this ListLevel.  # noqa: E501
         :type: int

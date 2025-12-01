@@ -534,7 +534,7 @@ class HtmlSaveOptionsData(object):
     def update_created_time_property(self):
         """Gets the update_created_time_property of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_created_time_property of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -545,7 +545,7 @@ class HtmlSaveOptionsData(object):
     def update_created_time_property(self, update_created_time_property):
         """Sets the update_created_time_property of this HtmlSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_created_time_property: The update_created_time_property of this HtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1028,7 +1028,7 @@ class HtmlSaveOptionsData(object):
     def export_page_margins(self):
         """Gets the export_page_margins of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show the area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
 
         :return: The export_page_margins of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1039,7 +1039,7 @@ class HtmlSaveOptionsData(object):
     def export_page_margins(self, export_page_margins):
         """Sets the export_page_margins of this HtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show the area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
 
         :param export_page_margins: The export_page_margins of this HtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1248,7 +1248,7 @@ class HtmlSaveOptionsData(object):
     def html_version(self):
         """Gets the html_version of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
+        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. The default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
 
         :return: The html_version of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1259,7 +1259,7 @@ class HtmlSaveOptionsData(object):
     def html_version(self, html_version):
         """Sets the html_version of this HtmlSaveOptionsData.
 
-        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
+        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. The default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
 
         :param html_version: The html_version of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
@@ -1448,7 +1448,7 @@ class HtmlSaveOptionsData(object):
     def replace_backslash_with_yen_sign(self):
         """Gets the replace_backslash_with_yen_sign of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. The default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
 
         :return: The replace_backslash_with_yen_sign of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1459,7 +1459,7 @@ class HtmlSaveOptionsData(object):
     def replace_backslash_with_yen_sign(self, replace_backslash_with_yen_sign):
         """Sets the replace_backslash_with_yen_sign of this HtmlSaveOptionsData.
 
-        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
+        Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. The default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.  # noqa: E501
 
         :param replace_backslash_with_yen_sign: The replace_backslash_with_yen_sign of this HtmlSaveOptionsData.  # noqa: E501
         :type: bool

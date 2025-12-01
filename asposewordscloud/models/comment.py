@@ -164,7 +164,7 @@ class Comment(object):
     def author(self):
         """Gets the author of this Comment.  # noqa: E501
 
-        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is an empty string.  # noqa: E501
 
         :return: The author of this Comment.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class Comment(object):
     def author(self, author):
         """Sets the author of this Comment.
 
-        Gets or sets the author name for a comment. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the author name for a comment. Cannot be null.Default is an empty string.  # noqa: E501
 
         :param author: The author of this Comment.  # noqa: E501
         :type: str
@@ -186,7 +186,7 @@ class Comment(object):
     def initial(self):
         """Gets the initial of this Comment.  # noqa: E501
 
-        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is an empty string.  # noqa: E501
 
         :return: The initial of this Comment.  # noqa: E501
         :rtype: str
@@ -197,7 +197,7 @@ class Comment(object):
     def initial(self, initial):
         """Sets the initial of this Comment.
 
-        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is an empty string.  # noqa: E501
 
         :param initial: The initial of this Comment.  # noqa: E501
         :type: str

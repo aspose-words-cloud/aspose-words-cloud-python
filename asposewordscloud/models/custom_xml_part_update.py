@@ -117,7 +117,7 @@ class CustomXmlPartUpdate(object):
     def data(self):
         """Gets the data of this CustomXmlPartUpdate.  # noqa: E501
 
-        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is an empty string.  # noqa: E501
 
         :return: The data of this CustomXmlPartUpdate.  # noqa: E501
         :rtype: str
@@ -128,7 +128,7 @@ class CustomXmlPartUpdate(object):
     def data(self, data):
         """Sets the data of this CustomXmlPartUpdate.
 
-        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is an empty string.  # noqa: E501
 
         :param data: The data of this CustomXmlPartUpdate.  # noqa: E501
         :type: str
