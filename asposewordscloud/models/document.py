@@ -46,6 +46,7 @@ class Document(object):
         'links': 'list[Link]',
         'document_properties': 'DocumentProperties',
         'file_name': 'str',
+        'file_size': 'int',
         'is_encrypted': 'bool',
         'is_signed': 'bool',
         'source_format': 'str'
@@ -55,17 +56,19 @@ class Document(object):
         'links': 'Links',
         'document_properties': 'DocumentProperties',
         'file_name': 'FileName',
+        'file_size': 'FileSize',
         'is_encrypted': 'IsEncrypted',
         'is_signed': 'IsSigned',
         'source_format': 'SourceFormat'
     }
 
-    def __init__(self, links=None, document_properties=None, file_name=None, is_encrypted=None, is_signed=None, source_format=None):  # noqa: E501
+    def __init__(self, links=None, document_properties=None, file_name=None, file_size=None, is_encrypted=None, is_signed=None, source_format=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
 
         self._links = None
         self._document_properties = None
         self._file_name = None
+        self._file_size = None
         self._is_encrypted = None
         self._is_signed = None
         self._source_format = None
@@ -77,6 +80,8 @@ class Document(object):
             self.document_properties = document_properties
         if file_name is not None:
             self.file_name = file_name
+        if file_size is not None:
+            self.file_size = file_size
         if is_encrypted is not None:
             self.is_encrypted = is_encrypted
         if is_signed is not None:
@@ -149,6 +154,28 @@ class Document(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def file_size(self):
+        """Gets the file_size of this Document.  # noqa: E501
+
+        Gets or sets the file size.  # noqa: E501
+
+        :return: The file_size of this Document.  # noqa: E501
+        :rtype: int
+        """
+        return self._file_size
+
+    @file_size.setter
+    def file_size(self, file_size):
+        """Sets the file_size of this Document.
+
+        Gets or sets the file size.  # noqa: E501
+
+        :param file_size: The file_size of this Document.  # noqa: E501
+        :type: int
+        """
+        self._file_size = file_size
 
     @property
     def is_encrypted(self):
@@ -246,6 +273,7 @@ class Document(object):
 
         if self._document_properties is not None:
             self._document_properties.validate()
+
 
 
 
