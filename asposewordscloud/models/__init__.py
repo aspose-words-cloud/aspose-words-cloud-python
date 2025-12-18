@@ -21,8 +21,6 @@ from asposewordscloud.models.border import Border
 from asposewordscloud.models.border_response import BorderResponse
 from asposewordscloud.models.borders_collection import BordersCollection
 from asposewordscloud.models.borders_response import BordersResponse
-from asposewordscloud.models.classification_response import ClassificationResponse
-from asposewordscloud.models.classification_result import ClassificationResult
 from asposewordscloud.models.comment import Comment
 from asposewordscloud.models.comment_insert import CommentInsert
 from asposewordscloud.models.comment_link import CommentLink
