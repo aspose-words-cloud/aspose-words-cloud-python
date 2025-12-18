@@ -608,12 +608,31 @@ class ApiClient(object):
 
     def deserialize_files_collection(self, data, headers):
         result = {}
-        if b'Content-Type' in headers.keys() and headers[b'Content-Type'].decode("utf-8").startswith("multipart/mixed"):
-            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'].decode("utf-8"), 'UTF-8').parts
-            for part in parts:
-                result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
-        elif "Content-Type" in headers.keys() and headers["Content-Type"].startswith("multipart/mixed"):
-            parts = decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8').parts
+        content_type = None
+        if headers is not None:
+            if b'Content-Type' in headers:
+                content_type = headers[b'Content-Type']
+            elif "Content-Type" in headers:
+                content_type = headers["Content-Type"]
+            else:
+                # Fallback: try case-insensitive lookup for dict-like headers
+                try:
+                    for k, v in headers.items():
+                        key = k.decode("utf-8", errors="ignore") if isinstance(k, (bytes, bytearray)) else str(k)
+                        if key.lower() == "content-type":
+                            content_type = v
+                            break
+                except Exception:
+                    pass
+
+        if content_type is not None and type(content_type) != str:
+            try:
+                content_type = content_type.decode("utf-8")
+            except Exception:
+                content_type = str(content_type)
+
+        if content_type is not None and content_type.startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, content_type, 'UTF-8').parts
             for part in parts:
                 result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
         else:
@@ -639,10 +658,21 @@ class ApiClient(object):
             return self.deserialize_files_collection(data, headers)
 
         if response_type == "multipart":
-            if b'Content-Type' in headers:
-                return decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8')
-            if "Content-Type" in headers:
-                return decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8')
+            content_type = None
+            if headers is not None:
+                if b'Content-Type' in headers:
+                    content_type = headers[b'Content-Type']
+                elif "Content-Type" in headers:
+                    content_type = headers["Content-Type"]
+
+            if content_type is not None and type(content_type) != str:
+                try:
+                    content_type = content_type.decode("utf-8")
+                except Exception:
+                    content_type = str(content_type)
+
+            if content_type is not None:
+                return decoder.MultipartDecoder(data, content_type, 'UTF-8')
 
         # fetch data from response object
         if six.PY3:
