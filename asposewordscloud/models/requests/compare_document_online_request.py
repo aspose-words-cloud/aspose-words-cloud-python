@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="compare_document_online_request.py">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,9 +42,10 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param open_type_support The value indicates whether OpenType support is on.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, compare_data, load_encoding=None, password=None, encrypted_password=None, open_type_support=None, dest_file_name=None):
+    def __init__(self, document, compare_data, load_encoding=None, password=None, encrypted_password=None, open_type_support=None, dest_file_name=None, fonts_location=None):
         self.document = document
         self.compare_data = compare_data
         self.load_encoding = load_encoding
@@ -52,6 +53,7 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
         self.encrypted_password = encrypted_password
         self.open_type_support = open_type_support
         self.dest_file_name = dest_file_name
+        self.fonts_location = fonts_location
 
     def create_http_request(self, api_client, encryptor):
         # verify the required parameter 'document' is set
@@ -93,6 +95,8 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
                 query_params.append(('openTypeSupport', self.open_type_support))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.fonts_location is not None:
+                query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`

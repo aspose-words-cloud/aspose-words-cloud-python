@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_drawing_object_ole_data_request.py">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_client.py">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -359,12 +359,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '25.12'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '26.1'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 25.12'
+        self.user_agent = 'python sdk 26.1'
 
     def __del__(self):
         if not self.pool is None:

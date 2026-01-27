@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.py">
-#   Copyright (c) 2025 Aspose.Words for Cloud
+#   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -745,6 +745,7 @@ class WordsApi(Encryptor, object):
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param open_type_support bool : The value indicates whether OpenType support is on.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -826,6 +827,7 @@ class WordsApi(Encryptor, object):
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param open_type_support bool : The value indicates whether OpenType support is on.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: CompareDocumentOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
