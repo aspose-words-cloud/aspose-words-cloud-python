@@ -113,6 +113,7 @@ class ApiClient(object):
         'CustomXmlPartsResponse, _': asposewordscloud.models.CustomXmlPartsResponse,
         'CustomXmlPartUpdate, _': asposewordscloud.models.CustomXmlPartUpdate,
         'DigitalSignatureDetails, _': asposewordscloud.models.DigitalSignatureDetails,
+        'DoclingSaveOptionsData, _': asposewordscloud.models.DoclingSaveOptionsData,
         'DocmSaveOptionsData, _': asposewordscloud.models.DocmSaveOptionsData,
         'DocSaveOptionsData, _': asposewordscloud.models.DocSaveOptionsData,
         'Document, _': asposewordscloud.models.Document,
