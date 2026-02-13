@@ -48,6 +48,7 @@ from asposewordscloud.models.custom_xml_parts_collection import CustomXmlPartsCo
 from asposewordscloud.models.custom_xml_parts_response import CustomXmlPartsResponse
 from asposewordscloud.models.custom_xml_part_update import CustomXmlPartUpdate
 from asposewordscloud.models.digital_signature_details import DigitalSignatureDetails
+from asposewordscloud.models.docling_save_options_data import DoclingSaveOptionsData
 from asposewordscloud.models.docm_save_options_data import DocmSaveOptionsData
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
