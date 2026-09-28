@@ -5,7 +5,7 @@ parameters {
 		string(name: 'pypiLogin', description: 'Login for pypi auth')
 		string(name: 'pypiPass', description: 'Password for pypi auth')
 }
-node('words-linux') {         
+node('sdk-linux') {         
     try {		
 	    stage('0:Merge master to release'){
 			if (params.StartFromStage.toInteger() < 1) {
@@ -81,7 +81,7 @@ def publishToPypi()
     }
 }
 
-node('words-linux') {
+node('sdk-linux') {
 	try {
 		publishToPypi()
 	} finally {
