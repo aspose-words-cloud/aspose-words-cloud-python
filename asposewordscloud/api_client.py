@@ -76,6 +76,7 @@ class ApiClient(object):
     }
 
     MODEL_TYPES_MAPPING = {
+        'AdvancedCompareOptions, _': asposewordscloud.models.AdvancedCompareOptions,
         'ApiError, _': asposewordscloud.models.ApiError,
         'AvailableFontsResponse, _': asposewordscloud.models.AvailableFontsResponse,
         'Azw3SaveOptionsData, _': asposewordscloud.models.Azw3SaveOptionsData,
@@ -361,12 +362,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '26.9'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-client-version': '26.10'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 26.9'
+        self.user_agent = 'python sdk 26.10'
 
     class HttpPartResponse(object):
         def __init__(self, data, headers, status):
